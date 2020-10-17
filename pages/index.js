@@ -2,20 +2,24 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
-export default function Home() {
+
+export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      
+      <header>
+        <h1>Home Page</h1>
+      </header>
 
       <section className={utilStyles.headingMd}>
-        <p>[self intro goes here]</p>
+        <p>Welcome to the beginning of the website.</p>
         <p>
-          (This is a sample website - you'll be build a site like this on{' '})
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          The idea behind this website to collate some really 
+          interesting ideas and practice web development skills at the same time.
         </p>
-
       </section>
     </Layout>
   )

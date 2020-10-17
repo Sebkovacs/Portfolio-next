@@ -1,25 +1,55 @@
 .container {
-    max-width: 36rem;
-    padding: 0 1rem;
+    padding: 0 32px;
     margin: 3rem auto 6rem;
   }
   
+  .headbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
   
   .headerImage {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
   }
   
   .headerHomeImage {
-    width: 8rem;
-    height: 8rem;
+    width: 4rem;
+    height: 4rem;
   }
   
   .backToHome {
     margin: 3rem 0 0;
+  }
+
+  .heading {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-left: 32px;
+  }
+  .nav {
+    display: block;
+    align-content: center;
+    margin-right: 6.25%;
+  }
+  .navitem {
+    margin: 0px 15px;
+    padding: 5px 0;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: inset 0 -2px 0 blue;
+    transition: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .navitem:hover {
+    text-decoration: none;
+    box-shadow: inset 0 -6px 0 blue;
   }

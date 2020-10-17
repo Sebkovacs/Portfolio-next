@@ -1,19 +1,21 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
-export default function Services(){
+export default function Products (){
     return (
         <Layout>
                 <Head>
-                <title>Services</title>
+                <title>Products</title>
                 <link rel="icon" href="/favicon.ico" />
                 </Head>
-            
+
+                <header>
+                    <h1>Product Page</h1>
+                </header>
+
                 <main>
-                    <h1>Services Pages</h1>
-                    
+
                 </main>
         </Layout>
 

@@ -4,7 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
 const name = 'Rapotors'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Rapotors'
 
 export default function Layout({ children, home}) {
     return (
@@ -24,35 +24,44 @@ export default function Layout({ children, home}) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <header className={styles.header}>
-                {home ? (
-                    <>
-                    <img
-                        src="/images/tenor.gif"
-                        className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-                        alt={name}
-                    />
-                    <h1 className={utilStyles.heading2X1}>{name}</h1>
-                    </>
-                ) : (
-                    <>
-                    <Link href="/">
-                        <a>
+            <div className={styles.headbar}>
+                <header className={styles.header}>
+                    {home ? (
+                        <>
                         <img
-                        src="/images/tenor.gif"
-                        className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-                        alt={name}
+                            src="/images/tenor.gif"
+                            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+                            alt={name}
                         />
-                        </a>
-                    </Link>
-                    <h2 className={utilStyles.headingLg}>
+                        <p className={styles.heading}>{name}</p>
+                        </>
+                    ) : (
+                        <>
                         <Link href="/">
-                            <a className={utilStyles.colorInherit}>{name}</a>
+                            <a>
+                            <img
+                            src="/images/tenor.gif"
+                            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+                            alt={name}
+                            />
+                            </a>
                         </Link>
-                    </h2>
-                    </>
-                )}
-            </header>
+                        <p className={styles.heading}>
+                            <Link href="/">
+                                <a className={utilStyles.colorInherit}>{name}</a>
+                            </Link>
+                        </p>
+                        </>
+                    )}
+                </header>
+                <nav className={styles.nav}>
+                    <Link href="/"><a className={styles.navitem}>Home</a></Link>
+                    <Link href="/products"><a className={styles.navitem}>Products</a></Link>
+                    <Link href="/services"><a className={styles.navitem}>Services</a></Link>
+                    <Link href="/blog"><a className={styles.navitem}>Blog</a></Link>
+                    <Link href="/about"><a className={styles.navitem}>About</a></Link>
+                </nav>
+            </div>
 
             <main>
                 {children}
