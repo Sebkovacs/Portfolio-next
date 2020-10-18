@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import styles from '../styles/utils.module.css'
 
-export default function BackBlog(){
+export default function BackProjects(){
    return(
         <div className={styles.backToHome}>
-            <Link href="/blog">
-                <a>← Back to Blog</a>
+            <Link href="/projects">
+                <a>← Back to Projects</a>
             </Link>
         </div>
    ) 

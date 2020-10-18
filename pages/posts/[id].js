@@ -1,9 +1,9 @@
 import Layout, { siteTitle } from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import Back from '../../components/back-blog'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
+import BackBlog from '../../components/back-blog'
 
 
 export default function Post({ postData }) {
@@ -19,7 +19,7 @@ export default function Post({ postData }) {
             </div>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
-        <Back></Back>
+        <BackBlog></BackBlog>
     </Layout>
   )
 }

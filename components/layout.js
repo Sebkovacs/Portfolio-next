@@ -56,7 +56,7 @@ export default function Layout({ children, home}) {
                 </header>
                 <nav className={styles.nav}>
                     <Link href="/"><a className={styles.navitem}>Home</a></Link>
-                    <Link href="/products"><a className={styles.navitem}>Products</a></Link>
+                    <Link href="/projects"><a className={styles.navitem}>Projects</a></Link>
                     <Link href="/services"><a className={styles.navitem}>Services</a></Link>
                     <Link href="/blog"><a className={styles.navitem}>Blog</a></Link>
                     <Link href="/about"><a className={styles.navitem}>About</a></Link>
