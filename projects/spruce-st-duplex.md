@@ -1,9 +1,10 @@
 ---
-title: 'House'
-date: '2020-01-02'
-type: 'Residential'
-status: 'Complete'
-summary: 'Really cool house pushing the boundaries of minimal design and composition, and the transition from large form to detail, underpinned by a philisophy of fractiles.'
+title: 'Spruce Street Duplex'
+date: '2018-08-22'
+type: 'Residential Duplex'
+status: 'Development Application'
+summary: 'Duplex designed for builder for development purposes.'
+thumb: '/images/projects/spruce-street-duplex-430x270.jpg'
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

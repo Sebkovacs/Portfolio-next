@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import cards from '../styles/cards.module.css'
-import { getProjectsData } from '../lib/projects'
+import { getSortedProjectsData } from '../lib/projects'
 import Link from 'next/link'
 import Date from '../components/date'
 
@@ -18,17 +18,16 @@ export default function Projects( { allProjectsData } ){
                 </header>
 
                 <main className={cards.projectcards}>
-                {allProjectsData.map(({ id, date, title, type, status, summary }) => (
+                {allProjectsData.map(({ id, date, title, type, status, summary, thumb}) => (
                     <div className={cards.projectcard} key={id}>
-                        <Link href={`/posts/${id}`}>
-                            <a>{title}</a>
-                        </Link>
-                    <br />
-                    <small className={utilStyles.lightText}>
-                        <Date dateString={date} />
-                    </small>
-                    <p className={utilStyles.lightText}>"Type: "{type}" | Status: " {status}</p>
-                    <p>{summary}</p>
+                        <img src={thumb} alt={title}></img>
+                        <div className={cards.infobox}>
+                            <Link href={`/projects/${id}`}>
+                                <a>{title}</a>
+                            </Link>
+                            <p className={cards.details}>Type: {type} | Status: {status}<br /> Date: <Date dateString={date} /></p>
+                            <p className={cards.description}>{summary}</p>
+                        </div>
                     </div>
                     ))}
                 </main>

@@ -12,11 +12,12 @@ export default function Project( { projectData } ) {
                 <title>{siteTitle}: {' '} {projectData.title}</title>
             </Head>
             <article>
+                <img src={projectData.thumb.replace(/\-430x270.jpg/, '.jpg')} alt={projectData.title}></img>
                 <h1 className={utilStyles.headingXl}>{projectData.title}</h1>
                 <div className={utilStyles.lightText}>
                     <Date dateString={projectData.date} />
                 </div>
-                <div className={utilStyles.lightText}>"Type: "{type}" | Status: " {status}</div>
+                <div className={utilStyles.lightText}>Type: {projectData.type} | Status: {projectData.status}</div>
                 <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
             </article>
             <BackProjects></BackProjects>

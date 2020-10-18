@@ -1,10 +1,10 @@
 ---
-title: 'Alternative Development 1'
-date: '2019-06-15'
+title: 'Alternative Development 2'
+date: '2019-11-15'
 type: 'Mixed Use Multi-Res'
 status: 'Speculative'
 summary: 'This project aimed to test ideas around sustainability, affordability and public good, on urban-infill site in the heart of Newcastle.'
-thumb: '\images\projects\alternative-development-1-430x270.jpg'
+thumb: '\images\projects\alternative-development-2-430x270.jpg'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

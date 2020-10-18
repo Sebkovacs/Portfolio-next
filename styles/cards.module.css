@@ -1,10 +1,27 @@
 .projectcards {
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: wrap;
+    justify-content: flex-start;
 }
 
 .projectcard {
     width: 300px;
-    height: 400px;
-    background-color: cadetblue;
+    height: auto;
+    box-shadow: 5px 5px 2rem grey;
+    border-radius: 1rem;
+    padding: 0;
+    margin: 3px;
+    overflow: hidden;
+}
+.infobox {
+    padding: 5px 16px;
+}
+.details {
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+.description {
+    font-size: 10px;
 }
