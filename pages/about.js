@@ -1,14 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout from '../components/layout'
+import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
 export default function About(){
     return (
         <Layout>
             <Head>
-            <title>About Me</title>
-            <link rel="icon" href="/favicon.ico" />
+            <title>{siteTitle}: {' '} About</title>
             </Head>
             
             <header>

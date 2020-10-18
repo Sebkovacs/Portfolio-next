@@ -8,7 +8,6 @@ export default function Architecture(){
         <div className="container">
             <Head>
             <title>Architecture</title>
-            <link rel="icon" href="/favicon.ico" />
             </Head>
         
             <main>

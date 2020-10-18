@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout from '../components/layout'
+import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
@@ -9,8 +9,7 @@ export default function Home({ allPostsData }) {
   return (
     <Layout>
         <Head>
-          <title>Blog</title>
-          <link rel="icon" href="/favicon.ico" />
+          <title>{siteTitle}: {' '} Blog</title>
         </Head>
         
         <header>
@@ -18,18 +17,20 @@ export default function Home({ allPostsData }) {
         </header>
 
         <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <ul className={utilStyles.list}>
+        <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-                <Link herf={'/posts/${id}'}><a>{title}</a></Link>
-                <br />
-                <small className={utilStyles.lightText}>
-                  <Date dateString={date} />
-                </small>
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
-          </ul>      
-        </section>
+        </ul>
+      </section>
     </Layout>
   )
 }

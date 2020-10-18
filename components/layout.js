@@ -10,10 +10,10 @@ export default function Layout({ children, home}) {
     return (
         <div className={styles.container}>
             <Head>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/rapotors-favicon.png" />
                 <meta 
                 name="description"
-                content="Learn how to build a persona website using Next.js"
+                content="A practice Website with next.js"
                 />
                 <meta
                 property="og:image"
@@ -66,13 +66,6 @@ export default function Layout({ children, home}) {
             <main>
                 {children}
             </main>
-            {!home && (
-                <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
-                </div>
-            )}
        </div>
     )
 }

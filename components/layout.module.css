@@ -46,10 +46,10 @@
     padding: 5px 0;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: inset 0 -2px 0 blue;
-    transition: cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: inset 0 -2px 0 #0070f3;
+    transition: cubic-bezier(.17,.67,.83,.67) .25s;
   }
   .navitem:hover {
     text-decoration: none;
-    box-shadow: inset 0 -6px 0 blue;
+    box-shadow: inset 0 -6px 0 #0070f3;
   }

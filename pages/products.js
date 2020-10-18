@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import Layout from '../components/layout'
+import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
 export default function Products (){
     return (
         <Layout>
                 <Head>
-                <title>Products</title>
-                <link rel="icon" href="/favicon.ico" />
+                <title>{siteTitle}: {' '} Products</title>
                 </Head>
 
                 <header>
