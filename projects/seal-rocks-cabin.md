@@ -1,10 +1,35 @@
 ---
-title: 'Seal Rock Cabin'
+title: 'Topi Farm Cabin'
+shortTitle: 'topi'
+pano: no
+panoLink: "#"
+
 date: '2019-03-02'
 type: 'Residential'
 status: 'Design'
 summary: 'Secondary Dwelling in coastal farming region. Fun design problem dealing with environmental conditions, summer heat, cold winters, bushfire risk and aesthetics with a tight budget. Complete package costed with two designs and multiple budget options presented to the client.'
-thumb: '\images\projects\seal-rocks-cabin-430x270.jpg'
+
+thumb: '/1.jpg'
+thumbAlt: 'image alt text.jpg'
+
+image1: '/1.jpg'
+imageAlt1: 'image alt text.jpg'
+
+image2: '/2.jpg'
+imageAlt2: 'image alt text.jpg'
+
+image3: '/3.jpg'
+imageAlt3: 'image alt text.jpg'
+
+image4: '/4.jpg'
+imageAlt4: 'image alt text.jpg'
+
+image5: '/5.jpg'
+imageAlt5: 'image alt text.jpg'
+
+image6: '/6.jpg'
+imageAlt6: 'image alt text.jpg'
+
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

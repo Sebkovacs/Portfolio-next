@@ -1,0 +1,44 @@
+.filterMenu {
+    display: flex;
+    flex-direction: column;
+    border-right: solid 1px var(--border1);
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+}
+
+.filterMenu>h1{
+    height: 3em;
+    border-bottom: solid 1px var(--border1);
+    padding: 1em;
+}
+
+.filterContainer{
+
+    margin: 1em;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.filters li{
+    margin-top: 1em;
+}
+
+
+
+@media (max-width: 768px) {
+    .cardWrap {gap: 10px;}
+    .card { height: 30vw;}
+    .filterMenu{display: none;}
+    .projects{width: 100%; margin-left: 0%;}
+    .cardWrap {width: 100%;}
+}
+
+@media (max-width: 425px) {
+    .cardWrap {flex-direction: column; gap: 0px;}
+    .card {height: 33vw;}
+    .label, .label2 {top: .7em; right:.5em;}
+    
+    
+}

@@ -1,55 +1,202 @@
-.container {
-    padding: 0 32px;
-    margin: 3rem auto 6rem;
-  }
-  
-  .headbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+#layout {
+  display: flex;
+  flex-direction: row;
+}
 
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .headerImage {
-    width: 4rem;
-    height: 4rem;
-  }
-  
-  .headerHomeImage {
-    width: 4rem;
-    height: 4rem;
-  }
-  
-  .backToHome {
-    margin: 3rem 0 0;
-  }
+#icon {
+  position: fixed;
+  background-color: var(--bg2);
+  top: var(--headerHeight);
+  left: 0;
+  height: 6em;
+  width: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px var(--border1);
+  cursor: pointer;
+}
 
-  .heading {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-left: 32px;
-  }
-  .nav {
-    display: block;
-    align-content: center;
-    margin-right: 6.25%;
-  }
-  .navitem {
-    margin: 0px 15px;
-    padding: 5px 0;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: inset 0 -2px 0 #0070f3;
-    transition: cubic-bezier(.17,.67,.83,.67) .25s;
-  }
-  .navitem:hover {
-    text-decoration: none;
-    box-shadow: inset 0 -6px 0 #0070f3;
-  }
+.sideBarOpen {
+  margin: var(--headerHeight) auto 0;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px var(--border1);
+
+  position: fixed;
+  z-index: 5;
+
+  width: 20%;
+  height: 100vh;
+
+  left: 0;
+
+}
+.sideBarOpen h1 {
+  margin-left: 1%;
+  position: fixed;
+  width: 19%;
+}
+
+.filterContainer{
+  position: fixed;
+  margin-top: var(--h1Height);
+  margin-left: 1%;
+  padding-left: 2rem;
+
+  width: 19%;
+
+  height: calc(100vh - var(--h1Height) - var(--headerHeight));
+  overflow-y: auto;
+
+
+}
+
+.filters, .filters ul, .filters li{
+  padding: 1em 0;
+  cursor: pointer;
+}
+.filters ul, .filters li{
+  padding: 1em;
+}
+
+.filters li:hover {
+  background-color: var(--secondary-var2);
+}
+
+
+.sideBarClosed {
+  margin: var(--headerHeight) auto 0;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px var(--border1);
+
+  position: fixed;
+  z-index: 5;
+
+  width: 20%;
+  height: 100vh;
+  
+  left: -19%;
+}
+
+
+.bodyOpen {
+  margin: var(--headerHeight) auto 0;
+  padding: 0;
+  width: 80%;
+  position: absolute;
+  right:0;
+  background-color: var(--bg3);
+}
+
+.bodyClosed {
+  margin: var(--headerHeight) auto 0;
+  padding: 0;
+  width: 99%;
+  position: absolute;
+  right:0;
+  background-color: var(--bg3);
+}
+
+.body {
+  margin: var(--headerHeight) auto 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--bg3);
+}
+
+
+.headerWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--headerHeight);
+}
+
+.logo {
+  font-weight: 300;
+  color: var(--t1);
+  /* text-transform: lowercase; */
+  font-size: 1em;
+  line-height: 1em;
+}
+
+.navToggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 55px;
+  margin-left: 1em;
+  align-items: center;
+}
+
+#toggle {
+  display: none;
+}
+
+
+.mobileNav {
+  display: none;
+  position: absolute;
+  top:0;
+  padding: 0 3em 0 2em;
+  left: -100%;
+  height: 100vh;
+  z-index: 6;
+  background-color: var(--bg2);
+  transition: 0.5s ease;
+  width: 100vw;
+  text-align: center;
+ 
+}
+
+.mobileNavHeading {
+border-bottom: 1px solid var(--bg1);
+padding: 1em;
+}
+
+.mobileNav > ul {
+  padding-inline-start: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNav li {
+
+  margin: 3em;
+}
+.mobileNav a {
+  padding: 0;
+  margin: 0;
+
+}
+.mobileNav li a:hover {
+  color: var(  --primary-var2);
+}
+
+#toggle:checked ~ .mobileNav {
+  left: 0;
+}
+
+#toggle:checked ~ .black {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .headerWrap { justify-content: center;}
+  .navitem {display: none;}
+  .mobileNav {display: block;}
+  .navToggle {display: flex;}
+  .logo {text-align: center;} 
+}
+
+
+@media (max-width: 425px) {
+
+  
+}
+

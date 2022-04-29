@@ -1,0 +1,128 @@
+.details {
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg1);
+    border-right: solid 1px var(--border1);
+  
+    position: fixed;
+    z-index: 5;
+  
+    width: 20%;
+    height: 100vh;
+  
+    left: 0;
+
+
+}
+
+.details>h1{
+    border-bottom: solid 1px var(--border1);
+    padding: 1em;
+}
+
+.detailsContainer{
+    height: calc(100vh - var(--h1Height) - var(--headerHeight));
+
+
+    overflow-y: auto;
+}
+
+.details ul{
+    padding-inline: 3em;
+}
+
+.details li{
+    padding: 1em 0;
+
+}
+
+.details p {
+    padding: 1em 2em;
+    margin: 0;
+}
+
+.pano {
+    padding-left: 2em;
+}
+
+.projDetails{ 
+    
+    padding: 1em; 
+    margin: 1em;
+    background-color: var(--primary);
+}
+
+.projDetails h3{
+    padding-top: 0;
+}
+.projDetails ul{
+    padding: 0;
+}
+.projDetails li {
+    border-top: 1px solid var(--border1) ;
+    padding: .5em;
+    font-size: .9em;
+    list-style: none;
+}
+
+
+
+.main{
+    padding: 2em;
+    width: 80%;
+    position: absolute;
+    right:0;
+
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr ;
+    gap: 2em;
+    position: relative;
+}
+
+.pic {
+    display: flex;
+    align-content: center;
+    overflow: hidden;
+    height: calc(100vh - 8rem);
+    width: var(--container)/2;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+    .cardWrap {gap: 10px;}
+    .card { height: 30vw;}
+
+    .main {width: 100%; margin: 0; padding: 0;}
+    
+    .details { top:0; display: flex; flex-direction: column; width: 100%; height:auto; position: relative;}
+    .detailsContainer{height:fit-content;  overflow: visible; } 
+    
+    .projectDetails {height: 0;}
+
+    .projTitle {text-align: center;}
+    .projDetails{float: none; padding: 1em; background-color: var(--bg2);}
+    .projects{width: 100%; padding:0; margin: 0;}
+    .cardWrap {width: 100%;}
+}
+
+@media (max-width: 425px) {
+    .cardWrap {flex-direction: column; gap: 0px;}
+    .card {height: 33vw;}
+    .label, .label2 {top: .7em; right:.5em;}
+
+
+    .projDetails{float: right; margin: 0.5rem 1rem; padding: .5rem; background-color: var(--bg2);}
+    .projDetails h3{padding: 0 0 .5em 0;}
+    .projDetails li{font-size: .7rem;}
+    
+}

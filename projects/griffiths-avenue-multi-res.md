@@ -1,10 +1,36 @@
 ---
-title: 'Griffiths Avenue Townhouses'
+title: 'Griffiths Townhouses'
+shortTitle: 'griffiths'
+pano: no
+panoLink: "#"
+
+
 date: '2019-10-12'
 type: 'Residential - Multi-Res'
 status: 'CC approved'
 summary: 'New build on country property in the beautiful Hunter Valley.'
-thumb: '/images/projects/griffiths-avenue-multi-res-430x270.jpg'
+
+thumb: '/1.png'
+thumbAlt: 'hello'
+
+image1: '/1.png'
+imageAlt1: 'hello'
+
+image2: '/2.png'
+imageAlt2: 'hello'
+
+image3: '/3.png'
+imageAlt3: 'hello'
+
+image4: '/4.png'
+imageAlt4: 'hello'
+
+image5: '/5.png'
+imageAlt5: 'hello'
+
+image6: '/6.png'
+imageAlt6: 'hello'
+
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

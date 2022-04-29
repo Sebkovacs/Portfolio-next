@@ -1,43 +1,175 @@
-import Layout, { siteTitle } from '../../components/layout'
+import Layout, { siteTitle } from '../../components/LayoutSideOpen'
 import { getAllProjectIds, getProjectData } from '../../lib/projects'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
-import BackProjects from '../../components/back-projects'
+import BackProjects from '../../components/Back-projects'
+import projects from '../../styles/projects.module.css'
+import Image from 'next/image'
+import Link from 'next/link'
+import { SRLWrapper } from "simple-react-lightbox";
 
-export default function Project( { projectData } ) {
-    return(
+const options = {
+    progressBar: {
+        showProgressBar: false
+      },
+    settings: {
+
+
+    },
+    buttons: {
+        showAutoplayButton: false,
+        showDownloadButton: false,
+        showThumbnailsButton: true,
+    },
+    caption: {
+        showCaption: false,
+
+
+    }
+  };
+
+
+export default function Project({ projectData }) {
+    let pano = false;
+    if (projectData.pano == 'yes') {
+        pano = true
+    }
+    
+    return (
         <Layout>
             <Head>
                 <title>{siteTitle}: {' '} {projectData.title}</title>
             </Head>
-            <article>
-                <img src={projectData.thumb.replace(/\-430x270.jpg/, '.jpg')} alt={projectData.title}></img>
-                <h1 className={utilStyles.headingXl}>{projectData.title}</h1>
-                <div className={utilStyles.lightText}>
-                    <Date dateString={projectData.date} />
+
+            <div className={projects.details}>
+                <h1 className={projects.projTitle}>{projectData.title}</h1>
+
+
+                {/* Mobile Only Header Image */}
+                <div className={utilStyles.mobileOnly}>
+                    <Image
+                        src={`/media/projects/${projectData.shortTitle}${projectData.image1}`}
+                        alt={projectData.imageAlt2}
+                        width={600}
+                        height={300}
+
+                    />
                 </div>
-                <div className={utilStyles.lightText}>Type: {projectData.type} | Status: {projectData.status}</div>
-                <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
-            </article>
-            <BackProjects></BackProjects>
-        </Layout>
+
+
+                <div className={projects.detailsContainer}>
+                <Link href={projectData.panoLink}>
+                <a target="_blank" style={{display: pano?"block":"none"}} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>Pano Link →</a>
+                </Link>
+                    <div className={projects.projDetails}>
+                        <h3 >Project Details</h3>
+                        <ul>
+                            <li>Type: {projectData.type}</li>
+                            <li>Worked on: {projectData.work}</li>
+                            <li>Status: {projectData.status}</li>
+                            {/* <li><Date dateString={projectData.date} /></li> */}
+                            <li>Company: {projectData.company}</li>
+                            <li>Location: {projectData.location}</li>
+                            <li>Software: {projectData.software}</li>
+                            <li>Rendering: {projectData.rendering}</li>
+
+                        </ul>
+                    </div>
+
+                    {/* main write up */}
+                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
+
+                    <BackProjects />
+                </div>
+            </div>
+
+            <div className={projects.main}>
+                <SRLWrapper options={options}>
+                <div className={projects.wrap}>
+
+                    <div className={projects.pic}>
+                    <Image
+                        src={`/media/projects/${projectData.shortTitle}${projectData.image1}`}
+                        alt={projectData.imageAlt1}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                    </div>
+
+                    <div className={projects.pic}>
+                    <Image
+
+                        src={`/media/projects/${projectData.shortTitle}${projectData.image2}`}
+                        alt={projectData.imageAlt2}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                    </div>
+
+                    <div className={projects.pic}>
+                    <Image
+
+                        src={`/media/projects/${projectData.shortTitle}${projectData.image3}`}
+                        alt={projectData.imageAlt3}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                    </div>
+
+                    <div className={projects.pic}>
+                    <Image
+
+                        src={`/media/projects/${projectData.shortTitle}${projectData.image4}`}
+                        alt={projectData.imageAlt4}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                    </div>
+
+                    <div className={projects.pic}>
+                    <Image
+
+                        src={`/media/projects/${projectData.shortTitle}${projectData.image5}`}
+                        alt={projectData.imageAlt5}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                    </div>
+
+                    <div className={projects.pic}>
+                    <Image
+
+                        src={`/media/projects/${projectData.shortTitle}${projectData.image6}`}
+                        alt={projectData.imageAlt6}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                    </div>
+
+
+                </div >
+                </SRLWrapper>
+            </div >
+
+
+        </Layout >
     )
 }
 
 export async function getStaticPaths() {
     const paths = getAllProjectIds()
     return {
-      paths,
-      fallback: false
+        paths,
+        fallback: false
     }
-  }
-  
+}
+
 export async function getStaticProps({ params }) {
-const projectData = await getProjectData(params.id)
+    const projectData = await getProjectData(params.id)
     return {
         props: {
-        projectData
+            projectData
         }
     }
 }

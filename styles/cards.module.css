@@ -1,27 +1,62 @@
-.projectcards {
+.cardWrap {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr ;
+    gap: 1em;
+    position: relative;
+}
+
+.card {
     display: flex;
-    flex-flow: wrap;
-    justify-content: flex-start;
-}
-
-.projectcard {
-    width: 300px;
-    height: auto;
-    box-shadow: 5px 5px 2rem grey;
-    border-radius: 1rem;
-    padding: 0;
-    margin: 3px;
+    align-content: center;
     overflow: hidden;
+    height: 33vh;
+    width: var(--container)/2;
+    position: relative;
+    transition: .5s;
 }
-.infobox {
-    padding: 5px 16px;
+
+.title {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    color: var(--t1);
+    font-size: 1.5em;
+    display: none;
+    z-index: 5;
 }
+
 .details {
-    font-size: 8px;
-    font-weight: 700;
+    margin: 0;
+    font-size: .6rem;
+    color: var(--color2);
 }
 
 
-.description {
-    font-size: 10px;
+.card:hover {
+    opacity: 80%;
+}
+.card:hover .title {
+    color: var(--t1);
+    display: block;
+    background-color: aliceblue;
+}
+
+
+
+@media (max-width: 768px) {
+    .cardWrap {gap: 10px;}
+    .card { height: 30vw;}
+    .filterMenu{display: none;}
+    .projects{width: 100%; margin-left: 0%;}
+    .cardWrap {width: 100%;}
+}
+
+@media (max-width: 425px) {
+    .cardWrap {flex-direction: column; gap: 0px;}
+    .card {height: 33vw;}
+    .label, .label2 {top: .7em; right:.5em;}
+    
+    
 }

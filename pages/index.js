@@ -1,26 +1,59 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Link from 'next/link'
+import LayoutFilter, { siteTitle } from '../components/LayoutFilter'
+import { getSortedProjectsData } from '../lib/projects'
+import cards from '../styles/cards.module.css'
 import utilStyles from '../styles/utils.module.css'
+import Image from 'next/image'
 
 
-export default function Home({ allPostsData }) {
-  return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}: {' '} Home</title>
-      </Head>
-      
-      <header>
-        <h1>Home Page</h1>
-      </header>
 
-      <section className={utilStyles.headingMd}>
-        <p>Welcome to the beginning of the website.</p>
-        <p>
-          The idea behind this website to collate some really 
-          interesting ideas and practice web development skills at the same time.
-        </p>
-      </section>
-    </Layout>
-  )
+const title = "Projects"
+
+export default function Projects({ allProjectsData }) {
+    return (
+        <LayoutFilter>
+            <Head>
+                <title>{siteTitle} {' | '} {title}</title>
+            </Head>
+
+            <h1>{title}</h1>
+
+            <div className={cards.cardWrap}>
+                {allProjectsData.map(({ id, title, shortTitle, type, status, thumb, thumbAlt }) => (
+                    <Link href={`/projects/${id}`}>
+                        <a key={id} className={cards.card} >
+                            <Image
+                                src={`/media/projects/${shortTitle}${thumb}`}
+                                alt={thumbAlt}
+                                layout="fill"
+                                objectFit="cover"
+                            />
+
+                            <div className={cards.title}>
+
+                                <span>{title}</span>
+                                <p className={cards.details}>{type} | {status}</p>
+                            </div>
+
+
+
+                        </a>
+                    </Link>
+                ))}
+            </div>
+
+
+        </LayoutFilter>
+
+    )
+}
+
+export async function getStaticProps() {
+    const allProjectsData = getSortedProjectsData()
+    return {
+        props: {
+            allProjectsData
+        }
+    }
 }

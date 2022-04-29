@@ -1,10 +1,35 @@
 ---
 title: 'Spruce Street Duplex'
+shortTitle: 'spruce'
+pano: no
+panoLink: "#"
+
 date: '2018-08-22'
 type: 'Residential Duplex'
 status: 'Development Application'
 summary: 'Duplex designed for builder for development purposes.'
-thumb: '/images/projects/spruce-street-duplex-430x270.jpg'
+
+thumb: '/1.jpg'
+thumbAlt: 'image alt text.jpg'
+
+image1: '/1.jpg'
+imageAlt1: 'image alt text.jpg'
+
+image2: '/2.jpg'
+imageAlt2: 'image alt text.jpg'
+
+image3: '/3.jpg'
+imageAlt3: 'image alt text.jpg'
+
+image4: '/4.jpg'
+imageAlt4: 'image alt text.jpg'
+
+image5: '/5.jpg'
+imageAlt5: 'image alt text.jpg'
+
+image6: '/6.jpg'
+imageAlt6: 'image alt text.jpg'
+
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

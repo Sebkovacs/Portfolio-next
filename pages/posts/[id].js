@@ -1,10 +1,9 @@
-import Layout, { siteTitle } from '../../components/layout'
+import Layout, { siteTitle } from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
-import BackBlog from '../../components/back-blog'
-
+import BackEssays from '../../components/Back-essays'
 
 export default function Post({ postData }) {
   return (
@@ -12,14 +11,14 @@ export default function Post({ postData }) {
         <Head>
             <title>{siteTitle}: {' '} {postData.title}</title>
         </Head>
-        <article>
-            <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-            <div className={utilStyles.lightText}>
-            <Date dateString={postData.date} />
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </article>
-        <BackBlog></BackBlog>
+        <section className={utilStyles.container}>
+          <h1 className={utilStyles.postTitle}>{postData.title}</h1>
+          <p className={utilStyles.lightText}>
+          Writen: <Date dateString={postData.date} />
+          </p>
+          <div className={utilStyles.bt1} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <BackEssays />
+        </section>
     </Layout>
   )
 }

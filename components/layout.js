@@ -1,16 +1,18 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Header from './Header'
+import Footer from './Footer'
 
-const name = 'Fractile-X'
-export const siteTitle = 'Fractile-X'
+export const siteTitle = 'SK'
 
-export default function Layout({ children, home}) {
+
+export default function Layout({ children, title}) {
     return (
-        <div className={styles.container}>
+        <>
             <Head>
+                <title>{siteTitle} | {title}</title>
                 <link rel="icon" href="/rapotors-favicon.png" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta 
                 name="description"
                 content="A practice Website with next.js"
@@ -23,49 +25,23 @@ export default function Layout({ children, home}) {
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
-            </Head>
-            <div className={styles.headbar}>
-                <header className={styles.header}>
-                    {home ? (
-                        <>
-                        <img
-                            src="/images/tenor.gif"
-                            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-                            alt={name}
-                        />
-                        <p className={styles.heading}>{name}</p>
-                        </>
-                    ) : (
-                        <>
-                        <Link href="/">
-                            <a>
-                            <img
-                            src="/images/tenor.gif"
-                            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-                            alt={name}
-                            />
-                            </a>
-                        </Link>
-                        <p className={styles.heading}>
-                            <Link href="/">
-                                <a className={utilStyles.colorInherit}>{name}</a>
-                            </Link>
-                        </p>
-                        </>
-                    )}
-                </header>
-                <nav className={styles.nav}>
-                    <Link href="/"><a className={styles.navitem}>Home</a></Link>
-                    <Link href="/projects"><a className={styles.navitem}>Projects</a></Link>
-                    <Link href="/services"><a className={styles.navitem}>Services</a></Link>
-                    <Link href="/blog"><a className={styles.navitem}>Blog</a></Link>
-                    <Link href="/about"><a className={styles.navitem}>About</a></Link>
-                </nav>
-            </div>
 
-            <main>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet" />
+            </Head>
+            <Header />
+            <aside className={styles.sideBarClosed }>
+                    
+
+                    <h1>Filter</h1>
+
+            </aside>
+            <main className={styles.bodyClosed}>
                 {children}
             </main>
-       </div>
+
+            {/* <Footer /> */}
+       </>
     )
 }
