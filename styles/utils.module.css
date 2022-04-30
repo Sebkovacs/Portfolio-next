@@ -50,7 +50,8 @@ padding: 0 2em;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items:baseline;
+    flex-wrap: wrap;
+    align-items: stretch;
     margin: 1em auto;
     gap: 2em;
 }
@@ -58,13 +59,13 @@ padding: 0 2em;
 
 
 .list {
-    background-color: var(--primary);
+    background: linear-gradient(156deg, var(--primary),  var(--bg2));
     border: 1px solid var(--border1);
     /* box-shadow: 5px 5px 20px var(--border1); */
     border-radius: .5em;
     padding: 2em;
-    flex: 1 2 150px;
-    
+    flex: 1 ;
+
 }
 .list li {
     margin: .5em 0 1em ;
@@ -92,6 +93,7 @@ padding: 0 2em;
 }
 .bb1 {
     border-bottom: 1px solid var(--border1);
+    margin-bottom: 1em;
 }
 .bt1 {
     border-top: 1px solid var(--border1);
@@ -109,6 +111,9 @@ padding: 0 2em;
 .pcOnly {display:block;}
 .mobileOnly {display: none;}
 
+@media (max-width: 1024px) {
+    .flex {flex-direction: column;}
+}
 
 @media (max-width: 768px) {
     .container { width: 95%;}
@@ -118,6 +123,8 @@ padding: 0 2em;
     .mobileOnly {display: block;}
     .lightText li, .lightText a  {font-size: .8rem;}
     .rightSm, .leftSm, .rightMd, .leftMd, .rightBg, .leftBg {width: unset; margin: 0 auto;}
+    .flex {flex-direction: column;}
+    .padding {padding: 3em;}
   }
   
   
@@ -126,5 +133,5 @@ padding: 0 2em;
     .back {padding: 1em 0.5em;}
     .list {margin: .5em;}
     .flex {display: block;}
-
+    .padding {padding: 1em;}
   }

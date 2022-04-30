@@ -46,7 +46,7 @@
 
 
 @media (max-width: 768px) {
-    .cardWrap {gap: 10px;}
+    .cardWrap {gap: 1em; grid-template-columns: 1fr 1fr;}
     .card { height: 30vw;}
     .filterMenu{display: none;}
     .projects{width: 100%; margin-left: 0%;}
@@ -54,9 +54,21 @@
 }
 
 @media (max-width: 425px) {
-    .cardWrap {flex-direction: column; gap: 0px;}
-    .card {height: 33vw;}
-    .label, .label2 {top: .7em; right:.5em;}
-    
+    .cardWrap {flex-direction: column; gap: 1em; padding: 0; grid-template-columns: 1fr;}
+    .card {height: 50vw; margin-bottom: 3rem; overflow:visible;}
+ 
+    .title {
+        position: absolute;
+        bottom: -3rem;
+        height: 3rem;
+        width: 100%;
+
+        padding: 0rem 1rem;
+        color: var(--t1);
+        display: block;
+        z-index: 5;
+        
+    }
+    .details {font-size: unset; padding: 0rem 1rem; margin: 0;}
     
 }

@@ -29,15 +29,11 @@ export default function Projects({ allProjectsData }) {
                                 layout="fill"
                                 objectFit="cover"
                             />
-
                             <div className={cards.title}>
 
-                                <span>{title}</span>
+                                <h2>{title}</h2>
                                 <p className={cards.details}>{type} | {status}</p>
                             </div>
-
-
-
                         </a>
                     </Link>
                 ))}

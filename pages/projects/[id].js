@@ -51,13 +51,14 @@ export default function Project({ projectData }) {
 
                 {/* Mobile Only Header Image */}
                 <div className={utilStyles.mobileOnly}>
-                    <Image
-                        src={`/media/projects/${projectData.shortTitle}${projectData.image1}`}
-                        alt={projectData.imageAlt2}
-                        width={600}
-                        height={300}
-
-                    />
+                    <div className={projects.pic}>
+                        <Image
+                            src={`/media/projects/${projectData.shortTitle}${projectData.image1}`}
+                            alt={projectData.imageAlt2}
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                    </div>
                 </div>
 
 
@@ -83,11 +84,12 @@ export default function Project({ projectData }) {
 
                     {/* main write up */}
                     <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
-
+                    <div className={utilStyles.pcOnly}>
                     <BackButton
                         link="/"
                         where="Projects"
                     />
+                    </div>
                 </div>
             </div>
 
@@ -95,7 +97,7 @@ export default function Project({ projectData }) {
                 <SRLWrapper options={options}>
                     <div className={projects.wrap}>
 
-                        <div className={projects.pic}>
+                        <div className={`${projects.pic} ${utilStyles.pcOnly}`}>
                             <Image
                                 src={`/media/projects/${projectData.shortTitle}${projectData.image1}`}
                                 alt={projectData.imageAlt1}
@@ -157,7 +159,14 @@ export default function Project({ projectData }) {
 
                     </div >
                 </SRLWrapper>
+                <div className={utilStyles.mobileOnly}>
+                    <BackButton
+                        link="/"
+                        where="Projects"
+                    />
+            </div>
             </div >
+
 
 
         </Layout >

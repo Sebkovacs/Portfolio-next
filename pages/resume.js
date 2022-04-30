@@ -34,18 +34,22 @@ export default function Resume() {
                         </div>
 
                         <div className={utilStyles.list}>
+
                             <h3>Software</h3>
+                            
                             <h4>Drafting / BIM</h4>
                             <ul>
                                 <li>Revit</li>
                                 <li>Vectorworks</li>
                             </ul>
+
                             <h4> Rendering</h4>
                             <ul>
                             <li>Vray</li>
                             <li>Twinmotion </li>
                             <li>Lumion</li>
                             </ul>
+                            
                             <h4>Other</h4>
                             <ul>
                             <li>Adobe Photoshop</li>
@@ -53,8 +57,9 @@ export default function Resume() {
                             <li>Adobe InDesign</li>
                             <li>Google Office Suite</li>
                             </ul>
-                        </div>
 
+                            
+                        </div>
 
                         <div className={utilStyles.list}>
                             <h3>Other Skills / Proficiencies</h3>
@@ -64,6 +69,7 @@ export default function Resume() {
                                 <li>Web Development</li>
                             </ul>
                         </div>
+
 
 
 
