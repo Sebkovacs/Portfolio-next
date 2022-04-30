@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { SRLWrapper } from "simple-react-lightbox";
 
 import Layout, { siteTitle } from '../../components/LayoutSideOpen'
-import Date from '../../components/date'
+import Date from '../../components/Date'
 import BackButton from '../../components/BackButton'
 
 import { getAllProjectIds, getProjectData } from '../../lib/projects'

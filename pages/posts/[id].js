@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import Layout, { siteTitle } from '../../components/LayoutSideOpen'
-import Date from '../../components/date'
+import Date from '../../components/Date'
 import BackButton from '../../components/BackButton'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
