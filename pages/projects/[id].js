@@ -64,7 +64,7 @@ export default function Project({ projectData }) {
 
                 <div className={projects.detailsContainer}>
                     <Link href={projectData.panoLink}>
-                        <a target="_blank" style={{ display: pano ? "block" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>Pano Link →</a>
+                        <a target="_blank" style={{ display: pano ? "block" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>3D Panorama Tour →</a>
                     </Link>
 
                     <div className={projects.projDetails}>
