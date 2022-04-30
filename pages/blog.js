@@ -5,9 +5,9 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/Date'
 
-let title = "Essays"
+let title = "Blog"
 
-export default function Home({ allPostsData }) {
+export default function Blog({ allPostsData }) {
   return (
     <LayoutFilter>
         <Head>

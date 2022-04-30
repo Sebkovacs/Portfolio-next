@@ -15,7 +15,7 @@ export default function Layout() {
 
                     <nav>
                         <Link href="/"><a className={styles.navitem}>Projects</a></Link>
-                        <Link href="/essays"><a className={styles.navitem}>Essays</a></Link>
+                        <Link href="/blog"><a className={styles.navitem}>Blog</a></Link>
                         <Link href="/resume"><a className={styles.navitem}>Resume</a></Link>
                         <Link href="/contact"><a className={styles.navitem}>Contact</a></Link>
 
@@ -40,7 +40,7 @@ export default function Layout() {
                                     <li><Link href="/projects"><a>top 1</a></Link></li>
                                 </ul>
                                 </details>
-                                <li><Link href="/essays"><a>Essays</a></Link></li>
+                                <li><Link href="/blog"><a>Blog</a></Link></li>
                                 <li><Link href="/resume"><a>Resume</a></Link></li>
                                 <li><Link href="/contact"><a>Contact</a></Link></li>
                             </ul>

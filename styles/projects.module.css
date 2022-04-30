@@ -30,7 +30,8 @@
 }
 
 .details ul{
-    padding-inline: 3em;
+    padding-inline-start: 3em;
+    padding-inline-end: 3em;
 }
 
 .details li{
@@ -109,7 +110,7 @@
     
     .projectDetails {height: 0;}
 
-    .projTitle {text-align: center;}
+    .title {text-align: center;}
     .projDetails{float: none; padding: 1em; background-color: var(--bg2);}
     .projects{width: 100%; padding:0; margin: 0;}
     .cardWrap {width: 100%;}
