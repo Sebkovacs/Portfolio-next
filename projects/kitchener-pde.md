@@ -2,7 +2,7 @@
 title: 'Duplex Concept'
 shortTitle: 'kitchener'
 pano: yes
-panoLink: "/projects/kitchener/pano"
+panoLink: "pano.sebastiankovacs.info"
 
 date: '2019-10-12'
 
