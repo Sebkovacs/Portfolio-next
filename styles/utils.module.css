@@ -60,7 +60,8 @@ padding: 0 2em;
 .list {
     background-color: var(--primary);
     border: 1px solid var(--border1);
-    border-radius: 15px;
+    /* box-shadow: 5px 5px 20px var(--border1); */
+    border-radius: .5em;
     padding: 2em;
     flex: 1 2 150px;
     
