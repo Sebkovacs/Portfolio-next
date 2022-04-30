@@ -1,25 +1,65 @@
-import Layout, { siteTitle } from '../../components/Layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
+
+import Layout, { siteTitle } from '../../components/LayoutSideOpen'
 import Date from '../../components/date'
+import BackButton from '../../components/BackButton'
+
+import { getAllPostIds, getPostData } from '../../lib/posts'
+
 import utilStyles from '../../styles/utils.module.css'
-import BackEssays from '../../components/Back-essays'
+import blog from '../../styles/blog.module.css'
+
 
 export default function Post({ postData }) {
   return (
     <Layout>
-        <Head>
-            <title>{siteTitle}: {' '} {postData.title}</title>
-        </Head>
-        <section className={utilStyles.container}>
-          <h1 className={utilStyles.postTitle}>{postData.title}</h1>
-          <p className={utilStyles.lightText}>
-          Writen: <Date dateString={postData.date} />
-          </p>
-          <div className={utilStyles.bt1} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-          <BackEssays />
-        </section>
-    </Layout>
+      <Head>
+        <title>{siteTitle}: {' '} {postData.title}</title>
+      </Head>
+
+      <div className={blog.tc}>
+        <h1 className={blog.title}>{postData.title}</h1>
+
+        {/* Mobile Only Header Image */}
+        <div className={utilStyles.mobileOnly}>
+          {/* <Image
+                  src={`/media/blog/${postData.shortTitle}${postData.image1}`}
+                  alt={postData.imageAlt2}
+                  width={600}
+                  height={300}
+
+              /> */}
+        </div>
+
+        <div className={blog.tcContainer}>
+
+          <div>
+            <p className={`${utilStyles.lightText} ${utilStyles.bb1}`}>
+              Updated: <Date dateString={postData.date} />
+              
+            </p>
+            <h2>Table of Contents</h2>
+            <ul>
+              <li>Type: {postData.type}</li>
+              <li>Worked on: {postData.work}</li>
+              <li>Status: {postData.status}</li>
+              <li>Company: {postData.company}</li>
+              <li>Location: {postData.location}</li>
+              <li>Software: {postData.software}</li>
+            </ul>
+          </div>
+
+          <BackButton
+            link="/blog"
+            where="Blog"
+          />
+        </div>
+      </div>
+      
+      {/* Blog Content Here */}
+      <div className={blog.main} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+
+    </Layout >
   )
 }
 
