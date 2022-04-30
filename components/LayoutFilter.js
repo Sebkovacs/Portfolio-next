@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
+import utilStyles from '../styles/utils.module.css'
 import Header from './Header'
 import Footer from './Footer'
 import { useState } from "react";
@@ -48,7 +49,7 @@ export default function Layout({ children, title}) {
                     <h1>Filter</h1>
                     <div className={styles.filterContainer}>
 
-                    <details className={styles.filters}><summary>Project Type</summary>
+                    <details className={`${styles.filters} ${utilStyles.mt1}`}><summary>Project Type</summary>
                                 <ul className={styles.details}>
                                     <li><Link href="/projects"><a>top 1</a></Link></li>
                                     <li><Link href="/projects"><a>top 1</a></Link></li>

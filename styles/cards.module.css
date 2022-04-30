@@ -29,8 +29,8 @@
 
 .details {
     margin: 0;
-    font-size: .6rem;
-    color: var(--color2);
+    font-size: .6em;
+    color: var(--t2);
 }
 
 
@@ -47,28 +47,36 @@
 
 @media (max-width: 768px) {
     .cardWrap {gap: 1em; grid-template-columns: 1fr 1fr;}
-    .card { height: 30vw;}
+    .card { height: 30vw; margin-bottom: 3rem; overflow:visible;}
     .filterMenu{display: none;}
     .projects{width: 100%; margin-left: 0%;}
     .cardWrap {width: 100%;}
-}
 
-@media (max-width: 425px) {
-    .cardWrap {flex-direction: column; gap: 1em; padding: 0; grid-template-columns: 1fr;}
-    .card {height: 50vw; margin-bottom: 3rem; overflow:visible;}
- 
     .title {
         position: absolute;
-        bottom: -3rem;
-        height: 3rem;
+        bottom: -2rem;
+        height: 2rem;
         width: 100%;
 
         padding: 0rem 1rem;
         color: var(--t1);
         display: block;
         z-index: 5;
+        background-color: var(--bg2);
+ 
+        padding: 0 .2em;
         
     }
-    .details {font-size: unset; padding: 0rem 1rem; margin: 0;}
-    
+    .title h2, .title p {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .cardWrap {flex-direction: column; gap: 1em; padding: 0; grid-template-columns: 1fr;}
+    .card {height: 50vw; margin-bottom: 3rem; overflow:visible;}
+    .title h2, .title p {
+        font-size: .8rem;
+        padding: 0;
+    }
 }

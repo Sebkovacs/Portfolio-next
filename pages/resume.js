@@ -14,7 +14,7 @@ export default function Resume() {
                 <h1>Resume Summary</h1>
 
                 <div className={utilStyles.padding}>
-                    <p>this is an introduction & summary</p>
+
                     <div className={utilStyles.flex}>
                         <div className={utilStyles.list}>
                             <h3>Relevant Work History</h3>

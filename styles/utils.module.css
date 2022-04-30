@@ -20,31 +20,13 @@ padding: 0 2em;
 
 .lightText, .lightText li, .lightText a  {
     font-weight: 300;
-    font-size: .8rem;
+    font-size: 1em;
     color: var(--t1);
 }
 .lightText a:hover  {
-    color: var(--secondary);
+    color: var(--s1);
 }
 
-.bborder {
-    border-bottom: 1px solid var(--color2);
-}
-
-.rightSm, .leftSm {
-    width: 30%;
-
-}
-
-.rightMd, .leftMd {
-    width: 40%;
-
-}
-
-.rightBg, .leftBg {
-    width: 60%;
-
-}
 
 .flex {
     display: flex;
@@ -52,14 +34,13 @@ padding: 0 2em;
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: stretch;
-    margin: 1em auto;
     gap: 2em;
 }
 
 
 
 .list {
-    background: linear-gradient(156deg, var(--primary),  var(--bg2));
+    background: var(--bg2) ;
     border: 1px solid var(--border1);
     /* box-shadow: 5px 5px 20px var(--border1); */
     border-radius: .5em;
@@ -82,7 +63,9 @@ padding: 0 2em;
 }
 
 
-
+.wide {
+    width: fit-content;
+}
 .postTitle {
     position: relative;
     bottom: 0;
@@ -91,12 +74,25 @@ padding: 0 2em;
     vertical-align: middle;
     font-size: 2.5em;
 }
+.mb1 {
+    margin-bottom: 1em;
+}
+.mt1 {
+    margin-top: 1em;
+}
+
 .bb1 {
     border-bottom: 1px solid var(--border1);
-    margin-bottom: 1em;
+}
+.bb2 {
+    border-bottom: 1px solid var(--border2);
 }
 .bt1 {
     border-top: 1px solid var(--border1);
+    padding-top: 1em;
+}
+.bt2 {
+    border-top: 1px solid var(--border2);
     padding-top: 1em;
 }
 

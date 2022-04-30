@@ -1,16 +1,21 @@
 :root {
-  --bg1:aliceblue ;
-  --bg2:rgb(243, 243, 243);
+  --bg1: #f7eeff ;
+  --bg2: #FFFBFE;
+
   --border1:  #dbdbdb;
   --border2:  #707070;
-  --t1: rgb(50, 50, 50);
-  --t2: #cf10ff;
-  --primary: #fafafa;
-  --primary-var1: rgb(31, 102, 160);
-  --primary-var2: #89fdfd;
-  --secondary: #1070ff;
-  --secondary-var1: #f0fd3c;
-  --secondary-var2: #f7ff8a;
+
+  --p1: #6750A4;
+  --p2: #EADDFF;
+  --p3: #21005D;
+
+  --s1: #625B71;
+  --s2: #E8DEF8;
+  --s3: #1D192B;
+
+  --t1: #3d282f;
+  --t2: #66434f;
+
   --container: 90vw;
   --headerHeight: 4rem;
   --h1Height: 6rem;
@@ -83,7 +88,7 @@ footer ul li:first-child {
 }
 
 a {
-  color: var(--secondary);
+  color: var(--s1);
   text-decoration: none;
   transition: .2s ;
 }
@@ -93,7 +98,7 @@ a:focus {
 
 main a:hover {
   color: var(--t1);
-  background-color: var(--secondary-var2);
+  background-color: var(--s2);
 }
 
 nav a, nav summary, nav details li {
@@ -122,7 +127,7 @@ h1 {
 
 h2 {
   /* font-family: 'Pacifico', cursive; */
-  padding: .5em 0;
+
   color: var(--t1);
   font-size: 1.4rem;
 }
