@@ -1,9 +1,9 @@
 import Layout, { siteTitle } from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
-import Date from '../../components/date'
+import Date from '../../components/Date'
 import utilStyles from '../../styles/utils.module.css'
-import BackEssays from '../../components/Back-essays'
+import BackEssays from '../../components/BackEssays'
 
 export default function Post({ postData }) {
   return (
