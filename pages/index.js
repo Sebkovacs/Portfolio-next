@@ -24,7 +24,7 @@ export default function Projects({ allProjectsData }) {
                     <Link href={`/projects/${id}`}>
                         <a key={id} className={cards.card} >
                             <Image
-                                src={`/media/projects/${shortTitle}${thumb}`}
+                                src={`/projects/${shortTitle}${thumb}`}
                                 alt={thumbAlt}
                                 layout="fill"
                                 objectFit="cover"

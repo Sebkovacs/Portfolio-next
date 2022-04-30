@@ -1,42 +1,42 @@
 ---
-title: 'Duplex Concept'
-shortTitle: 'kitchener'
+title: 'Backyard Concepts'
+shortTitle: 'leveys'
 pano: yes
 panoLink: "https://pano.sebastiankovacs.info"
 
 date: '2019-10-12'
 
-type: 'Residential'
+type: 'Residential Alts & Ads'
 work: 'Concept Design'
 status: 'Concept'
 company: 'Sebastian Kovacs'
-location: 'The Hill, NSW'
-software:  'Revit'
-rendering: 'Vray'
+location: 'Merewether, NSW'
+software:  'Vectorworks'
+rendering: 'Twinmotion'
 
 
-summary: 'New build on country property in the beautiful Hunter Valley.'
+summary: 'Exploring different concept ideas: feel, functon and cost. '
 
-thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
+thumb: '/1.png'
+thumbAlt: 'hello'
 
-image1: '/1.jpg'
-imageAlt1: 'image alt text.jpg'
+image1: '/1.png'
+imageAlt1: 'hello'
 
-image2: '/2.jpg'
-imageAlt2: 'image alt text.jpg'
+image2: '/2.png'
+imageAlt2: 'hello'
 
-image3: '/3.jpg'
-imageAlt3: 'image alt text.jpg'
+image3: '/3.png'
+imageAlt3: 'hello'
 
-image4: '/4.jpg'
-imageAlt4: 'image alt text.jpg'
+image4: '/4.png'
+imageAlt4: 'hello'
 
-image5: '/5.jpg'
-imageAlt5: 'image alt text.jpg'
+image5: '/5.png'
+imageAlt5: 'hello'
 
-image6: '/6.jpg'
-imageAlt6: 'image alt text.jpg'
+image6: '/6.png'
+imageAlt6: 'hello'
 
 
 ---

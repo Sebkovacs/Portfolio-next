@@ -53,7 +53,7 @@ export default function Project({ projectData }) {
                 <div className={utilStyles.mobileOnly}>
                     <div className={projects.pic}>
                         <Image
-                            src={`/media/projects/${projectData.shortTitle}${projectData.image1}`}
+                            src={`/projects/${projectData.shortTitle}${projectData.image1}`}
                             alt={projectData.imageAlt2}
                             layout="fill"
                             objectFit="cover"
@@ -99,7 +99,7 @@ export default function Project({ projectData }) {
 
                         <div className={`${projects.pic} ${utilStyles.pcOnly}`}>
                             <Image
-                                src={`/media/projects/${projectData.shortTitle}${projectData.image1}`}
+                                src={`/projects/${projectData.shortTitle}${projectData.image1}`}
                                 alt={projectData.imageAlt1}
                                 layout="fill"
                                 objectFit="cover"
@@ -109,7 +109,7 @@ export default function Project({ projectData }) {
                         <div className={projects.pic}>
                             <Image
 
-                                src={`/media/projects/${projectData.shortTitle}${projectData.image2}`}
+                                src={`/projects/${projectData.shortTitle}${projectData.image2}`}
                                 alt={projectData.imageAlt2}
                                 layout="fill"
                                 objectFit="cover"
@@ -119,7 +119,7 @@ export default function Project({ projectData }) {
                         <div className={projects.pic}>
                             <Image
 
-                                src={`/media/projects/${projectData.shortTitle}${projectData.image3}`}
+                                src={`/projects/${projectData.shortTitle}${projectData.image3}`}
                                 alt={projectData.imageAlt3}
                                 layout="fill"
                                 objectFit="cover"
@@ -129,7 +129,7 @@ export default function Project({ projectData }) {
                         <div className={projects.pic}>
                             <Image
 
-                                src={`/media/projects/${projectData.shortTitle}${projectData.image4}`}
+                                src={`/projects/${projectData.shortTitle}${projectData.image4}`}
                                 alt={projectData.imageAlt4}
                                 layout="fill"
                                 objectFit="cover"
@@ -139,7 +139,7 @@ export default function Project({ projectData }) {
                         <div className={projects.pic}>
                             <Image
 
-                                src={`/media/projects/${projectData.shortTitle}${projectData.image5}`}
+                                src={`/projects/${projectData.shortTitle}${projectData.image5}`}
                                 alt={projectData.imageAlt5}
                                 layout="fill"
                                 objectFit="cover"
@@ -149,7 +149,7 @@ export default function Project({ projectData }) {
                         <div className={projects.pic}>
                             <Image
 
-                                src={`/media/projects/${projectData.shortTitle}${projectData.image6}`}
+                                src={`/projects/${projectData.shortTitle}${projectData.image6}`}
                                 alt={projectData.imageAlt6}
                                 layout="fill"
                                 objectFit="cover"
