@@ -11,14 +11,14 @@ Structure
 0. intro
 1. define excess in housing
 2. is there a change in what is necessary - old vs mid vs contemporary housing and planning
-  1.values and priorities
-  2. transport
-  3. materials
-  4. planning policy
-  5. what matters - design quality vs quantity vs function
+- values and priorities
+- transport
+- materials
+- planning policy
+- what matters - design quality vs quantity vs function
 3. impacts
-  1. urban / land use impacts
-  2. energy / sustainability impacts
-  3. property price and affordability impacts
-  4. future impacts
+- urban / land use impacts
+- energy / sustainability impacts
+- property price and affordability impacts
+- future impacts
 4. conclusion
