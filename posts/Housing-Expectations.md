@@ -6,9 +6,12 @@ category: 'urban'
 
 **Question**
 
-*Is Australia housing excessive? What is now deemed necessity? And what are the greater impacts of this?*
+*Is Australia housing excessive?  
+What is now deemed necessity?  
+And what are the greater impacts of this?*
 
-Structure 
+Structure
+
 0. intro
 1. define excess in housing
 2. is there a change in what is necessary - old vs mid vs contemporary housing and planning
