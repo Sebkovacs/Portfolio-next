@@ -4,8 +4,9 @@ date: '2020-01-01'
 category: 'urban'
 ---
 
-*Question*
-**Is Australia housing excessive? What is now deemed necessity? And what are the greater impacts of this?**
+**Question**
+
+*Is Australia housing excessive? What is now deemed necessity? And what are the greater impacts of this?*
 
 Structure 
 0. intro
