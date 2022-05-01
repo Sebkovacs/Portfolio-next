@@ -193,6 +193,10 @@
 }
 
 @media (max-width: 425px) {
+
+    .details {
+        padding-bottom: 3rem;
+    }
     .cardWrap {
         flex-direction: column;
         gap: 0px;
