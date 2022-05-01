@@ -11,6 +11,8 @@ import blog from '../../styles/blog.module.css'
 
 
 export default function Post({ postData }) {
+
+
   return (
     <Layout>
       <Head>
@@ -19,24 +21,10 @@ export default function Post({ postData }) {
 
       <div className={blog.tc}>
         <h1 className={blog.title}>{postData.title}</h1>
-
-        {/* Mobile Only Header Image */}
-        <div className={utilStyles.mobileOnly}>
-          {/* <Image
-                  src={`/media/blog/${postData.shortTitle}${postData.image1}`}
-                  alt={postData.imageAlt2}
-                  width={600}
-                  height={300}
-
-              /> */}
-        </div>
-
         <div className={blog.tcContainer}>
-
           <div>
             <p className={`${utilStyles.lightText} ${utilStyles.bb1}`}>
               Updated: <Date dateString={postData.date} />
-              
             </p>
             <h2>Table of Contents</h2>
             <ul>
@@ -48,17 +36,23 @@ export default function Post({ postData }) {
               <li>Software: {postData.software}</li>
             </ul>
           </div>
-
+<div className={utilStyles.pcOnly}>
           <BackButton
             link="/blog"
             where="Blog"
           />
+</div>
         </div>
       </div>
       
       {/* Blog Content Here */}
       <div className={blog.main} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-
+<div className={utilStyles.mobileOnly}>
+          <BackButton
+            link="/blog"
+            where="Blog"
+          />
+</div>
     </Layout >
   )
 }
