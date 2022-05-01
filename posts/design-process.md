@@ -1,12 +1,34 @@
 ---
-title: 'Design Process - sales, marketing, web / UX'
+title: 'Design Processes from different industries'
 date: '2020-01-01'
-category: 'Rendering'
+category: 'Design'
 ---
 
-Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+# how do other industries design?
+Design is problem solving - there is a need for something and you need to work out what / how to solve it
+The thought of how (the process) of designing
+Is approached by different industries really interested me
 
-- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
-- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
+Different design process
+- design thinking
+- UX / web design
+- other
+- other
+- architecture
 
-Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+
+## design process 
+### design thinking
+
+### UX design
+
+
+### other 1
+
+### other 2
+
+
+### architecture 
+I guess it's because most architectural design I've seen
+Is basically one concept (idea) and based off a brief, interview and a host of regulatory requirements 
+Never really distinct multiple concepts with client input
