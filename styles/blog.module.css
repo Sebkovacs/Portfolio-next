@@ -55,11 +55,11 @@
     background-color: var(--primary);
 }
 
-.main p, .main ul, .main ol, .main Li {
+.main p, .main ul, .main ol, .main li {
 margin: 0;
-padding: 1rem;
-padding-inline-start: 1rem;
-list-style: initial;
+padding: 2em 1em;
+padding-inline-start: 3em;
+list-style: unset;
 }
 
 
