@@ -57,14 +57,14 @@
 
 .main p, .main ul, .main ol, .main li {
 margin: 0;
-padding: 2em 1em;
+padding: 1em 2em;
 padding-inline-start: 3em;
 list-style: unset;
 }
 
 
 @media (max-width: 768px) {
-    .main {width: 100%; margin: 0; padding: 0;}
+    .main {position: relative; width: 100%; margin: 0; padding: 0;}
     .tc { top:0; display: flex; flex-direction: column; width: 100%; height:auto; position: relative;}
     .tcContainer{height:fit-content;  overflow: visible; } 
 }
