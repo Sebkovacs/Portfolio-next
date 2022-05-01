@@ -28,8 +28,6 @@
 
 .tcContainer{
     height: calc(100vh - var(--h1Height) - var(--headerHeight));
-
-
     overflow-y: auto;
 }
 
@@ -55,6 +53,12 @@
     position: absolute;
     right:0;
     background-color: var(--primary);
+}
+
+.main p, .main ul, .main ol, .main Li {
+margin: initial;
+padding: initial;
+padding-inline-start: initial;
 }
 
 
