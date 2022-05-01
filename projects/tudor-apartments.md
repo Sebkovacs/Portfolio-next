@@ -5,10 +5,14 @@ pano: yes
 panoLink: "https://twinmotion.unrealengine.com/panorama/oFEBEKa1IxmAi7Wq"
 
 date: '2019-11-15'
+
 type: 'Mixed Use Multi-Res'
 status: 'Concept'
-
-summary: 'This project aimed to test ideas around sustainability, affordability and public good, on urban-infill site in the heart of Newcastle.'
+work: 'Concept Design'
+location: 'Hamilton, NSW'
+company: 'Sebastian Kovacs'
+software:  'Vectorworks'
+rendering: 'Twinmotion'
 
 
 thumb: '/1.png'
@@ -33,10 +37,7 @@ image6: '/6.png'
 imageAlt6: 'hello'
 
 ---
-
-Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
-
-- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
-- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
-
-Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+This project aimed to test ideas around sustainability, affordability and public good, on urban-infill site in the heart of Newcastle.
+Concept design for 10 unique apartments; mixed use development.
+The goal was to hedge risk accommodating for a range of occupants and price points.
+The building was designed to be constructed from CLT (per XLAM) and key priorities were achieving cross & stack (natural) ventilation and nature into the design.

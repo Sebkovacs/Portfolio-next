@@ -1,5 +1,5 @@
 ---
-title: 'Backyard Concepts'
+title: 'Extension Concepts'
 shortTitle: 'leveys'
 pano: yes
 panoLink: "https://pano.sebastiankovacs.info"
@@ -7,8 +7,8 @@ panoLink: "https://pano.sebastiankovacs.info"
 date: '2019-10-12'
 
 type: 'Residential Alts & Ads'
-work: 'Concept Design'
 status: 'Concept'
+work: 'Concept Design'
 company: 'Sebastian Kovacs'
 location: 'Merewether, NSW'
 software:  'Vectorworks'
@@ -41,6 +41,4 @@ imageAlt6: 'hello'
 
 ---
 
-
-### The Project
 Exploring different concept ideas: feel, functon and cost.

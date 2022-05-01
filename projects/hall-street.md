@@ -1,18 +1,18 @@
 ---
-title: 'Country House'
-shortTitle: 'bolwarra'
+title: 'Dual Occupancy'
+shortTitle: 'hall'
 pano: no
 panoLink: "#"
 
 date: '2019-10-12'
 
 type: 'Residential'
-status: 'Constructed'
-work: 'Construction Drawings'
-location: 'Bolwarra Heights, NSW'
+status: 'In Construction'
+work: 'Construction Documentation'
+location: 'Merewether, NSW'
 company: 'JTA'
 software:  'Vectorworks'
-rendering: 
+# rendering: 'Twinmotion'
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
@@ -36,11 +36,11 @@ image6: '/6.jpg'
 imageAlt6: 'image alt text.jpg'
 
 
-
 ---
 
-New build on an empty site. 
+Clients wanted to downsize and finance a new house by developing their existing home into two new dwellings.
 
-Worked on a full set of construction & tender documents. 
+I worked on this project after DA to produce construction drawings.
+There were restrictions around SW easement through middle of the site and flood levels.
 
-Comparison of tenders from builders.
+Demo, build dual occ, sub-divide

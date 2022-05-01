@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import LayoutFilter, { siteTitle } from '../components/LayoutFilter'
+import Layout, { siteTitle } from '../components/Layout'
 import { getSortedProjectsData } from '../lib/projects'
 import cards from '../styles/cards.module.css'
 import utilStyles from '../styles/utils.module.css'
@@ -12,7 +12,7 @@ const title = "Projects"
 
 export default function Projects({ allProjectsData }) {
     return (
-        <LayoutFilter>
+        <Layout>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
@@ -40,7 +40,7 @@ export default function Projects({ allProjectsData }) {
             </div>
 
 
-        </LayoutFilter>
+        </Layout>
 
     )
 }

@@ -1,13 +1,18 @@
 ---
-title: 'Renovation and Second storey'
+title: 'Townhouse Reno'
 shortTitle: 'dawson'
 pano: no
 panoLink: "#"
 
 date: '2019-10-12'
+
 type: 'Residential Alts & Adds'
-status: 'Constructed'
-summary: 'New build on country property in the beautiful Hunter Valley.'
+status: 'Concept'
+work: 'Concept Design'
+location: 'Cooks Hill, NSW'
+company: 'Sebastian Kovacs'
+software:  'Revit'
+rendering: 'Vray'
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
@@ -30,19 +35,21 @@ imageAlt5: 'image alt text.jpg'
 image6: '/6.jpg'
 imageAlt6: 'image alt text.jpg'
 
+plan1: '/p1.jpg'
+planAlt1: 'image alt text.jpg'
+
+plan2: '/p2.jpg'
+planAlt2: 'image alt text.jpg'
+
+plan3: '/p3.jpg'
+planAlt3: 'image alt text.jpg'
+
 ---
 
-We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
+2 concepts exploring opening up of the living space and kitchen. 
 
-You can use Static Generation for many types of pages, including:
+Concept 1 explored the idea of a larger master bedroom with ensuite.
 
-- Marketing pages
-- Blog posts
-- E-commerce product listings
-- Help and documentation
+Concept 2 explored the ideas of maximal natural light and external storage. 
 
-You should ask yourself: "Can I pre-render this page **ahead** of a user's request?" If the answer is yes, then you should choose Static Generation.
-
-On the other hand, Static Generation is **not** a good idea if you cannot pre-render a page ahead of a user's request. Maybe your page shows frequently updated data, and the page content changes on every request.
-
-In that case, you can use **Server-Side Rendering**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use client-side JavaScript to populate data.
+Materials were tested between the two concepts.

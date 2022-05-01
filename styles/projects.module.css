@@ -5,64 +5,76 @@
 
     background-color: var(--bg1);
     border-right: solid 1px var(--border1);
-  
+
     position: fixed;
     z-index: 5;
-  
+
     width: 20%;
     height: 100vh;
-  
+
     left: 0;
-    background: var(--bg2) ;
+    background: var(--bg2);
 
 }
 
-.details>h1{
+.details>h1 {
     border-bottom: solid 1px var(--border1);
     padding: 1em;
 }
 
-.detailsContainer{
+.detailsContainer {
     height: calc(100vh - var(--h1Height) - var(--headerHeight));
 
 
     overflow-y: auto;
 }
 
-.details ul{
+.details ul {
     padding-inline-start: 3em;
     padding-inline-end: 3em;
 }
 
-.details li{
+.details li {
     padding: 1em 0;
 
 }
 
+.details h3 {
+    padding-left: 2rem;
+}
+
 .details p {
-    padding: 1em 2em;
+    padding: 0 2rem 1rem 2rem;
     margin: 0;
 }
 
-.pano {
-    padding-left: 2em;
+.linkContainer {
+    width: 100%;
+    /* display: flex; */
+    justify-content: space-between;
+    /* padding: 0 1em; */
+
 }
 
-.projDetails{ 
-    
-    padding: 1em; 
+
+
+.projDetails {
+
+    padding: 1em;
     margin: 1em;
     background-color: var(--primary);
 }
 
-.projDetails h3{
-    padding-top: 0;
+.projDetails h3 {
+    padding-left: 0;
 }
-.projDetails ul{
+
+.projDetails ul {
     padding: 0;
 }
+
 .projDetails li {
-    border-top: 1px solid var(--border1) ;
+    border-top: 1px solid var(--border1);
     padding: .5em;
     font-size: .9em;
     list-style: none;
@@ -70,18 +82,26 @@
 
 
 
-.main{
+.main {
     padding: 2em;
     width: 80%;
     position: absolute;
-    right:0;
+    right: 0;
 
 }
 
-.wrap {
+.imageWrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr ;
+    grid-template-rows: 1fr;
+    gap: 2em;
+    position: relative;
+}
+
+.planWrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     gap: 2em;
     position: relative;
 }
@@ -97,35 +117,104 @@
 
 
 @media (max-width: 768px) {
-    .cardWrap {gap: 10px;}
-    .card { height: 30vw;}
+    .cardWrap {
+        gap: 10px;
+    }
 
-    .main {width: 100%; margin: 0; padding: 0;}
-    
-    .details { top:0; display: flex; flex-direction: column; width: 100%; height:auto; position: relative;}
-    .detailsContainer{height:fit-content;  overflow: visible; } 
-    
-    .projectDetails {height: 0;}
+    .card {
+        height: 30vw;
+    }
 
-    .title {text-align: center;}
-    .projDetails{float: right; margin: 1em 2em; padding: 1em; background-color: var(--bg2);}
-    .projects{width: 100%; padding:0; margin: 0;}
-    .cardWrap {width: 100%;}
+    .main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-    .wrap {grid-template-columns: 1fr;}
-    .pic {height: 55vh; width: 100vw;}
+    .details {
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .detailsContainer {
+        height: fit-content;
+        overflow: visible;
+    }
+
+    .projectDetails {
+        height: 0;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .projDetails {
+        float: right;
+        margin: 1em 2em;
+        padding: 1em;
+        background-color: var(--bg2);
+    }
+
+    .projects {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cardWrap {
+        width: 100%;
+    }
+
+    .wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .pic {
+        height: 55vh;
+        width: 100vw;
+    }
 }
 
 @media (max-width: 425px) {
-    .cardWrap {flex-direction: column; gap: 0px;}
-    .card {height: 33vw;}
-    .label, .label2 {top: .7em; right:.5em;}
+    .cardWrap {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .card {
+        height: 33vw;
+    }
+
+    .label,
+    .label2 {
+        top: .7em;
+        right: .5em;
+    }
 
 
-    .projDetails{float: right; margin: 0.5rem 1rem; padding: .5rem; background-color: var(--bg2);}
-    .projDetails h3{padding: 0 0 .5em 0;}
-    .projDetails li{font-size: .7rem;}
+    .projDetails {
+        float: right;
+        margin: 0.5rem 1rem;
+        padding: .5rem;
+        background-color: var(--bg2);
+    }
 
-    .pic {height: 40vh; width: 100vw;}
-    
+    .projDetails h3 {
+        padding: 0 0 .5em 0;
+    }
+
+    .projDetails li {
+        font-size: .7rem;
+    }
+
+    .pic {
+        height: 40vh;
+        width: 100vw;
+    }
+
 }

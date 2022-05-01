@@ -63,19 +63,22 @@ export default function Project({ projectData }) {
 
 
                 <div className={projects.detailsContainer}>
-                    <Link href={projectData.panoLink}>
-                        <a target="_blank" style={{ display: pano ? "block" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>3D Panorama Tour →</a>
-                    </Link>
-
+                    <div className={projects.linkContainer}>
+                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`} href="#images">Images</a>
+                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`} href="#plans">Plans</a>
+                        <Link href={projectData.panoLink}>
+                            <a target="_blank" style={{ display: pano ? "block" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>3D Panorama Tour ↗</a>
+                        </Link>
+                    </div>
                     <div className={projects.projDetails}>
-                        <h3 >Project Details</h3>
+                        <h3>Project Details</h3>
                         <ul>
                             <li>Type: {projectData.type}</li>
                             <li>Worked on: {projectData.work}</li>
                             <li>Status: {projectData.status}</li>
                             {/* <li><Date dateString={projectData.date} /></li> */}
-                            <li>Company: {projectData.company}</li>
                             <li>Location: {projectData.location}</li>
+                            <li>Company: {projectData.company}</li>
                             <li>Software: {projectData.software}</li>
                             <li>Rendering: {projectData.rendering}</li>
 
@@ -83,6 +86,7 @@ export default function Project({ projectData }) {
                     </div>
 
                     {/* main write up */}
+                    <h3>Overview</h3>
                     <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
                     <div className={utilStyles.pcOnly}>
                     <BackButton
@@ -95,7 +99,7 @@ export default function Project({ projectData }) {
 
             <div className={projects.main}>
                 <SRLWrapper options={options}>
-                    <div className={projects.wrap}>
+                    <div id="images" className={projects.imageWrap}>
 
                         <div className={`${projects.pic} ${utilStyles.pcOnly}`}>
                             <Image
@@ -155,9 +159,39 @@ export default function Project({ projectData }) {
                                 objectFit="cover"
                             />
                         </div>
-
-
                     </div >
+
+                    <div id="plans" className={projects.planWrap}>
+                        <div className={projects.pic}>
+                            <Image
+
+                                src={`/projects/${projectData.shortTitle}${projectData.plan1}`}
+                                alt={projectData.planAlt1}
+                                layout="fill"
+                                objectFit="cover"
+                            />
+                        </div>
+                        <div className={projects.pic}>
+                            <Image
+
+                                src={`/projects/${projectData.shortTitle}${projectData.plan2}`}
+                                alt={projectData.planAlt2}
+                                layout="fill"
+                                objectFit="cover"
+                            />
+                        </div>
+                        <div className={projects.pic}>
+                            <Image
+
+                                src={`/projects/${projectData.shortTitle}${projectData.plan3}`}
+                                alt={projectData.planAlt3}
+                                layout="fill"
+                                objectFit="cover"
+                            />
+                        </div>
+
+                    </div>
+
                 </SRLWrapper>
                 <div className={utilStyles.mobileOnly}>
                     <BackButton
