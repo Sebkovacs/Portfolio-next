@@ -58,10 +58,12 @@
 .main p, .main ul, .main ol, {
 margin: 0;
 padding: 1em 2em;
+list-style-type: initial;
 }
 .main li {
-padding-inline-start: 1em;
+padding-inline: 3em;
 padding: .5em 0;
+
 }
 
 
