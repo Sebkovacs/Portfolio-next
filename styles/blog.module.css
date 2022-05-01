@@ -61,9 +61,8 @@ padding: 1em 2em;
 list-style-type: unset;
 }
 .main li {
-
-padding: 2em 0;
-
+margin-left: 2em;
+padding:1em;
 }
 
 
