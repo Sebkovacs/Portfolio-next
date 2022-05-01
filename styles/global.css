@@ -9,7 +9,7 @@
   --p2: #EADDFF;
   --p3: #21005D;
 
-  --s1: #625B71;
+  --s1: #3e8de7;
   --s2: #E8DEF8;
   --s3: #1D192B;
 
@@ -92,6 +92,7 @@ a {
   text-decoration: none;
   transition: .2s ;
 }
+
 a:focus {
   opacity: .7;
 }

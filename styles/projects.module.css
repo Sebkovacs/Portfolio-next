@@ -153,12 +153,12 @@
         text-align: center;
     }
 
-    .projDetails {
+    /* .projDetails {
         float: right;
         margin: 1em 2em;
         padding: 1em;
         background-color: var(--bg2);
-    }
+    } */
 
     .projects {
         width: 100%;
@@ -177,6 +177,18 @@
     .pic {
         height: 55vh;
         width: 100vw;
+    }
+    .linkContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;    
+    }
+    .pano {
+        padding: 1em;
+        flex-grow: 1;
+        text-align: center;
     }
 }
 
@@ -197,12 +209,12 @@
     }
 
 
-    .projDetails {
+    /* .projDetails {
         float: right;
         margin: 0.5rem 1rem;
         padding: .5rem;
         background-color: var(--bg2);
-    }
+    } */
 
     .projDetails h3 {
         padding: 0 0 .5em 0;
