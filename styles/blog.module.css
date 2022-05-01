@@ -56,9 +56,10 @@
 }
 
 .main p, .main ul, .main ol, .main Li {
-margin: initial;
-padding: initial;
-padding-inline-start: initial;
+margin: 0;
+padding: 1rem;
+padding-inline-start: 1rem;
+list-style: initial;
 }
 
 
