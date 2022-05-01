@@ -8,11 +8,6 @@ export const siteTitle = 'SK'
 
 
 export default function Layout({ children, title}) {
-    const [sideBar, setSideBarOpen] = useState(false);
-
-    function toggle(){
-        setSideBarOpen(!sideBar);
-    }
 
     return (
         <>

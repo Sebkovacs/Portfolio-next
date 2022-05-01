@@ -170,7 +170,7 @@
         width: 100%;
     }
 
-    .wrap {
+    .imageWrap {
         grid-template-columns: 1fr;
     }
 
