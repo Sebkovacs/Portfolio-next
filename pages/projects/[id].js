@@ -105,7 +105,7 @@ export default function Project({ projectData }) {
                 <SRLWrapper options={options}>
                     <div id="images" className={projects.imageWrap}>
                         {projectData.pics.map((pic) => 
-                        <div className={projects.pic} key={pic.id}>
+                        <div className={pic.id == 1 ? `${projects.pic} ${utilStyles.pcOnly}` : projects.pic} key={pic.id}>
                             <Image
                                 src={`/projects/${projectData.shortTitle}${pic.image}`}
                                 alt={pic.alt}
