@@ -28,8 +28,6 @@
 
 .tcContainer{
     height: calc(100vh - var(--h1Height) - var(--headerHeight));
-
-
     overflow-y: auto;
 }
 
@@ -57,9 +55,19 @@
     background-color: var(--primary);
 }
 
+.main p, .main ul, .main ol, {
+margin: 0;
+padding: 1em 2em;
+list-style-type: unset;
+}
+.main li {
+margin-left: 2em;
+padding:1em;
+}
+
 
 @media (max-width: 768px) {
-    .main {width: 100%; margin: 0; padding: 0;}
+    .main {position: relative; width: 100%; margin: 0; padding: 0;}
     .tc { top:0; display: flex; flex-direction: column; width: 100%; height:auto; position: relative;}
     .tcContainer{height:fit-content;  overflow: visible; } 
 }
