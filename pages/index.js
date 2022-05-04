@@ -21,8 +21,8 @@ export default function Projects({ allProjectsData }) {
 
             <div className={cards.cardWrap}>
                 {allProjectsData.map(({ id, title, shortTitle, type, status, thumb, thumbAlt }) => (
-                    <Link href={`/projects/${id}`}>
-                        <a key={id} className={cards.card} >
+                    <Link key={id}  href={`/projects/${id}`}>
+                        <a className={cards.card} >
                             <Image
                                 src={`/projects/${shortTitle}${thumb}`}
                                 alt={thumbAlt}

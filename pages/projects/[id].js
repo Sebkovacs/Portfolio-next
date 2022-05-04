@@ -12,6 +12,7 @@ import { getAllProjectIds, getProjectData } from '../../lib/projects'
 import utilStyles from '../../styles/utils.module.css'
 import projects from '../../styles/projects.module.css'
 
+
 const options = {
     progressBar: {
         showProgressBar: false
@@ -33,54 +34,57 @@ const options = {
 };
 
 
+
 export default function Project({ projectData }) {
     let pano = false;
     if (projectData.pano == 'yes') {
         pano = true
-    }
+    };
+
+    
+
 
     return (
         <Layout>
             <Head>
                 <title>{siteTitle}: {' '} {projectData.title}</title>
             </Head>
-
-            <div className={projects.details}>
+            <div className={projects.top} id="top"/>
+            <div className={projects.details} >
                 <h1 className={projects.title}>{projectData.title}</h1>
-
-
                 {/* Mobile Only Header Image */}
                 <div className={utilStyles.mobileOnly}>
-                    <div className={projects.pic}>
+                    <div className={projects.pic} >
                         <Image
-                            src={`/projects/${projectData.shortTitle}${projectData.image1}`}
-                            alt={projectData.imageAlt2}
+                            src={`/projects/${projectData.shortTitle}${projectData.thumb}`}
+                            alt={projectData.thumbAlt}
                             layout="fill"
                             objectFit="cover"
+                            priority="true"
                         />
                     </div>
                 </div>
-
-
                 <div className={projects.detailsContainer}>
                     <div className={projects.linkContainer}>
                         <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`} href="#images">Images</a>
                         <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`} href="#plans">Plans</a>
                         <Link href={projectData.panoLink}>
-                            <a target="_blank" style={{ display: pano ? "block" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>3D Panorama Tour ↗</a>
+                            <a target="_blank" style={{ display: pano ? "block" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>3D Tour ↗</a>
                         </Link>
                     </div>
                     <div className={projects.projDetails}>
                         <h3>Project Details</h3>
                         <ul>
+
                             <li>Type: {projectData.type}</li>
-                            <li>Worked on: {projectData.work}</li>
+                            <li>Worked On: {projectData.work}</li>
                             <li>Status: {projectData.status}</li>
-                            {/* <li><Date dateString={projectData.date} /></li> */}
                             <li>Location: {projectData.location}</li>
                             <li>Company: {projectData.company}</li>
                             <li>Software: {projectData.software}</li>
                             <li>Rendering: {projectData.rendering}</li>
+
+                            {/* <li><Date dateString={projectData.date} /></li> */}
 
                         </ul>
                     </div>
@@ -100,104 +104,41 @@ export default function Project({ projectData }) {
             <div className={projects.main}>
                 <SRLWrapper options={options}>
                     <div id="images" className={projects.imageWrap}>
-
-                        <div className={`${projects.pic} ${utilStyles.pcOnly}`}>
+                        {projectData.pics.map((pic) => 
+                        <div className={projects.pic} key={pic.id}>
                             <Image
-                                src={`/projects/${projectData.shortTitle}${projectData.image1}`}
-                                alt={projectData.imageAlt1}
+                                src={`/projects/${projectData.shortTitle}${pic.image}`}
+                                alt={pic.alt}
                                 layout="fill"
                                 objectFit="cover"
+                                priority={pic.id < 3 ? true : false}
                             />
                         </div>
-
-                        <div className={projects.pic}>
-                            <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.image2}`}
-                                alt={projectData.imageAlt2}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
-
-                        <div className={projects.pic}>
-                            <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.image3}`}
-                                alt={projectData.imageAlt3}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
-
-                        <div className={projects.pic}>
-                            <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.image4}`}
-                                alt={projectData.imageAlt4}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
-
-                        <div className={projects.pic}>
-                            <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.image5}`}
-                                alt={projectData.imageAlt5}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
-
-                        <div className={projects.pic}>
-                            <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.image6}`}
-                                alt={projectData.imageAlt6}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
+                        )}
                     </div >
 
                     <div id="plans" className={projects.planWrap}>
-                        <div className={projects.pic}>
+                    {projectData.plans.map((plan) => 
+                        <div key={plan.id} className={projects.plan}>
                             <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.plan1}`}
-                                alt={projectData.planAlt1}
+                                src={`/projects/${projectData.shortTitle}${plan.plan}`}
+                                alt={plan.alt}
                                 layout="fill"
-                                objectFit="cover"
+                                objectFit="contain"
                             />
                         </div>
-                        <div className={projects.pic}>
-                            <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.plan2}`}
-                                alt={projectData.planAlt2}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
-                        <div className={projects.pic}>
-                            <Image
-
-                                src={`/projects/${projectData.shortTitle}${projectData.plan3}`}
-                                alt={projectData.planAlt3}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
-
+                        )}
                     </div>
 
                 </SRLWrapper>
-                <div className={utilStyles.mobileOnly}>
+                <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2}`}>
                     <BackButton
                         link="/"
                         where="Projects"
                     />
+                    <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.top} ${utilStyles.bt1} ${utilStyles.bb1}`}>
+                        <a href="#top">Top ↑</a>
+                    </div>
             </div>
             </div >
 

@@ -6,6 +6,8 @@ import Footer from './Footer'
 import { useState } from "react";
 import Link from 'next/link'
 
+
+
 export const siteTitle = 'SK'
 
 
@@ -15,6 +17,8 @@ export default function Layout({ children, title}) {
     function toggle(){
         setSideBarOpen(!sideBar);
     }
+
+    const filters = ["all"]
 
     return (
         <>
@@ -34,10 +38,6 @@ export default function Layout({ children, title}) {
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
-
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet" />
             </Head>
             <Header />
 
@@ -49,36 +49,39 @@ export default function Layout({ children, title}) {
                     <h1>Filter</h1>
                     <div className={styles.filterContainer}>
 
+                        <div className={utilStyles.bb1}>
+                            <small>Filters Applied</small>
+                            <div>
+                                {filters}
+                            </div>
+
+
+
+
+                        </div>
+
                     <details className={`${styles.filters} ${utilStyles.mt1}`}><summary>Project Type</summary>
                                 <ul className={styles.details}>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
+                                    <li>Residential</li>
+                                    <li>Multi-Residential</li>
+                                    <li>Commercial</li>
                                 </ul>
                         </details>
                         <details className={styles.filters}><summary>Status</summary>
                                 <ul className={styles.details}>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
+                                    <li>Concept</li>
+                                    <li>DA</li>
+                                    <li>CC</li>
+                                    <li>In Construction</li>
+                                    <li>Constructed</li>
                                 </ul>
                         </details>
                         <details className={styles.filters}><summary>Software</summary>
                                 <ul className={styles.details}>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                </ul>
-                        </details>
-                        <details className={styles.filters}><summary>Projects</summary>
-                                <ul className={styles.details}>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
-                                    <li><Link href="/projects"><a>top 1</a></Link></li>
+                                    <li>Revit</li>
+                                    <li>Vectorworks</li>
+                                    <li>Vray</li>
+                                    <li>Twinmotion</li>
                                 </ul>
                         </details>
                     </div>

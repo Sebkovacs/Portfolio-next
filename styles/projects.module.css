@@ -79,15 +79,16 @@
     font-size: .9em;
     list-style: none;
 }
-
-
-
 .main {
     padding: 2em;
     width: 80%;
     position: absolute;
     right: 0;
 
+}
+.top {
+    position: absolute;
+    top: calc(-1 * var(--headerHeight));
 }
 
 .imageWrap {
@@ -99,6 +100,8 @@
 }
 
 .planWrap {
+    margin-top: 2em;
+    padding: var(--headerHeight) 0;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -107,7 +110,15 @@
 }
 
 .pic {
-    height: calc(100vh - 8rem);
+    height: calc(55vh - 8rem);
+    width: var(--container)/2;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.plan{
+    height: calc(100vh - var(--headerHeight));
     width: var(--container)/2;
     position: relative;
     transition: .5s;
@@ -178,6 +189,11 @@
         height: 55vh;
         width: 100vw;
     }
+
+    .plan{
+        height: 60vw;
+    }
+
     .linkContainer {
         width: 100%;
         display: flex;
@@ -231,6 +247,10 @@
     .pic {
         height: 40vh;
         width: 100vw;
+    }
+    
+    .plan{
+        height: 50vh;
     }
 
 }

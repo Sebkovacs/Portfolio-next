@@ -18,23 +18,27 @@ rendering: 'Twinmotion'
 thumb: '/1.png'
 thumbAlt: 'hello'
 
-image1: '/1.png'
-imageAlt1: 'hello'
+pics: [
+{id: "1", image: '/1.png', alt: "hello"},
+{id: "2", image: '/2.png', alt: "hello"},
+{id: "3", image: '/3.png', alt: "hello"},
+{id: "4", image: '/4.png', alt: "hello"},
+{id: "5", image: '/5.png', alt: "Aerial Photomontage of the field and proposed facility building"},
+{id: "6", image: '/6.png', alt: "Ground Level Photomontage of the field and proposed facility building"}
 
-image2: '/2.png'
-imageAlt2: 'hello'
+]
 
-image3: '/3.png'
-imageAlt3: 'hello'
+plans: [
+{id: "1", plan: '/p1.jpg', alt: "Ground Floor Plan"},
+{id: "2", plan: '/p2.jpg', alt: "Reflected Ground Floor Ceiling Plan"},
+{id: "3", plan: '/p3.jpg', alt: "Elevations"},
+{id: "4", plan: '/p4.jpg', alt: "Section A & Section B"},
+{id: "5", plan: '/p5.jpg', alt: "Section C & Section D"},
+# {id: "6", plan: '/p6.jpg', alt: "Construction Details"},
+# {id: "7", plan: '/p7.jpg', alt: "Wall Type Details"},
+# {id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
 
-image4: '/4.png'
-imageAlt4: 'hello'
-
-image5: '/5.png'
-imageAlt5: 'hello'
-
-image6: '/6.png'
-imageAlt6: 'hello'
+]
 
 ---
 This project aimed to test ideas around sustainability, affordability and public good, on urban-infill site in the heart of Newcastle.
