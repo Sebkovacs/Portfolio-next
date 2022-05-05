@@ -225,18 +225,6 @@
         height: 100%;
     }
 
-    .pcOnly {
-        display: none;
-    }
-
-    .mobileOnly {
-        display: block;
-    }
-
-    .mobileOnlyFlex {
-        display: flex;
-    }
-
     .lightText li,
     .lightText a {
         font-size: .8rem;
@@ -287,6 +275,17 @@
         flex-grow: 1;
     }
     
+    .pcOnly {
+        display: none;
+    }
+
+    .mobileOnly {
+        display: flex;
+    }
+
+    .mobileOnlyFlex {
+        display: flex;
+    }
 }
 
 

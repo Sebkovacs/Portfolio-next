@@ -81,6 +81,7 @@
     font-size: .9em;
     list-style: none;
 }
+
 .main {
     /* padding: 2em; */
     width: 80%;
@@ -103,6 +104,7 @@
     gap: 2em;
     position: relative;
 }
+
 .gridWrap2 {
     padding: 2em;
     /* margin-top: 2em; */
@@ -121,6 +123,7 @@
     transition: .5s;
     cursor: pointer;
 }
+
 .pic2 {
     height: calc(55vh - 8rem);
     width: var(--container)/2;
@@ -129,7 +132,7 @@
     cursor: pointer;
 }
 
-.plan{
+.plan {
     height: calc(100vh - var(--headerHeight) - 2em);
     width: var(--container)/2;
     position: relative;
@@ -198,6 +201,7 @@
         grid-template-rows: 1fr;
         position: relative;
     }
+
     .gridWrap2 {
         padding: 0;
         margin-top: 2em;
@@ -207,15 +211,18 @@
         position: relative;
     }
 
-    .pic2 {height: 55vh;}
+    .pic2 {
+        height: 55vh;
+    }
 
     .linkContainer {
         width: 100%;
         display: flex;
         justify-content: space-around;
         margin: 0;
-        padding: 0;    
+        padding: 0;
     }
+
     .pano {
         padding: 1em;
         flex-grow: 1;
@@ -228,6 +235,7 @@
     .details {
         padding-bottom: 3rem;
     }
+
     .cardWrap {
         flex-direction: column;
         gap: 0px;
@@ -243,14 +251,6 @@
         right: .5em;
     }
 
-
-    /* .projDetails {
-        float: right;
-        margin: 0.5rem 1rem;
-        padding: .5rem;
-        background-color: var(--bg2);
-    } */
-
     .projDetails h3 {
         padding: 0 0 .5em 0;
     }
@@ -259,13 +259,12 @@
         font-size: .7rem;
     }
 
-    .imageWrap2 {
-        gap:0;
-        grid-template-columns: 1fr;
+    .pic2 {
+        height: 70vw;
     }
 
-    .pic2 {height: 70vw;}
-    
-    .plan {height: 70vh; }
+    .plan {
+        height: 70vh;
+    }
 
 }
