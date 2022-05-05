@@ -162,6 +162,7 @@
   height: var(--headerHeight);
   margin-left: 1em;
   align-items: center;
+  color: var(--t1);
 }
 
 #toggle {

@@ -46,7 +46,7 @@
 
 
 @media (max-width: 768px) {
-    .cardWrap {gap: 1em; grid-template-columns: 1fr 1fr;}
+    .cardWrap {padding: 1em; gap: 1em; grid-template-columns: 1fr 1fr;}
     .card { height: 30vw; margin-bottom: 3rem; overflow:visible;}
     .filterMenu{display: none;}
     .projects{width: 100%; margin-left: 0%;}

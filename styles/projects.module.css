@@ -20,6 +20,8 @@
 .details>h1 {
     border-bottom: solid 1px var(--border1);
     padding: 1em;
+    display: flex;
+    align-items: center;
 }
 
 .detailsContainer {
@@ -80,18 +82,31 @@
     list-style: none;
 }
 .main {
-    padding: 2em;
+    /* padding: 2em; */
     width: 80%;
     position: absolute;
     right: 0;
-
 }
+
 .top {
     position: absolute;
     top: calc(-1 * var(--headerHeight));
 }
 
-.imageWrap {
+.gridWrap1 {
+    padding: 2em;
+    /* margin-top: 2em; */
+    /* padding: var(--headerHeight) 0; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 2em;
+    position: relative;
+}
+.gridWrap2 {
+    padding: 2em;
+    /* margin-top: 2em; */
+    /* padding: var(--headerHeight) 0; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -99,17 +114,14 @@
     position: relative;
 }
 
-.planWrap {
-    margin-top: 2em;
-    padding: var(--headerHeight) 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    gap: 2em;
+.pic1 {
+    height: calc(100vh - 8rem);
+    width: var(--container)/2;
     position: relative;
+    transition: .5s;
+    cursor: pointer;
 }
-
-.pic {
+.pic2 {
     height: calc(55vh - 8rem);
     width: var(--container)/2;
     position: relative;
@@ -118,7 +130,7 @@
 }
 
 .plan{
-    height: calc(100vh - var(--headerHeight));
+    height: calc(100vh - var(--headerHeight) - 2em);
     width: var(--container)/2;
     position: relative;
     transition: .5s;
@@ -149,6 +161,7 @@
         width: 100%;
         height: auto;
         position: relative;
+        border-right: 0;
     }
 
     .detailsContainer {
@@ -158,10 +171,6 @@
 
     .projectDetails {
         height: 0;
-    }
-
-    .title {
-        text-align: center;
     }
 
     /* .projDetails {
@@ -181,18 +190,30 @@
         width: 100%;
     }
 
-    .imageWrap {
+    .gridWrap1 {
+        padding: 0;
+        margin-top: 2em;
+        /* padding: var(--headerHeight) 0; */
+        display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        /* gap: 2em; */
+        position: relative;
+    }
+    .gridWrap2 {
+        padding: 0;
+        margin-top: 2em;
+        /* padding: var(--headerHeight) 0; */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        /* gap: 2em; */
+        position: relative;
     }
 
-    .pic {
-        height: 55vh;
-        width: 100vw;
-    }
+    .pic2 {height: 55vh;}
 
-    .plan{
-        height: 60vw;
-    }
+    .plan1 {height: 60vw;}
 
     .linkContainer {
         width: 100%;
@@ -244,13 +265,13 @@
         font-size: .7rem;
     }
 
-    .pic {
-        height: 40vh;
-        width: 100vw;
+    .imageWrap2 {
+        gap:0;
+        grid-template-columns: 1fr;
     }
+
+    .pic1 {height: 70vw;}
     
-    .plan{
-        height: 50vh;
-    }
+    .plan2 {height: 50vw; }
 
 }

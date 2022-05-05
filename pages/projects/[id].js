@@ -5,13 +5,14 @@ import { SRLWrapper } from "simple-react-lightbox";
 
 import Layout, { siteTitle } from '../../components/LayoutSideOpen'
 import Date from '../../components/Date'
-import BackButton from '../../components/BackButton'
+import ButtonBack from '../../components/ButtonBack'
+import ButtonTop from '../../components/ButtonTop'
 
 import { getAllProjectIds, getProjectData } from '../../lib/projects'
 
 import utilStyles from '../../styles/utils.module.css'
 import projects from '../../styles/projects.module.css'
-
+import { useState } from "react";
 
 const options = {
     progressBar: {
@@ -38,11 +39,13 @@ const options = {
 
 export default function Project({ projectData }) {
     let pano = false;
-    if (projectData.pano == 'yes') {
-        pano = true
-    };
+    if (projectData.pano == 'yes') {pano = true};
 
-    
+    const [imageGrid, setImageGrid] = useState(false)
+    function toggleImageGrid(){setImageGrid(!imageGrid);}
+
+    const [planGrid, setPlanGrid] = useState(true)
+    function togglePlanGrid(){setPlanGrid(!planGrid);}
 
 
     return (
@@ -52,10 +55,16 @@ export default function Project({ projectData }) {
             </Head>
             <div className={projects.top} id="top"/>
             <div className={projects.details} >
-                <h1 className={projects.title}>{projectData.title}</h1>
+
+            <div className={utilStyles.title}>
+                <h1>{projectData.title}</h1>
+            </div>
+
+
+
                 {/* Mobile Only Header Image */}
                 <div className={utilStyles.mobileOnly}>
-                    <div className={projects.pic} >
+                    <div className={projects.pic2} >
                         <Image
                             src={`/projects/${projectData.shortTitle}${projectData.thumb}`}
                             alt={projectData.thumbAlt}
@@ -67,11 +76,18 @@ export default function Project({ projectData }) {
                 </div>
                 <div className={projects.detailsContainer}>
                     <div className={projects.linkContainer}>
-                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`} href="#images">Images</a>
-                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`} href="#plans">Plans</a>
+                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`} href="#images">Images</a>
+                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`} href="#plans">Plans</a>
                         <Link href={projectData.panoLink}>
-                            <a target="_blank" style={{ display: pano ? "block" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.back}`}>3D Tour ↗</a>
+                            <a target="_blank" style={{ display: pano ? "flex" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
                         </Link>
+
+                        <label htmlFor="imageGrid" className={`  ${utilStyles.bb1} ${utilStyles.link} ${utilStyles.pcOnly}`}>Image Display {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
+                        <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
+                             
+                        <label htmlFor="planGrid" className={`${utilStyles.pcOnly} ${utilStyles.bb1} ${utilStyles.link}`}>Plan Display  {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
+                        <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
+                        
                     </div>
                     <div className={projects.projDetails}>
                         <h3>Project Details</h3>
@@ -94,7 +110,7 @@ export default function Project({ projectData }) {
                     <h3>Overview</h3>
                     <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
                     <div className={utilStyles.pcOnly}>
-                    <BackButton
+                    <ButtonBack
                         link="/"
                         where="Projects"
                     />
@@ -103,22 +119,28 @@ export default function Project({ projectData }) {
             </div>
 
             <div className={projects.main}>
+
+                <div id="images" className={utilStyles.anchor} />
+                {/* <h2 onClick={toggleImageGrid}>Images</h2> */}
+
                 <SRLWrapper options={options}>
-                    <div id="images" className={projects.imageWrap}>
+                    <div className={imageGrid? projects.gridWrap1 : projects.gridWrap2}>
                         {projectData.pics.map((pic) => 
-                        <div className={pic.id == 1 ? `${projects.pic} ${utilStyles.pcOnly}` : projects.pic} key={pic.id}>
+                        <div className={`${pic.id == 1 ? utilStyles.pcOnly : utilStyles.flex} ${imageGrid? projects.pic1 : projects.pic2}`} key={pic.id}>
                             <Image
                                 src={`/projects/${projectData.shortTitle}${pic.image}`}
                                 alt={pic.alt}
                                 layout="fill"
                                 objectFit="cover"
-                                priority={pic.id < 3 ? true : false}
                             />
                         </div>
                         )}
                     </div >
 
-                    <div id="plans" className={projects.planWrap}>
+                    <div id="plans" className={utilStyles.anchor}/>
+                    {/* <h2 onClick={togglePlanGrid}>Plans</h2> */}
+
+                    <div className={planGrid? projects.gridWrap1 : projects.gridWrap2}>
                     {projectData.plans.map((plan) => 
                         <div key={plan.id} className={projects.plan}>
                             <Image
@@ -133,14 +155,14 @@ export default function Project({ projectData }) {
 
                 </SRLWrapper>
                 <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2}`}>
-                    <BackButton
+                    <ButtonBack
                         link="/"
                         where="Projects"
                     />
-                    <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.top} ${utilStyles.bt1} ${utilStyles.bb1}`}>
-                        <a href="#top">Top ↑</a>
-                    </div>
-            </div>
+                    <ButtonTop
+                    link="#top"
+                    />
+                </div>
             </div >
 
 

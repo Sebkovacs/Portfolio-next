@@ -3,8 +3,8 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Header from './Header'
 import Footer from './Footer'
-import { useState } from "react";
 import Link from 'next/link'
+import { useState } from "react";
 
 
 
@@ -63,8 +63,12 @@ export default function Layout({ children, title}) {
             <div id={styles.layout}>
             <aside className={sideBar? styles.sideBarOpen : styles.sideBarClosed }>
                     
-                    <div id={styles.icon} onClick={toggle}> > </div>
+                    <div id={styles.icon} onClick={toggle}> <span class="material-symbols-outlined">navigate_next</span> </div>
+
+
+                    <div className={utilStyles.title}>
                     <h1>Filters</h1>
+                    </div>
                     <div className={styles.filterContainer}>
 
                             <small>Filters</small>

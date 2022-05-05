@@ -32,8 +32,9 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  /* font-size: 1px; */
+  /* font-family: Roboto, Arial, Helvetica, sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   box-sizing: border-box;
 
 }
@@ -109,18 +110,28 @@ nav a, nav summary, nav details li {
   /* font-size: 1.25rem; */
 }
 
+label {
+  cursor: pointer;
+  user-select: none;
+  color: var(--s1);
+}
+label:hover {
+  color: var(--t2);
+  background-color: var(--p2);
+}
+
 h1 {
   /* font-family: 'Permanent Marker', cursive; */
 
   color: var(--t1);
   font-size: 2rem;
 
-  height: var(--h1Height);
+  /* height: var(--h1Height); */
 
-  border-bottom: solid 1px var(--border1);
+  /* border-bottom: solid 1px var(--border1);
   display: flex;
   align-items: center;
-  padding-left: 1em;
+  padding-left: 1em; */
   
 }
 
@@ -156,9 +167,7 @@ ul {
 
 @media (max-width: 768px) {
   section {width: 95%;}
-  h1 { justify-content: center;  padding-left: 0;}
 
-  
 }
 
 

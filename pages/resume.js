@@ -11,10 +11,19 @@ export default function Resume() {
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
-                <h1>Resume Summary</h1>
+                <div className={utilStyles.title}>
+                    <h1>Resume Summary</h1>
+                    <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}`}>
+                        <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                        <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                    </div>
+                </div>
 
+                    <div className={`${utilStyles.mobileOnlyFlex} `}>
+                        <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                        <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                    </div>
                 <div className={utilStyles.padding}>
-
                     <div className={utilStyles.flex}>
                         <div className={utilStyles.list}>
                             <h3>Relevant Work History</h3>

@@ -14,7 +14,9 @@ export default function Blog({ allPostsData }) {
           <title>{siteTitle} {' | '} {title}</title>
         </Head>
 
-        <h1>{title}</h1>
+        <div className={utilStyles.title}>
+            <h1>{title}</h1>
+            </div>
         <div className={utilStyles.padding}>
           <ul className={utilStyles.list}>
             {allPostsData.map(({ id, date, title }) => (

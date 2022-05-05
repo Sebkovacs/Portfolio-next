@@ -20,9 +20,9 @@ export default function Projects({ allProjectsData }) {
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
-
+            <div className={utilStyles.title}>
             <h1>{title}</h1>
-
+            </div>
             <div className={cards.cardWrap} id="cardWrap">
                 {allProjectsData.map(({ id, title, shortTitle, type, status, thumb, thumbAlt }) => (
                     <Link key={id} href={`/projects/${id}`}>
