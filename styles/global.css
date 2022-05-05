@@ -36,9 +36,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   box-sizing: border-box;
-  scroll-snap-align: center;
-  scroll-snap-type: y proximity;
-
 }
 
 header {
