@@ -193,27 +193,21 @@
     .gridWrap1 {
         padding: 0;
         margin-top: 2em;
-        /* padding: var(--headerHeight) 0; */
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        /* gap: 2em; */
         position: relative;
     }
     .gridWrap2 {
         padding: 0;
         margin-top: 2em;
-        /* padding: var(--headerHeight) 0; */
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        /* gap: 2em; */
         position: relative;
     }
 
     .pic2 {height: 55vh;}
-
-    .plan1 {height: 60vw;}
 
     .linkContainer {
         width: 100%;
@@ -270,8 +264,8 @@
         grid-template-columns: 1fr;
     }
 
-    .pic1 {height: 70vw;}
+    .pic2 {height: 70vw;}
     
-    .plan2 {height: 50vw; }
+    .plan {height: 70vh; }
 
 }
