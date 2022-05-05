@@ -18,9 +18,8 @@ const options = {
         showProgressBar: false
     },
     settings: {
-        hideControlsAfter: 2000,
-        boxShadow: 'none',
-        disablePanzoom: true,
+        hideControlsAfter: 200,
+
 
     },
     buttons: {
