@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import Layout, { siteTitle } from '../../components/LayoutSideOpen'
 import Date from '../../components/Date'
-import BackButton from '../../components/BackButton'
+import ButtonBack from '../../components/ButtonBack'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
@@ -37,7 +37,7 @@ export default function Post({ postData }) {
             </ul>
           </div>
 <div className={utilStyles.pcOnly}>
-          <BackButton
+          <ButtonBack
             link="/blog"
             where="Blog"
           />
