@@ -281,7 +281,7 @@
     }
 
     .mobileOnly {
-        display: flex;
+        display: block;
     }
 
     .mobileOnlyFlex {
