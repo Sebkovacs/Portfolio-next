@@ -8,9 +8,13 @@ import Image from 'next/image'
 
 
 
-const title = "Projects"
+
+const title = "Projects";
+
+
 
 export default function Projects({ allProjectsData }) {
+    // console.log(filters);
     return (
         <Layout>
             <Head>
@@ -19,9 +23,9 @@ export default function Projects({ allProjectsData }) {
 
             <h1>{title}</h1>
 
-            <div className={cards.cardWrap}>
+            <div className={cards.cardWrap} id="cardWrap">
                 {allProjectsData.map(({ id, title, shortTitle, type, status, thumb, thumbAlt }) => (
-                    <Link key={id}  href={`/projects/${id}`}>
+                    <Link key={id} href={`/projects/${id}`}>
                         <a className={cards.card} >
                             <Image
                                 src={`/projects/${shortTitle}${thumb}`}

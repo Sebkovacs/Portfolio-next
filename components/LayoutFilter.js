@@ -12,14 +12,32 @@ export const siteTitle = 'SK'
 
 
 export default function Layout({ children, title}) {
-    const [sideBar, setSideBarOpen] = useState(false);
+    const [sideBar, setSideBarOpen] = useState(false)
+    const [filters, setFilters] = useState([])
 
-    function toggle(){
-        setSideBarOpen(!sideBar);
+    function toggle(){setSideBarOpen(!sideBar);}
+
+    const types = ["Residential", "Mult-Residential", "Commercial", "Education", "Health"]
+    const status = ["constructed", "In Construction", "DA", "CC", "Concept"]
+    const software = ["revit", "vectorworks", "twinmotion", "rhino", "lumion", "archiCAD"]
+
+    const modFilter = (e) => {
+        
+         if (filters.includes(e.target.id) == false) {
+            filters.push(e.target.id);
+        } else {
+            let index = filters.indexOf(e.target.id);
+            filters.splice(index,1);
+        };
+
+        console.log(filters);
     }
 
-    const filters = ["all"]
+    const filtersList = filters.map((filter) => (
+        <div className={styles.filter} onClick={modFilter} id={filter} key={filter} >{filter}</div>
+    ));
 
+    
     return (
         <>
             <Head>
@@ -46,43 +64,31 @@ export default function Layout({ children, title}) {
             <aside className={sideBar? styles.sideBarOpen : styles.sideBarClosed }>
                     
                     <div id={styles.icon} onClick={toggle}> > </div>
-                    <h1>Filter</h1>
+                    <h1>Filters</h1>
                     <div className={styles.filterContainer}>
 
-                        <div className={utilStyles.bb1}>
-                            <small>Filters Applied</small>
-                            <div>
-                                {filters}
-                            </div>
-
-
-
-
+                            <small>Filters</small>
+                        <div className={styles.filters} >
+                            {filtersList}
                         </div>
+                        {/* <div className={utilStyles.bb1} /> */}
 
-                    <details className={`${styles.filters} ${utilStyles.mt1}`}><summary>Project Type</summary>
-                                <ul className={styles.details}>
-                                    <li>Residential</li>
-                                    <li>Multi-Residential</li>
-                                    <li>Commercial</li>
-                                </ul>
+                            <small>Tags</small>
+
+                        <details><summary>Type</summary>
+                            <div className={styles.tags}>
+                                {types.map((type) => <div className={styles.tag} id={type} key={type} onClick={modFilter} >{type}</div>)}
+                            </div>
                         </details>
-                        <details className={styles.filters}><summary>Status</summary>
-                                <ul className={styles.details}>
-                                    <li>Concept</li>
-                                    <li>DA</li>
-                                    <li>CC</li>
-                                    <li>In Construction</li>
-                                    <li>Constructed</li>
-                                </ul>
+                        <details><summary>Status</summary>
+                            <div className={styles.tags}>
+                                {status.map((status) => <div className={styles.tag} id={status} key={status} onClick={modFilter}>{status}</div>)}
+                            </div>
                         </details>
-                        <details className={styles.filters}><summary>Software</summary>
-                                <ul className={styles.details}>
-                                    <li>Revit</li>
-                                    <li>Vectorworks</li>
-                                    <li>Vray</li>
-                                    <li>Twinmotion</li>
-                                </ul>
+                        <details><summary>Software</summary>
+                            <div className={styles.tags}>
+                                {software.map((software) => <div className={styles.tag} id={software} key={software} onClick={modFilter}>{software}</div>)}
+                            </div>
                         </details>
                     </div>
             </aside>

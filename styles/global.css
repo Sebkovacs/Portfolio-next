@@ -98,8 +98,8 @@ a:focus {
 }
 
 main a:hover {
-  color: var(--t1);
-  background-color: var(--s2);
+  color: var(--t2);
+  background-color: var(--p2);
 }
 
 nav a, nav summary, nav details li {
