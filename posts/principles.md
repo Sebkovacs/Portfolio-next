@@ -1,5 +1,5 @@
 ---
-title: 'My Architecture Principles'
+title: 'Principles'
 date: '2021-11-01'
 category: 'Theory'
 ---

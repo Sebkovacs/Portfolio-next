@@ -193,7 +193,7 @@
 /* PC & Mobile Hide */
 
 .pcOnly {
-    display: block;
+    display: flex;
 }
 
 .mobileOnly {
