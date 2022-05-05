@@ -48,7 +48,7 @@ export default function Post({ postData }) {
       {/* Blog Content Here */}
       <div className={blog.main} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
 <div className={utilStyles.mobileOnly}>
-          <BackButton
+          <ButtonBack
             link="/blog"
             where="Blog"
           />
