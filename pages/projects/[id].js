@@ -121,7 +121,7 @@ export default function Project({ projectData }) {
             <div className={projects.main}>
 
                 <div id="images" className={utilStyles.anchor} />
-                <h2 onClick={toggleImageGrid} className={utilStyles.mobileOnly}>Image Display &nbsp; {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2>
+                {/* <h2 onClick={toggleImageGrid} className={utilStyles.mobileOnly}>Image Display &nbsp; {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
 
                 <SRLWrapper options={options}>
                     <div className={imageGrid? projects.gridWrap1 : projects.gridWrap2}>
@@ -138,7 +138,7 @@ export default function Project({ projectData }) {
                     </div >
 
                     <div id="plans" className={utilStyles.anchor}/>
-                    <h2 onClick={togglePlanGrid} className={utilStyles.mobileOnly} >Plan Display &nbsp; {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2>
+                    {/* <h2 onClick={togglePlanGrid} className={utilStyles.mobileOnly} >Plan Display &nbsp; {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
 
                     <div className={planGrid? projects.gridWrap1 : projects.gridWrap2}>
                     {projectData.plans.map((plan) => 
