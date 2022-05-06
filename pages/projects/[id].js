@@ -131,18 +131,19 @@ export default function Project({ projectData }) {
                                 src={`/projects/${projectData.shortTitle}${pic.image}`}
                                 alt={pic.alt}
                                 layout="fill"
-                                objectFit="cover"
+                                objectFit="contain"
                             />
                         </div>
                         )}
                     </div >
-
+                    
+                    <div className={utilStyles.bb1} />
                     <div id="plans" className={utilStyles.anchor}/>
                     {/* <h2 onClick={togglePlanGrid} className={utilStyles.mobileOnly} >Plan Display &nbsp; {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
 
                     <div className={planGrid? projects.gridWrap1 : projects.gridWrap2}>
                     {projectData.plans.map((plan) => 
-                        <div key={plan.id} className={projects.plan}>
+                        <div key={plan.id} className={`${utilStyles.bb1} ${projects.plan}`}>
                             <Image
                                 src={`/projects/${projectData.shortTitle}${plan.plan}`}
                                 alt={plan.alt}

@@ -15,16 +15,18 @@ software:  'Vectorworks'
 rendering: 'Twinmotion'
 
 
-thumb: '/1.png'
+thumb: '/1.jpg'
 thumbAlt: 'hello'
 
 pics: [
-{id: "1", image: '/1.png', alt: "hello"},
-{id: "2", image: '/2.png', alt: "hello"},
-{id: "3", image: '/3.png', alt: "hello"},
-{id: "4", image: '/4.png', alt: "hello"},
-{id: "5", image: '/5.png', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.png', alt: "Ground Level Photomontage of the field and proposed facility building"}
+{id: "1", image: '/1.jpg', alt: "hello"},
+{id: "2", image: '/2.jpg', alt: "hello"},
+{id: "3", image: '/3.jpg', alt: "hello"},
+{id: "4", image: '/4.jpg', alt: "hello"},
+{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
+{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
+{id: "7", image: '/7.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
+{id: "8", image: '/8.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
 
 ]
 
@@ -34,9 +36,16 @@ plans: [
 {id: "3", plan: '/p3.jpg', alt: "Elevations"},
 {id: "4", plan: '/p4.jpg', alt: "Section A & Section B"},
 {id: "5", plan: '/p5.jpg', alt: "Section C & Section D"},
-# {id: "6", plan: '/p6.jpg', alt: "Construction Details"},
-# {id: "7", plan: '/p7.jpg', alt: "Wall Type Details"},
-# {id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
+{id: "6", plan: '/p6.jpg', alt: "Construction Details"},
+{id: "7", plan: '/p7.jpg', alt: "Wall Type Details"},
+{id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
+{id: "9", plan: '/p9.jpg', alt: "Some of the Internal Elevations"},
+{id: "10", plan: '/p10.jpg', alt: "Some of the Internal Elevations"},
+{id: "11", plan: '/p11.jpg', alt: "Some of the Internal Elevations"},
+# {id: "12", plan: '/p12.jpg', alt: "Some of the Internal Elevations"},
+# {id: "13", plan: '/p13.jpg', alt: "Some of the Internal Elevations"},
+# {id: "14", plan: '/p14.jpg', alt: "Some of the Internal Elevations"},
+# {id: "15", plan: '/p15.jpg', alt: "Some of the Internal Elevations"}
 
 ]
 

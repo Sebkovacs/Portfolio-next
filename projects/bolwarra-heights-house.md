@@ -36,6 +36,13 @@ plans: [
 {id: "6", plan: '/p6.jpg', alt: "Construction Details"},
 {id: "7", plan: '/p7.jpg', alt: "Wall Type Details"},
 {id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
+{id: "9", plan: '/p9.jpg', alt: "Some of the Internal Elevations"},
+{id: "10", plan: '/p10.jpg', alt: "Some of the Internal Elevations"},
+{id: "11", plan: '/p11.jpg', alt: "Some of the Internal Elevations"},
+{id: "12", plan: '/p12.jpg', alt: "Some of the Internal Elevations"},
+{id: "13", plan: '/p13.jpg', alt: "Some of the Internal Elevations"},
+{id: "14", plan: '/p14.jpg', alt: "Some of the Internal Elevations"},
+{id: "15", plan: '/p15.jpg', alt: "Some of the Internal Elevations"},
 
 ]
 
