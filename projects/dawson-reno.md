@@ -36,6 +36,7 @@ plans: [
 {id: "6", plan: '/p6.jpg', alt: "Construction Details"},
 {id: "7", plan: '/p7.jpg', alt: "Wall Type Details"},
 {id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
+{id: "9", plan: '/p9.jpg', alt: "Some of the Internal Elevations"},
 
 ]
 
