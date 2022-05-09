@@ -1,8 +1,7 @@
 ---
 title: 'Duplex DA'
 shortTitle: 'spruce'
-pano: no
-panoLink: "#"
+
 
 date: '2018-08-22'
 

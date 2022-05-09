@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Header from './Header'
+import HoverTop from './HoverTop'
 import Footer from './Footer'
 import Link from 'next/link'
 import { useState } from "react";
@@ -101,6 +102,7 @@ export default function Layout({ children, title}) {
 
             <main className={sideBar? styles.bodyOpen : styles.bodyClosed }>
                 {children}
+                <HoverTop/>
             </main>
             </div>
             {/* <Footer /> */}

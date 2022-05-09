@@ -1,8 +1,6 @@
 ---
 title: 'Country House'
 shortTitle: 'bolwarra'
-pano: no
-panoLink: "#"
 
 date: '2019-10-12'
 

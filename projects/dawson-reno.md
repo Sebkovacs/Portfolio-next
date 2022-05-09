@@ -1,8 +1,6 @@
 ---
 title: 'Townhouse Reno'
 shortTitle: 'dawson'
-pano: no
-panoLink: "#"
 
 date: '2019-10-12'
 

@@ -1,8 +1,6 @@
 ---
 title: 'Dual Occupancy'
 shortTitle: 'hall'
-pano: no
-panoLink: "#"
 
 date: '2019-10-12'
 

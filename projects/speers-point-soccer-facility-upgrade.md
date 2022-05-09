@@ -1,8 +1,7 @@
 ---
 title: 'Speers Point'
 shortTitle: 'speers'
-pano: no
-panoLink: "#"
+
 
 date: '2019-10-12'
 

@@ -1,8 +1,8 @@
 ---
 title: 'Duplex Concept'
 shortTitle: 'kitchener'
-pano: yes
-panoLink: "https://pano.sebastiankovacs.info"
+
+pano: "https://pano.sebastiankovacs.info"
 
 date: '2019-10-12'
 
@@ -26,7 +26,7 @@ pics: [
 {id: "3", image: '/3.jpg', alt: "hello"},
 {id: "4", image: '/4.jpg', alt: "hello"},
 {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
+{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
 
 ]
 
@@ -38,7 +38,7 @@ plans: [
 {id: "5", plan: '/p5.jpg', alt: "Section C & Section D"},
 {id: "6", plan: '/p6.jpg', alt: "Construction Details"},
 {id: "7", plan: '/p7.jpg', alt: "Wall Type Details"},
-{id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
+
 
 ]
 

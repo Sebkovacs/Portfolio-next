@@ -1,8 +1,7 @@
 ---
 title: 'Farm Air BNB Cabin'
 shortTitle: 'topi'
-pano: no
-panoLink: "#"
+
 
 date: '2019-03-02'
 

@@ -55,6 +55,15 @@ section {
   margin: auto;
 }
 
+details {
+  cursor: pointer;
+}
+
+
+details[open] summary{
+  background-color: var(--border1);
+}
+
 time {
   font-size: inherit;
 }

@@ -24,6 +24,7 @@ export default function Contact(){
                         <p>Phone: <a href="tel:+61432365389">0432 365 389</a></p>
                         <p>Email: <a href="mailto: sebkovacs@gmail.com">sebkovacs@gmail.com</a></p>
                         <p>9/5 Dawson St Cooks Hill, Australia</p>
+                        
                     </div>
                 </div>
 

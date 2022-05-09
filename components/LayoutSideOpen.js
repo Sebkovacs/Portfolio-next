@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import Header from './Header'
+import HoverTop from './HoverTop'
 import Footer from './Footer'
 import { useState } from "react";
+
 
 export const siteTitle = 'SK'
 
@@ -35,9 +37,12 @@ export default function Layout({ children, title}) {
 
                 <main className={styles.body}>
                     {children}
+                    <HoverTop/>
                 </main>
             </div>
+
             {/* <Footer /> */}
+
        </>
     )
 }

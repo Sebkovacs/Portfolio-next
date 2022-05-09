@@ -39,13 +39,26 @@ const options = {
 
 export default function Project({ projectData }) {
     let pano = false;
-    if (projectData.pano == 'yes') {pano = true};
+    let panos = false;
+
+    // check if the project has a pano link or multiple pano links >> if so, later run code for link buttons
+    if (projectData.hasOwnProperty("pano")) {
+        pano = true;
+    } else if (projectData.hasOwnProperty("panos")) {
+        panos = true;
+    } else {
+        pano = false;
+        panos = false;
+    }
 
     const [imageGrid, setImageGrid] = useState(false)
     function toggleImageGrid(){setImageGrid(!imageGrid);}
 
     const [planGrid, setPlanGrid] = useState(true)
     function togglePlanGrid(){setPlanGrid(!planGrid);}
+
+    const [panoDrop, setPanoDrop] =useState(false)
+    function togglePanoDrop(){setPanoDrop(!panoDrop)}
 
 
     return (
@@ -78,9 +91,23 @@ export default function Project({ projectData }) {
                     <div className={projects.linkContainer}>
                         <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`} href="#images">Images</a>
                         <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`} href="#plans">Plans</a>
-                        <Link href={projectData.panoLink}>
-                            <a target="_blank" style={{ display: pano ? "flex" : "none" }} className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
-                        </Link>
+
+                        { projectData.hasOwnProperty("pano") ?
+                        <Link href={projectData.pano}>
+                        <a target="_blank" className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
+                        </Link> : <div/>
+                        }
+
+
+
+                        { projectData.hasOwnProperty("panos") ?
+                        <details id="panoDrop" onClick={togglePanoDrop}>
+                            <summary className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours &nbsp;{ panoDrop ?  <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span> }</summary>
+                            {projectData.panos.map((pano) => 
+                            <Link href={pano.link} ><a target="_blank" className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
+                        </details>
+                        : <div/>
+                        }
 
                         <label htmlFor="imageGrid" className={`  ${utilStyles.bb1} ${utilStyles.link} ${utilStyles.pcOnly}`}>Image Display {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
                         <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
@@ -156,17 +183,10 @@ export default function Project({ projectData }) {
 
                 </SRLWrapper>
                 <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2}`}>
-                    <ButtonBack
-                        link="/"
-                        where="Projects"
-                    />
-                    <ButtonTop
-                    link="#top"
-                    />
+                    <ButtonBack link="/" where="Projects" />
+                    {/* <ButtonTop link="#top" /> */}
                 </div>
             </div >
-
-
 
         </Layout >
     )

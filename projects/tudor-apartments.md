@@ -1,8 +1,7 @@
 ---
 title: 'Tudor Apartments'
 shortTitle: 'tudor'
-pano: yes
-panoLink: "https://twinmotion.unrealengine.com/panorama/oFEBEKa1IxmAi7Wq"
+pano: "https://twinmotion.unrealengine.com/panorama/oFEBEKa1IxmAi7Wq"
 
 date: '2019-11-15'
 
