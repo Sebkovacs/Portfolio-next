@@ -38,7 +38,7 @@ export default function Resume() {
                         <div className={utilStyles.list}>
                             <h3>Education / Qualifications</h3>
                             <ul>
-                                <li>2020 Masters Architecture</li>
+                                <li>Masters Architecture 2020 - University of Newcastle</li>
                             </ul>
                         </div>
 
