@@ -29,7 +29,7 @@ export default function Resume() {
                             <h3>Relevant Work History</h3>
                             <ul>
                                 <li>Side Jobs 2021 - Present</li>
-                                <li>Jason Topics Architecture 2018-2020</li>
+                                <li>Jason Topic Architecture 2018-2020</li>
                                 <li>Carpentry (Paul Hickson Builder) 2017-2018</li>
                                 <li>Construction (North) 2016-2017</li>
                             </ul>
