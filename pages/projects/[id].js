@@ -140,7 +140,7 @@ export default function Project({ projectData }) {
                 </div>
             </div>
 
-            <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${utilStyles.mobileOnlyFlex}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }</label>          
+            <small><label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${utilStyles.mobileOnlyFlex}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }</label></small>          
 
             <div className={projects.main}>
 
