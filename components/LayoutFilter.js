@@ -6,39 +6,35 @@ import HoverTop from './HoverTop'
 import Footer from './Footer'
 import Link from 'next/link'
 import { useState } from "react";
+import { id } from 'date-fns/locale'
 
 
 
 export const siteTitle = 'SK'
 
-
 export default function Layout({ children, title}) {
-    const [sideBar, setSideBarOpen] = useState(false)
-    const [filters, setFilters] = useState([])
-
+    const [sideBar, setSideBarOpen] = useState(true)
     function toggle(){setSideBarOpen(!sideBar);}
 
     const types = ["Residential", "Mult-Residential", "Commercial", "Education", "Health"]
     const status = ["constructed", "In Construction", "DA", "CC", "Concept"]
     const software = ["revit", "vectorworks", "twinmotion", "rhino", "lumion", "archiCAD"]
 
-    const modFilter = (e) => {
-        
-         if (filters.includes(e.target.id) == false) {
-            filters.push(e.target.id);
+    const [filters, setFilters] = useState(["vectorworks", "twinmotion",]);
+    
+    const modFilters = e => {
+        if (!filters.includes(e.target.id)) {
+            filters.push(e.target.id)
+            console.log(filters, `${e.target.id} was added`)
         } else {
             let index = filters.indexOf(e.target.id);
             filters.splice(index,1);
-        };
-
-        console.log(filters);
-    }
-
-    const filtersList = filters.map((filter) => (
-        <div className={styles.filter} onClick={modFilter} id={filter} key={filter} >{filter}</div>
-    ));
-
+            console.log(filters, `${e.target.id} was removed`)
+        }
+        setFilters([...filters]);
+    };
     
+
     return (
         <>
             <Head>
@@ -72,27 +68,27 @@ export default function Layout({ children, title}) {
                     </div>
                     <div className={styles.filterContainer}>
 
-                            <small>Filters</small>
+                        <small>Filters</small>
                         <div className={styles.filters} >
-                            {filtersList}
+                            {filters.map((filter) => <div className={styles.filter} id={filter} onClick={modFilters}>{filter}</div>)}
                         </div>
+
                         {/* <div className={utilStyles.bb1} /> */}
 
-                            <small>Tags</small>
-
+                        <small>Tags</small>
                         <details><summary>Type</summary>
                             <div className={styles.tags}>
-                                {types.map((type) => <div className={styles.tag} id={type} key={type} onClick={modFilter} >{type}</div>)}
+                                {types.map((type) => <div className={styles.tag} id={type} onClick={modFilters}>{type}</div>)}
                             </div>
                         </details>
                         <details><summary>Status</summary>
                             <div className={styles.tags}>
-                                {status.map((status) => <div className={styles.tag} id={status} key={status} onClick={modFilter}>{status}</div>)}
+                                {status.map((status) => <div className={styles.tag} id={status} onClick={modFilters}>{status}</div>)}
                             </div>
                         </details>
                         <details><summary>Software</summary>
                             <div className={styles.tags}>
-                                {software.map((software) => <div className={styles.tag} id={software} key={software} onClick={modFilter}>{software}</div>)}
+                                {software.map((software) => <div className={styles.tag} id={software} onClick={modFilters}>{software}</div>)}
                             </div>
                         </details>
                     </div>
@@ -102,10 +98,10 @@ export default function Layout({ children, title}) {
 
             <main className={sideBar? styles.bodyOpen : styles.bodyClosed }>
                 {children}
-                <HoverTop/>
             </main>
             </div>
             {/* <Footer /> */}
        </>
     )
 }
+

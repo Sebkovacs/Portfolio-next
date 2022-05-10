@@ -60,10 +60,8 @@
 }
 
 .projDetails {
-
     padding: 1em;
     margin: 1em;
-    background-color: var(--primary);
 }
 
 .projDetails h3 {
@@ -114,7 +112,9 @@
     gap: 2em;
     position: relative;
 }
-
+.thumb {
+    position: relative;
+}
 .pic1 {
     height: calc(100vh - 8rem);
     width: var(--container)/2;
@@ -142,6 +142,14 @@
 
 
 @media (max-width: 768px) {
+
+    .sideLink {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+
+    }
+
     .cardWrap {
         gap: 10px;
     }
@@ -175,12 +183,12 @@
         height: 0;
     }
 
-    /* .projDetails {
+    .projDetails {
         float: right;
-        margin: 1em 2em;
-        padding: 1em;
+        margin: 0em 2em;
+        padding: 0 1em;
         background-color: var(--bg2);
-    } */
+    }
 
     .projects {
         width: 100%;
@@ -206,14 +214,21 @@
         padding: 0;
         margin-top: 2em;
         display: grid;
-        grid-template-columns: 1fr;
+        gap: .25em;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         position: relative;
         margin-bottom: 5em;
     }
 
+    .thumb {
+        height: calc(60vw);
+    }
+    .pic1 {
+        height: calc(50vh);
+    }
     .pic2 {
-        height: 55vh;
+        height: calc(100vw / 3);
     }
 
     .linkContainer {
@@ -222,6 +237,7 @@
         justify-content: space-around;
         margin: 0;
         padding: 0;
+        flex-direction: row;
     }
 
     .pano {
@@ -233,6 +249,12 @@
 
 @media (max-width: 425px) {
 
+    .projDetails {
+        float: none;
+        /* margin: 2em 2em; */
+        padding:  1em 0;
+        background-color: var(--bg2);
+    }
     .details {
         padding-bottom: 3rem;
     }
@@ -260,8 +282,23 @@
         font-size: .7rem;
     }
 
+    .gridWrap2 {
+        padding: 0;
+        margin-top: 2em;
+        display: grid;
+        gap: .25em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        position: relative;
+        margin-bottom: 5em;
+    }
+
+    .pic1 {
+        height: 50vw;
+    }
+
     .pic2 {
-        height: 70vw;
+        height: 50vw;
     }
 
     .plan {

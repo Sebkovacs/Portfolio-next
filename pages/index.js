@@ -13,8 +13,9 @@ const title = "Projects";
 
 
 
-export default function Projects({ allProjectsData }) {
-    // console.log(filters);
+export default function Projects({ allProjectsData}) {
+
+
     return (
         <Layout>
             <Head>

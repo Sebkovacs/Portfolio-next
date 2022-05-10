@@ -58,11 +58,18 @@ section {
 details {
   cursor: pointer;
 }
+details[open]{
+  background-color: var(--bg1);
+  width: 100vw;
+  position: absolute;
+}
 
 
 details[open] summary{
-  background-color: var(--border1);
+  background-color: var(--s2);
 }
+
+
 
 time {
   font-size: inherit;
@@ -106,7 +113,7 @@ a:focus {
   opacity: .7;
 }
 
-main a:hover {
+main a:hover, summary:hover {
   color: var(--t2);
   background-color: var(--p2);
 }

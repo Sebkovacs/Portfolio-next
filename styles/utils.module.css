@@ -91,6 +91,10 @@
     width: fit-content;
 }
 
+.grow {
+    flex: 1 25%;
+}
+
 .postTitle {
     position: relative;
     bottom: 0;

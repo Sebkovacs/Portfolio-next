@@ -77,7 +77,7 @@ export default function Project({ projectData }) {
 
                 {/* Mobile Only Header Image */}
                 <div className={utilStyles.mobileOnly}>
-                    <div className={projects.pic2} >
+                    <div className={projects.thumb} >
                         <Image
                             src={`/projects/${projectData.shortTitle}${projectData.thumb}`}
                             alt={projectData.thumbAlt}
@@ -89,49 +89,50 @@ export default function Project({ projectData }) {
                 </div>
                 <div className={projects.detailsContainer}>
                     <div className={projects.linkContainer}>
-                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`} href="#images">Images</a>
-                        <a className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`} href="#plans">Plans</a>
+                        <a className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`} href="#images">Images</a>
+                        <a className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`} href="#plans">Plans</a>
 
                         { projectData.hasOwnProperty("pano") ?
                         <Link href={projectData.pano}>
-                        <a target="_blank" className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
+                        <a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
                         </Link> : <div/>
                         }
 
-
-
                         { projectData.hasOwnProperty("panos") ?
-                        <details id="panoDrop" onClick={togglePanoDrop}>
-                            <summary className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours &nbsp;{ panoDrop ?  <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span> }</summary>
+                        <details id="panoDrop" className={utilStyles.grow} onClick={togglePanoDrop}>
+                            <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours &nbsp;{ panoDrop ?  <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span> }</summary>
                             {projectData.panos.map((pano) => 
-                            <Link href={pano.link} ><a target="_blank" className={`${projects.pano} ${utilStyles.bb1} ${utilStyles.link}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
+                            <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
                         </details>
                         : <div/>
                         }
 
                         {/* <label htmlFor="imageGrid" className={`  ${utilStyles.bb1} ${utilStyles.link} ${utilStyles.pcOnly}`}>Image Display {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>           */}
-                        <label htmlFor="imageGrid" className={`  ${utilStyles.bb1} ${utilStyles.link}`}>Image Display {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
+                        <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
                         <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
                              
-                        <label htmlFor="planGrid" className={`${utilStyles.pcOnly} ${utilStyles.bb1} ${utilStyles.link}`}>Plan Display  {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
+                        <label htmlFor="planGrid" className={`${utilStyles.pcOnly} ${utilStyles.bb1} ${utilStyles.link}`}>Plan Display &nbsp;{planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
                         <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
                         
+                        <div>
+                        <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${projects.left}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
+
+                        </div>
+
                     </div>
+
                     <div className={projects.projDetails}>
-                        <h3>Project Details</h3>
-                        <ul>
-
-                            <li>Type: {projectData.type}</li>
-                            <li>Worked On: {projectData.work}</li>
-                            <li>Status: {projectData.status}</li>
-                            <li>Location: {projectData.location}</li>
-                            <li>Company: {projectData.company}</li>
-                            <li>Software: {projectData.software}</li>
-                            <li>Rendering: {projectData.rendering}</li>
-
-                            {/* <li><Date dateString={projectData.date} /></li> */}
-
-                        </ul>
+                        <h3>Project Details </h3> 
+                            <ul>
+                                <li>Type: {projectData.type}</li>
+                                <li>Worked On: {projectData.work}</li>
+                                <li>Status: {projectData.status}</li>
+                                <li>Location: {projectData.location}</li>
+                                <li>Company: {projectData.company}</li>
+                                <li>Software: {projectData.software}</li>
+                                <li>Rendering: {projectData.rendering}</li>
+                                {/* <li><Date dateString={projectData.date} /></li> */}
+                            </ul>
                     </div>
 
                     {/* main write up */}
@@ -159,7 +160,7 @@ export default function Project({ projectData }) {
                                 src={`/projects/${projectData.shortTitle}${pic.image}`}
                                 alt={pic.alt}
                                 layout="fill"
-                                objectFit="contain"
+                                objectFit={!imageGrid? "cover" : "contain"}
                             />
                         </div>
                         )}
@@ -185,7 +186,7 @@ export default function Project({ projectData }) {
                 </SRLWrapper>
                 <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2}`}>
                     <ButtonBack link="/" where="Projects" />
-                    {/* <ButtonTop link="#top" /> */}
+                    <ButtonTop link="#top" />
                 </div>
             </div >
 
