@@ -20,10 +20,11 @@ export default function Contact(){
                 <div className={utilStyles.padding}>
                     
                     <div className={utilStyles.list}>
-                        <h2 className={`${utilStyles.bb1} ${utilStyles.mb1}`}>Sebastian Kovacs</h2>
+                        <h2 className={`${utilStyles.grow} ${utilStyles.mb1} ${utilStyles.center} ${utilStyles.noPad}`}>Sebastian Kovacs</h2>
                         <p>Phone: <a href="tel:+61432365389">0432 365 389</a></p>
                         <p>Email: <a href="mailto: sebkovacs@gmail.com">sebkovacs@gmail.com</a></p>
-                        <p>9/5 Dawson St Cooks Hill, Australia</p>
+                        <h4>Address:</h4>
+                        <p>9/5 Dawson St<br /> Cooks Hill, NSW 2300<br /> Australia</p>
                         
                     </div>
                 </div>

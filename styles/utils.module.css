@@ -30,6 +30,15 @@
     padding: 2em 5em;
 }
 
+.noPad {
+    padding: 0;
+    line-height: 2em;
+}
+
+.center {
+    text-align: center;
+}
+
 .lightText,
 .lightText li,
 .lightText a {
@@ -129,6 +138,10 @@
 .bt2 {
     border-top: 1px solid var(--border2);
     padding-top: 1em;
+}
+
+.center {
+    text-align: center;
 }
 
 .back {
@@ -320,6 +333,10 @@
 
     .list {
         margin: .5em;
+        padding: 1em;
+    }
+    .list h2{
+        font-size: 5vw;
     }
 
     .flex {

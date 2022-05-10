@@ -8,11 +8,15 @@ export default function Layout() {
             <header className={`${styles.header} ${utilStyles.bb1}`}>
                 <div className={`${utilStyles.headerContainer} ${styles.headerWrap}`}>
                     <Link  href="/">
-                        <a className={styles.logo}>
+                        <a className={`${styles.logo} ${utilStyles.mobileOnly}`}>
+                        Sebastian Kovacs <br/> Architecture Portfolio
+                        </a>
+                    </Link>
+                    <Link  href="/">
+                    <a className={`${styles.logo} ${utilStyles.pcOnly}`} >
                         Sebastian Kovacs | Architecture Portfolio
                         </a>
                     </Link>
-
                     <nav>
                         <Link href="/"><a className={styles.navitem}>Projects</a></Link>
                         {/* <Link href="/blog"><a className={styles.navitem}>Blog</a></Link> */}
