@@ -184,7 +184,7 @@ export default function Project({ projectData }) {
                     </div>
 
                 </SRLWrapper>
-                <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2}`}>
+                <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2} ${utilStyles.ontop}`}>
                     <ButtonBack link="/" where="Projects" />
                     <ButtonTop link="#top" />
                 </div>

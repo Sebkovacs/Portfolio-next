@@ -148,6 +148,14 @@
     justify-content: flex-end;
 }
 
+.ontop {
+    margin-top: 3em;
+    position: relative;
+    z-index: 99;
+    bottom: 0;
+    width: 100vw;
+    background-color: var(--bg2);
+}
 
 .anchor {
     position: relative;
