@@ -238,6 +238,7 @@
         margin: 0;
         padding: 0;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .pano {
@@ -294,7 +295,11 @@
     }
 
     .pic1 {
+        height: 100vw;
+    }
+    .pic1 img{
         height: 50vw;
+        object-position: 40% 30%;
     }
 
     .pic2 {
@@ -302,7 +307,7 @@
     }
 
     .plan {
-        height: 70vh;
+        height: 100vw;
     }
 
 }

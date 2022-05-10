@@ -108,16 +108,16 @@ export default function Project({ projectData }) {
                         }
 
                         {/* <label htmlFor="imageGrid" className={`  ${utilStyles.bb1} ${utilStyles.link} ${utilStyles.pcOnly}`}>Image Display {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>           */}
-                        <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${utilStyles.pcOnly}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
+                        <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink}  `}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
                         <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
                              
                         <label htmlFor="planGrid" className={`${utilStyles.pcOnly} ${utilStyles.bb1} ${utilStyles.link}`}>Plan Display &nbsp;{planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
                         <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
                         
-                        <div>
+                        {/* <div>
                         <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${projects.left}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
 
-                        </div>
+                        </div> */}
 
                     </div>
 
@@ -177,7 +177,7 @@ export default function Project({ projectData }) {
                                 src={`/projects/${projectData.shortTitle}${plan.plan}`}
                                 alt={plan.alt}
                                 layout="fill"
-                                objectFit="cover"
+                                objectFit="contain"
                             />
                         </div>
                         )}
