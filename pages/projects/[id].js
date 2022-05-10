@@ -160,7 +160,7 @@ export default function Project({ projectData }) {
                                 src={`/projects/${projectData.shortTitle}${pic.image}`}
                                 alt={pic.alt}
                                 layout="fill"
-                                objectFit={!imageGrid? "cover" : "contain"}
+                                objectFit={!imageGrid? "cover" : "cover"}
                             />
                         </div>
                         )}
@@ -177,7 +177,7 @@ export default function Project({ projectData }) {
                                 src={`/projects/${projectData.shortTitle}${plan.plan}`}
                                 alt={plan.alt}
                                 layout="fill"
-                                objectFit="contain"
+                                objectFit="cover"
                             />
                         </div>
                         )}
