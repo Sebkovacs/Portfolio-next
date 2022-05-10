@@ -303,7 +303,7 @@
     }
 
     .pic2 {
-        height: 50vw;
+        height: calc(100vw / 3);
     }
 
     .plan {
