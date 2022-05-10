@@ -51,7 +51,7 @@ export default function Project({ projectData }) {
         panos = false;
     }
 
-    const [imageGrid, setImageGrid] = useState(false)
+    const [imageGrid, setImageGrid] = useState(true)
     function toggleImageGrid(){setImageGrid(!imageGrid);}
 
     const [planGrid, setPlanGrid] = useState(true)
@@ -155,7 +155,7 @@ export default function Project({ projectData }) {
                                 src={`/projects/${projectData.shortTitle}${pic.image}`}
                                 alt={pic.alt}
                                 layout="fill"
-                                objectFit={!imageGrid? "cover" : "cover"}
+                                objectFit="cover"
                             />
                         </div>
                         )}
@@ -179,9 +179,10 @@ export default function Project({ projectData }) {
                     </div>
 
                 </SRLWrapper>
+                <ButtonTop link="#top" where="Top" />
                 <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2} ${utilStyles.ontop}`}>
                     <ButtonBack link="/" where="Projects" />
-                    <ButtonTop link="#top" />
+                    <ButtonTop link="#top" where="Top" />
                 </div>
             </div >
 

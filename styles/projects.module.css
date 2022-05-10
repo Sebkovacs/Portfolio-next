@@ -26,8 +26,6 @@
 
 .detailsContainer {
     height: calc(100vh - var(--h1Height) - var(--headerHeight));
-
-
     overflow-y: auto;
 }
 
@@ -38,15 +36,15 @@
 
 .details li {
     padding: 1em 0;
-
+    margin: 0;
 }
 
 .details h3 {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 .details p {
-    padding: 0 2rem 1rem 2rem;
+    padding: 0 1rem 1rem 1rem;
     margin: 0;
 }
 
@@ -60,8 +58,8 @@
 }
 
 .projDetails {
-    padding: 1em;
-    margin: 1em;
+    padding: 0 1em;
+    /* margin: 1em; */
 }
 
 .projDetails h3 {
@@ -75,7 +73,7 @@
 .projDetails li {
     border-top: 1px solid var(--border1);
     padding: .5em;
-    font-size: .9em;
+    /* font-size: .9em; */
     list-style: none;
 }
 
@@ -92,43 +90,42 @@
 }
 
 .gridWrap1 {
-    padding: 2em;
-    /* margin-top: 2em; */
-    /* padding: var(--headerHeight) 0; */
+    padding: 1em;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    gap: 2em;
+    gap: 1em;
     position: relative;
 }
 
 .gridWrap2 {
-    padding: 2em;
-    /* margin-top: 2em; */
-    /* padding: var(--headerHeight) 0; */
+    padding: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 2em;
+    gap: 1em;
     position: relative;
 }
 .thumb {
     position: relative;
 }
 .pic1 {
-    height: calc(100vh - 8rem);
-    width: var(--container)/2;
+    /* height: calc(100vh - 8rem); */
+    /* width: var(--container)/2; */
+    aspect-ratio: 16 / 9;
     position: relative;
     transition: .5s;
     cursor: pointer;
 }
 
 .pic2 {
-    height: calc(55vh - 8rem);
-    width: var(--container)/2;
+    /* height: calc(55vh - 8rem);
+    width: var(--container)/2; */
+    aspect-ratio: 16 / 9;
     position: relative;
     transition: .5s;
     cursor: pointer;
+    
 }
 
 .plan {
@@ -208,27 +205,31 @@
         grid-template-rows: 1fr;
         position: relative;
         margin-bottom: 5em;
+        /* width: 100vw; */
     }
 
     .gridWrap2 {
         padding: 0;
         margin-top: 2em;
         display: grid;
-        gap: .25em;
+        gap: .1em;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         position: relative;
         margin-bottom: 5em;
+        /* width: 100vw; */
     }
 
     .thumb {
         height: calc(60vw);
     }
     .pic1 {
-        height: calc(50vh);
+        /* height: calc(50vh); */
+        aspect-ratio: 16 / 9;
     }
     .pic2 {
-        height: calc(100vw / 3);
+        /* height: calc(100vw / 3); */
+        aspect-ratio: 1 / 1;
     }
 
     .linkContainer {
@@ -252,12 +253,12 @@
 
     .projDetails {
         float: none;
-        /* margin: 2em 2em; */
+        margin: 0em 1em;
         padding:  1em 0;
         background-color: var(--bg2);
     }
     .details {
-        padding-bottom: 3rem;
+        padding-bottom: 0rem;
     }
 
     .cardWrap {
@@ -280,14 +281,15 @@
     }
 
     .projDetails li {
-        font-size: .7rem;
+        font-size: .5rem;
     }
+
 
     .gridWrap2 {
         padding: 0;
         margin-top: 2em;
         display: grid;
-        gap: .2em;
+        gap: .1em;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         position: relative;
@@ -295,15 +297,13 @@
     }
 
     .pic1 {
-        height: 100vw;
-    }
-    .pic1 img{
-        height: 50vw;
-        object-position: 40% 30%;
+        /* height: 100vw; */
+        aspect-ratio: 16 / 9;
     }
 
     .pic2 {
-        height: calc(100vw / 3);
+        /* height: calc(100vw / 3); */
+        aspect-ratio: 1 / 1;
     }
 
     .plan {

@@ -48,8 +48,9 @@ export default function Resume() {
                             
                             <h4>Drafting / BIM</h4>
                             <ul>
-                                <li>Revit</li>
-                                <li>Vectorworks</li>
+                                <li>Revit (v2020)</li>
+                                <li>Vectorworks (v2017-2021)</li>
+                                <li>Rhino</li>
                             </ul>
 
                             <h4> Rendering</h4>
@@ -76,6 +77,7 @@ export default function Resume() {
                                 <li>Digital Marketing</li>
                                 <li>B2B Sales</li>
                                 <li>Web Development</li>
+                                <li>Social Media Marketing</li>
                             </ul>
                         </div>
 
