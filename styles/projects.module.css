@@ -287,8 +287,8 @@
         padding: 0;
         margin-top: 2em;
         display: grid;
-        gap: .25em;
-        grid-template-columns: 1fr 1fr;
+        gap: .2em;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         position: relative;
         margin-bottom: 5em;
