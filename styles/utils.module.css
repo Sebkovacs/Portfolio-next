@@ -13,7 +13,7 @@
 
 .headerContainer {
     width: 100%;
-    padding: 0 2em;
+    padding: 0 1em;
 }
 
 .title {
@@ -22,7 +22,8 @@
     border-bottom: solid 1px var(--border1);
     display: flex;
     align-items: center;
-    padding: 0 calc(2em - 1%);
+    /* padding: 0 calc(2em - 1%); */
+    padding: 0 1em;
     justify-content: space-between;
 }
 

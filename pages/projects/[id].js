@@ -89,22 +89,28 @@ export default function Project({ projectData }) {
                     </div>
                 </div>
                 <div className={projects.detailsContainer}>
-                    <div className={projects.linkContainer}>
+                    <div className={projects.linkContainer}> 
+                    <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">
+                                Images
+                            </a>
+                    <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">
+                                Plans
+                            </a>
                         
-                        <div className={`${utilStyles.grow} ${utilStyles.swap}`}>
+                        <div className={`${utilStyles.grow} ${utilStyles.swap} ${utilStyles.pcOnly}`}>
                             <a className={`${utilStyles.linkTo}`} href="#images">
                                 Images
                             </a>
-                            <label htmlFor="imageGrid" className={` ${utilStyles.toggle} ${utilStyles.pcOnly}  `}>
+                            <label htmlFor="imageGrid" className={` ${utilStyles.toggle}  `}>
                                 {imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }
                             </label>
                         </div>
 
-                        <div className={`${utilStyles.grow} ${utilStyles.swap}`}>
+                        <div className={`${utilStyles.grow} ${utilStyles.swap} ${utilStyles.pcOnly}`}>
                             <a className={`${utilStyles.linkTo}`} href="#plans">
                                 Plans
                             </a>
-                            <label htmlFor="planGrid" className={` ${utilStyles.toggle} ${utilStyles.pcOnly}  `}>
+                            <label htmlFor="planGrid" className={` ${utilStyles.toggle}  `}>
                             {planGrid? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span> }
                             </label>
                         </div>
