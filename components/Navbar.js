@@ -23,7 +23,7 @@ const Navbar = ({children}) => {
     const handleScroll = debounce(() => {
         const currentScrollPos = window.pageYOffset;
 
-        setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
+        setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 150);
 
         setPrevScrollPos(currentScrollPos);
             // timer set to 100 milliseconds:

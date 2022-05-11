@@ -1,3 +1,9 @@
+.background {
+  background-color: var(--bg2);
+  height: var(--headerHeight);
+  position: relative;
+}
+
 #layout {
   display: flex;
   flex-direction: row;
@@ -114,7 +120,7 @@
 
 
 .bodyOpen {
-  margin: var(--headerHeight) auto 0;
+  /* margin: var(--headerHeight) auto 0; */
   padding: 0;
   width: 80%;
   position: absolute;
@@ -123,7 +129,7 @@
 }
 
 .bodyClosed {
-  margin: var(--headerHeight) auto 0;
+  /* margin: var(--headerHeight) auto 0; */
   padding: 0;
   width: 99%;
   position: absolute;
@@ -132,7 +138,7 @@
 }
 
 .body {
-  margin: var(--headerHeight) auto 0;
+  /* margin: var(--headerHeight) auto 0; */
   padding: 0;
   width: 100%;
   background-color: var(--bg3);

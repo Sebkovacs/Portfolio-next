@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 
 export default function Layout() {
     return (
-        <header>
+        <header className={styles.background}>
 
             {/* PC Header & Nav */}
 
