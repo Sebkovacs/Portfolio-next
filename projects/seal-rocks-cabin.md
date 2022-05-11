@@ -11,7 +11,7 @@ status: 'Concept'
 location: 'Topi Topi, NSW'
 company: 'Sebastian Kovacs'
 software:  'Vectorworks'
-rendering: 'Twinmotion'
+rendering: 'Vray'
 
 
 thumb: '/1.jpg'

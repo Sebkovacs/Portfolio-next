@@ -10,7 +10,7 @@ work: 'Development Approval'
 location: 'Charlestown, NSW'
 company: 'JTA'
 software:  'Vectorworks'
-rendering: ''
+rendering: 
 
 thumb: '/1.png'
 thumbAlt: 'hello'

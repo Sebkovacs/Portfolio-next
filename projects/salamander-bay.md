@@ -10,7 +10,7 @@ work: 'DA Drawings'
 location: 'Salamander Bay, NSW'
 company: 'JTA'
 software:  'Vectorworks'
-rendering: ''
+rendering: 
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'

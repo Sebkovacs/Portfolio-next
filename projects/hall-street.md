@@ -10,7 +10,7 @@ work: 'Construction Documentation'
 location: 'Merewether, NSW'
 company: 'JTA'
 software:  'Vectorworks'
-# rendering: 'Twinmotion'
+rendering:
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'

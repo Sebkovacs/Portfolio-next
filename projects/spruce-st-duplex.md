@@ -11,7 +11,7 @@ work: 'DA Drawings'
 location: 'New Lambton Heights, NSW'
 company: 'JTA'
 software:  'Vectorworks'
-rendering: ''
+rendering: 
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
