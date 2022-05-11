@@ -144,7 +144,7 @@ label:hover {
 
 h1 {
   color: var(--t1);
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 900;
   font-style: italic;
   text-transform: uppercase; 

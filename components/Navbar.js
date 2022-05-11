@@ -13,7 +13,7 @@ const Navbar = ({children}) => {
     // debounce wrapper added:
     const handleScroll = debounce(() => {
         const currentScrollPos = window.pageYOffset;
-
+        
         setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 150) || currentScrollPos < 20);
 
         setPrevScrollPos(currentScrollPos);
