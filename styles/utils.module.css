@@ -18,7 +18,7 @@
 
 .title {
     height: var(--h1Height);
-
+    
     border-bottom: solid 1px var(--border1);
     display: flex;
     align-items: center;
@@ -74,6 +74,11 @@
     padding: 1em;
     flex: 1;
 
+}
+
+.list a{
+
+    padding: 0 .2em;
 }
 
 .list li {
@@ -208,6 +213,55 @@
     color: var(--s1);
     font-weight: 900;
     text-transform: uppercase;
+    font-style: normal;
+}
+.swap {
+    margin: .5em;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    border-radius: .5em;
+    border: 1px solid var(--border1);
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.linkTo {
+    display: flex;
+    align-items: center;
+    padding-left: .5em;
+    height: 2em;
+    width: 75%;
+
+}
+.swap:hover {
+    background-color: var(--p2);
+    color: var(--t2);
+
+}
+.swap:hover a {
+    background-color: var(--p2);
+    color: var(--t2);
+
+}
+
+
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    width: 25%;
+    color: var(--border2);
+
+    border-left: 1px solid var(--border1);
+
+}
+
+.toggle:hover {
+    background-color: var(--p3);
+    /* color: var(--border1); */
 }
 .hoverTop {
     position: fixed;

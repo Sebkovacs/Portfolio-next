@@ -14,6 +14,7 @@ import utilStyles from '../../styles/utils.module.css'
 import projects from '../../styles/projects.module.css'
 import { useState } from "react";
 
+
 const options = {
     progressBar: {
         showProgressBar: false
@@ -50,8 +51,8 @@ export default function Project({ projectData }) {
         pano = false;
         panos = false;
     }
-
-    const [imageGrid, setImageGrid] = useState(true)
+    
+    const [imageGrid, setImageGrid] = useState(false)
     function toggleImageGrid(){setImageGrid(!imageGrid);}
 
     const [planGrid, setPlanGrid] = useState(true)
@@ -89,8 +90,24 @@ export default function Project({ projectData }) {
                 </div>
                 <div className={projects.detailsContainer}>
                     <div className={projects.linkContainer}>
-                        <a className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`} href="#images">Images</a>
-                        <a className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`} href="#plans">Plans</a>
+                        
+                        <div className={`${utilStyles.grow} ${utilStyles.swap}`}>
+                            <a className={`${utilStyles.linkTo}`} href="#images">
+                                Images
+                            </a>
+                            <label htmlFor="imageGrid" className={` ${utilStyles.toggle} ${utilStyles.pcOnly}  `}>
+                                {imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }
+                            </label>
+                        </div>
+
+                        <div className={`${utilStyles.grow} ${utilStyles.swap}`}>
+                            <a className={`${utilStyles.linkTo}`} href="#plans">
+                                Plans
+                            </a>
+                            <label htmlFor="planGrid" className={` ${utilStyles.toggle} ${utilStyles.pcOnly}  `}>
+                            {planGrid? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span> }
+                            </label>
+                        </div>
 
                         { projectData.hasOwnProperty("pano") ?
                         <Link href={projectData.pano}>
@@ -107,10 +124,9 @@ export default function Project({ projectData }) {
                         : <div/>
                         }
 
-                        <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${utilStyles.pcOnly}  `}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>          
+                                  
                         <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
                              
-                        <label htmlFor="planGrid" className={`${utilStyles.pcOnly} ${utilStyles.bb1} ${utilStyles.link}`}>Plan Display &nbsp;{planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
                         <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
                     </div>
 
