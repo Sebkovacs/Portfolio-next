@@ -30,6 +30,7 @@ company: 'Sebastian Kovacs'
 location: 'Merewether, NSW'
 software:  'Vectorworks'
 rendering: 'Twinmotion'
+photography: 
 
 
 summary: 'Exploring different concept ideas: feel, functon and cost. '

@@ -11,6 +11,7 @@ location: 'Charlestown, NSW'
 company: 'JTA'
 software:  'Vectorworks'
 rendering: 
+photography: 
 
 thumb: '/1.png'
 thumbAlt: 'hello'

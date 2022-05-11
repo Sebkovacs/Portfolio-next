@@ -143,6 +143,7 @@ export default function Project({ projectData }) {
                                 <li style={{display: projectData.company==null? "none":"flex"}}>Company: {projectData.company}</li>
                                 <li style={{display: projectData.software==null? "none":"flex"}}>Software: {projectData.software}</li>
                                 <li style={{display: projectData.rendering==null? "none":"flex"}}>Rendering: {projectData.rendering}</li>
+                                <li style={{display: projectData.photography==null? "none":"flex"}}>Photography: {projectData.photography}</li>
                                 {/* <li><Date dateString={projectData.date} /></li> */}
                             </ul>
                     </div>

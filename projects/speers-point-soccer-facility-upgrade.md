@@ -5,13 +5,14 @@ shortTitle: 'speers'
 
 date: '2019-10-12'
 
-type: 'Commercial'
-status: 'Constructed'
-work: 'CC Drawings'
-location: 'Speers Point, NSW'
-company: 'JTA'
-software:  'Vectorworks'
-rendering: 'Vectorworks'
+type: Commercial
+status: Constructed
+work: CC Drawings
+location: Speers Point, NSW
+company: JTA
+software:  Vectorworks
+rendering: Vectorworks
+photography: Sebastian Kovacs
 
 thumb: '/1.jpg'
 thumbAlt: "A photo of Speers Point Soccer Facility"

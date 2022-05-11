@@ -13,6 +13,7 @@ company: 'Sebastian Kovacs'
 location: 'The Hill, NSW'
 software:  'Revit'
 rendering: 'Vray'
+photography: 
 
 
 summary: 'New build on country property in the beautiful Hunter Valley.'

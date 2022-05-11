@@ -11,6 +11,7 @@ location: 'Salamander Bay, NSW'
 company: 'JTA'
 software:  'Vectorworks'
 rendering: 
+photography: 
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'

@@ -5,13 +5,14 @@ shortTitle: 'glovers'
 date: '2019-10-12'
 
 
-type: 'Residential Alts & Adds'
-status: 'Constructed'
-work: 'Construction Documentation'
-location: 'Cooks Hill, NSW'
-company: 'JTA'
-software:  'Vectorworks'
+type: Residential Alts & Adds
+status: Constructed
+work: Construction Documentation
+location: Cooks Hill, NSW
+company: JTA
+software:  Vectorworks
 rendering: 
+photography: Sebastian Kovacs
 
 
 thumb: '/1.jpg'

@@ -4,13 +4,14 @@ shortTitle: 'dawson'
 
 date: '2019-10-12'
 
-type: 'Residential Alts & Adds'
-status: 'Concept'
-work: 'Concept Design'
-location: 'Cooks Hill, NSW'
-company: 'Sebastian Kovacs'
-software:  'Revit'
-rendering: 'Vray'
+type: Residential Alts & Adds
+status: Concept
+work: Concept Design
+location: Cooks Hill, NSW
+company: Sebastian Kovacs
+software:  Revit
+rendering: Vray
+photography: 
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'

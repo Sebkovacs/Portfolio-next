@@ -12,6 +12,7 @@ location: 'Topi Topi, NSW'
 company: 'Sebastian Kovacs'
 software:  'Vectorworks'
 rendering: 'Vray'
+photography: 
 
 
 thumb: '/1.jpg'

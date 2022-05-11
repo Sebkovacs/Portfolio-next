@@ -4,20 +4,21 @@ shortTitle: 'bolwarra'
 
 date: '2019-10-12'
 
-type: 'Residential'
-status: 'Constructed'
-work: 'Construction Drawings'
-location: 'Bolwarra Heights, NSW'
-company: 'JTA'
-software:  'Vectorworks'
+type: Residential
+status: Constructed
+work: Construction Drawings
+location: Bolwarra Heights, NSW
+company: JTA
+software:  Vectorworks
 rendering: 
+photography: 
 
-thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
+thumb: /1.jpg
+thumbAlt: image alt text.jpg
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "hello"},
-{id: "2", image: '/2.jpg', alt: "hello"},
+{id: 1, image: /1.jpg, alt: hello},
+{id: "2", image: '/2.jpg', alt: yum},
 {id: "3", image: '/3.jpg', alt: "hello"},
 {id: "4", image: '/4.jpg', alt: "hello"},
 {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},

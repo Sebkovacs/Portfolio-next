@@ -12,7 +12,7 @@ location: 'Hamilton, NSW'
 company: 'Sebastian Kovacs'
 software:  'Vectorworks'
 rendering: 'Twinmotion'
-
+photography: 
 
 thumb: '/1.jpg'
 thumbAlt: 'hello'

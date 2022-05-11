@@ -12,6 +12,7 @@ location: 'New Lambton Heights, NSW'
 company: 'JTA'
 software:  'Vectorworks'
 rendering: 
+photography: 
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
