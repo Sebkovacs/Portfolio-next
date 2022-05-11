@@ -140,7 +140,7 @@ export default function Project({ projectData }) {
                 </div>
             </div>
 
-            <small><label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${utilStyles.mobileOnlyFlex}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }</label></small>          
+            <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${utilStyles.mobileOnlyFlex}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }</label>         
 
             <div className={projects.main}>
 
@@ -179,7 +179,9 @@ export default function Project({ projectData }) {
                     </div>
 
                 </SRLWrapper>
-                <ButtonTop link="#top" where="Top" />
+                <div className={utilStyles.pcOnly} >
+                    <ButtonTop link="#top" where="Top" />
+                </div>
                 <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2} ${utilStyles.ontop}`}>
                     <ButtonBack link="/" where="Projects" />
                     <ButtonTop link="#top" where="Top" />

@@ -22,12 +22,12 @@
     border-bottom: solid 1px var(--border1);
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 calc(2em - 1%);
     justify-content: space-between;
 }
 
 .padding {
-    padding: 2em 5em;
+    padding: 2em 4em;
 }
 
 .noPad {
@@ -48,7 +48,6 @@
 .lightText a:hover {
     color: var(--s1);
 }
-
 
 
 .flex {
@@ -261,21 +260,6 @@
         height: 100%;
     }
 
-    .lightText li,
-    .lightText a {
-        font-size: .8rem;
-    }
-
-    .rightSm,
-    .leftSm,
-    .rightMd,
-    .leftMd,
-    .rightBg,
-    .leftBg {
-        width: unset;
-        margin: 0 auto;
-    }
-
     .flex {
         flex-direction: column;
     }
@@ -284,23 +268,21 @@
         padding: 3em;
     }
 
-    .back {
+    .back, .top  {
         width: 100%;
     }
 
-    .top {
-        width: 50%;
-    }
     .link {
         justify-content: center;
     }
     .title {
-        padding: 0;
+        padding: 0 1em;
         margin: 0;
         justify-content: center;
+        text-align: center;
     }
     .download {
-        padding: 2em 0;
+        padding: 1em 0;
         margin: 0em;
         justify-content: center;
         background-color: unset;
@@ -309,6 +291,11 @@
         border: 0 solid var(--border1);
         border-bottom: 1px solid var(--border1);
         flex-grow: 1;
+        font-size: .7em;
+    }
+
+    .list a{
+        line-height: 2em;
     }
     
     .pcOnly {
@@ -329,23 +316,54 @@
     .container {
         width: 100%;
     }
+    .headerContainer {
+        width: 100%;
+        padding: 0 1.5em;
+    }
 
     .list {
-        margin: .5em;
-        padding: 1em;
+        margin: 1em;
+        padding: .5em .1em;
     }
     .list h2{
-        font-size: 1.2em;
+        font-size: 7vw;
+        padding: 1em;
+        margin: 0;
+        text-align: start;
     }
+    .list h3{
+        font-size: 1em;
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+
+    .list h4 {
+        padding-bottom: .5em;
+    }
+    .list ul {
+        padding: 0 2em;
+    }
+
+    .list p {
+        margin: 0;
+    }
+    .list a {
+        font-size: 7vw;
+    }
+
 
     .flex {
         display: block;
     }
 
     .padding {
-        padding: 1em;
+        padding: 0em;
     }
     .center {
         text-align: center;
+    }
+    .back, .top {
+        font-size: .6em;
+        padding: 1em .5em;
     }
 }

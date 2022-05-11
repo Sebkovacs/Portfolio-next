@@ -138,6 +138,14 @@
   background-color: var(--bg3);
 }
 
+.header {
+  position: fixed;
+  width: 100%;
+  transition: top 0.6s;
+  z-index: 10;
+  background-color: var(--bg2);
+  
+}
 
 .headerWrap {
   display: flex;
@@ -151,7 +159,7 @@
   color: var(--t1);
   /* text-transform: lowercase; */
   font-size: 1em;
-
+  margin: 0;
 }
 
 .navToggle {
@@ -163,6 +171,9 @@
   margin-left: 1em;
   align-items: center;
   color: var(--t1);
+}
+.navToggle:hover {
+  background-color: unset;
 }
 
 #toggle {
@@ -181,11 +192,11 @@
   transition: 0.5s ease;
   width: 100vw;
   text-align: center;
- 
+  z-index: 99;
 }
 
 .mobileNavHeading {
-border-bottom: 1px solid var(--bg1);
+border-bottom: .5em solid  var(--border2);
 padding: 1em;
 }
 
@@ -241,3 +252,6 @@ padding: 1em;
   .logo { font-size: 0.8em;}
 }
 
+@media (max-width: 320px) {
+  .navToggle{ margin: 0 .5em;}
+}

@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import Header from './Header'
-
 import Footer from './Footer'
 
 export const siteTitle = 'SK'
