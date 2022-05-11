@@ -27,11 +27,13 @@
 
 .title h2 {
     font-size: 1em;
+    text-underline-offset: 0;
 
 }
 .title p {
     font-size: 1em;
     line-height: 1.5em;
+    text-underline-offset: 0;
 }
 
 .details {

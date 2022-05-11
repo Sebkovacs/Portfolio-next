@@ -61,7 +61,6 @@ export default function Project({ projectData }) {
     const [panoDrop, setPanoDrop] =useState(false)
     function togglePanoDrop(){setPanoDrop(!panoDrop)}
 
-
     return (
         <Layout>
             <Head>
@@ -73,8 +72,6 @@ export default function Project({ projectData }) {
             <div className={utilStyles.title}>
                 <h1>{projectData.title}</h1>
             </div>
-
-
 
                 {/* Mobile Only Header Image */}
                 <div className={utilStyles.mobileOnly}>
@@ -139,16 +136,17 @@ export default function Project({ projectData }) {
                     <div className={projects.projDetails}>
                         <h3>Project Details </h3> 
                             <ul>
-                                <li>Type: {projectData.type}</li>
-                                <li>Worked On: {projectData.work}</li>
-                                <li>Status: {projectData.status}</li>
-                                <li>Location: {projectData.location}</li>
-                                <li>Company: {projectData.company}</li>
-                                <li>Software: {projectData.software}</li>
-                                <li>Rendering: {projectData.rendering}</li>
+                                <li style={{display: projectData.type==null? "none":"flex"}}>Type: {projectData.type}</li>
+                                <li style={{display: projectData.status==null? "none":"flex"}}>Worked On: {projectData.work}</li>
+                                <li style={{display: projectData.work==null? "none":"flex"}}>Status: {projectData.status}</li>
+                                <li style={{display: projectData.location==null? "none":"flex"}}>Location: {projectData.location}</li>
+                                <li style={{display: projectData.company==null? "none":"flex"}}>Company: {projectData.company}</li>
+                                <li style={{display: projectData.software==null? "none":"flex"}}>Software: {projectData.software}</li>
+                                <li style={{display: projectData.rendering==null? "none":"flex"}}>Rendering: {projectData.rendering}</li>
                                 {/* <li><Date dateString={projectData.date} /></li> */}
                             </ul>
                     </div>
+                    {console.log(projectData.rendering)}
 
                     {/* main write up */}
                     <h3>Overview</h3>

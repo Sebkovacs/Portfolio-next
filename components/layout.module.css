@@ -148,10 +148,10 @@
 .header {
   position: fixed;
   width: 100%;
-  transition: top 0.6s;
   z-index: 10;
   background-color: var(--bg2);
-  
+  top: 0;
+  transition: 0.6s;
 }
 
 .headerWrap {

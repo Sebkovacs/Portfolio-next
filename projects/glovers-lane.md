@@ -4,6 +4,7 @@ shortTitle: 'glovers'
 
 date: '2019-10-12'
 
+
 type: 'Residential Alts & Adds'
 status: 'Constructed'
 work: 'Construction Documentation'
@@ -11,6 +12,7 @@ location: 'Cooks Hill, NSW'
 company: 'JTA'
 software:  'Vectorworks'
 rendering: 
+
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'

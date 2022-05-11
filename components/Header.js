@@ -28,7 +28,8 @@ export default function Layout() {
 
             {/* Mobile Header & Nav */}
             <nav className={utilStyles.mobileOnly}>
-            <Navbar>
+            {/* <Navbar> */}
+            <div className={`${styles.header} ${utilStyles.bb1}`}>
                 <div className={`${utilStyles.headerContainer} ${styles.headerWrap} `}>
                     <Link href="/">
                         <a className={`${styles.logo} `}>
@@ -43,7 +44,8 @@ export default function Layout() {
                         </span>
                     </label>
                 </div>
-            </Navbar>
+            </div>
+            {/* </Navbar> */}
             
                 <Link href="/"><a className={styles.navitem}>Projects</a></Link>
                 {/* <Link href="/blog"><a className={styles.navitem}>Blog</a></Link> */}
