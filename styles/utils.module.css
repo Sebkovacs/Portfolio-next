@@ -579,9 +579,6 @@
     .flex {
         display: block;
     }
-    .flex2 {
-        flex-direction: column;
-    }
 
     .padding {
         padding: 0em;
