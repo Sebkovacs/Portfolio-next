@@ -87,7 +87,7 @@ export default function Resume() {
                             </ul>
                         </div>
 
-                        <div className={utilStyles.meh}/>
+                        <div className={utilStyles.fire}/>
 
 
 

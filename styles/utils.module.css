@@ -17,6 +17,38 @@
     /* bottom: 0;
     right: 50; */
 }
+.cake {
+    background-image: url("../public/cake.gif") ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 2 / 1;
+    height: 10vh;
+    position: relative;
+    /* bottom: 0;
+    right: 50; */
+}
+.think {
+    background-image: url("../public/think.gif") ;
+    /* background-position: center; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 2 / 1;
+    width: 200px;
+    position: relative;
+    margin: 0 auto -20px;
+}
+.fire {
+    background-image: url("../public/fire.gif") ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 1.5 / 1;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 .cash {
     background-image: url("../public/cash.gif") ;
     background-position: center;
@@ -107,6 +139,16 @@
     align-items: stretch;
 }
 
+.address {
+    display: flex;
+    align-items: baseline;
+
+}
+.address p{
+    padding-left: 1em;
+
+}
+
 .grid2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -138,6 +180,17 @@
 
 .list li {
     margin: .5em 0 1em;
+}
+
+.contact {
+    background: linear-gradient(to right top, var(--bg2), var(--p2));
+    border: 3px solid var(--border2);
+    box-shadow: 5px 5px 20px var(--border1);
+    border-radius: .5em;
+    padding: 1em;
+    /* flex: 1; */
+    transition: ease-in-out 2s;
+
 }
 
 .hero {
@@ -423,6 +476,10 @@
         line-height: 2em;
     }
 
+    .address {
+        flex-direction: column;
+    }
+
     .pcOnly {
         display: none;
     }
@@ -438,6 +495,23 @@
 
 
 @media (max-width: 425px) {
+
+    .fire {
+        background-image: url("../public/fire.gif") ;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        aspect-ratio: 1.5 / 1;
+        width: 300px;
+        position: relative;
+        margin: auto;
+    }
+    .think {
+        width: 200px;
+        margin-bottom: -50px;
+    
+    }
+
     .container {
         width: 100%;
     }
@@ -485,12 +559,28 @@
     .list a {
         font-size: 7vw;
     }
+
+    .contact {
+        margin: 1em;
+        padding: .5em .1em;
+    }
+
+    .contact h2 {
+        font-size: 7vw;
+        padding: 1em;
+        margin: 0;
+        text-align: start;
+    }
+
     .grid2 {
         grid-template-columns: 1fr;
     }
 
     .flex {
         display: block;
+    }
+    .flex2 {
+        flex-direction: column;
     }
 
     .padding {

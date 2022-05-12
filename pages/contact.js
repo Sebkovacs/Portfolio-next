@@ -18,12 +18,13 @@ export default function Contact(){
 
 
                 <div className={utilStyles.party}>
+                    <div className={utilStyles.think}/>
                     
-                    <div className={utilStyles.list}>
+                    <div className={utilStyles.contact}>
                         <h2 className={`${utilStyles.grow} ${utilStyles.mb1} ${utilStyles.center} ${utilStyles.noPad}`}>Sebastian Kovacs</h2>
                         <p>Phone: <br className={utilStyles.mobileOnly}/> <a href="tel:+61432365389">0432 365 389</a></p>
                         <p>Email: <br className={utilStyles.mobileOnly}/><a className={utilStyles.lowerCase} href="mailto: sebkovacs@gmail.com">sebkovacs@gmail.com</a></p>
-                        <div className={utilStyles.flex2}>
+                        <div className={utilStyles.address}>
                         <h4>Address:</h4>
                         <p>9/5 Dawson St<br /> Cooks Hill, NSW 2300<br /> Australia</p>
                         </div>
