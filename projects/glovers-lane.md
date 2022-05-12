@@ -28,15 +28,18 @@ pics: [
 
 ]
 
+north: -50
+
 plans: [
-{id: "1", plan: '/p1.jpg', alt: "Glovers Lane Site Plan"},
-{id: "2", plan: '/p2.jpg', alt: "Glovers Lane Main Floor Plan"},
-{id: "3", plan: '/p3.jpg', alt: "Glovers Lane Upper Floor Plan"},
-{id: "4", plan: '/p4.jpg', alt: "Glovers Lane Elevations"},
-{id: "5", plan: '/p5.jpg', alt: "Section A & Section B - cross sections"},
-{id: "6", plan: '/p6.jpg', alt: "Section C - long section"},
-{id: "7", plan: '/p7.jpg', alt: "Selection of Glovers Lane Construction Details"},
-# {id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
+{id: "1", plan: '/p1.jpg', alt: "Site Plan"},
+{id: "2", plan: '/p2.jpg', alt: "Main Level Plan"},
+{id: "3", plan: '/p3.jpg', alt: "Upper Level Plan"},
+{id: "4", plan: '/p4.jpg', alt: "Elevations"},
+{id: "5", plan: '/p5.jpg', alt: "Section A"},
+{id: "6", plan: '/p6.jpg', alt: "Section B"},
+{id: "7", plan: '/p7.jpg', alt: "Section C"},
+{id: "8", plan: '/p8.jpg', alt: "Construction Details"},
+# {id: "9", plan: '/p9.jpg', alt: "Construction Details"},
 
 ]
 

@@ -10,7 +10,7 @@
   --p3: #a784df;
 
   --s1: #3e8de7;
-  --s2: #E8DEF8;
+  --s2: #fffab6;
   --s3: #1D192B;
 
   --t1: #555152;
@@ -148,6 +148,7 @@ h1 {
   font-weight: 900;
   font-style: italic;
   text-transform: uppercase; 
+  user-select: none;
 }
 
 
@@ -161,6 +162,7 @@ h2 {
   letter-spacing: .5em;
   color: var(--t2);
   font-size: 1.4rem;
+  
 }
 
 h3 {

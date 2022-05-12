@@ -24,9 +24,12 @@
     align-items: center;
 }
 
+
 .detailsContainer {
     height: calc(100vh - var(--h1Height) - var(--headerHeight));
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .details ul {
@@ -90,54 +93,73 @@
     top: calc(-1 * var(--headerHeight));
 }
 
-.gridWrap1 {
-    /* padding: 1em; */
+.gridWrap1, .gridWrap2 {
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 1em;
     position: relative;
+    margin-bottom: 3em;
 }
-
+.gridWrap1{
+    grid-template-columns: 1fr;
+}
 .gridWrap2 {
     padding: 1em;
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1em;
-    position: relative;
 }
+
 .thumb {
     position: relative;
 }
-.pic1 {
-    /* height: calc(100vh - 8rem); */
-    /* width: var(--container)/2; */
+.pic1, .pic2 {
     aspect-ratio: 16 / 9;
     position: relative;
     transition: .5s;
     cursor: pointer;
-}
-
-.pic2 {
-    /* height: calc(55vh - 8rem);
-    width: var(--container)/2; */
-    aspect-ratio: 16 / 9;
-    position: relative;
-    transition: .5s;
-    cursor: pointer;
-    
+    overflow: hidden;
 }
 
 .plan {
-    height: calc(100vh - var(--headerHeight) - 2em);
+    height: calc(100vh - var(--headerHeight));
     width: var(--container)/2;
     position: relative;
     transition: .5s;
     cursor: pointer;
 }
 
+.imageTitle {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    padding: .5em 1em;
+    align-items: center;
+    background-color: var(--p3);
+    color: var(--bg2);
+    font-family: 'Inconsolata', monospace;
+    font-size: .5em;
+    font-weight: 500;
+}
 
+.pic1:hover .imageTitle, .pic2:hover .imageTitle  {
+    display: flex;
+    position: absolute;
+}
+
+.planTitle {
+    font-size: 1em;
+}
+
+.planDetails {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 0 1em;
+    color: var(--t1);
+}
 
 @media (max-width: 768px) {
 
@@ -199,27 +221,15 @@
         width: 100%;
     }
 
-    .gridWrap1 {
+    .gridWrap1, .gridWrap2 {
         padding: 0;
         margin-top: 2em;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        position: relative;
-        margin-bottom: 5em;
-        /* width: 100vw; */
+        margin-bottom: 0;
     }
 
     .gridWrap2 {
-        padding: 0;
-        margin-top: 2em;
-        display: grid;
         gap: .1em;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        position: relative;
-        margin-bottom: 5em;
-        /* width: 100vw; */
     }
 
     .thumb {
@@ -232,6 +242,13 @@
     .pic2 {
         /* height: calc(100vw / 3); */
         aspect-ratio: 1 / 1;
+    }
+
+    .planTitle{
+        padding: 0;
+    }
+    .planDetails {
+        padding:  .5em;
     }
 
     .linkContainer {
@@ -282,20 +299,14 @@
         padding: 0 0 .5em 0;
     }
 
-    .projDetails li {
-        /* font-size: .5rem; */
-    }
+    /* .projDetails li {
+        font-size: .5rem;
+    } */
 
 
     .gridWrap2 {
-        padding: 0;
-        margin-top: 2em;
-        display: grid;
         gap: .1em;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        position: relative;
-        margin-bottom: 5em;
     }
 
     .pic1 {
@@ -311,5 +322,14 @@
     .plan {
         height: 100vw;
     }
+    .planTitle{
+        padding: 0;
+
+    }
+    .planDetails {
+        padding: .5em;
+        font-size: .7em;
+    }
+
 
 }

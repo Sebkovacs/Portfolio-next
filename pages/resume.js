@@ -38,35 +38,41 @@ export default function Resume() {
                         <div className={utilStyles.list}>
                             <h3>Education / Qualifications</h3>
                             <ul>
-                                <li>Masters Architecture July 2020 - University of Newcastle</li>
+                                <li>Masters Architecture - University of Newcastle July 2020 </li>
                             </ul>
                         </div>
 
                         <div className={utilStyles.list}>
 
                             <h3>Software</h3>
-                            
-                            <h4>Drafting / BIM</h4>
-                            <ul>
-                                <li>Revit (v2020)</li>
-                                <li>Vectorworks (v2017-2021)</li>
-                                <li>Rhino</li>
-                            </ul>
+                              
+                            <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                                <h4>Drafting / BIM</h4>
+                                <ul>
+                                    <li>Revit (v2020)</li>
+                                    <li>Vectorworks (v2017-2021)</li>
+                                    <li>Rhino</li>
+                                </ul>
+                            </div>
 
-                            <h4> Rendering</h4>
-                            <ul>
-                            <li>Vray</li>
-                            <li>Twinmotion </li>
-                            <li>Lumion</li>
-                            </ul>
+                            <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                                <h4> Rendering</h4>
+                                <ul>
+                                <li>Vray</li>
+                                <li>Twinmotion </li>
+                                <li>Lumion</li>
+                                </ul>
+                            </div>
                             
-                            <h4>Other</h4>
-                            <ul>
-                            <li>Adobe Photoshop</li>
-                            <li>Adobe Illustrator </li>
-                            <li>Adobe InDesign</li>
-                            <li>Google Office Suite</li>
-                            </ul>
+                            <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                                <h4>Other</h4>
+                                <ul>
+                                <li>Adobe Photoshop</li>
+                                <li>Adobe Illustrator </li>
+                                <li>Adobe InDesign</li>
+                                <li>Google Office Suite</li>
+                                </ul>
+                            </div>
 
                             
                         </div>

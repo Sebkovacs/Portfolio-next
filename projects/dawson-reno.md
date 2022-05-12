@@ -26,16 +26,18 @@ pics: [
 
 ]
 
+north: 45
+
 plans: [
-{id: "1", plan: '/p1.jpg', alt: "Ground Floor Plan"},
-{id: "2", plan: '/p2.jpg', alt: "Reflected Ground Floor Ceiling Plan"},
-{id: "3", plan: '/p3.jpg', alt: "Elevations"},
-{id: "4", plan: '/p4.jpg', alt: "Section A & Section B"},
-{id: "5", plan: '/p5.jpg', alt: "Section C & Section D"},
-{id: "6", plan: '/p6.jpg', alt: "Construction Details"},
-{id: "7", plan: '/p7.jpg', alt: "Wall Type Details"},
-{id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
-{id: "9", plan: '/p9.jpg', alt: "Some of the Internal Elevations"},
+{id: "1", plan: '/p1.jpg', alt: "Existing Ground Floor Plan"},
+{id: "2", plan: '/p2.jpg', alt: "Existing Upper Floor Plan"},
+{id: "3", plan: '/p3.jpg', alt: "Concept 1 Ground Floor Plan"},
+{id: "4", plan: '/p4.jpg', alt: "Concept 1 Upper Floor Plan"},
+{id: "5", plan: '/p5.jpg', alt: "Concept 2 Floor Plan"},
+{id: "6", plan: '/p6.jpg', alt: "Concept 2 Floor Plan"},
+{id: "7", plan: '/p7.jpg', alt: "Existing Sections"},
+{id: "8", plan: '/p8.jpg', alt: "Concept 1 Sections"},
+{id: "9", plan: '/p9.jpg', alt: "Concept 2 Sections"},
 
 ]
 

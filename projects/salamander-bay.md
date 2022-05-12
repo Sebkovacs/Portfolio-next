@@ -22,9 +22,13 @@ pics: [
 {id: "3", image: '/3.jpg', alt: "Kitchen"},
 {id: "4", image: '/4.jpg', alt: "Renovated Deck"},
 {id: "5", image: '/5.jpg', alt: "Master Bedroom"},
-{id: "6", image: '/6.jpg', alt: "New Pool Area"}
-
+{id: "6", image: '/6.jpg', alt: "New Pool Area"},
+{id: "7", image: '/7.jpg', alt: "New TV Lounge on the Lower Floor"},
+{id: "8", image: '/8.jpg', alt: "Looking from the new TV Lounge towards the pool"},
+{id: "9", image: '/9.jpg', alt: "Ensuite Bathroom"},
 ]
+
+north: -15
 
 plans: [
 {id: "1", plan: '/p1.jpg', alt: "Ground Floor Plan"},

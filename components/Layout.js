@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import Header from './Header'
 import Footer from './Footer'
 
-export const siteTitle = 'SK'
+export const siteTitle = 'Sebastian Kovacs'
 
 
 export default function Layout({ children, title}) {
@@ -11,11 +11,11 @@ export default function Layout({ children, title}) {
         <>
             <Head>
                 <title>{siteTitle} | {title}</title>
-                <link rel="icon" href="/rapotors-favicon.png" />
+                <link rel="icon" href="/sebastian-kovacs-portfolio.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta 
                 name="description"
-                content="A practice Website with next.js"
+                content="Sebastian Kovacs Architecture Portfolio"
                 />
                 <meta
                 property="og:image"

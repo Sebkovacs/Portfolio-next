@@ -51,27 +51,27 @@ export default function Project({ projectData }) {
         pano = false;
         panos = false;
     }
-    
+
     const [imageGrid, setImageGrid] = useState(false)
-    function toggleImageGrid(){setImageGrid(!imageGrid);}
+    function toggleImageGrid() { setImageGrid(!imageGrid); }
 
     const [planGrid, setPlanGrid] = useState(true)
-    function togglePlanGrid(){setPlanGrid(!planGrid);}
+    function togglePlanGrid() { setPlanGrid(!planGrid); }
 
-    const [panoDrop, setPanoDrop] =useState(false)
-    function togglePanoDrop(){setPanoDrop(!panoDrop)}
+    const [panoDrop, setPanoDrop] = useState(false)
+    function togglePanoDrop() { setPanoDrop(!panoDrop) }
 
     return (
         <Layout>
             <Head>
                 <title>{siteTitle}: {' '} {projectData.title}</title>
             </Head>
-            <div className={projects.top} id="top"/>
+            <div className={projects.top} id="top" />
             <div className={projects.details} >
 
-            <div className={utilStyles.title}>
-                <h1>{projectData.title}</h1>
-            </div>
+                <div className={utilStyles.title}>
+                    <h1>{projectData.title}</h1>
+                </div>
 
                 {/* Mobile Only Header Image */}
                 <div className={utilStyles.mobileOnly}>
@@ -86,20 +86,20 @@ export default function Project({ projectData }) {
                     </div>
                 </div>
                 <div className={projects.detailsContainer}>
-                    <div className={projects.linkContainer}> 
-                    <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">
-                                Images
-                            </a>
-                    <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">
-                                Plans
-                            </a>
-                        
+                    <div className={projects.linkContainer}>
+                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">
+                            Images
+                        </a>
+                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">
+                            Plans
+                        </a>
+
                         <div className={`${utilStyles.grow} ${utilStyles.swap} ${utilStyles.pcOnly}`}>
                             <a className={`${utilStyles.linkTo}`} href="#images">
                                 Images
                             </a>
                             <label htmlFor="imageGrid" className={` ${utilStyles.toggle}  `}>
-                                {imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }
+                                {imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
                             </label>
                         </div>
 
@@ -108,60 +108,59 @@ export default function Project({ projectData }) {
                                 Plans
                             </a>
                             <label htmlFor="planGrid" className={` ${utilStyles.toggle}  `}>
-                            {planGrid? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span> }
+                                {planGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
                             </label>
                         </div>
 
-                        { projectData.hasOwnProperty("pano") ?
-                        <Link href={projectData.pano}>
-                        <a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
-                        </Link> : <div/>
+                        {projectData.hasOwnProperty("pano") ?
+                            <Link href={projectData.pano}>
+                                <a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
+                            </Link> : <div />
                         }
 
-                        { projectData.hasOwnProperty("panos") ?
-                        <details id="panoDrop" className={utilStyles.grow} onClick={togglePanoDrop}>
-                            <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours { panoDrop ?  <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span> }</summary>
-                            {projectData.panos.map((pano) => 
-                            <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
-                        </details>
-                        : <div/>
+                        {projectData.hasOwnProperty("panos") ?
+                            <details id="panoDrop" className={utilStyles.grow} onClick={togglePanoDrop}>
+                                <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
+                                {projectData.panos.map((pano) =>
+                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
+                            </details>
+                            : <div />
                         }
 
-                                  
+
                         <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
-                             
+
                         <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
                     </div>
 
                     <div className={projects.projDetails}>
-                        <h3>Project Details </h3> 
-                            <ul>
-                                <li style={{display: projectData.type==null? "none":"flex"}}>Type: {projectData.type}</li>
-                                <li style={{display: projectData.status==null? "none":"flex"}}>Worked On: {projectData.work}</li>
-                                <li style={{display: projectData.work==null? "none":"flex"}}>Status: {projectData.status}</li>
-                                <li style={{display: projectData.location==null? "none":"flex"}}>Location: {projectData.location}</li>
-                                <li style={{display: projectData.company==null? "none":"flex"}}>Company: {projectData.company}</li>
-                                <li style={{display: projectData.software==null? "none":"flex"}}>Software: {projectData.software}</li>
-                                <li style={{display: projectData.rendering==null? "none":"flex"}}>Rendering: {projectData.rendering}</li>
-                                <li style={{display: projectData.photography==null? "none":"flex"}}>Photography: {projectData.photography}</li>
-                                {/* <li><Date dateString={projectData.date} /></li> */}
-                            </ul>
+                        <h3>Project Details </h3>
+                        <ul>
+                            <li style={{ display: projectData.type == null ? "none" : "flex" }}>Type: {projectData.type}</li>
+                            <li style={{ display: projectData.status == null ? "none" : "flex" }}>Worked On: {projectData.work}</li>
+                            <li style={{ display: projectData.work == null ? "none" : "flex" }}>Status: {projectData.status}</li>
+                            <li style={{ display: projectData.location == null ? "none" : "flex" }}>Location: {projectData.location}</li>
+                            <li style={{ display: projectData.company == null ? "none" : "flex" }}>Company: {projectData.company}</li>
+                            <li style={{ display: projectData.software == null ? "none" : "flex" }}>Software: {projectData.software}</li>
+                            <li style={{ display: projectData.rendering == null ? "none" : "flex" }}>Rendering: {projectData.rendering}</li>
+                            <li style={{ display: projectData.photography == null ? "none" : "flex" }}>Photography: {projectData.photography}</li>
+                            {/* <li><Date dateString={projectData.date} /></li> */}
+                        </ul>
                     </div>
-                    {console.log(projectData.rendering)}
 
                     {/* main write up */}
                     <h3>Overview</h3>
-                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
+                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} className={utilStyles.grow}/>
                     <div className={utilStyles.pcOnly}>
-                    <ButtonBack
-                        link="/"
-                        where="Projects"
-                    />
+                        <ButtonBack
+                            link="/"
+                            where="Projects"
+                        />
                     </div>
                 </div>
             </div>
 
-            <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${utilStyles.mobileOnlyFlex}`}>Image Display &nbsp;{imageGrid? <span className="material-symbols-outlined">grid_view</span>: <span className="material-symbols-outlined">view_agenda</span> }</label>         
+            <label htmlFor="imageGrid" className={` ${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} ${projects.sideLink} ${utilStyles.mobileOnlyFlex}`}>Image Display &nbsp;{imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}</label>
 
             <div className={projects.main}>
 
@@ -169,33 +168,43 @@ export default function Project({ projectData }) {
                 {/* <h2 onClick={toggleImageGrid} className={utilStyles.mobileOnly}>Image Display &nbsp; {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
 
                 <SRLWrapper options={options}>
-                    <div className={imageGrid? projects.gridWrap1 : projects.gridWrap2}>
-                        {projectData.pics.map((pic) => 
-                        <div className={`${pic.id == 1 ? utilStyles.pcOnly : utilStyles.flex} ${imageGrid? projects.pic1 : projects.pic2}`} key={pic.id}>
-                            <Image
-                                src={`/projects/${projectData.shortTitle}${pic.image}`}
-                                alt={pic.alt}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
+                    <div className={imageGrid ? projects.gridWrap1 : projects.gridWrap2}>
+                        {projectData.pics.map((pic) =>
+                            <div className={imageGrid ? projects.pic1 : projects.pic2} key={pic.id}>
+                                <Image
+                                    src={`/projects/${projectData.shortTitle}${pic.image}`}
+                                    alt={pic.alt}
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                                <h3 className={projects.imageTitle}>{pic.id} {pic.alt}</h3>
+                            </div>
                         )}
                     </div >
-                    
-                    <div className={utilStyles.bb1} />
-                    <div id="plans" className={utilStyles.anchor}/>
+
+                    {/* <div className={utilStyles.bb1} /> */}
+
+                    <div id="plans" className={utilStyles.anchor} />
+
                     {/* <h2 onClick={togglePlanGrid} className={utilStyles.mobileOnly} >Plan Display &nbsp; {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
 
-                    <div className={planGrid? projects.gridWrap1 : projects.gridWrap2}>
-                    {projectData.plans.map((plan) => 
-                        <div key={plan.id} className={`${utilStyles.bb1} ${projects.plan}`}>
-                            <Image
-                                src={`/projects/${projectData.shortTitle}${plan.plan}`}
-                                alt={plan.alt}
-                                layout="fill"
-                                objectFit="contain"
-                            />
-                        </div>
+                    <div className={planGrid ? projects.gridWrap1 : projects.gridWrap2}>
+                        {projectData.plans.map((plan) =>
+                            <div key={plan.id} className={`${utilStyles.bb1} ${projects.plan}`}>
+                                <Image
+                                    src={`/projects/${projectData.shortTitle}${plan.plan}`}
+                                    alt={plan.alt}
+                                    layout="fill"
+                                    objectFit="contain"
+                                />
+                                <div className={projects.planDetails}>
+
+                                    <h3 className={projects.planTitle}> {plan.alt}</h3>
+                                    <span class="material-symbols-outlined" style={{ transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan")? "block":"none" }}>
+                                        navigation
+                                    </span>
+                                </div>
+                            </div>
                         )}
                     </div>
 

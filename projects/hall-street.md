@@ -26,6 +26,8 @@ pics: [
 
 ]
 
+north: -45
+
 plans: [
 {id: "1", plan: '/p1.jpg', alt: "Site & Roof Plan"},
 {id: "2", plan: '/p2.jpg', alt: "Reflected Ground Floor Ceiling Plan"},

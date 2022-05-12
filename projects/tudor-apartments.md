@@ -29,6 +29,8 @@ pics: [
 
 ]
 
+north: 80
+
 plans: [
 {id: "1", plan: '/p1.jpg', alt: "Ground Floor Plan"},
 {id: "2", plan: '/p2.jpg', alt: "Reflected Ground Floor Ceiling Plan"},
