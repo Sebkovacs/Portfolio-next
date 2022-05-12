@@ -13,9 +13,9 @@
     background-repeat: no-repeat;
     aspect-ratio: 2 / 1;
     height: 10vh;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    position: relative;
+    /* bottom: 0;
+    right: 50; */
 }
 .cash {
     background-image: url("../public/cash.gif") ;
@@ -23,7 +23,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     aspect-ratio: 2 / 1;
-    height: 10vh;
+    height: 7vh;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -445,6 +445,10 @@
     .headerContainer {
         width: 100%;
         padding: 0 1.5em;
+    }
+
+    .party {
+        padding: 1em 0;
     }
 
     .list {
