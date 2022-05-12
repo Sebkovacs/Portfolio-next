@@ -17,7 +17,7 @@ export default function Contact(){
             </div>
 
 
-                <div className={utilStyles.padding}>
+                <div className={utilStyles.party}>
                     
                     <div className={utilStyles.list}>
                         <h2 className={`${utilStyles.grow} ${utilStyles.mb1} ${utilStyles.center} ${utilStyles.noPad}`}>Sebastian Kovacs</h2>

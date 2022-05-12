@@ -44,6 +44,10 @@ export default function Projects({ allProjectsData}) {
                 ))}
             </div>
 
+            <Link href={"/contact"}> 
+                <a className={utilStyles.cash} />
+            </Link>
+
 
         </Layout>
 

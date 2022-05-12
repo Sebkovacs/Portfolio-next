@@ -6,6 +6,45 @@
     overflow: hidden;
 }
 
+.meh {
+    background-image: url("../public/meh.gif") ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 2 / 1;
+    height: 10vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.cash {
+    background-image: url("../public/cash.gif") ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 2 / 1;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.party {
+    min-height: calc(100vh - var(--headerHeight) - var(--h1Height));
+    background-image: url("../public/party.gif") ;
+    background-position: center;
+    background-blend-mode: soft-light;
+    background-color: var(--bg2);
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    padding: 3em;
+}
+
+.meh:hover, .cash:hover {
+    background-color: unset;
+}
+
 .container {
     width: var(--container);
     margin: 0 auto;
