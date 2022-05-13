@@ -6,77 +6,6 @@
     overflow: hidden;
 }
 
-.meh {
-    background-image: url("../public/meh.gif") ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    height: 10vh;
-    position: relative;
-    /* bottom: 0;
-    right: 50; */
-}
-.cake {
-    background-image: url("../public/cake.gif") ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    height: 10vh;
-    position: relative;
-    /* bottom: 0;
-    right: 50; */
-}
-.think {
-    background-image: url("../public/think.gif") ;
-    /* background-position: center; */
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    width: 200px;
-    position: relative;
-    margin: 0 auto -20px;
-}
-.fire {
-    background-image: url("../public/fire.gif") ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 1.5 / 1;
-    width: 300px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-.cash {
-    background-image: url("../public/cash.gif") ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    height: 7vh;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 99;
-}
-
-.party {
-    min-height: calc(100vh - var(--headerHeight) - var(--h1Height));
-    background-image: url("../public/party.gif") ;
-    background-position: center;
-    background-blend-mode: soft-light;
-    background-color: var(--bg2);
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
-    padding: 3em;
-}
-
-.meh:hover, .cash:hover {
-    background-color: unset;
-}
-
 .container {
     width: var(--container);
     margin: 0 auto;
@@ -101,6 +30,7 @@
 .padding {
     padding: 2em 4em;
 }
+
 
 .noPad {
     padding: 0;
@@ -155,19 +85,37 @@
 }
 
 .list {
-    background: linear-gradient(to right top, var(--bg2), var(--p2));
-    border: 5px dashed var(--border1);
-    box-shadow: 5px 5px 20px var(--border1);
+    /* background: linear-gradient(to right top, var(--bg2), var(--p2)); */
+    border: 5px solid var(--border1);
+
     border-radius: .5em;
     padding: 1em;
     /* flex: 1; */
-    transition: ease-in-out 2s;
+    transition: all ease 2s;
+
+    background-image: url("../public/smoke1.gif") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-color: var(--border1);
 
 }
 
 .list:hover {
-    background: linear-gradient(to right top, var(--p2), var(--p3));
+    /* background: linear-gradient(to right top, var(--p2), var(--p3)); */
     border: 5px solid var(--border1);
+    box-shadow: 5px 5px 20px var(--border1);
+
+
+    background-color: var(--p2);
+    background-image: url("../public/smoke2.gif") ;
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+
 }
 
 .list h4 {
@@ -189,10 +137,21 @@
     border-radius: .5em;
     padding: 1em;
     /* flex: 1; */
+    width: max-content;
     transition: ease-in-out 2s;
-
+    position: relative;
+    margin: auto;
 }
-
+.contact a{
+    padding: 0 .5em;
+    background-color: transparent;
+    transition: none;
+}
+.contact a:hover{
+    padding: 0 .5em;
+    background-color: var(--s2);
+    background-image: none;
+}
 .hero {
     position: relative;
     overflow: hidden;
@@ -313,7 +272,7 @@
 }
 
 .link {
-    /* height: 3em; */
+
     padding: .5em;
     margin: .5em;
     background-color: var(--bg2);
@@ -327,58 +286,33 @@
     font-weight: 900;
     text-transform: uppercase;
     font-style: normal;
-}
-
-.swap {
-    margin: .5em;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    user-select: none;
-    border-radius: .5em;
-    border: 1px solid var(--border1);
-    justify-content: space-between;
+    position: relative;
     overflow: hidden;
 }
 
-.linkTo {
-    display: flex;
-    align-items: center;
-    padding-left: .5em;
-    height: 2em;
-    width: 75%;
-
-}
-
-.swap:hover {
-    background-color: var(--p2);
-    color: var(--t2);
-
-}
-
-.swap:hover a {
-    background-color: var(--p2);
-    color: var(--t2);
-
-}
-
-
 .toggle {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2em;
-    width: 25%;
-    /* color: var(--border2); */
-
+    right: 0;
+    padding: .5em;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    /* background-color: transparent); */
+    z-index: 10;
     border-left: 1px solid var(--border1);
-
 }
 
-.toggle:hover {
-    background-color: var(--p3);
-    /* color: var(--border1); */
+.link:hover .toggle {
+    /* background-color: rgba(var(--p1),.3); */
 }
+
+.link:hover .toggle:hover {
+    background-color: rgba(var(--p1),.6);
+    color: var(--t2);
+}
+
 
 .hoverTop {
     position: fixed;
@@ -424,6 +358,11 @@
 
     .flex {
         height: auto;
+    }
+
+    .contact {
+        margin: 1em auto;
+        width: min-content;
     }
 
     .heroImage {
@@ -521,10 +460,6 @@
         padding: 0 1.5em;
     }
 
-    .party {
-        padding: 1em 0;
-    }
-
     .list {
         margin: 1em;
         padding: .5em .1em;
@@ -561,7 +496,7 @@
     }
 
     .contact {
-        margin: 1em;
+        margin: 2em auto;
         padding: .5em .1em;
     }
 
@@ -571,13 +506,31 @@
         margin: 0;
         text-align: start;
     }
+    .contact h4 {
+        padding-bottom: 0;
+    }
+    .contact a{
+        padding: 0 ;
+        background-color: transparent;
+        transition: none;
+        font-size: 1.5em;
+    }
+    .contact p{
+margin: 0;
+    }
+    .address p{
+        padding-top: .5em;
+            }
 
     .grid2 {
         grid-template-columns: 1fr;
     }
 
     .flex {
-        display: block;
+        display: flex;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
     }
 
     .padding {

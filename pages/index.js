@@ -5,7 +5,7 @@ import { getSortedProjectsData } from '../lib/projects'
 import cards from '../styles/cards.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image'
-
+import gif from '../styles/gif.module.css'
 
 
 
@@ -45,7 +45,7 @@ export default function Projects({ allProjectsData}) {
             </div>
 
             <Link href={"/contact"}> 
-                <a className={utilStyles.cash} />
+                <a className={gif.cash} />
             </Link>
 
 

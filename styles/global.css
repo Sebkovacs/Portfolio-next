@@ -5,7 +5,7 @@
   --border1:  #dbdbdb;
   --border2:  #707070;
 
-  --p1: #6750A4;
+  --p1:	125, 60, 164;
   --p2: #EADDFF;
   --p3: #a784df;
 
@@ -112,10 +112,17 @@ footer ul li:first-child {
 a {
   color: var(--s1);
   text-decoration: none;
-  transition: .2s ;
+  transition: 1s ;
   font-weight: 900;
   font-style: italic;
   text-transform: uppercase;
+  background-color: var(--bg2);
+
+  /* background-image: url("../public/smoke1.gif") ; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
 }
 
 a:focus {
@@ -125,6 +132,9 @@ a:focus {
 main a:hover, summary:hover {
   color: var(--t2);
   background-color: var(--p2);
+  background-image: url("../public/smoke2.gif") ;
+  background-blend-mode: overlay;
+
 }
 
 nav a, nav summary, nav details li {

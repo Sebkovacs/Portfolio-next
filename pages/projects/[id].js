@@ -94,23 +94,19 @@ export default function Project({ projectData }) {
                             Plans
                         </a>
 
-                        <div className={`${utilStyles.grow} ${utilStyles.swap} ${utilStyles.pcOnly}`}>
-                            <a className={`${utilStyles.linkTo}`} href="#images">
-                                Images
-                            </a>
+                        <a href="#images" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
+                            Images
                             <label htmlFor="imageGrid" className={` ${utilStyles.toggle}  `}>
                                 {imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
                             </label>
-                        </div>
+                        </a>
 
-                        <div className={`${utilStyles.grow} ${utilStyles.swap} ${utilStyles.pcOnly}`}>
-                            <a className={`${utilStyles.linkTo}`} href="#plans">
+                        <a href="#plans" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
                                 Plans
-                            </a>
                             <label htmlFor="planGrid" className={` ${utilStyles.toggle}  `}>
                                 {planGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
                             </label>
-                        </div>
+                        </a>
 
                         {projectData.hasOwnProperty("pano") ?
                             <Link href={projectData.pano}>

@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/Layout'
 import utilStyles from '../styles/utils.module.css'
+import Image from 'next/image'
+import gif from '../styles/gif.module.css'
 
 const title = "Resume"
 
@@ -23,7 +25,7 @@ export default function Resume() {
                         <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
                         <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
                     </div>
-                <div className={utilStyles.padding}>
+                <div className={gif.party}>
                     <div className={utilStyles.flex}>
                         <div className={utilStyles.list}>
                             <h3>Relevant Work History</h3>
@@ -87,8 +89,8 @@ export default function Resume() {
                             </ul>
                         </div>
 
-                        <div className={utilStyles.fire}/>
-
+                        <div className={gif.friday}><Image src={"/friday.gif"} layout="fill" objectFit='cover' objectPosition={"bottom"} /></div>
+                        <div className={gif.fire}><Image src={"/fire.gif"} layout="fill" objectFit='cover' objectPosition={"top"}/></div>
 
 
 
