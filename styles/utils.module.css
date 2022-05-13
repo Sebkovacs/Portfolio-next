@@ -434,23 +434,6 @@
 
 
 @media (max-width: 425px) {
-
-    .fire {
-        background-image: url("../public/fire.gif") ;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        aspect-ratio: 1.5 / 1;
-        width: 300px;
-        position: relative;
-        margin: auto;
-    }
-    .think {
-        width: 200px;
-        margin-bottom: -50px;
-    
-    }
-
     .container {
         width: 100%;
     }
@@ -546,4 +529,11 @@ margin: 0;
         font-size: .5em;
         padding: 1em .5em;
     }
+}
+
+@media (max-width: 375px) {
+    .contact {
+        padding-bottom: 1.5em;
+    }
+
 }
