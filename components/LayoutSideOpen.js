@@ -9,6 +9,7 @@ export const siteTitle = 'Sebastian Kovacs'
 
 
 export default function Layout({ children, title}) {
+   
 
     return (
         <>

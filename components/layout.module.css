@@ -15,8 +15,8 @@
   background-color: var(--bg2);
   top: var(--headerHeight);
   left: 0;
-  height: 6em;
-  width: 1%;
+  height: var(--h1Height);
+  width: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +24,7 @@
   border-bottom: solid 1px var(--border1);
   cursor: pointer;
   user-select: none;
+  color: var(--t1)
 }
 
 .sideBarOpen {
@@ -45,7 +46,7 @@
 .sideBarOpen h1 {
   margin-left: 1%;
   position: fixed;
-  width: 19%;
+  width: 18%;
 }
 
 .filterContainer{
@@ -116,7 +117,7 @@
   width: 20%;
   height: 100vh;
   
-  left: -19%;
+  left: -18%;
 }
 
 
@@ -132,7 +133,7 @@
 .bodyClosed {
   /* margin: var(--headerHeight) auto 0; */
   padding: 0;
-  width: 99%;
+  width: 98%;
   position: absolute;
   right:0;
   background-color: var(--bg3);

@@ -15,6 +15,7 @@ import projects from '../../styles/projects.module.css'
 import { useState } from "react";
 
 
+
 const options = {
     progressBar: {
         showProgressBar: false

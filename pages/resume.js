@@ -89,8 +89,20 @@ export default function Resume() {
                             </ul>
                         </div>
 
+                        <Link href={"/contact"}>
+                        <a className={gif.fire}>
+                            
+                        <div className={gif.text}>
+                            {/* Lets Get Cooking... */}
+                            Contact Me 😅
+                        </div>
+                            
                         <div className={gif.friday}><Image src={"/friday.gif"} layout="fill" objectFit='cover' objectPosition={"bottom"} /></div>
-                        <div className={gif.fire}><Image src={"/fire.gif"} layout="fill" objectFit='cover' objectPosition={"top"}/></div>
+                        <Image src={"/fire.gif"} layout="fill" objectFit='cover' objectPosition={"top"}/>
+                        </a>
+                        </Link>
+
+                        {/* <div className={gif.fire}><Image src={"/fire.gif"} layout="fill" objectFit='cover' objectPosition={"top"}/></div> */}
 
 
 

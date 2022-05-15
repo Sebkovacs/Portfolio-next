@@ -9,13 +9,15 @@ import gif from '../styles/gif.module.css'
 
 
 
+
 const title = "Projects";
 
 
 
-export default function Projects({ allProjectsData}) {
+export default function Projects({ allProjectsData }) {
 
-
+    const projects = allProjectsData;
+    
     return (
         <Layout>
             <Head>
@@ -25,7 +27,7 @@ export default function Projects({ allProjectsData}) {
             <h1>{title}</h1>
             </div>
             <div className={cards.cardWrap} id="cardWrap">
-                {allProjectsData.map(({ id, title, shortTitle, type, status, thumb, thumbAlt }) => (
+                {projects.map(({ id, title, shortTitle, type, status, thumb, thumbAlt }) => (
                     <Link key={id} href={`/projects/${id}`}>
                         <a className={cards.card} >
                             <Image
@@ -45,7 +47,10 @@ export default function Projects({ allProjectsData}) {
             </div>
 
             <Link href={"/contact"}> 
-                <a className={gif.cash} />
+                <a className={gif.cash}>
+                    <p className={gif.typewriter}>Get in Touch!</p>
+                    <Image src={"/cash.gif"} layout="fill" objectFit='contain'/>
+                </a>
             </Link>
 
 

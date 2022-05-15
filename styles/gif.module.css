@@ -57,6 +57,15 @@
     z-index: 99;
 }
 
+.happyblue:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+.happyblue:hover::after {
+    content: "he he he";
+    margin: 3em;
+
+}
 
 .fire {
     /* background-image: url("../public/fire.gif") ; */
@@ -70,35 +79,63 @@
     aspect-ratio:  1 / 1;
     position: absolute;
     bottom: 0;
-    
     right: 3em;
+    transition: 1s;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+.fire:hover {
+    background-image: none;
+    background-color: transparent;
+}
+
+
+
+.fire .text {
+    /* transform: rotateZ(-90deg); */
+    position: absolute;
+    /* transform:translateY(3em); */
+    z-index: 99;
+    transition: ease-out .5s;
+    width: max-content;
+    opacity: 0;
+    color: var(--t1);
+    z-index: 1;
+    font-size: larger;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.fire:hover .text {
+    opacity: 1;
+    transform:translateY(-.5em);
+    color: var(--t2);
+    z-index: 1;
+}
+
+
 .friday {
     /* background-image: url("../public/friday.gif") ; */
     /* background-position: bottom; */
     /* background-size: cover; */
     /* background-repeat: no-repeat; */
     z-index: 10;
-
+    top: 1em;
     height: 70px;
     width: 150px;
     position: absolute;
-    bottom: 3em;
-    right: 3.2em;
+    /* bottom: 3em; */
+    /* right: 3.2em; */
+    transform: 1s;
 
 }
-.cash {
-    background-image: url("../public/cash.gif") ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    height: 7vh;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 99;
-    background-color: unset;
+
+.fire:hover .friday {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 }
 
 .party {
@@ -110,11 +147,6 @@
     /* background-size: cover; */
     /* background-repeat: no-repeat; */
     padding: 2em;
-}
-
-.cash:hover {
-    background-color: unset;
-    background-image: url("../public/cash.gif") ;
 }
 
 .meh:hover {
@@ -146,6 +178,75 @@
 .icon:hover {
         background-color:var(--s2) ;
 background-blend-mode: difference;
+}
+
+.cash {
+    width: 4em;
+    height: 2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;   
+    background-color: transparent;
+}
+.cash:hover {
+    background-image: none;
+    background-color: transparent;
+}
+
+.typewriter {
+    display: none;
+    position: absolute;
+    left: 2em;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    font-size: 1.5em;
+    width: 390px;
+    letter-spacing: .15em;
+    font-style: normal;
+    z-index: 1;
+    background-blend-mode: difference;
+}
+
+.cash:hover .typewriter {
+    display: block;
+    overflow: hidden;
+    border-right: .15em solid var(--t2);
+    white-space: nowrap;
+    padding-left: 10px;
+    color: var(--s1);
+    background-color: rgba(var(--p1), .3);
+    animation: 
+      typing 2.6s steps(13, end),
+      blink-caret .2s step-end infinite;
+}
+
+/* Key frames HERE! */
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+@keyframes typing {
+from { width: 10px }
+to { width: 390px }
+}
+
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: orange; }
 }
 
 @media (max-width: 1024px) {
@@ -202,6 +303,12 @@ background-blend-mode: difference;
         top: -74px;
         right: 0;
         z-index: 99;
+    }
+    .happyblue:hover::after {
+        content: "he he he";
+        margin: 0em;
+        position: absolute;
+    
     }
 
 }
