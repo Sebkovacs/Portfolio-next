@@ -22,8 +22,9 @@ const options = {
     },
     settings: {
         hideControlsAfter: 200,
-
-
+        captionFontFamily: "'Inconsolata', monospace",
+        captionFontWeight: 500,
+        captionColor: "#f3f3f3",
     },
     buttons: {
         showAutoplayButton: false,
@@ -31,7 +32,7 @@ const options = {
         showThumbnailsButton: true,
     },
     caption: {
-        showCaption: false,
+        showCaption: true,
 
 
     }
