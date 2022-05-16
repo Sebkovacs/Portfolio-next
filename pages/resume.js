@@ -94,7 +94,7 @@ export default function Resume() {
                             
                         <div className={gif.text}>
                             {/* Lets Get Cooking... */}
-                            Contact Me 😅
+                            Contact Me 👌
                         </div>
                             
                         <div className={gif.friday}><Image src={"/friday.gif"} layout="fill" objectFit='cover' objectPosition={"bottom"} /></div>
