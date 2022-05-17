@@ -278,6 +278,10 @@ from, to { border-color: transparent }
         margin-bottom: -70px;
     }
 
+    .fire:hover .text {
+        opacity: 0;
+    }
+
 
     .icon {
         margin: .5em;
