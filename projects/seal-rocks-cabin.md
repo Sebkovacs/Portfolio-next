@@ -23,9 +23,11 @@ pics: [
 {id: "2", image: '/2.jpg', alt: "Looking South East"},
 {id: "3", image: '/3.jpg', alt: "View uphill from Hubbard Rd"},
 {id: "4", image: '/4.jpg', alt: "SE Perspective"},
-# {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-# {id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
-
+{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
+{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
+{id: "7", plan: '/7.jpg', alt: "North Elevation"},
+{id: "8", plan: '/8.jpg', alt: "East Elevation"},
+{id: "9", plan: '/9.jpg', alt: "South Elevation"},
 ]
 
 north: -10
