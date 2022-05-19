@@ -27,8 +27,7 @@ pics: [
 {id: "3", image: '/3.jpg', alt: "hello"},
 {id: "4", image: '/4.jpg', alt: "hello"},
 {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
-
+{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
 ]
 
 north: 43

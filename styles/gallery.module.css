@@ -1,0 +1,118 @@
+.imageGrid1 {
+    padding: 2em 3em;
+    /* width: 70vw; */
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    position: relative;
+    margin: auto;
+}
+.imageGrid2 {
+    padding: 2em 3em;
+    /* width: 70vw; */
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    position: relative;
+    margin: auto;
+}
+
+.image1 {
+    display: flex;
+    align-content: center;
+    /* overflow: hidden; */
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100% ;
+    cursor: pointer;
+    border: 2px solid var(--bg1);
+}
+.image2 {
+    display: flex;
+    align-content: center;
+    /* overflow: hidden; */
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100% ;
+    cursor: pointer;
+    border: 2px solid var(--bg1);
+}
+
+.title {
+    font-size: .7em;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    /* background-color: var(--p3); */
+    padding: .2em;
+    font-weight: 700;
+    width: 100%;
+    color: var(--t1);
+    border-bottom: 2px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg2);
+}
+
+.des {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--bg2);
+    padding: .2em;
+    margin: 0;
+    width: 100%;
+    transition: 1s;
+}
+
+.image1:hover, .image2:hover {
+border: 2px solid var(--border1);
+}
+.image1:hover .title, .image2:hover .title, .image1:hover .des, .image2:hover .des {
+    opacity: 1;
+}
+.image1:hover .title, .image2:hover .title {
+    border-bottom: 2px solid var(--border1);
+}
+
+.sideLink {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    font-size: .5em;
+}
+
+
+@media (max-width: 768px) {
+    .imageGrid1 {
+        padding: 1em 2em;
+        grid-template-columns:  1fr 1fr 1fr;
+        gap: 5px;
+    }
+    .imageGrid2 {
+        padding: 1em 2em;
+        grid-template-columns:  1fr 1fr;
+        gap: 5px;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .imageGrid1 {
+        padding: 0em;
+        grid-template-columns:  1fr 1fr 1fr;
+        gap: 0;
+    }
+    .imageGrid2 {
+        padding: 0em;
+        grid-template-columns:  1fr;
+        gap: 5px;
+    }
+    .image1 {
+        border: 0 solid var(--bg1);
+    }
+}

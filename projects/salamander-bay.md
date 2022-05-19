@@ -25,7 +25,7 @@ pics: [
 {id: "6", image: '/6.jpg', alt: "New Pool Area"},
 {id: "7", image: '/7.jpg', alt: "New TV Lounge on the Lower Floor"},
 {id: "8", image: '/8.jpg', alt: "Looking from the new TV Lounge towards the pool"},
-{id: "9", image: '/9.jpg', alt: "Ensuite Bathroom"},
+{id: "9", image: '/9.jpg', alt: "Ensuite Bathroom"}
 ]
 
 north: -15

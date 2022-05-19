@@ -19,12 +19,7 @@ thumbAlt: 'image alt text.jpg'
 
 pics: [
 {id: "1", image: '/1.jpg', alt: "Photomontage from Spruce St"},
-{id: "2", image: '/2.jpg', alt: "3D View of Massing"},
-# {id: "3", image: '/3.jpg', alt: "hello"},
-# {id: "4", image: '/4.jpg', alt: "hello"},
-# {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-# {id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
-
+{id: "2", image: '/2.jpg', alt: "3D View of Massing"}
 ]
 
 north: 80

@@ -18,7 +18,7 @@ thumbAlt: 'image alt text.jpg'
 
 pics: [
 {id: "1", image: '/1.jpg', alt: "Photomontage of the Dual Occupancy project from Hall St"},
-{id: "2", image: '/2.jpg', alt: "Aerial view of the propsed development, showing the general nature of and size of the buildings"},
+{id: "2", image: '/2.jpg', alt: "Aerial view of the propsed development, showing the general nature of and size of the buildings"}
 ]
 
 north: -45

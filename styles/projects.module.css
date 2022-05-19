@@ -270,6 +270,10 @@
 
 @media (max-width: 425px) {
 
+    .pic1:hover .imageTitle, .pic2:hover .imageTitle  {
+        display: none;
+    }
+
     .projDetails {
         float: none;
         margin: 0em 1em;

@@ -18,12 +18,7 @@ thumbAlt: image alt text.jpg
 
 pics: [
 {id: 1, image: /1.jpg, alt: hello},
-{id: "2", image: '/2.jpg', alt: yum},
-# {id: "3", image: '/3.jpg', alt: "hello"},
-# {id: "4", image: '/4.jpg', alt: "hello"},
-# {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-# {id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
-
+{id: "2", image: '/2.jpg', alt: yum}
 ]
 
 north: 15

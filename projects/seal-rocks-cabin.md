@@ -25,9 +25,9 @@ pics: [
 {id: "4", image: '/4.jpg', alt: "SE Perspective"},
 {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
 {id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
-{id: "7", plan: '/7.jpg', alt: "North Elevation"},
-{id: "8", plan: '/8.jpg', alt: "East Elevation"},
-{id: "9", plan: '/9.jpg', alt: "South Elevation"},
+{id: "7", image: '/7.jpg', alt: "North Elevation"},
+{id: "8", image: '/8.jpg', alt: "East Elevation"},
+{id: "9", image: '/9.jpg', alt: "South Elevation"}
 ]
 
 north: -10
