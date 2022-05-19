@@ -39,8 +39,8 @@ export default function Gallery({ allProjectsData }) {
     // const [imageGrid, setImageGrid] = useState(true)
     // function toggleImageGrid() { setImageGrid(!imageGrid); }
 
-    const [gridCount, setGridCount] = useState(true)
-    const [imageRatio, setImageRatio] = useState(2)
+    const [gridCount, setGridCount] = useState(false)
+    const [imageRatio, setImageRatio] = useState(1)
     const [captionToggle, setCaptionToggle] = useState(false)
     const [sidePanelShow, setSidePanelShow] = useState(false)
 
@@ -49,11 +49,11 @@ export default function Gallery({ allProjectsData }) {
         //     setGridCount(currGrid => currGrid + 1)
         // } else { setGridCount(1); }
         setGridCount(!gridCount);
-        setCaptionToggle(!captionToggle);  
+        setCaptionToggle(!captionToggle);
     }
 
     function toggleImageRatio() {
-        imageRatio < 2 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
+        imageRatio < 3 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
     }
 
     function toggleCaptions() { setCaptionToggle(!captionToggle); }
@@ -65,17 +65,18 @@ export default function Gallery({ allProjectsData }) {
     switch (imageRatio) {
         case 1:
             aspectRatio = '16 / 9';
-            ratioText ="Landscape";
+            ratioText = "Landscape";
             break;
 
         case 2:
             aspectRatio = '1 / 1';
-            ratioText ="Square";
+            ratioText = "Square";
             break;
 
-        // case 3:
-        //     aspectRatio = '4 / 3';
-        //     break;
+        case 3:
+            aspectRatio = '3 / 4';
+            ratioText = "Portrait";
+            break;
 
         // case 4:
         //     aspectRatio = '1 / 1';
@@ -83,7 +84,7 @@ export default function Gallery({ allProjectsData }) {
 
         default:
             aspectRatio = '1 / 1';
-            ratioText ="Square";
+            ratioText = "Square";
     }
 
     let gridSwitch = false
@@ -109,7 +110,7 @@ export default function Gallery({ allProjectsData }) {
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
                 <div className={`${utilStyles.pcOnly} ${utilStyles.flex2}`}>
-                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count: {gridCount}</p>
+                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Toggle {gridCount}</p>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
@@ -123,57 +124,61 @@ export default function Gallery({ allProjectsData }) {
 
                 {randomGalleryList.map((pic) =>
                     <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}  >
-                        <div className={utilStyles.anchor} id={`${pic.id}${pic.shortTitle}${pic.alt}`}/>
-                                <a className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }}  onClick={toggleImageGrid} href={`#${pic.id}${pic.shortTitle}${pic.alt}`}> 
-                                    <Image
-                                        src={`/projects/${pic.shortTitle}${pic.image}`}
-                                        alt={pic.alt}
-                                        layout="fill"
-                                        objectFit="cover"
-                                    />
-                                    <div className={captionToggle ? gallery.hide : gallery.hover}>
-                                    <Link href={`/projects/${pic.link}`}>
-                                        <a className={gallery.title}>Project: {pic.title}
-                                            &nbsp;
-                                            <span class="material-symbols-outlined">
-                                                north_east
-                                            </span>
-                                        </a>
-                                        </Link>
-                                        <p className={gallery.des}>{pic.alt}</p>
-                                    </div>
-                                </a>
+                        <div className={utilStyles.anchor} id={`${pic.id}${pic.shortTitle}${pic.alt}`} />
+                        <div >
+                            <Link href={`#${pic.id}${pic.shortTitle}${pic.alt}`} >
+                            <a className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }} onClick={toggleImageGrid}>
+                                <Image
+                                    src={`/projects/${pic.shortTitle}${pic.image}`}
+                                    alt={pic.alt}
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </a>
+                            </Link>
+                            <div className={captionToggle ? gallery.hide : gallery.hover}>
+                                <Link href={`/projects/${pic.link}`}>
+                                    <a className={gallery.title}>Project: {pic.title}
+                                        &nbsp;
+                                        <span class="material-symbols-outlined">
+                                            north_east
+                                        </span>
+                                    </a>
+                                </Link>
+                                <p className={gallery.des}>{pic.alt}</p>
+                            </div>
+                        </div>
 
-                                <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={captionToggle ? gallery.caption : gallery.hide}>
-                                    <p>{pic.title}</p>
-                                    <p>{pic.alt}</p>
-                                    <Link href={`/projects/${pic.link}`}>
-                                        <a className={gallery.captionLink}>
-                                            <span style={{ fontSize: "20px" }} className="material-symbols-outlined">north_east</span>
-                                        </a>
-                                    </Link>
-                                </div>
+                        <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={captionToggle ? gallery.caption : gallery.hide}>
+                            <p>{pic.title}</p>
+                            <p>{pic.alt}</p>
+                            <Link href={`/projects/${pic.link}`}>
+                                <a className={gallery.captionLink}>
+                                    <span style={{ fontSize: "20px" }} className="material-symbols-outlined">north_east</span>
+                                </a>
+                            </Link>
+                        </div>
                     </div>
 
                 )}
-        </div>
+            </div>
 
-            {/* BOTTOM TOGGLES */ }
+            {/* BOTTOM TOGGLES */}
 
-    <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{ right: sidePanelShow ? "0" : "-300px" }} >
-        <h3>Settings</h3>
-        <div className={gallery.sidePanelToggle} onClick={toggleSidePanel} style={{ transition: "ease 1s", border: sidePanelShow ? "2px solid var(--border1)" : "2px solid transparent" }}>
-            {sidePanelShow ? <span class="material-symbols-outlined">
-                navigate_next
-            </span>:<span class="material-symbols-outlined">
-                navigate_before
-            </span> }
-        </div>
-        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count: {gridCount}</p>
-        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
-        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
-        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
-    </aside>
+            <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{ right: sidePanelShow ? "0" : "-300px" }} >
+                <h3>Settings</h3>
+                <div className={gallery.sidePanelToggle} onClick={toggleSidePanel} style={{ transition: "ease 1s", border: sidePanelShow ? "2px solid var(--border1)" : "2px solid transparent" }}>
+                    {sidePanelShow ? <span class="material-symbols-outlined">
+                        navigate_next
+                    </span> : <span class="material-symbols-outlined">
+                        navigate_before
+                    </span>}
+                </div>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Toggle {gridCount}</p>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
+            </aside>
         </Layout >
 
     )

@@ -61,7 +61,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    /* cursor: pointer; */
+    /* height: calc(100vh - var(--headerHeight) - var(--h1Height)); */
 }
 
 .title {
