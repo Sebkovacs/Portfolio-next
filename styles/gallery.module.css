@@ -217,7 +217,12 @@
 
 
 @media (max-width: 768px) {
-
+    .wrapper {
+        border: none;
+    }
+    .wrapper:hover {
+        border: none;
+    }
     
 
     .imageGrid1 {

@@ -39,23 +39,25 @@ export default function Gallery({ allProjectsData }) {
     // const [imageGrid, setImageGrid] = useState(true)
     // function toggleImageGrid() { setImageGrid(!imageGrid); }
 
-    const [gridCount, setGridCount] = useState(3)
+    const [gridCount, setGridCount] = useState(true)
+    const [imageRatio, setImageRatio] = useState(2)
+    const [captionToggle, setCaptionToggle] = useState(false)
+    const [sidePanelShow, setSidePanelShow] = useState(false)
 
     function toggleImageGrid() {
-        if (gridCount < 4) {
-            setGridCount(currGrid => currGrid + 1)
-        } else { setGridCount(1); }
+        // if (gridCount < 4) {
+        //     setGridCount(currGrid => currGrid + 1)
+        // } else { setGridCount(1); }
+        setGridCount(!gridCount);
+        setCaptionToggle(!captionToggle);  
     }
 
-    const [imageRatio, setImageRatio] = useState(2)
     function toggleImageRatio() {
         imageRatio < 2 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
     }
 
-    const [captionToggle, setCaptionToggle] = useState(false)
     function toggleCaptions() { setCaptionToggle(!captionToggle); }
 
-    const [sidePanelShow, setSidePanelShow] = useState(false)
     function toggleSidePanel() { setSidePanelShow(!sidePanelShow); }
 
     let aspectRatio = ""
@@ -84,6 +86,20 @@ export default function Gallery({ allProjectsData }) {
             ratioText ="Square";
     }
 
+    let gridSwitch = false
+    switch (gridCount) {
+        case true:
+            gridSwitch = 1;
+            break;
+
+        case false:
+            gridSwitch = 3;
+
+            break;
+        default:
+            gridSwitch = 1;
+
+    }
 
     return (
         <Layout>
@@ -101,13 +117,14 @@ export default function Gallery({ allProjectsData }) {
             </div>
 
             {/* Main Conent */}
-            <div className={`${gif.party} ${gallery.imageGrid1}`} style={{ gridTemplateColumns: `repeat(${gridCount}, 1fr` }}>
+            <div className={`${gif.party} ${gallery.imageGrid1}`} style={{ gridTemplateColumns: `repeat(${gridSwitch}, 1fr` }}>
 
                 {/* MAP GALLERY > galleryList */}
 
                 {randomGalleryList.map((pic) =>
-                    <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}>
-                                <div className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }}>
+                    <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}  >
+                        <div className={utilStyles.anchor} id={`${pic.id}${pic.shortTitle}${pic.alt}`}/>
+                                <a className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }}  onClick={toggleImageGrid} href={`#${pic.id}${pic.shortTitle}${pic.alt}`}> 
                                     <Image
                                         src={`/projects/${pic.shortTitle}${pic.image}`}
                                         alt={pic.alt}
@@ -125,7 +142,7 @@ export default function Gallery({ allProjectsData }) {
                                         </Link>
                                         <p className={gallery.des}>{pic.alt}</p>
                                     </div>
-                                </div>
+                                </a>
 
                                 <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={captionToggle ? gallery.caption : gallery.hide}>
                                     <p>{pic.title}</p>
