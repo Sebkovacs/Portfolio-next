@@ -7,7 +7,6 @@ import utilStyles from '../styles/utils.module.css'
 
 import Image from 'next/image'
 import gif from '../styles/gif.module.css'
-import neArrow from '../public/icons/ne-arrow.svg'
 
 import { useState } from 'react'
 
@@ -17,36 +16,71 @@ import { useState } from 'react'
 
 const title = "Gallery";
 
-function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
-
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-}
-
 
 export default function Gallery({ allProjectsData }) {
 
     let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title }))).flat();
 
-    shuffle(galleryList)
+    let [randomGalleryList, setRandomGalleryList] = useState(galleryList);
 
-    const [imageGrid, setImageGrid] = useState(true)
-    function toggleImageGrid() { setImageGrid(!imageGrid); }
+    function mixGallery() {
+        let currentIndex = galleryList.length;
+        let randomIndex = 0;
+
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [galleryList[currentIndex], galleryList[randomIndex]] = [galleryList[randomIndex], galleryList[currentIndex]];
+        }
+        return setRandomGalleryList(randomGalleryList = galleryList);
+    }
+
+    // const [imageGrid, setImageGrid] = useState(true)
+    // function toggleImageGrid() { setImageGrid(!imageGrid); }
+
+    const [gridCount, setGridCount] = useState(2)
+
+    function toggleImageGrid() {
+        if (gridCount < 4) {
+            setGridCount(currGrid => currGrid + 1)
+        } else { setGridCount(1); }
+    }
+
+    const [imageRatio, setImageRatio] = useState(1)
+    function toggleImageRatio() {
+        imageRatio < 2 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
+    }
 
     const [captionToggle, setCaptionToggle] = useState(false)
     function toggleCaptions() { setCaptionToggle(!captionToggle); }
+
+    const [sidePanelShow, setSidePanelShow] = useState(false)
+    function toggleSidePanel() { setSidePanelShow(!sidePanelShow); }
+
+    let aspectRatio = "1 / 1"
+    switch (imageRatio) {
+        case 1:
+            aspectRatio = '16 / 9';
+
+            break;
+
+        // case 2:
+        //     aspectRatio = '16 / 9';
+        //     break;
+
+        // case 3:
+        //     aspectRatio = '4 / 3';
+        //     break;
+
+        // case 4:
+        //     aspectRatio = '1 / 1';
+        //     break;
+
+        default:
+            aspectRatio = '1 / 1';
+    }
+
 
     return (
         <Layout>
@@ -55,23 +89,29 @@ export default function Gallery({ allProjectsData }) {
             </Head>
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
-                <div className={utilStyles.buttons}>
-                    <label htmlFor="toggleCatpions" className={` ${utilStyles.download} ${utilStyles.pcOnly} ${gallery.toggle} `}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_off</span> : <span className="material-symbols-outlined">toggle_on</span>}</label>
-                    <label htmlFor="imageGrid" className={` ${utilStyles.download}  ${utilStyles.pcOnly} ${gallery.toggle} `}>Image Display &nbsp; {imageGrid ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
+                <div className={`${utilStyles.pcOnly} ${utilStyles.flex2}`}>
+                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count = {gridCount}</p>
+                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio = {aspectRatio}</p>
+                    <label htmlFor="toggleCatpions" ><p className={`${gallery.toggle} ${utilStyles.link}`}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p></label>
+                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
                 </div>
             </div>
 
+
+
+            {/* TOGGLE INPUTS*/}
             <input id="toggleCatpions" className={utilStyles.hide} type="checkbox" onClick={toggleCaptions} />
 
-            <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
 
-            {/* ${utilStyles.mobileOnlyFlex} */}
+            {/* Main Conent */}
+            <div className={`${gif.party} ${gallery.imageGrid1}`} style={{ gridTemplateColumns: `repeat(${gridCount}, 1fr` }}>
+                
+                {/* MAP GALLERY > galleryList */}
+                
+                {randomGalleryList.map((pic) =>
+                    <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}>
 
-            <div className={`${gif.party} ${imageGrid ? gallery.imageGrid1 : gallery.imageGrid2}`}>
-                {galleryList.map((pic) =>
-
-                    <div className={gallery.wrapper}>
-                        <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={imageGrid ? gallery.image1 : gallery.image2}>
+                        <div className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }}>
                             <Image
                                 src={`/projects/${pic.shortTitle}${pic.image}`}
                                 alt={pic.alt}
@@ -105,9 +145,20 @@ export default function Gallery({ allProjectsData }) {
 
                 )}
             </div>
-<label htmlFor="toggleCatpions" className={` ${utilStyles.link} ${gallery.toggleCaption}  ${gallery.toggleBottom} `}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_off</span> : <span className="material-symbols-outlined">toggle_on</span>}</label>
-<label htmlFor="imageGrid" className={` ${utilStyles.link} ${gallery.toggleGrid} ${gallery.toggleBottom}`}>Image Display &nbsp; {imageGrid ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
 
+            {/* BOTTOM TOGGLES */}
+
+            <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{right: sidePanelShow? "0" : "-300px"}} >
+                <div className={gallery.sidePanelToggle} onClick={toggleSidePanel} style={{transition: "ease 1s", border: sidePanelShow ? "2px solid var(--border1)" : "2px solid transparent"}}>
+                    <span class="material-symbols-outlined">
+                        navigate_before
+                    </span>
+                </div>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count = {gridCount}</p>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio = {aspectRatio}</p>
+                <label htmlFor="toggleCatpions" ><p className={`${gallery.toggle} ${utilStyles.link}`}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p></label>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
+            </aside>
         </Layout>
 
     )

@@ -10,18 +10,6 @@
     overflow: hidden;
 }
 
-.imageGrid2 {
-    padding: 2em 4em;
-    /* width: 70vw; */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 10px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-}
-
 .wrapper {
     border: 2px solid transparent;
     height: auto;
@@ -72,19 +60,8 @@
     align-content: center;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 1 / 1;
     width: 100%;
-    cursor: pointer;
-}
-
-.image2 {
-    display: flex;
-    align-content: center;
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .title {
@@ -149,6 +126,7 @@
     font-weight: 900;
     font-style: italic;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .toggle:hover {
@@ -157,6 +135,51 @@
     background-image: url("../public/smoke2.gif") ;
     background-blend-mode: overlay;
 }
+
+.sidePanel {
+    position: fixed;
+    right: 0;
+    top: calc(var(--headerHeight));
+    background-color: yellowgreen;
+    height: calc(100vh - var(--headerHeight));
+    width: 300px;
+    z-index: 99;
+
+}
+.sidePanel .toggle:hover {
+    background-image: url("../public/smoke2.gif") ;
+    background-blend-mode: lighten;
+    background-color: var(--p2);
+}
+
+.sidePanelToggle {
+    width: 2em;
+    height: 2em;
+    background-color: var(--p2);
+    position: fixed;
+    right: .5em;
+    bottom: .5em;
+    border-radius: 50%;
+    box-shadow: 5px 5px 20px var(--border1);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    user-select: none;
+}
+.sidePanelToggle:hover {
+    background-color: var(--p3);
+    box-shadow: 0 0  20px var(--p3);
+
+    /* top: calc(var(--headerHeight)); */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .toggleBottom{
     position: fixed;
@@ -177,6 +200,9 @@
 
 
 @media (max-width: 768px) {
+
+    
+
     .imageGrid1 {
         padding: 1em 2em;
         grid-template-columns: 1fr 1fr 1fr;
@@ -226,6 +252,47 @@
 }
 
 @media (max-width: 425px) {
+    .caption {
+       display: flex;
+       flex-direction: column;
+       position: relative;
+    }
+    .caption p:first-child {
+        font-weight: 600;
+        border-right: 0 double var(--border1);
+    }
+
+    .captionLink {
+        position: absolute;
+        top: -1em;
+        right: 0;
+        margin: .5em;
+        padding: .2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+        box-shadow:  5px 5px 20px  var(--border1);
+        border-radius: 50%;
+background-color: var(--bg1);
+
+    }
+    
+
+    .sidePanel {
+        width: 200px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-grow: 1;
+    gap: 1em;
+        }
+    
+
+    
+
     .imageGrid1 {
         padding: 0em;
         margin: 0%;

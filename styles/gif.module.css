@@ -219,8 +219,9 @@ background-blend-mode: difference;
     color: var(--s1);
     background-color: rgba(var(--p1), .3);
     animation: 
-      typing 2.6s steps(13, end),
-      blink-caret .2s step-end infinite;
+      typing 2s ease,
+      /* typing 1.2s steps(13, end), */
+      blink-caret .6s step-end infinite;
 }
 
 /* Key frames HERE! */
