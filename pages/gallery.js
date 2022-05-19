@@ -40,7 +40,7 @@ export default function Gallery({ allProjectsData }) {
     // function toggleImageGrid() { setImageGrid(!imageGrid); }
 
     const [gridCount, setGridCount] = useState(false)
-    const [imageRatio, setImageRatio] = useState(1)
+    const [imageRatio, setImageRatio] = useState(2)
     const [captionToggle, setCaptionToggle] = useState(false)
     const [sidePanelShow, setSidePanelShow] = useState(false)
 
