@@ -40,7 +40,7 @@ export default function Gallery({ allProjectsData }) {
 
     let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title }))).flat();
 
-    // shuffle(galleryList)
+    shuffle(galleryList)
 
     const [imageGrid, setImageGrid] = useState(true)
     function toggleImageGrid() { setImageGrid(!imageGrid); }
@@ -56,8 +56,8 @@ export default function Gallery({ allProjectsData }) {
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
                 <div className={utilStyles.buttons}>
-                    <label htmlFor="toggleCatpions" className={` ${utilStyles.download} ${gallery.toggle} `}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_off</span> : <span className="material-symbols-outlined">toggle_on</span>}</label>
-                    <label htmlFor="imageGrid" className={` ${utilStyles.download}  ${gallery.toggle} `}>Image Display &nbsp; {imageGrid ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
+                    <label htmlFor="toggleCatpions" className={` ${utilStyles.download} ${utilStyles.pcOnly} ${gallery.toggle} `}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_off</span> : <span className="material-symbols-outlined">toggle_on</span>}</label>
+                    <label htmlFor="imageGrid" className={` ${utilStyles.download}  ${utilStyles.pcOnly} ${gallery.toggle} `}>Image Display &nbsp; {imageGrid ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</label>
                 </div>
             </div>
 
