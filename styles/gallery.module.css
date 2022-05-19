@@ -275,7 +275,7 @@
        position: relative;
     }
     .caption p:first-child {
-        font-weight: 600;
+        font-weight: 700;
         border-right: 0 double var(--border1);
     }
 
