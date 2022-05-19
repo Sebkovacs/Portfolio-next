@@ -80,14 +80,6 @@ export default function Gallery({ allProjectsData }) {
                 )}
             </div>
 
-            <Link href={"/contact"}>
-                <a className={gif.cash}>
-                    <p className={gif.typewriter}>Get in Touch!</p>
-                    <Image src={"/cash.gif"} layout="fill" objectFit='contain' />
-                </a>
-            </Link>
-
-
         </Layout>
 
     )
