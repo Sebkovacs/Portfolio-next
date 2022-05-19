@@ -58,23 +58,28 @@ export default function Gallery({ allProjectsData }) {
 
             <div className={imageGrid ? gallery.imageGrid1 : gallery.imageGrid2}>
                 {galleryList.map((pic) =>
-
-                    <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={imageGrid ? gallery.image1 : gallery.image2}>
-                        <Image
-                            src={`/projects/${pic.shortTitle}${pic.image}`}
-                            alt={pic.alt}
-                            layout="fill"
-                            objectFit="cover"
-                        />
-                        <Link href={`/projects/${pic.link}`}>
-                            <a className={gallery.title}>Project: {pic.title}
-                            &nbsp; 
-                            <span class="material-symbols-outlined">
-                                more_up
-                            </span>
-                            </a>
-                        </Link>
-                        <p className={gallery.des}>{pic.alt}</p>
+                    
+                    <div>
+                        <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={imageGrid ? gallery.image1 : gallery.image2}>
+                            <Image
+                                src={`/projects/${pic.shortTitle}${pic.image}`}
+                                alt={pic.alt}
+                                layout="fill"
+                                objectFit="cover"
+                            />
+                            <Link href={`/projects/${pic.link}`}>
+                                <a className={gallery.title}>Project: {pic.title}
+                                &nbsp;
+                                <span class="material-symbols-outlined">
+                                    more_up
+                                </span>
+                                </a>
+                            </Link>
+                            <p className={gallery.des}>{pic.alt}</p>
+                        </div>
+                        <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} style={{display: imageGrid ? "none" : "block" }} className={gallery.caption}>
+                            <p>{pic.alt}</p>
+                        </div>
                     </div>
 
                 )}
