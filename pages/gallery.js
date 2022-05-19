@@ -9,7 +9,6 @@ import Image from 'next/image'
 import gif from '../styles/gif.module.css'
 
 import { useState } from 'react'
-import { SRLWrapper } from "simple-react-lightbox";
 
 
 
@@ -57,7 +56,6 @@ export default function Gallery({ allProjectsData }) {
 
             {/* ${utilStyles.mobileOnlyFlex} */}
 
-            <SRLWrapper >
             <div className={imageGrid ? gallery.imageGrid1 : gallery.imageGrid2}>
                 {galleryList.map((pic) =>
 
@@ -81,7 +79,6 @@ export default function Gallery({ allProjectsData }) {
 
                 )}
             </div>
-            </SRLWrapper>
 
             <Link href={"/contact"}>
                 <a className={gif.cash}>
