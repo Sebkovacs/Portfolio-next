@@ -92,9 +92,9 @@ export default function Gallery({ allProjectsData }) {
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
                 <div className={`${utilStyles.pcOnly} ${utilStyles.flex2}`}>
-                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count = {gridCount}</p>
-                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio = {ratioText}</p>
-                    <p className={`${gallery.toggle} ${utilStyles.link}`}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count: {gridCount}</p>
+                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
+                    <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
                 </div>
             </div>
@@ -155,8 +155,8 @@ export default function Gallery({ allProjectsData }) {
                 navigate_before
             </span> }
         </div>
-        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count: <br/> {gridCount}</p>
-        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: <br/> {ratioText}</p>
+        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Count: {gridCount}</p>
+        <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
         <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
         <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
     </aside>

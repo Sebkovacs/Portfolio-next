@@ -1,5 +1,5 @@
 .imageGrid1 {
-    padding: 2em 3em;
+    padding: 2em 4em;
     /* width: 70vw; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -127,6 +127,7 @@
     font-style: italic;
     text-transform: uppercase;
     cursor: pointer;
+    padding: .5em 1em;
 }
 
 .toggle:hover {
@@ -135,6 +136,7 @@
     background-image: url("../public/smoke2.gif") ;
     background-blend-mode: overlay;
 }
+
 
 .sidePanel {
     position: fixed;
@@ -146,6 +148,21 @@
     z-index: 99;
 
 }
+
+.sidePanel h3 {
+    padding-left: .5em;
+    padding-bottom: 1em;
+    border-bottom: 2px dotted var(--t1);
+}
+.sidePanel .toggle {
+        margin-top: 1rem;
+        width: auto;
+        padding: .5em 1em;
+        height: 3em;
+
+}
+
+
 .sidePanel .toggle:hover {
     background-image: url("../public/smoke2.gif") ;
     background-blend-mode: lighten;
@@ -160,7 +177,7 @@
     right: .5em;
     bottom: .5em;
     border-radius: 50%;
-    box-shadow: 5px 5px 20px var(--border1);
+    box-shadow: 0 0 20px rgba(var(--p1), .3);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -277,15 +294,26 @@
 background-color: var(--bg1);
 
     }
-    .toggle {
-        text-align: center;
-        padding: 0;
-        padding: 1em 0;
-        min-width: 80%;
-        min-height: 4em;
-        
-    }
+    .sidePanel h3 {
 
+        text-align: center;
+
+        padding: 1em 1em;
+        margin: 0;
+
+}
+    .sidePanel .toggle {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        padding: .5em 1em;
+        margin: 0;
+        height: auto;
+        min-height: 3em;
+        width: 80%;
+}
     .sidePanel {
         width: 200px;
     margin: 0;
