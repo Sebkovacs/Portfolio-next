@@ -20,9 +20,9 @@ export default function Layout() {
                     <div>
                         <Link href="/"><a className={styles.navitem}>Projects</a></Link>
                         {/* <Link href="/blog"><a className={styles.navitem}>Blog</a></Link> */}
+                        <Link href="/gallery"><a className={styles.navitem}>Gallery</a></Link>
                         <Link href="/resume"><a className={styles.navitem}>Resume</a></Link>
                         <Link href="/contact"><a className={styles.navitem}>Contact</a></Link>
-                        <Link href="/gallery"><a className={styles.navitem}>Gallery</a></Link>
                     </div>
                 </div>
             </nav>
@@ -50,9 +50,9 @@ export default function Layout() {
             
                 <Link href="/"><a className={styles.navitem}>Projects</a></Link>
                 {/* <Link href="/blog"><a className={styles.navitem}>Blog</a></Link> */}
+                <Link href="/gallery"><a className={styles.navitem}>Gallery</a></Link>
                 <Link href="/resume"><a className={styles.navitem}>Resume</a></Link>
                 <Link href="/contact"><a className={styles.navitem}>Contact</a></Link>
-                <Link href="/gallery"><a className={styles.navitem}>Gallery</a></Link>
                 <input type={'checkbox'} id={styles.toggle} />
                 <div className={styles.mobileNav}>
                     <label className={styles.navToggle} htmlFor={styles.toggle} >
@@ -66,9 +66,9 @@ export default function Layout() {
                     <ul>
                         <li><Link href="/"><a>Projects</a></Link></li>
                         {/* <li><Link href="/blog"><a>Blog</a></Link></li> */}
+                        <li><Link href="/gallery"><a>Gallery</a></Link></li>
                         <li><Link href="/resume"><a>Resume</a></Link></li>
                         <li><Link href="/contact"><a>Contact</a></Link></li>
-                        <li><Link href="/gallery"><a>Gallery</a></Link></li>
                     </ul>
                 </div>
                 <label className={styles.black} htmlFor={styles.toggle}></label>
