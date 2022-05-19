@@ -134,7 +134,6 @@ main a:hover, summary:hover {
   background-color: var(--p2);
   background-image: url("../public/smoke2.gif") ;
   background-blend-mode: overlay;
-
 }
 
 nav a, nav summary, nav details li {
