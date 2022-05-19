@@ -18,9 +18,10 @@
 }
 
 .caption {
-    display: grid;
-    grid-template-columns: 2fr 6fr 50px;
+    display: flex;
+    flex-direction: column-reverse;
     padding: .5em;
+    position: relative;
 }
 
 .caption p:first-child {
@@ -31,9 +32,14 @@
 .caption p {
     margin: 0;
     padding: .5em;
+    margin-right: .5em;
 }
 
 .captionLink {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: .5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,7 +154,7 @@
     height: calc(100vh - var(--headerHeight));
     width: 300px;
     z-index: 99;
-
+    transition: 1s;
 }
 
 .sidePanel h3 {
@@ -217,7 +223,27 @@
 .toggleGrid {
     bottom: 0em;
 }
+.projectLink {
+    padding: .5em;
 
+    border-bottom: 1px solid var(--border1);
+
+    color: var(--t2);
+
+    font-family: 'Inconsolata', monospace;
+
+    font-size: .4em;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: capitalize;
+    /* letter-spacing: 1px; */
+}
+
+.projectLink:hover {
+    background-color: var(--s2);
+    background-image: none;
+
+}
 
 
 @media (max-width: 768px) {

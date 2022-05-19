@@ -42,6 +42,7 @@ body {
   font-weight: 400;
   font-size: 30px;
   box-sizing: border-box;
+  color: var(--t1);
 }
 
 header {
@@ -79,6 +80,10 @@ details[open] summary{
 
 time {
   font-size: inherit;
+}
+
+span {
+  color: var(--s1);
 }
 footer {
   height: 55px;

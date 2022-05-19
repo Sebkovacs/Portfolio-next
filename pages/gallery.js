@@ -19,7 +19,7 @@ const title = "Gallery";
 
 export default function Gallery({ allProjectsData }) {
 
-    let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title }))).flat();
+    let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type }))).flat();
 
     let [randomGalleryList, setRandomGalleryList] = useState(galleryList);
 
@@ -150,7 +150,9 @@ export default function Gallery({ allProjectsData }) {
                         </div>
 
                         <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={captionToggle ? gallery.caption : gallery.hide}>
-                            <p>{pic.title}</p>
+                            <Link href={`/projects/${pic.link}`}>
+                            <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
+                            </Link>
                             <p>{pic.alt}</p>
                             <Link href={`/projects/${pic.link}`}>
                                 <a className={gallery.captionLink}>
