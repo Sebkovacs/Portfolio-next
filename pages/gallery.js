@@ -39,7 +39,7 @@ export default function Gallery({ allProjectsData }) {
     // const [imageGrid, setImageGrid] = useState(true)
     // function toggleImageGrid() { setImageGrid(!imageGrid); }
 
-    const [gridCount, setGridCount] = useState(2)
+    const [gridCount, setGridCount] = useState(3)
 
     function toggleImageGrid() {
         if (gridCount < 4) {
@@ -47,7 +47,7 @@ export default function Gallery({ allProjectsData }) {
         } else { setGridCount(1); }
     }
 
-    const [imageRatio, setImageRatio] = useState(1)
+    const [imageRatio, setImageRatio] = useState(2)
     function toggleImageRatio() {
         imageRatio < 2 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
     }
@@ -66,9 +66,10 @@ export default function Gallery({ allProjectsData }) {
             ratioText ="Landscape";
             break;
 
-        // case 2:
-        //     aspectRatio = '16 / 9';
-        //     break;
+        case 2:
+            aspectRatio = '1 / 1';
+            ratioText ="Square";
+            break;
 
         // case 3:
         //     aspectRatio = '4 / 3';
@@ -106,8 +107,6 @@ export default function Gallery({ allProjectsData }) {
 
                 {randomGalleryList.map((pic) =>
                     <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}>
-                        <Link href={`/projects/${pic.link}`}>
-                            <a>
                                 <div className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }}>
                                     <Image
                                         src={`/projects/${pic.shortTitle}${pic.image}`}
@@ -116,14 +115,14 @@ export default function Gallery({ allProjectsData }) {
                                         objectFit="cover"
                                     />
                                     <div className={captionToggle ? gallery.hide : gallery.hover}>
-                                    
+                                    <Link href={`/projects/${pic.link}`}>
                                         <a className={gallery.title}>Project: {pic.title}
                                             &nbsp;
                                             <span class="material-symbols-outlined">
                                                 north_east
                                             </span>
                                         </a>
-
+                                        </Link>
                                         <p className={gallery.des}>{pic.alt}</p>
                                     </div>
                                 </div>
@@ -137,8 +136,6 @@ export default function Gallery({ allProjectsData }) {
                                         </a>
                                     </Link>
                                 </div>
-                            </a>
-                        </Link>
                     </div>
 
                 )}
