@@ -112,7 +112,10 @@ border: 2px solid var(--border1);
         grid-template-columns:  1fr;
         gap: 5px;
     }
-    .image1 {
-        border: 0 solid var(--bg1);
+    .image1, .image2 {
+        border: 0px solid var(--bg1);
+    }
+    .image1:hover .title, .image2:hover .title, .image1:hover .des, .image2:hover .des {
+        display: none;
     }
 }
