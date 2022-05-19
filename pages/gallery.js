@@ -124,9 +124,9 @@ export default function Gallery({ allProjectsData }) {
 
                 {randomGalleryList.map((pic) =>
                     <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}  >
-                        <div className={utilStyles.anchor} id={`${pic.id}${pic.shortTitle}${pic.alt}`} />
+                        <div className={utilStyles.anchor} id={`${pic.shortTitle}-${pic.id}`} />
                         <div >
-                            <Link href={`#${pic.id}${pic.shortTitle}${pic.alt}`} >
+                            <Link href={`#${pic.shortTitle}-${pic.id}`} >
                             <a className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }} onClick={toggleImageGrid}>
                                 <Image
                                     src={`/projects/${pic.shortTitle}${pic.image}`}
