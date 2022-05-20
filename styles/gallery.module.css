@@ -15,7 +15,7 @@
     border: 2px solid transparent;
     height: auto;
     background-color: var(--bg2);
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
 }
 

@@ -180,6 +180,9 @@
   align-items: center;
   color: var(--t1);
 }
+.navToggle span{
+  color: var(--t1);
+}
 .navToggle:hover {
   background-color: unset;
 }
