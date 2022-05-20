@@ -1,12 +1,13 @@
-.imageGrid1 {
-    padding: 2em 4em;
-    /* width: 70vw; */
+.imageGrid {
+    padding: 2em 10em;
+    margin: auto;
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 10px;
+
     position: relative;
-    margin: auto;
     overflow: hidden;
 }
 
@@ -14,19 +15,28 @@
     border: 2px solid transparent;
     height: auto;
     background-color: var(--bg2);
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: relative;
 }
+
+.wrapper:hover {
+    border: 2px solid var(--border1);
+}
+
+.imageSize {
+    display: flex;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
 
 .caption {
     display: flex;
     flex-direction: column-reverse;
     padding: .5em;
     position: relative;
-}
-
-.caption p:first-child {
-    font-weight: 600;
-    border-right: 1px double var(--border1);
 }
 
 .caption p {
@@ -44,83 +54,32 @@
     align-items: center;
     justify-content: center;
     aspect-ratio: 1 / 1;
-    /* border-right: 2px dotted var(--t2) ; */
 }
 
 .captionLink:hover {
     border-radius: 50%;
 }
 
-.captionArrow {
+.projectLink {
+    padding: .5em;
 
-    transform: scale(.5);
-}
+    /* border-top: 1px solid var(--border1); */
 
-.hide {
-    display: none;
-}
+    color: var(--t2);
 
-
-.image1 {
-    display: flex;
-    align-content: center;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    /* height: calc(100vh - var(--headerHeight) - var(--h1Height)); */
-}
-
-.title {
-    font-size: .7em;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    /* background-color: var(--p3); */
-    padding: .2em;
+    font-family: 'Inconsolata', monospace;
+    width: max-content;
+    font-size: .4em;
     font-weight: 700;
-    width: 100%;
-    color: var(--t1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--bg2);
+    font-style: normal;
+    text-transform: capitalize;
+    /* letter-spacing: 1px; */
 }
 
-.des {
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    background-color: var(--bg2);
-    padding: .2em;
-    margin: 0;
-    width: 100%;
-    transition: 1s;
-    border-top: 2px solid transparent;
-}
+.projectLink:hover {
+    background-color: var(--s2);
+    background-image: none;
 
-.wrapper:hover {
-    border: 2px solid var(--border1);
-}
-
-.wrapper:hover .captionTitle {
-    border-left: 2px solid var(--border1);
-}
-
-.image1:hover .title,
-.image2:hover .title,
-.image1:hover .des,
-.image2:hover .des {
-    opacity: 1;
-}
-
-.image1:hover .title,
-.image2:hover .title {
-    border-bottom: 2px solid var(--border1);
-}
-
-.image1:hover .des,
-.image2:hover .des {
-    border-top: 2px solid var(--border1);
 }
 
 .toggle {
@@ -173,9 +132,9 @@
 
 
 .sidePanel .toggle:hover {
-    background-image: url("../public/smoke2.gif");
-    background-blend-mode: lighten;
-    background-color: var(--p2);
+    background-image: url("../public/smoke1.gif");
+    background-blend-mode: overlay;
+    background-color: var(--s2);
 }
 
 .sidePanelToggle {
@@ -223,28 +182,10 @@
 .toggleGrid {
     bottom: 0em;
 }
-.projectLink {
-    padding: .5em;
 
-    border-bottom: 1px solid var(--border1);
-
-    color: var(--t2);
-
-    font-family: 'Inconsolata', monospace;
-
-    font-size: .4em;
-    font-weight: 700;
-    font-style: normal;
-    text-transform: capitalize;
-    /* letter-spacing: 1px; */
+.hide {
+    display: none;
 }
-
-.projectLink:hover {
-    background-color: var(--s2);
-    background-image: none;
-
-}
-
 
 @media (max-width: 768px) {
     .wrapper {
@@ -256,15 +197,9 @@
     }
 
 
-    .imageGrid1 {
+    .imageGrid {
         padding: 1em 2em;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 5px;
-    }
-
-    .imageGrid2 {
-        padding: 1em 2em;
-        grid-template-columns: 1fr 1fr;
         gap: 5px;
     }
 
@@ -316,33 +251,17 @@
         border-right: 0 double var(--border1);
         border-bottom: 1px double var(--border1);
     }
+
     .sidePanel .toggle {
         margin-top: 1rem;
         width: auto;
         padding: .5em 1em;
         height: 3em;
-    
+
     }
 
     .captionLink {
-        position: absolute;
-        top: -1em;
-        right: .5em;
-        /* margin: .5em; */
-        /* padding: .2em; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        height: 2em;
-        aspect-ratio: 1 / 1;
-
-        box-shadow: 0 0 20px rgba(var(--p1), .5);
-        border-radius: 50%;
-
-        background-color: var(--p3);
-        color: var(--bg1);
-        
+display: none;
     }
 
     .sidePanel h3 {
@@ -378,13 +297,11 @@
         gap: 1em;
     }
 
-
     .wrapper {
         border: 1px solid var(--bg1);
-
     }
 
-    .imageGrid1 {
+    .imageGrid {
         padding: 0em;
         margin: 0%;
         grid-template-columns: 1fr 1fr 1fr;
@@ -393,12 +310,5 @@
 
     .image1 {
         border: 0px solid var(--bg1);
-    }
-
-    .image1:hover .title,
-    .image2:hover .title,
-    .image1:hover .des,
-    .image2:hover .des {
-        display: none;
     }
 }

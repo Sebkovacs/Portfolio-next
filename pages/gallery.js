@@ -40,7 +40,7 @@ export default function Gallery({ allProjectsData }) {
     // function toggleImageGrid() { setImageGrid(!imageGrid); }
 
     const [gridCount, setGridCount] = useState(false)
-    const [imageRatio, setImageRatio] = useState(2)
+    const [imageRatio, setImageRatio] = useState(false)
     const [captionToggle, setCaptionToggle] = useState(false)
     const [sidePanelShow, setSidePanelShow] = useState(false)
 
@@ -50,10 +50,12 @@ export default function Gallery({ allProjectsData }) {
         // } else { setGridCount(1); }
         setGridCount(!gridCount);
         setCaptionToggle(!captionToggle);
+        setImageRatio(!imageRatio);
     }
 
     function toggleImageRatio() {
-        imageRatio < 3 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
+        // imageRatio < 2 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
+        setImageRatio(!imageRatio);
     }
 
     function toggleCaptions() { setCaptionToggle(!captionToggle); }
@@ -63,24 +65,15 @@ export default function Gallery({ allProjectsData }) {
     let aspectRatio = ""
     let ratioText = ""
     switch (imageRatio) {
-        case 1:
+        case true:
             aspectRatio = '16 / 9';
             ratioText = "Landscape";
             break;
 
-        case 2:
+        case false:
             aspectRatio = '1 / 1';
             ratioText = "Square";
             break;
-
-        case 3:
-            aspectRatio = '3 / 4';
-            ratioText = "Portrait";
-            break;
-
-        // case 4:
-        //     aspectRatio = '1 / 1';
-        //     break;
 
         default:
             aspectRatio = '1 / 1';
@@ -109,25 +102,27 @@ export default function Gallery({ allProjectsData }) {
             </Head>
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
-                <div className={`${utilStyles.pcOnly} ${utilStyles.flex2}`}>
+                {/* <div className={`${utilStyles.pcOnly} ${utilStyles.flex2}`}>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Toggle {gridCount}</p>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                     <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
-                </div>
+                </div> */}
             </div>
 
             {/* Main Conent */}
-            <div className={`${gif.party} ${gallery.imageGrid1}`} style={{ gridTemplateColumns: `repeat(${gridSwitch}, 1fr` }}>
+            <div className={` ${gallery.imageGrid}`} style={{ gridTemplateColumns: `repeat(${gridSwitch}, 1fr`, gap: imageRatio ? "10vh" : null }}>
 
                 {/* MAP GALLERY > galleryList */}
 
                 {randomGalleryList.map((pic) =>
-                    <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}  >
-                        <div className={utilStyles.anchor} id={`${pic.shortTitle}-${pic.id}`} />
-                        <div >
-                            <Link href={`#${pic.shortTitle}-${pic.id}`} >
-                            <a className={gallery.image1} style={{ aspectRatio: `${aspectRatio}` }} onClick={toggleImageGrid}>
+                    <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper} >
+
+                        <div className={utilStyles.anchor2} id={`${pic.shortTitle}-${pic.id}`}/>
+
+
+                        <Link href={`#${pic.shortTitle}-${pic.id}`} >
+                            <a className={gallery.imageSize} style={{ aspectRatio: `${aspectRatio}` }} onClick={toggleImageGrid}>
                                 <Image
                                     src={`/projects/${pic.shortTitle}${pic.image}`}
                                     alt={pic.alt}
@@ -135,23 +130,12 @@ export default function Gallery({ allProjectsData }) {
                                     objectFit="cover"
                                 />
                             </a>
-                            </Link>
-                            <div className={captionToggle ? gallery.hide : gallery.hover}>
-                                <Link href={`/projects/${pic.link}`}>
-                                    <a className={gallery.title}>Project: {pic.title}
-                                        &nbsp;
-                                        <span class="material-symbols-outlined">
-                                            north_east
-                                        </span>
-                                    </a>
-                                </Link>
-                                <p className={gallery.des}>{pic.alt}</p>
-                            </div>
-                        </div>
+                        </Link>
+
 
                         <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={captionToggle ? gallery.caption : gallery.hide}>
                             <Link href={`/projects/${pic.link}`}>
-                            <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
+                                <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
                             </Link>
                             <p>{pic.alt}</p>
                             <Link href={`/projects/${pic.link}`}>
@@ -167,7 +151,7 @@ export default function Gallery({ allProjectsData }) {
 
             {/* BOTTOM TOGGLES */}
 
-            <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{ right: sidePanelShow ? "0" : "-300px" }} >
+            {/* <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{ right: sidePanelShow ? "0" : "-300px" }} >
                 <h3>Settings</h3>
                 <div className={gallery.sidePanelToggle} onClick={toggleSidePanel} style={{ transition: "ease 1s", border: sidePanelShow ? "2px solid var(--border1)" : "2px solid transparent" }}>
                     {sidePanelShow ? <span class="material-symbols-outlined">
@@ -180,7 +164,7 @@ export default function Gallery({ allProjectsData }) {
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
-            </aside>
+            </aside> */}
         </Layout >
 
     )

@@ -247,7 +247,11 @@
 
 .anchor {
     position: relative;
-    top: calc(-1 * var(--headerHeight))
+    top: calc(-1 * var(--headerHeight));
+}
+.anchor2 {
+    position: absolute;
+    top: calc(-1.5 * var(--headerHeight));
 }
 
 .hide {
