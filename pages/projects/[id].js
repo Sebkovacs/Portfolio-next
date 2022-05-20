@@ -155,12 +155,6 @@ export default function Project({ projectData }) {
                             where="Projects"
                         />
                     </div>
-                    <div className={utilStyles.pcOnly}>
-                    <ButtonBack
-                            link="/gallery"
-                            where="Gallery"
-                        />
-                    </div>
                 </div>
             </div>
 
