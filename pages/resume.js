@@ -53,7 +53,6 @@ export default function Resume() {
                                 <ul>
                                     <li>Revit (v2020)</li>
                                     <li>Vectorworks (v2017-2021)</li>
-                                    <li>Rhino</li>
                                 </ul>
                             </div>
 
