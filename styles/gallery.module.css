@@ -12,16 +12,12 @@
 }
 
 .wrapper {
-    /* border: 2px solid transparent; */
     height: auto;
     background-color: var(--bg2);
     overflow: hidden;
     position: relative;
 }
 
-.wrapper:hover {
-    /* border: 2px solid var(--border1); */
-}
 
 .imageSize {
     display: flex;

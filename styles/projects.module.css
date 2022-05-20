@@ -147,6 +147,7 @@
 
 .planTitle {
     font-size: 1em;
+    padding: 0 1em;
 }
 
 .planDetails {
@@ -158,6 +159,9 @@
     position: absolute;
     bottom: 0;
     padding: 0 1em;
+    color: var(--t1);
+}
+.planDetails span {
     color: var(--t1);
 }
 
