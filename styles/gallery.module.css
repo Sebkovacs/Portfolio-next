@@ -12,7 +12,7 @@
 }
 
 .wrapper {
-    border: 2px solid transparent;
+    /* border: 2px solid transparent; */
     height: auto;
     background-color: var(--bg2);
     overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .wrapper:hover {
-    border: 2px solid var(--border1);
+    /* border: 2px solid var(--border1); */
 }
 
 .imageSize {
@@ -246,12 +246,6 @@
         position: relative;
     }
 
-    .caption p:first-child {
-        font-weight: 700;
-        border-right: 0 double var(--border1);
-        border-bottom: 1px double var(--border1);
-    }
-
     .sidePanel .toggle {
         margin-top: 1rem;
         width: auto;
@@ -262,6 +256,15 @@
 
     .captionLink {
 display: none;
+    }
+
+    .projectLink {
+        font-size: .3em;
+        padding: .2rem 0;
+    }
+    .caption p{
+        font-size: .5em;
+        padding: .2rem 0;
     }
 
     .sidePanel h3 {
@@ -295,10 +298,6 @@ display: none;
         align-items: center;
         flex-grow: 1;
         gap: 1em;
-    }
-
-    .wrapper {
-        border: 1px solid var(--bg1);
     }
 
     .imageGrid {
