@@ -95,8 +95,6 @@ export default function Gallery({ allProjectsData }) {
 
     }
 
-    let imgCount = 0;
-
     return (
         <Layout>
             <Head>
@@ -117,7 +115,7 @@ export default function Gallery({ allProjectsData }) {
 
                 {/* MAP GALLERY > galleryList */}
 
-                {randomGalleryList.map((pic) => 
+                {randomGalleryList.map((pic, index) => 
                     <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}>
 
                         <div className={utilStyles.anchor2} id={`${pic.shortTitle}-${pic.id}`}/>
@@ -130,6 +128,7 @@ export default function Gallery({ allProjectsData }) {
                                     alt={pic.alt}
                                     layout="fill"
                                     objectFit="cover"
+                                    priority = {index <= 6 ? true : false}
                                 />
                             </a>
                         </Link>

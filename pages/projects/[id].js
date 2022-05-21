@@ -63,6 +63,7 @@ export default function Project({ projectData }) {
     const [panoDrop, setPanoDrop] = useState(false)
     function togglePanoDrop() { setPanoDrop(!panoDrop) }
 
+
     return (
         <Layout>
             <Head>
@@ -167,13 +168,14 @@ export default function Project({ projectData }) {
 
                 <SRLWrapper options={options}>
                     <div className={imageGrid ? projects.gridWrap1 : projects.gridWrap2}>
-                        {projectData.pics.map((pic) =>
+                        {projectData.pics.map((pic, index) =>
                             <div className={imageGrid ? projects.pic1 : projects.pic2} key={pic.id}>
                                 <Image
                                     src={`/projects/${projectData.shortTitle}${pic.image}`}
                                     alt={pic.alt}
                                     layout="fill"
                                     objectFit="cover"
+                                    priority = {index <= 4 ? true : false}
                                 />
                                 <h3 className={projects.imageTitle}>{pic.id} {pic.alt}</h3>
                             </div>

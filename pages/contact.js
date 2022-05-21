@@ -25,8 +25,8 @@ export default function Contact(){
 
                     
                     <div className={utilStyles.contact}>
-                        <div className={gif.talk}><Image src={"/talk.gif"} layout="fill" objectFit='cover'></Image></div>
-                        <div className={gif.happyblue}><Image src={"/happyblue.gif"} layout="fill" objectFit='cover'/></div>
+                        <div className={gif.talk}><Image src={"/talk.gif"} layout="fill" objectFit='cover' priority="true"></Image></div>
+                        <div className={gif.happyblue}><Image src={"/happyblue.gif"} layout="fill" objectFit='cover' priority="true"/></div>
                         <div className={gif.icon}>
                             {/* <Image src={"/sebastian-kovacs-portfolio.png"} height={50} width={50}/> */}
                             </div>

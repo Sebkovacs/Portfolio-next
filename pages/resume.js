@@ -96,8 +96,8 @@ export default function Resume() {
                             Contact Me 👌
                         </div>
                             
-                        <div className={gif.friday}><Image src={"/friday.gif"} layout="fill" objectFit='cover' objectPosition={"bottom"} /></div>
-                        <Image src={"/fire.gif"} layout="fill" objectFit='cover' objectPosition={"top"}/>
+                        <div className={gif.friday}><Image src={"/friday.gif"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true"/></div>
+                        <Image src={"/fire.gif"} layout="fill" objectFit='cover' objectPosition={"top"} priority="true"/>
                         </a>
                         </Link>
 
