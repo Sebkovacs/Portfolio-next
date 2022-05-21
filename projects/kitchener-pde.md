@@ -27,7 +27,26 @@ pics: [
 {id: "3", image: '/3.jpg', alt: "hello"},
 {id: "4", image: '/4.jpg', alt: "hello"},
 {id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
+{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
+{id: "7", image: '/7.jpg', alt: "hello"},
+{id: "8", image: '/8.jpg', alt: "hello"},
+{id: "9", image: '/9.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
+{id: "10", image: '/10.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
+{id: "11", image: '/11.jpg', alt: "hello"},
+{id: "12", image: '/12.jpg', alt: "hello"},
+{id: "13", image: '/13.jpg', alt: "hello"},
+{id: "14", image: '/14.jpg', alt: "hello"},
+{id: "15", image: '/15.jpg', alt: "hello"},
+{id: "16", image: '/16.jpg', alt: "hello"},
+{id: "17", image: '/17.jpg', alt: "hello"},
+{id: "18", image: '/18.jpg', alt: "hello"},
+{id: "19", image: '/19.jpg', alt: "hello"},
+{id: "20", image: '/20.jpg', alt: "hello"},
+{id: "21", image: '/21.jpg', alt: "hello"},
+
+
+
+
 ]
 
 north: 43
