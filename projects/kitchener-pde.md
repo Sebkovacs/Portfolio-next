@@ -1,8 +1,8 @@
 ---
-title: 'Duplex Concept'
-shortTitle: 'kitchener'
+title: Duplex Concept
+shortTitle: kitchener
 
-pano: "https://pano.sebastiankovacs.info"
+pano: https://kitchener-pano.vercel.app/
 
 date: '2019-10-12'
 
@@ -16,7 +16,7 @@ rendering: 'Vray'
 photography: 
 
 
-summary: 'New build on country property in the beautiful Hunter Valley.'
+summary: New build on country property in the beautiful Hunter Valley.
 
 thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'

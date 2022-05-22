@@ -118,10 +118,10 @@ export default function Project({ projectData }) {
                         }
 
                         {projectData.hasOwnProperty("panos") ?
-                            <details id="panoDrop" className={utilStyles.grow} onClick={togglePanoDrop}>
+                            <details id="panoDrop" className={` ${utilStyles.grow} `} onClick={togglePanoDrop}>
                                 <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
                                 {projectData.panos.map((pano) =>
-                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
+                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
                             </details>
                             : <div />
                         }

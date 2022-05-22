@@ -236,6 +236,7 @@
     /* border: none; */
 }
 
+
 .ontop {
     margin-top: 3em;
     position: relative;
@@ -277,8 +278,8 @@
 
 .link {
 
-    padding: .5em;
-    margin: .5em;
+    padding: .5rem;
+    margin: .5rem;
     background-color: var(--bg2);
     display: flex;
     align-items: center;
@@ -341,6 +342,12 @@
     display: none;
 }
 
+.font2 {
+    font-family: var(--font2);
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: .5em;
+}
 
 @media (max-width: 1024px) {
     .flex {

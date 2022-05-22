@@ -20,6 +20,8 @@
   --headerHeight: 3rem;
   --h1Height: 5rem;
 
+  --font2: 'Inconsolata', monospace;
+
 }
 
 html {
@@ -66,16 +68,15 @@ details {
   cursor: pointer;
 }
 details[open]{
-  background-color: var(--bg1);
-  width: 100vw;
-  position: absolute;
+  /* background-color: var(--bg1); */
+  /* width: 100vw; */
+  position: relative;
 }
 
 
 details[open] summary{
   background-color: var(--s2);
 }
-
 
 
 time {
@@ -114,7 +115,7 @@ footer ul li:first-child {
   font-weight: 600;
 }
 
-a {
+a , summary{
   color: var(--s1);
   text-decoration: none;
   transition: 1s ;
@@ -128,10 +129,6 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
-}
-
-a:focus {
-  opacity: .7;
 }
 
 main a:hover, summary:hover {

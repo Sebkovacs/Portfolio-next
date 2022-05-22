@@ -19,12 +19,13 @@ thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "hello"},
-{id: "2", image: '/2.jpg', alt: "hello"},
-{id: "3", image: '/3.jpg', alt: "hello"},
-{id: "4", image: '/4.jpg', alt: "hello"},
-{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed"},
-{id: "6", image: '/6.png', alt: "Ground Level Photomontage of the field and proposed facility building"}
+{id: "1", image: '/1.jpg', alt: "Main view from laneway"},
+{id: "2", image: '/2.jpg', alt: "View from main road: Council St"},
+{id: "3", image: '/3.jpg', alt: "View to the trees"},
+{id: "4", image: '/4.jpg', alt: "Main Entry: New detailing"},
+{id: "5", image: '/5.jpg', alt: "Respecting the heritage aesthetic and blending in..."},
+{id: "6", image: '/6.jpg', alt: "New kitchen and dining on the main level"},
+{id: "7", image: '/7.jpg', alt: "Render of new backyard and interior design"}
 ]
 
 north: -50
@@ -37,9 +38,7 @@ plans: [
 {id: "5", plan: '/p5.jpg', alt: "Section A"},
 {id: "6", plan: '/p6.jpg', alt: "Section B"},
 {id: "7", plan: '/p7.jpg', alt: "Section C"},
-{id: "8", plan: '/p8.jpg', alt: "Construction Details"},
-# {id: "9", plan: '/p9.jpg', alt: "Construction Details"},
-
+{id: "8", plan: '/p8.jpg', alt: "Construction Details"}
 ]
 
 ---

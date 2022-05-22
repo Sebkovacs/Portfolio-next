@@ -13,16 +13,39 @@ software:  Revit
 rendering: Vray
 photography: 
 
-thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
+
+thumb: /1.jpg
+thumbAlt: Townhouse Renovation Concepts
+
+
+panos: [
+    {name: Concept 1,
+    link: https://dawson-c1-pano.vercel.app/
+    },
+    {name: Concept 2,
+    link: https://dawson-c2.vercel.app/
+    }
+]
 
 pics: [
 {id: "1", image: '/1.jpg', alt: "hello"},
 {id: "2", image: '/2.jpg', alt: "hello"},
 {id: "3", image: '/3.jpg', alt: "hello"},
 {id: "4", image: '/4.jpg', alt: "hello"},
-{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
+{id: "5", image: '/5.jpg', alt: "hello"},
+{id: "6", image: '/6.jpg', alt: "hello"},
+{id: "7", image: '/7.jpg', alt: "hello"},
+{id: "8", image: '/8.jpg', alt: "hello"},
+{id: "9", image: '/9.jpg', alt: "hello"},
+{id: "10", image: '/10.jpg', alt: "hello"},
+{id: "11", image: '/11.jpg', alt: "hello"},
+{id: "12", image: '/12.jpg', alt: "hello"},
+{id: "13", image: '/13.jpg', alt: "hello"},
+{id: "14", image: '/14.jpg', alt: "hello"},
+{id: "15", image: '/15.jpg', alt: "hello"},
+{id: "16", image: '/16.jpg', alt: "hello"},
+{id: "17", image: '/17.jpg', alt: "hello"},
+{id: "18", image: '/18.jpg', alt: "hello"}
 ]
 
 north: 45
