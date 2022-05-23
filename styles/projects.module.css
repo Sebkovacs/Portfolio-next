@@ -33,12 +33,12 @@
 }
 
 .details ul {
-    padding-inline-start: 3em;
-    padding-inline-end: 3em;
+    padding-inline-start: 2em;
+    padding-inline-end: 1em;
 }
 
 .details li {
-    padding: 1em 0;
+    padding: .5em 0;
     margin: 0;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .details p {
-    padding: 0 1rem 1rem 1rem;
+    padding: .5rem 1rem;
     margin: 0;
 }
 

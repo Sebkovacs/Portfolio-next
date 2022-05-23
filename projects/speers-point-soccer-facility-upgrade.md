@@ -18,13 +18,13 @@ thumb: '/1.jpg'
 thumbAlt: "A photo of Speers Point Soccer Facility"
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "hello"},
-{id: "2", image: '/2.jpg', alt: "hello"},
-{id: "3", image: '/3.jpg', alt: "hello"},
-{id: "4", image: '/4.jpg', alt: "hello"},
-{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
-{id: "7", image: '/7.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
+{id: 1, image: '/1.jpg', alt: New home of the Jets... },
+{id: 2, image: '/2.jpg', alt: Field facing facade},
+{id: 3, image: '/3.jpg', alt: View from the carpark},
+{id: 4, image: '/4.jpg', alt: Eaves detailing},
+{id: 5, image: '/5.jpg', alt: Public toilet window detailing},
+{id: 6, image: '/6.jpg', alt: Ground Level Photomontage of the field and proposed building},
+{id: 7, image: '/7.jpg', alt: Aerial Photomontage of the proposed building}
 ]
 
 north: -10

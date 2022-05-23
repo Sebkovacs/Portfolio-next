@@ -139,11 +139,6 @@ export default function Gallery({ allProjectsData }) {
                                 <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
                             </Link>
                             <p>{pic.alt}</p>
-                            <Link href={`/projects/${pic.link}`}>
-                                <a className={gallery.captionLink}>
-                                    <span style={{ fontSize: "20px" }} className="material-symbols-outlined">north_east</span>
-                                </a>
-                            </Link>
                         </div>
                     </div>
 
@@ -152,7 +147,7 @@ export default function Gallery({ allProjectsData }) {
 
             {/* BOTTOM TOGGLES */}
 
-            {/* <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{ right: sidePanelShow ? "0" : "-300px" }} >
+            <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{ right: sidePanelShow ? "0" : "-300px" }} >
                 <h3>Settings</h3>
                 <div className={gallery.sidePanelToggle} onClick={toggleSidePanel} style={{ transition: "ease 1s", border: sidePanelShow ? "2px solid var(--border1)" : "2px solid transparent" }}>
                     {sidePanelShow ? <span class="material-symbols-outlined">
@@ -165,7 +160,7 @@ export default function Gallery({ allProjectsData }) {
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
-            </aside> */}
+            </aside>
         </Layout >
 
     )
