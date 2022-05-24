@@ -83,29 +83,21 @@ export default function Gallery({ allProjectsData }) {
             aspectRatio = '1 / 1';
             ratioText = "Square";
             break;
-
-        default:
-            aspectRatio = '16 / 9';
-            ratioText = "Square";
     }
 
-    let gridSwitch = 3;
-    let gridText = ""
-    switch (gridCount) {
-        case true:
-            gridSwitch = 1;
-            gridText = "Single"
-            break;
+    // let gridSwitch = 3;
+    // let gridText = ""
+    // switch (gridCount) {
+    //     case true:
+    //         gridSwitch = 1;
+    //         gridText = "Single"
+    //         break;
 
-        case false:
-            gridSwitch = 3;
-            gridText = "Grid"
-
-            break;
-        default:
-            gridSwitch = 1;
-            gridText = "Single"
-    }
+    //     case false:
+    //         gridSwitch = 3;
+    //         gridText = "Grid"
+    //         break;
+    // }
 
     let imageDisplay = ""
     let imageDisplayText =""
@@ -125,12 +117,11 @@ export default function Gallery({ allProjectsData }) {
             imageDisplayText = "1 large landscape"
             break;
 
-
-        default:
+        case gridCount && imageRatio:
             imageDisplay = gallery.landscapeGrid;
             imageDisplayText = "landscape grid"
+                break;
     }
-    console.log("image display =" , imageDisplayText)
 
     return (
         <Layout>
@@ -187,10 +178,10 @@ export default function Gallery({ allProjectsData }) {
             <SidePanel
                 heading={"Settings"}
             >
-                <p className={utilStyles.link} onClick={toggleImageGridOnly}>{gridText} &nbsp;{gridCount ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}</p>
-                <p className={utilStyles.link} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}</p>
-                <p className={`${gridCount? gallery.toggleGray : null} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
-                <p className={utilStyles.link} id={gallery.mix} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
+                <p className={utilStyles.link2} onClick={toggleImageGridOnly}>{gridCount ?  "Grid" : "Single" } &nbsp;{gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
+                <p className={utilStyles.link2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}</p>
+                <p className={`${gridCount? gallery.toggleGray : null} ${utilStyles.link2}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                <p className={utilStyles.link2} id={gallery.mix} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
             </SidePanel>
         </Layout >
 

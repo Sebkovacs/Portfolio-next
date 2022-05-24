@@ -305,7 +305,7 @@
         grid-template-columns: 1fr 1fr;
         width: 100vw;
         padding: 1em 0px;
-        gap: 2em 0px;
+        gap: 0px;
     }
 
     .caption {
@@ -347,6 +347,10 @@
         color: var(--p3);
         background-color: var(--p2);
     }
+    .toggleGray span {
+        background-color: transparent;
+    }
+
 
     .sidePanel h3 {
         text-align: center;
