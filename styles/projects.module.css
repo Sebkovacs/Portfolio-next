@@ -111,12 +111,22 @@
 .thumb {
     position: relative;
 }
-.pic1, .pic2 {
-    aspect-ratio: 16 / 9;
-    position: relative;
-    transition: .5s;
-    cursor: pointer;
+
+.wrapper {
+    height: auto;
+    background-color: var(--bg2);
     overflow: hidden;
+    position: relative;
+
+}
+
+.pic {
+    display: flex;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16 / 9;    
+    cursor: pointer;
 }
 
 .plan {
@@ -127,22 +137,27 @@
     cursor: pointer;
 }
 
-.imageTitle {
-    display: none;
+.pic .imageTitle {
+    opacity: 0;
+
     position: absolute;
     bottom: 0;
     padding: .5em 1em;
+
     align-items: center;
+
     background-color: var(--p3);
     color: var(--bg2);
+
     font-family: 'Inconsolata', monospace;
     font-size: .5em;
-    font-weight: 500;
+    font-weight: 400;
+    font-style: normal;
+    text-transform:initial;
 }
 
-.pic1:hover .imageTitle, .pic2:hover .imageTitle  {
-    display: flex;
-    position: absolute;
+.pic:hover .imageTitle {
+    opacity: 1;
 }
 
 .planTitle {
@@ -161,6 +176,8 @@
     padding: 0 1em;
     color: var(--t1);
 }
+
+
 .planDetails span {
     color: var(--t1);
 }
@@ -239,13 +256,8 @@
     .thumb {
         height: calc(60vw);
     }
-    .pic1 {
-        /* height: calc(50vh); */
+    .pic {
         aspect-ratio: 16 / 9;
-    }
-    .pic2 {
-        /* height: calc(100vw / 3); */
-        aspect-ratio: 1 / 1;
     }
 
     .planTitle{
@@ -274,7 +286,7 @@
 
 @media (max-width: 425px) {
 
-    .pic1:hover .imageTitle, .pic2:hover .imageTitle  {
+    .pic:hover .imageTitle {
         display: none;
     }
 
@@ -317,13 +329,7 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .pic1 {
-        /* height: 100vw; */
-        aspect-ratio: 16 / 9;
-    }
-
-    .pic2 {
-        /* height: calc(100vw / 3); */
+    .pic {
         aspect-ratio: 1 / 1;
     }
 

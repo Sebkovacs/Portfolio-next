@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/Layout'
+
 import { getSortedProjectsData } from '../lib/projects'
+
 import gallery from '../styles/gallery.module.css'
 import utilStyles from '../styles/utils.module.css'
 
@@ -134,7 +136,7 @@ export default function Gallery({ allProjectsData }) {
                         </Link>
 
 
-                        <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={captionToggle ? gallery.caption : gallery.hide}>
+                        <div className={captionToggle ? gallery.caption : gallery.hide}>
                             <Link href={`/projects/${pic.link}`}>
                                 <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
                             </Link>

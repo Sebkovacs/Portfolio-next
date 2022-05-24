@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SRLWrapper } from "simple-react-lightbox";
+// import { SRLWrapper } from "simple-react-lightbox";
 
 import Layout, { siteTitle } from '../../components/LayoutSideOpen'
 import Date from '../../components/Date'
@@ -12,6 +12,8 @@ import { getAllProjectIds, getProjectData } from '../../lib/projects'
 
 import utilStyles from '../../styles/utils.module.css'
 import projects from '../../styles/projects.module.css'
+import gallery from '../../styles/gallery.module.css'
+
 import { useState } from "react";
 
 
@@ -55,13 +57,18 @@ export default function Project({ projectData }) {
     }
 
     const [imageGrid, setImageGrid] = useState(false)
-    function toggleImageGrid() { setImageGrid(!imageGrid); }
-
+    const [imageRatio, setImageRatio] = useState(false)
     const [planGrid, setPlanGrid] = useState(true)
-    function togglePlanGrid() { setPlanGrid(!planGrid); }
-
     const [panoDrop, setPanoDrop] = useState(false)
-    function togglePanoDrop() { setPanoDrop(!panoDrop) }
+    const [captionToggle, setCaptionToggle] = useState(false)
+
+
+
+
+    function toggleImageGrid() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); }
+    function togglePlanGrid() { setPlanGrid(!planGrid); }
+    function togglePanoDrop() { setPanoDrop(!panoDrop); }
+
 
 
     return (
@@ -105,7 +112,7 @@ export default function Project({ projectData }) {
                         </a>
 
                         <a href="#plans" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
-                                Plans
+                            Plans
                             <label htmlFor="planGrid" className={` ${utilStyles.toggle}  `}>
                                 {planGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
                             </label>
@@ -149,7 +156,7 @@ export default function Project({ projectData }) {
 
                     {/* main write up */}
                     <h3>Overview</h3>
-                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} className={utilStyles.grow}/>
+                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} className={utilStyles.grow} />
                     <div className={utilStyles.pcOnly}>
                         <ButtonBack
                             link="/"
@@ -164,51 +171,62 @@ export default function Project({ projectData }) {
             <div className={projects.main}>
 
                 <div id="images" className={utilStyles.anchor} />
-                {/* <h2 onClick={toggleImageGrid} className={utilStyles.mobileOnly}>Image Display &nbsp; {imageGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
-
-                <SRLWrapper options={options}>
-                    <div className={imageGrid ? projects.gridWrap1 : projects.gridWrap2}>
-                        {projectData.pics.map((pic, index) =>
-                            <div className={imageGrid ? projects.pic1 : projects.pic2} key={pic.id}>
-                                <Image
-                                    src={`/projects/${projectData.shortTitle}${pic.image}`}
-                                    alt={pic.alt}
-                                    layout="fill"
-                                    objectFit="cover"
-                                    priority = {index <= 4 ? true : false}
-                                />
-                                <h3 className={projects.imageTitle}>{pic.id} {pic.alt}</h3>
-                            </div>
-                        )}
-                    </div >
-
-                    {/* <div className={utilStyles.bb1} /> */}
-
-                    <div id="plans" className={utilStyles.anchor} />
-
-                    {/* <h2 onClick={togglePlanGrid} className={utilStyles.mobileOnly} >Plan Display &nbsp; {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
-
-                    <div className={planGrid ? projects.gridWrap1 : projects.gridWrap2}>
-                        {projectData.plans.map((plan) =>
-                            <div key={plan.id} className={`${utilStyles.bb1} ${projects.plan}`}>
-                                <Image
-                                    src={`/projects/${projectData.shortTitle}${plan.plan}`}
-                                    alt={plan.alt}
-                                    layout="fill"
-                                    objectFit="contain"
-                                />
-                                <div className={projects.planDetails}>
-
-                                    <h3 className={projects.planTitle}> {plan.alt}</h3>
-                                    <span class="material-symbols-outlined" style={{ transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan")? "block":"none" }}>
-                                        navigation
-                                    </span>
+   
+                <div className={imageGrid ? projects.gridWrap1 : projects.gridWrap2}>
+                    
+                    {/* MAP IMAGES */}
+                    
+                    {projectData.pics.map((pic, index) =>
+                        <div className={projects.wrapper} key={pic.id}>
+                            
+                            <div className={utilStyles.anchor2} style={{backgroundColor: "red"}} id={`img${pic.id}`}>ANCHOR</div>
+                            
+                            <Link href={`#img${pic.id}`}>
+                                <div onClick={toggleImageGrid} className={projects.pic}>
+                                    <Image
+                                        src={`/projects/${projectData.shortTitle}${pic.image}`}
+                                        alt={pic.alt}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        priority={index <= 4 ? true : false}
+                                    />
+                                    <h3 className={projects.imageTitle} style={{ display: captionToggle && "none" }}>{pic.id} {pic.alt}</h3>
                                 </div>
-                            </div>
-                        )}
-                    </div>
+                            </Link>
 
-                </SRLWrapper>
+                            <div className={captionToggle ? gallery.caption : gallery.hide}>
+                                <p>{pic.alt}</p>
+                            </div>
+                        </div>
+                    )}
+
+                </div >
+
+                {/* <div className={utilStyles.bb1} /> */}
+
+                <div id="plans" className={utilStyles.anchor} />
+
+                {/* <h2 onClick={togglePlanGrid} className={utilStyles.mobileOnly} >Plan Display &nbsp; {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
+
+                <div className={planGrid ? projects.gridWrap1 : projects.gridWrap2}>
+                    {projectData.plans.map((plan) =>
+                        <div key={plan.id} className={`${utilStyles.bb1} ${projects.plan}`}>
+                            <Image
+                                src={`/projects/${projectData.shortTitle}${plan.plan}`}
+                                alt={plan.alt}
+                                layout="fill"
+                                objectFit="contain"
+                            />
+                            <div className={projects.planDetails}>
+
+                                <h3 className={projects.planTitle}> {plan.alt}</h3>
+                                <span class="material-symbols-outlined" style={{ transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>
+                                    navigation
+                                </span>
+                            </div>
+                        </div>
+                    )}
+                </div>
                 <div className={utilStyles.pcOnly} >
                     <ButtonTop link="#top" where="Top" />
                 </div>
