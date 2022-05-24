@@ -42,7 +42,7 @@ export default function Gallery({ allProjectsData }) {
     // const [imageGrid, setImageGrid] = useState(true)
     // function toggleImageGrid() { setImageGrid(!imageGrid); }
 
-    const [gridCount, setGridCount] = useState(false)
+    const [gridCount, setGridCount] = useState(true)
     const [imageRatio, setImageRatio] = useState(false)
     const [captionToggle, setCaptionToggle] = useState(false)
     const [sidePanelShow, setSidePanelShow] = useState(false)
@@ -85,24 +85,52 @@ export default function Gallery({ allProjectsData }) {
             break;
 
         default:
-            aspectRatio = '1 / 1';
+            aspectRatio = '16 / 9';
             ratioText = "Square";
     }
 
-    let gridSwitch = false
+    let gridSwitch = 3;
+    let gridText = ""
     switch (gridCount) {
         case true:
             gridSwitch = 1;
+            gridText = "Single"
             break;
 
         case false:
             gridSwitch = 3;
+            gridText = "Grid"
 
             break;
         default:
             gridSwitch = 1;
-
+            gridText = "Single"
     }
+
+    let imageDisplay = ""
+    let imageDisplayText =""
+    switch (gridCount, imageRatio) {
+        case gridCount && !imageRatio:
+            imageDisplay = gallery.squareSingle;
+            imageDisplayText = "1 large square"
+            break;
+
+        case !gridCount && !imageRatio:
+            imageDisplay = gallery.squareGrid;
+            imageDisplayText = "square grid"
+            break;
+
+        case !gridCount && imageRatio:
+            imageDisplay = gallery.landscapeSingle;
+            imageDisplayText = "1 large landscape"
+            break;
+
+
+        default:
+            imageDisplay = gallery.landscapeGrid;
+            imageDisplayText = "landscape grid"
+    }
+    console.log("image display =" , imageDisplayText)
 
     return (
         <Layout>
@@ -120,14 +148,14 @@ export default function Gallery({ allProjectsData }) {
             </div>
 
             {/* Main Conent */}
-            <div className={` ${gallery.imageGrid}`} style={{ gridTemplateColumns: `repeat(${gridSwitch}, 1fr`, gap: imageRatio ? "10vh" : null }}>
+            <div className={`${gallery.imageGrid} ${imageDisplay}`} >
 
                 {/* MAP GALLERY > galleryList */}
 
-                {randomGalleryList.map((pic, index) => 
+                {randomGalleryList.map((pic, index) =>
                     <div key={`${pic.id}${pic.shortTitle}${pic.alt}`} className={gallery.wrapper}>
 
-                        <div className={utilStyles.anchor2} id={`${pic.shortTitle}-${pic.id}`}/>
+                        <div className={utilStyles.anchor2} id={`${pic.shortTitle}-${pic.id}`} />
 
 
                         <Link href={`#${pic.shortTitle}-${pic.id}`} >
@@ -137,13 +165,13 @@ export default function Gallery({ allProjectsData }) {
                                     alt={pic.alt}
                                     layout="fill"
                                     objectFit="cover"
-                                    priority = {index <= 6 ? true : false}
+                                    priority={index <= 6 ? true : false}
                                 />
                             </a>
                         </Link>
 
 
-                        <div className={captionToggle ? gallery.caption : gallery.hide}>
+                        <div className={`${captionToggle ? gallery.caption : gallery.hide} ${gridCount ? gallery.captionHide : null}`}>
                             <Link href={`/projects/${pic.link}`}>
                                 <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
                             </Link>
@@ -157,13 +185,12 @@ export default function Gallery({ allProjectsData }) {
             {/* BOTTOM TOGGLES */}
 
             <SidePanel
-            heading={"Settings"}
-            fullHeight={true}
+                heading={"Settings"}
             >
-                <p className={utilStyles.link} onClick={toggleImageGridOnly}>Grid Toggle {gridCount}</p>
-                <p className={utilStyles.link} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
-                <p className={utilStyles.link} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
-                <p className={utilStyles.link} onClick={mixGallery}>Mix Gallery</p>
+                <p className={utilStyles.link} onClick={toggleImageGridOnly}>{gridText} &nbsp;{gridCount ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}</p>
+                <p className={utilStyles.link} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}</p>
+                <p className={`${gridCount? gallery.toggleGray : null} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                <p className={utilStyles.link} id={gallery.mix} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
             </SidePanel>
         </Layout >
 

@@ -1,14 +1,35 @@
 .imageGrid {
-    padding: 2em 10em;
     margin: auto;
+    padding: 2em;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 10px;
 
     position: relative;
     overflow: hidden;
+}
+
+.squareSingle {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 45vw;
+}
+
+.squareGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80vw;
+}
+
+.landscapeSingle {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 75vw;
+}
+
+.landscapeGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80vw;
 }
 
 .wrapper {
@@ -19,6 +40,7 @@
     border: 2px solid transparent;
     user-select: none;
 }
+
 .wrapper:hover {
     border: 2px solid var(--p2);
 }
@@ -52,13 +74,15 @@
     color: var(--t2);
 
     font-family: 'Inconsolata', monospace;
-    width: max-content;
+    width: fit-content;
     font-size: .4em;
     font-weight: 700;
     font-style: normal;
     text-transform: capitalize;
     /* letter-spacing: 1px; */
     transition: 0s;
+
+
 }
 
 .projectLink:hover {
@@ -171,6 +195,11 @@
     display: none;
 }
 
+#mix:active span {
+    transform: rotateZ(90deg);
+}
+
+
 @media (max-width: 768px) {
     .wrapper {
         border: none;
@@ -182,8 +211,36 @@
 
 
     .imageGrid {
-        padding: 1em 2em;
+        padding: 1rem 2rem;
         grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+    }
+
+    .squareSingle {
+        padding: 1rem 1rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        width: 100vw;
+    }
+
+    .squareGrid {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100vw;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .landscapeSingle {
+        padding: 1rem 1rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100vw;
+    }
+
+    .landscapeGrid {
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
+        padding: 5px;
         gap: 5px;
     }
 
@@ -224,6 +281,33 @@
 }
 
 @media (max-width: 425px) {
+
+    .squareSingle {
+        padding: 1rem 0rem;
+        grid-template-columns: 1fr;    
+        gap: 2rem;
+        width: 100vw;
+    }
+    .squareGrid {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100vw;
+        padding: 0px;
+        gap: 0px;
+    }
+    .landscapeSingle {
+        padding: 1rem 0;
+        grid-template-columns: 1fr;  
+        gap: 2rem;
+        width: 100vw;
+    }
+    
+    .landscapeGrid {
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
+        padding: 1em 0px;
+        gap: 2em 0px;
+    }
+
     .caption {
         display: flex;
         flex-direction: column;
@@ -239,20 +323,32 @@
     }
 
     .captionLink {
-display: none;
+        display: none;
     }
 
     .projectLink {
         font-size: .3em;
         padding: .2rem 0;
     }
-    .caption p{
-        font-size: .5em;
+
+    .caption p {
+        font-size: 50%;
+        padding: .2rem 0;
+    }
+    .caption a {
+        font-size: 40%;
         padding: .2rem 0;
     }
 
-    .sidePanel h3 {
+    .captionHide {
+        display: none;
+    }
+    .toggleGray, .toggleGray span {
+        color: var(--p3);
+        background-color: var(--p2);
+    }
 
+    .sidePanel h3 {
         text-align: center;
 
         padding: 1em 1em;
@@ -271,7 +367,7 @@ display: none;
         height: auto;
         min-height: 3em;
         width: 80%;
-        
+
     }
 
     .sidePanel {
@@ -283,13 +379,6 @@ display: none;
         align-items: center;
         flex-grow: 1;
         gap: 1em;
-    }
-
-    .imageGrid {
-        padding: 0em;
-        margin: 0%;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0px;
     }
 
     .image1 {

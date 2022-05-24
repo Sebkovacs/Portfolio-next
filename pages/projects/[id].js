@@ -15,7 +15,6 @@ import projects from '../../styles/projects.module.css'
 import gallery from '../../styles/gallery.module.css'
 
 import { useState } from "react";
-import SidePanel from '../../components/SidePanel'
 
 
 
@@ -206,38 +205,11 @@ export default function Project({ projectData }) {
             </div>
 
             {/* Mobile Device Image Controls */}
-            <SidePanel 
-            heading={"Image Display"}
-            fullHeight={true}
-            >
-                <a className={utilStyles.link2} onClick={toggleImageRatio}>
-                    {/* {ratioText}
-                    &nbsp;
-                    {imageRatio ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">crop_square</span>} */}
-                Square
-                {imageRatio ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}
-                    Landscape
-                
-                </a>
-
-                <Link href="#images">
-                    <a onClick={toggleImageGrid}
-                        className={utilStyles.link2}
-                    >
-                        {/* {gridText} */}
-                        Grid
-                        {/* &nbsp; */}
-                        {/* {imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>} */}
-                        {imageGrid ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}
-                        Single
-                    </a>
-                </Link>
-                
-            </SidePanel>
-            {/* <div className={` ${projects.imageControls} ${utilStyles.mobileOnlyFlex}`}>
+            
+            <div className={` ${projects.imageControls} ${utilStyles.mobileOnlyFlex}`}>
                 <a className={utilStyles.link2} onClick={toggleImageRatio}>
                     {ratioText}
-                    &nbsp;{imageRatio ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">crop_square</span>}
+                    &nbsp;{imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
                 </a>
 
                 <Link href="#images">
@@ -248,13 +220,13 @@ export default function Project({ projectData }) {
                         &nbsp;{imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
                     </a>
                 </Link>
-            </div> */}
+            </div>
 
             {/* Main Content */}
 
             <div className={projects.main}>
 
-                <div id="images" className={utilStyles.anchor2} style={{ backgroundColor: "red" }}></div>
+                <div id="images" className={utilStyles.anchor2}></div>
 
                 <div className={imageGrid ? projects.gridWrap1 : projects.gridWrap2}>
 

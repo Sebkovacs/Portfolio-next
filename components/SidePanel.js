@@ -1,12 +1,14 @@
 import side from '../styles/sidePanel.module.css'
+import utilStyles from '../styles/utils.module.css'
 import { useState } from 'react';
-import { useEffect } from 'react'
 
 export default function SidePanel({ children, heading }) {
 
     let [panelOpen, setPanelOpen] = useState(false);
 
     function toggle() { setPanelOpen(!panelOpen) };
+
+    console.log("panel is open ", panelOpen)
 
     return (
         <aside>
@@ -32,7 +34,7 @@ export default function SidePanel({ children, heading }) {
 
                 </div>
 
-                <div className={side.background} onClick={toggle} style={{ opacity: panelOpen ? "1" : "0", display: panelOpen ? "block" : "none" }}/>
+                <div className={`${utilStyles.mobileOnly} ${side.background} }`} onClick={toggle} style={{ display: !panelOpen && "none"}}/>
 
         </aside>
     )
