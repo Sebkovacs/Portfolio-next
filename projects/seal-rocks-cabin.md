@@ -1,7 +1,7 @@
 ---
 title: 'Farm Air BNB Cabin'
 shortTitle: 'topi'
-
+pano: https://twinmotion.unrealengine.com/panorama/Njp9KYyAXZO7wA2o
 
 date: '2019-03-02'
 

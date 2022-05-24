@@ -1,7 +1,7 @@
 ---
-title: 'Tudor Apartments'
-shortTitle: 'tudor'
-pano: "https://twinmotion.unrealengine.com/panorama/oFEBEKa1IxmAi7Wq"
+title: Tudor Apartments
+shortTitle: tudor
+pano: https://twinmotion.unrealengine.com/panorama/oFEBEKa1IxmAi7Wq
 
 date: '2019-11-15'
 
