@@ -1,0 +1,118 @@
+.panel {
+    position: fixed;
+    padding: 1em;
+    margin-top: var(--headerHeight);
+
+    height: calc(100vh - var(--headerHeight));
+
+    top: 0;
+
+    z-index: 10;
+
+    width: 300px;
+
+    border: 5px solid var(--border1);
+    border-radius: .5em;
+
+    transition: all ease 1s;
+
+    background-image: url("../public/smoke1.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-color: var(--border1);
+}
+
+.panel:hover {
+    border: 5px solid var(--border1);
+    box-shadow: 5px 5px 20px var(--border1);
+
+
+    background-color: var(--p2);
+    background-image: url("../public/smoke2.gif") ;
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+
+}
+
+.panel h3 {
+    padding-left: .5em;
+    padding-bottom: 1em;
+    border-bottom: 2px dotted var(--t1);
+}
+
+.panel p, .panel a{
+    background-image: none;
+    background-blend-mode: overlay;
+    margin-top: 1rem;
+    width: auto;
+    padding: .5em 1em;
+    height: 3em;
+    transition: 1s;
+    font-weight: 500;
+}
+
+.panel p:hover, .panel a:hover {
+    background-image: url("../public/smoke1.gif");
+    background-blend-mode: overlay;
+    background-color: var(--s2);
+    cursor: pointer;
+}
+
+.toggle {
+    width: 2em;
+    height: 2em;
+    background-color: var(--p2);
+    position: fixed;
+    right: .5rem;
+    bottom: .5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(var(--t1), .3);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    user-select: none;
+    z-index: 10;
+}
+
+
+.toggle:hover {
+    background-color: var(--p3);
+    box-shadow: 0 0 20px var(--p3);
+
+    /* top: calc(var(--headerHeight)); */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle span {
+    color: var(--bg1);
+}
+
+
+
+
+
+@media (max-width: 425px) {
+    .panel {
+        height: 2rem;
+        top: unset;
+        bottom: 0;
+        width: 100%;
+        padding: 0;
+    }
+    .toggle {
+        width: 1.5rem;
+        height: 1.5rem;
+        bottom: .25rem;
+    }
+    
+}

@@ -117,13 +117,6 @@
 
 }
 
-
-.sidePanel .toggle:hover {
-    background-image: url("../public/smoke1.gif");
-    background-blend-mode: overlay;
-    background-color: var(--s2);
-}
-
 .sidePanelToggle {
     width: 2em;
     height: 2em;

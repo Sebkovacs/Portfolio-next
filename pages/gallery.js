@@ -11,6 +11,7 @@ import Image from 'next/image'
 import gif from '../styles/gif.module.css'
 
 import { useState } from 'react'
+import SidePanel from '../components/SidePanel'
 
 
 
@@ -155,20 +156,15 @@ export default function Gallery({ allProjectsData }) {
 
             {/* BOTTOM TOGGLES */}
 
-            <aside className={`  ${gallery.sidePanel} ${utilStyles.list}`} style={{ right: sidePanelShow ? "0" : "-300px" }} >
-                <h3>Settings</h3>
-                <div className={gallery.sidePanelToggle} onClick={toggleSidePanel} style={{ transition: "ease 1s", border: sidePanelShow ? "2px solid var(--border1)" : "2px solid transparent" }}>
-                    {sidePanelShow ? <span class="material-symbols-outlined">
-                        navigate_next
-                    </span> : <span class="material-symbols-outlined">
-                        navigate_before
-                    </span>}
-                </div>
-                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGridOnly}>Grid Toggle {gridCount}</p>
-                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
-                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
-                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>
-            </aside>
+            <SidePanel
+            heading={"Settings"}
+            fullHeight={true}
+            >
+                <p className={utilStyles.link} onClick={toggleImageGridOnly}>Grid Toggle {gridCount}</p>
+                <p className={utilStyles.link} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
+                <p className={utilStyles.link} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                <p className={utilStyles.link} onClick={mixGallery}>Mix Gallery</p>
+            </SidePanel>
         </Layout >
 
     )
