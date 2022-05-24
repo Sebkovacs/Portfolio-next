@@ -32,7 +32,7 @@ export default function SidePanel({ children, heading }) {
 
                 </div>
 
-                <div className={side.background} onClick={toggle} style={{ opacity: panelOpen ? "1" : "0" }}/>
+                <div className={side.background} onClick={toggle} style={{ opacity: panelOpen ? "1" : "0", display: panelOpen ? "block" : "none" }}/>
 
         </aside>
     )
