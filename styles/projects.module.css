@@ -329,9 +329,9 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .pic {
+    /* .pic {
         aspect-ratio: 1 / 1;
-    }
+    } */
 
     .plan {
         height: 100vw;

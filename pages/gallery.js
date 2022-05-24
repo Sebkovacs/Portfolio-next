@@ -54,6 +54,12 @@ export default function Gallery({ allProjectsData }) {
         setCaptionToggle(!captionToggle);
         setImageRatio(!imageRatio);
     }
+    function toggleImageGridOnly() {
+        // if (gridCount < 4) {
+        //     setGridCount(currGrid => currGrid + 1)
+        // } else { setGridCount(1); }
+        setGridCount(!gridCount);
+    }
 
     function toggleImageRatio() {
         // imageRatio < 2 ? setImageRatio(currRatio => currRatio + 1) : setImageRatio(1);
@@ -158,7 +164,7 @@ export default function Gallery({ allProjectsData }) {
                         navigate_before
                     </span>}
                 </div>
-                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGrid}>Grid Toggle {gridCount}</p>
+                <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageGridOnly}>Grid Toggle {gridCount}</p>
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleImageRatio}>Aspect Ratio: {ratioText}</p>
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                 <p className={`${gallery.toggle} ${utilStyles.link}`} onClick={mixGallery}>Mix Gallery</p>

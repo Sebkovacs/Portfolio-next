@@ -17,7 +17,7 @@
     overflow: hidden;
     position: relative;
     border: 2px solid transparent;
-
+    user-select: none;
 }
 .wrapper:hover {
     border: 2px solid var(--p2);
@@ -44,21 +44,6 @@
     padding: .5em;
 }
 
-.captionLink {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: .5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1 / 1;
-}
-
-.captionLink:hover {
-    border-radius: 50%;
-}
-
 .projectLink {
     padding: .5em;
 
@@ -73,6 +58,7 @@
     font-style: normal;
     text-transform: capitalize;
     /* letter-spacing: 1px; */
+    transition: 0s;
 }
 
 .projectLink:hover {
@@ -113,6 +99,7 @@
     width: 300px;
     z-index: 99;
     transition: 1s;
+    user-select: none;
 }
 
 .sidePanel h3 {
