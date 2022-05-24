@@ -1,55 +1,38 @@
 import side from '../styles/sidePanel.module.css'
 import { useState } from 'react';
+import { useEffect } from 'react'
 
-export default function SidePanel({children, heading, fullHeight}) {
+export default function SidePanel({ children, heading }) {
 
     let [panelOpen, setPanelOpen] = useState(false);
 
-    function toggle() {setPanelOpen(!panelOpen)};
-
-    let mobileDevice = false;
-    let panelWidth = "";
-
-    if (window.innerWidth <= 425) {
-        mobileDevice=true;
-    }
-
-    switch (mobileDevice) {
-        case true:
-            panelWidth = "-100%";
-            break;
-        case false:
-            panelWidth = "-300px";
-            break;
-
-        default:
-            panelWidth = "-300px";
-    }
-    console.log(window.innerWidth)
-    console.log("mobile?", mobileDevice)
-    console.log("is the panel open?", panelOpen)
-    
+    function toggle() { setPanelOpen(!panelOpen) };
 
     return (
-        <aside
-            className={`${side.panel} ${fullHeight ? side.fullHeight : side.normalHeight}`}
-            style={{ right: panelOpen ? `${panelWidth}` : "0px" , height: mobileDevice? "auto" : "100%" }}>
+        <aside>
 
-            <div 
-            className={side.toggle} 
-            onClick={toggle} 
-            style={{ transition: "ease 1s", border: panelOpen ? "2px solid var(--border1)" : "2px solid transparent" }}
-            >
-                {panelOpen ? <span class="material-symbols-outlined">
-                    navigate_next
-                </span> : <span class="material-symbols-outlined">
-                    navigate_before
-                </span>}
-            </div>
+                <div
+                    className={side.panel}
+                    style={{ right: panelOpen ? "0px" : "-300px" }}>
 
-            <h3>{heading}</h3>
-            {children}
-            
+                    <div
+                        className={side.toggle}
+                        onClick={toggle}
+                        style={{ transition: "ease 1s", border: panelOpen ? "2px solid var(--border1)" : "2px solid transparent" }}
+                    >
+                        {panelOpen ? <span class="material-symbols-outlined">
+                            navigate_next
+                        </span> : <span class="material-symbols-outlined">
+                            navigate_before
+                        </span>}
+                    </div>
+
+                    <h3>{heading}</h3>
+                    {children}
+
+                </div>
+
+                <div className={side.background} onClick={toggle} style={{ opacity: panelOpen ? "1" : "0" }}/>
 
         </aside>
     )

@@ -1,14 +1,21 @@
+.background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.493);
+    z-index: 1;
+}
+
 .panel {
     position: fixed;
-    padding: 1em;
-    margin-top: var(--headerHeight);
-
-    height: calc(100vh - var(--headerHeight));
-
-    top: 0;
-
+    bottom: 0;
     z-index: 10;
 
+    padding: 1em;
+
+    height: calc(100vh - var(--headerHeight));
     width: 300px;
 
     border: 5px solid var(--border1);
@@ -43,6 +50,7 @@
     padding-left: .5em;
     padding-bottom: 1em;
     border-bottom: 2px dotted var(--t1);
+    text-align: center;
 }
 
 .panel p, .panel a{
@@ -85,8 +93,6 @@
 .toggle:hover {
     background-color: var(--p3);
     box-shadow: 0 0 20px var(--p3);
-
-    /* top: calc(var(--headerHeight)); */
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -102,13 +108,13 @@
 
 
 @media (max-width: 425px) {
-    .panel {
+    /* .panel {
         height: 2rem;
         top: unset;
         bottom: 0;
         width: 100%;
         padding: 0;
-    }
+    } */
     .toggle {
         width: 1.5rem;
         height: 1.5rem;
