@@ -211,16 +211,25 @@ export default function Project({ projectData }) {
             fullHeight={true}
             >
                 <a className={utilStyles.link2} onClick={toggleImageRatio}>
-                    {ratioText}
-                    &nbsp;{imageRatio ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">crop_square</span>}
+                    {/* {ratioText}
+                    &nbsp;
+                    {imageRatio ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">crop_square</span>} */}
+                Square
+                {imageRatio ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}
+                    Landscape
+                
                 </a>
 
                 <Link href="#images">
                     <a onClick={toggleImageGrid}
                         className={utilStyles.link2}
                     >
-                        {gridText}
-                        &nbsp;{imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
+                        {/* {gridText} */}
+                        Grid
+                        {/* &nbsp; */}
+                        {/* {imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>} */}
+                        {imageGrid ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}
+                        Single
                     </a>
                 </Link>
                 
