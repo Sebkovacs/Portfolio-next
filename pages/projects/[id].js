@@ -68,8 +68,46 @@ export default function Project({ projectData }) {
     function toggleImageGrid() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); }
     function togglePlanGrid() { setPlanGrid(!planGrid); }
     function togglePanoDrop() { setPanoDrop(!panoDrop); }
+    function toggleImageRatio() {setImageRatio(!imageRatio); }
+    
+    let aspectRatio = ""
+    let ratioText = ""
+    switch (imageRatio) {
+        case true:
+            aspectRatio = '16 / 9';
+            ratioText = "Landscape";
+            console.log(aspectRatio)
+            break;
 
+        case false:
+            aspectRatio = '1 / 1';
+            ratioText = "Square";
+            console.log(aspectRatio)
+            break;
 
+        default:
+            aspectRatio = '1 / 1';
+            ratioText = "Square";
+    }
+
+    let gridText = ""
+    let gridSwitch = false
+    switch (imageGrid) {
+        case true:
+            gridSwitch = 1;
+            gridText = "Single";
+            break;
+
+        case false:
+            gridSwitch = 3;
+            gridText = "Grid";
+
+            break;
+        default:
+            gridSwitch = 1;
+            gridText = "Single";
+
+    }
 
     return (
         <Layout>
@@ -166,30 +204,41 @@ export default function Project({ projectData }) {
                 </div>
             </div>
 
-            <Link href="#images">
-            <a onClick={toggleImageGrid}
-                className={`  ${utilStyles.link} ${projects.sideLink} ${utilStyles.mobileOnlyFlex}`}
-                > 
-                    Image Display &nbsp;{imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
+            {/* Mobile Device Image Controls */}
 
-            </a>
-            </Link>
+            <div className={` ${projects.imageControls} ${utilStyles.mobileOnlyFlex}`}>
+                <a className={utilStyles.link2} onClick={toggleImageRatio}>
+                    {ratioText}
+                    &nbsp;{imageRatio ? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">crop_square</span>}
+                </a>
 
+                <Link href="#images">
+                    <a onClick={toggleImageGrid}
+                        className={utilStyles.link2}
+                    >
+                        {gridText}
+                        &nbsp;{imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
+                    </a>
+                </Link>
+            </div>
+
+            {/* Main Content */}
+            
             <div className={projects.main}>
 
-                <div id="images" className={utilStyles.anchor2} style={{backgroundColor: "red"}}></div>
-   
+                <div id="images" className={utilStyles.anchor2} style={{ backgroundColor: "red" }}></div>
+
                 <div className={imageGrid ? projects.gridWrap1 : projects.gridWrap2}>
-                    
+
                     {/* MAP IMAGES */}
-                    
+
                     {projectData.pics.map((pic, index) =>
                         <div className={projects.wrapper} key={pic.id}>
-                            
-                            <div className={utilStyles.anchor2} id={`img${pic.id}`}/>
-                            
+
+                            <div className={utilStyles.anchor2} id={`img${pic.id}`} />
+
                             <Link href={`#img${pic.id}`}>
-                                <div onClick={toggleImageGrid} className={projects.pic}>
+                                <div onClick={toggleImageGrid} className={projects.pic} style={{aspectRatio:` ${aspectRatio}`}}>
                                     <Image
                                         src={`/projects/${projectData.shortTitle}${pic.image}`}
                                         alt={pic.alt}
@@ -235,7 +284,7 @@ export default function Project({ projectData }) {
                     )}
                 </div>
                 <div className={utilStyles.pcOnly} >
-                    <ButtonTop link="#top" where="Top"/>
+                    <ButtonTop link="#top" where="Top" />
                 </div>
                 <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2} ${utilStyles.ontop}`}>
                     <ButtonBack link="/" where="Projects" />

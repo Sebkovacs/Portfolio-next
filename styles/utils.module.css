@@ -295,6 +295,26 @@
     overflow: hidden;
 }
 
+.link2 {
+    padding: .3rem;
+    margin: .3rem;
+    background-color: var(--bg2);
+    display: flex;
+    align-items: center;
+    user-select: none;
+    border-radius: .5em;
+    border: 1px solid var(--border1);
+    justify-content: space-between;
+    color: var(--s1);
+    font-weight: 400;
+    font-size: .5rem;
+    text-transform: uppercase;
+    font-family: var(--font2);
+    font-style: normal;
+    position: relative;
+    flex: 1;
+}
+
 .toggle {
     position: absolute;
     display: flex;

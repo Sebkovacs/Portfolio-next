@@ -184,12 +184,14 @@
 
 @media (max-width: 768px) {
 
-    .sideLink {
+    .imageControls {
         position: fixed;
         bottom: 0;
         right: 0;
         z-index: 1;
         font-size: .5em;
+        width: 100vw;
+        /* background-color: bisque; */
     }
 
     .cardWrap {
