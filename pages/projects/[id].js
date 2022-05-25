@@ -57,7 +57,7 @@ export default function Project({ projectData }) {
     }
 
     const [imageGrid, setImageGrid] = useState(false)
-    const [imageRatio, setImageRatio] = useState(false)
+    const [imageRatio, setImageRatio] = useState(true)
     const [planGrid, setPlanGrid] = useState(true)
     const [panoDrop, setPanoDrop] = useState(false)
     const [captionToggle, setCaptionToggle] = useState(false)
@@ -86,7 +86,7 @@ export default function Project({ projectData }) {
             break;
 
         default:
-            aspectRatio = '1 / 1';
+            aspectRatio = '16 / 9';
             ratioText = "Square";
     }
 
@@ -134,18 +134,17 @@ export default function Project({ projectData }) {
                     </div>
                 </div>
                 <div className={projects.detailsContainer}>
+
                     <div className={projects.linkContainer}>
-                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">
-                            Images
-                        </a>
-                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">
-                            Plans
-                        </a>
+                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">Images</a>
+                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">Plans</a>
+
+
 
                         <a href="#images" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
                             Images
                             <label htmlFor="imageGrid" className={` ${utilStyles.toggle}  `}>
-                                {imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
+                                {imageGrid ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">grid_view</span>}
                             </label>
                         </a>
 
@@ -155,6 +154,8 @@ export default function Project({ projectData }) {
                                 {planGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
                             </label>
                         </a>
+
+
 
                         {projectData.hasOwnProperty("pano") ?
                             <Link href={projectData.pano}>

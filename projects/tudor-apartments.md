@@ -14,16 +14,16 @@ software:  'Vectorworks'
 rendering: 'Twinmotion'
 photography: 
 
-thumb: '/1.jpg'
+thumb: '/1.png'
 thumbAlt: 'hello'
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "Street View from Tudor St"},
-{id: "2", image: '/2.jpg', alt: "Arieal View from Tudor St"},
-{id: "3", image: '/3.jpg', alt: "Entery Foyer"},
-{id: "4", image: '/4.jpg', alt: "hello"},
-{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
+{id: "1", image: '/1.png', alt: "Street View from Tudor St"},
+{id: "2", image: '/2.png', alt: "Arieal View from Tudor St"},
+{id: "3", image: '/3.png', alt: "Entery Foyer"},
+{id: "4", image: '/4.png', alt: "hello"},
+{id: "5", image: '/5.png', alt: "Aerial Photomontage of the field and proposed facility building"},
+{id: "6", image: '/6.png', alt: "Ground Level Photomontage of the field and proposed facility building"},
 {id: "7", image: '/7.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
 {id: "8", image: '/8.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
 ]
