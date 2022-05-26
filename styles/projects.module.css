@@ -182,16 +182,40 @@
     color: var(--t1);
 }
 
-@media (max-width: 768px) {
+.mobileImageControls {
+position: fixed;
+bottom: 0;
+height: 3em;
+width: 100%;
+padding: .5em 0;
+background-color: var(--p2);
+z-index: 10;
+transition: .5s;
+}
 
-    .imageControls {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
-        font-size: .5em;
-        width: 100vw;
-    }
+.controlsHidden {
+    bottom: -3em;
+}
+.controlsVisible {
+    bottom: 0;
+}
+
+.mobileControlsToggle {
+    transition: .5s;
+position: absolute;
+height: 1em;
+aspect-ratio: 1 / 1;
+top: -1em;
+z-index: 11;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+background-color: var(--bg2);
+border-top: 1px solid var(--border1);
+}
+
+@media (max-width: 768px) {
 
     .cardWrap {
         gap: 10px;

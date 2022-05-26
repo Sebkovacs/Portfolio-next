@@ -18,14 +18,21 @@ thumb: '/1.png'
 thumbAlt: 'hello'
 
 pics: [
-{id: "1", image: '/1.png', alt: "Street View from Tudor St"},
-{id: "2", image: '/2.png', alt: "Arieal View from Tudor St"},
-{id: "3", image: '/3.png', alt: "Entery Foyer"},
-{id: "4", image: '/4.png', alt: "hello"},
-{id: "5", image: '/5.png', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.png', alt: "Ground Level Photomontage of the field and proposed facility building"},
-{id: "7", image: '/7.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
-{id: "8", image: '/8.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"}
+{id: 1, image: '/1.png', alt: Tudor St view from the East},
+{id: 2, image: '/2.png', alt: Tudor St view from the West},
+{id: 3, image: '/3.png', alt: William St view from the North},
+{id: 4, image: '/4.png', alt: William St view from the South},
+{id: 5, image: '/5.png', alt: Entry},
+{id: 6, image: '/6.png', alt: Entry},
+{id: 7, image: '/7.png', alt: },
+{id: 8, image: '/8.png', alt: },
+{id: 9, image: '/9.png', alt: },
+{id: 10, image: '/10.png', alt: },
+{id: 11, image: '/11.png', alt: },
+{id: 12, image: '/12.png', alt: },
+{id: 13, image: '/13.png', alt: },
+{id: 14, image: '/14.png', alt: },
+{id: 15, image: '/15.png', alt: }
 ]
 
 north: 80
@@ -41,12 +48,7 @@ plans: [
 {id: "8", plan: '/p8.jpg', alt: "Some of the Internal Elevations"},
 {id: "9", plan: '/p9.jpg', alt: "Some of the Internal Elevations"},
 {id: "10", plan: '/p10.jpg', alt: "Some of the Internal Elevations"},
-{id: "11", plan: '/p11.jpg', alt: "Some of the Internal Elevations"},
-# {id: "12", plan: '/p12.jpg', alt: "Some of the Internal Elevations"},
-# {id: "13", plan: '/p13.jpg', alt: "Some of the Internal Elevations"},
-# {id: "14", plan: '/p14.jpg', alt: "Some of the Internal Elevations"},
-# {id: "15", plan: '/p15.jpg', alt: "Some of the Internal Elevations"}
-
+{id: "11", plan: '/p11.jpg', alt: "Some of the Internal Elevations"}
 ]
 
 ---
