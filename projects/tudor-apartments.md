@@ -32,7 +32,10 @@ pics: [
 {id: 12, image: '/12.png', alt: },
 {id: 13, image: '/13.png', alt: },
 {id: 14, image: '/14.png', alt: },
-{id: 15, image: '/15.png', alt: }
+{id: 15, image: '/15.png', alt: },
+{id: 16, image: '/16.png', alt: },
+{id: 17, image: '/17.png', alt: },
+{id: 18, image: '/18.png', alt: }
 ]
 
 north: 80
