@@ -207,10 +207,10 @@ transition: .5s;
 .mobileControlsToggle {
 
 position: absolute;
-top: -2rem;
+top: -1.5rem;
 z-index: 4;
 
-height: 2rem;
+height: 1.5rem;
 width: 100%;
 /* aspect-ratio: 1 / 1; */
 padding: 1em;
