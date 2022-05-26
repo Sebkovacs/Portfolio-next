@@ -163,7 +163,7 @@ export default function Project({ projectData }) {
                         }
 
 
-                        <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleImageGrid} />
+                        <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleZoom} />
 
                         <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
                     </div>

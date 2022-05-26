@@ -171,8 +171,8 @@
 }
 
 .grow {
-    flex: 1 25%;
-    min-width: 120px;
+    flex: 1 33%;
+
 }
 
 .postTitle {
@@ -367,6 +367,9 @@
     font-weight: 400;
     text-transform: capitalize;
     font-size: .5em;
+}
+.font2 span{
+    font-weight: inherit;
 }
 .hide {
     display: none
