@@ -20,13 +20,18 @@ export default function Filters ({filters, setFilters}) {
         }
         setFilters([...filters]);
     };
+
+    function clearFilters() {
+        setFilters([])
+    }
     
 
 
     return (
         <div className={styles.filterContainer}>
 
-        <small>Filters</small>
+<small>Filters</small>
+<div className={utilStyles.link} onClick={clearFilters}>Clear</div>
         <div className={styles.filters} >
             {filters.map((filter) => <div className={styles.filter} id={filter} onClick={modFilters}>{filter}</div>)}
         </div>

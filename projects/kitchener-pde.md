@@ -22,31 +22,21 @@ thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "View from Kitchener Pde Looing North"},
-{id: "2", image: '/2.jpg', alt: "hello"},
-{id: "3", image: '/3.jpg', alt: "hello"},
-{id: "4", image: '/4.jpg', alt: "hello"},
-{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
-{id: "7", image: '/7.jpg', alt: "hello"},
-{id: "8", image: '/8.jpg', alt: "hello"},
-{id: "9", image: '/9.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "10", image: '/10.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
-{id: "11", image: '/11.jpg', alt: "hello"},
-{id: "12", image: '/12.jpg', alt: "hello"},
-{id: "13", image: '/13.jpg', alt: "hello"},
-{id: "14", image: '/14.jpg', alt: "hello"},
-{id: "15", image: '/15.jpg', alt: "hello"},
-{id: "16", image: '/16.jpg', alt: "hello"},
-{id: "17", image: '/17.jpg', alt: "hello"},
-{id: "18", image: '/18.jpg', alt: "hello"},
-{id: "19", image: '/19.jpg', alt: "hello"},
-{id: "20", image: '/20.jpg', alt: "hello"},
-{id: "21", image: '/21.jpg', alt: "hello"},
-
-
-
-
+{id: 1, image: '/1.jpg', alt: Street view from Kitchener Pde looking east},
+{id: 2, image: '/2.jpg', alt: Street view from Nesca Pde looking north},
+{id: 3, image: '/3.jpg', alt: Back yard view from rear boundary},
+{id: 4, image: '/4.jpg', alt: Unit 1 garage},
+{id: 5, image: '/5.jpg', alt: Unit 1 entry and laundry},
+{id: 6, image: '/6.jpg', alt: Unit 1 main floor - living area & kitchen},
+{id: 7, image: '/7.jpg', alt: Unit 1 main floor - bedroom},
+{id: 8, image: '/8.jpg', alt: Unit 1 upper floor - tv lounge},
+{id: 9, image: '/9.jpg', alt: Unit 1 upper floor - master ensuite},
+{id: 10, image: '/10.jpg', alt: Unit 1 upper floor - master bedroom},
+{id: 11, image: '/11.jpg', alt: Unit 2 hallway view into the main living area},
+{id: 12, image: '/12.jpg', alt: Unit 2 main living area & kitchen},
+{id: 13, image: '/13.jpg', alt: "Unit 2 upper level tv lounge, right sliding door is the entry to upper bedroom 3"},
+{id: 14, image: '/14.jpg', alt: Unit 2 upper level bedroom},
+{id: 15, image: '/15.jpg', alt: Unit 2 upper level study}
 ]
 
 north: 43

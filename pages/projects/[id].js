@@ -14,37 +14,23 @@ import utilStyles from '../../styles/utils.module.css'
 import projects from '../../styles/projects.module.css'
 import gallery from '../../styles/gallery.module.css'
 
-import { useState } from "react";
-
-
-
-const options = {
-    progressBar: {
-        showProgressBar: false
-    },
-    settings: {
-        hideControlsAfter: 200,
-
-    },
-    buttons: {
-        showAutoplayButton: false,
-        showDownloadButton: false,
-        showThumbnailsButton: true,
-    },
-    caption: {
-        showCaption: true,
-        captionFontFamily: "'Inconsolata', monospace",
-        captionFontWeight: 500,
-        captionColor: "#f3f3f3",
-
-    }
-};
+import { useState } from "react"
+import { useEffect } from 'react'
 
 
 
 export default function Project({ projectData }) {
     let pano = false;
     let panos = false;
+
+    let mobileDevice = 1000
+    let isMobile = false
+
+    let aspectRatio = ""
+    let ratioText = ""
+
+    let gridText = ""
+    let gridSwitch = false
 
     // check if the project has a pano link or multiple pano links >> if so, later run code for link buttons
     if (projectData.hasOwnProperty("pano")) {
@@ -56,42 +42,45 @@ export default function Project({ projectData }) {
         panos = false;
     }
 
+    if (typeof window !== 'undefined') {
+
+        mobileDevice = window.innerWidth;
+        console.log(mobileDevice)
+    }
+    mobileDevice <= 425 ? isMobile = true : false;
+    console.log(isMobile)
+
+
     const [imageGrid, setImageGrid] = useState(false)
-    const [imageRatio, setImageRatio] = useState(true)
+    const [imageRatio, setImageRatio] = useState(!isMobile)
     const [planGrid, setPlanGrid] = useState(true)
     const [panoDrop, setPanoDrop] = useState(false)
     const [captionToggle, setCaptionToggle] = useState(false)
+    const [imageControls, setImageControls] = useState(false)
 
-
-
-
-    function toggleImageGrid() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); }
+    function toggleImageGrid() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); setImageRatio(!imageRatio); }
     function togglePlanGrid() { setPlanGrid(!planGrid); }
     function togglePanoDrop() { setPanoDrop(!panoDrop); }
-    function toggleImageRatio() {setImageRatio(!imageRatio); }
-    
-    let aspectRatio = ""
-    let ratioText = ""
+    function toggleImageRatio() { setImageRatio(!imageRatio); }
+    function imageControlsToggle() { setImageControls(!imageControls); console.log(imageControls) }
+
+
+
+
+
     switch (imageRatio) {
         case true:
             aspectRatio = '16 / 9';
             ratioText = "Landscape";
-            console.log(aspectRatio)
             break;
 
         case false:
             aspectRatio = '1 / 1';
             ratioText = "Square";
-            console.log(aspectRatio)
             break;
-
-        default:
-            aspectRatio = '16 / 9';
-            ratioText = "Square";
     }
 
-    let gridText = ""
-    let gridSwitch = false
+
     switch (imageGrid) {
         case true:
             gridSwitch = 1;
@@ -101,13 +90,9 @@ export default function Project({ projectData }) {
         case false:
             gridSwitch = 3;
             gridText = "Grid";
-
             break;
-        default:
-            gridSwitch = 1;
-            gridText = "Single";
-
     }
+
 
     return (
         <Layout>
@@ -135,17 +120,21 @@ export default function Project({ projectData }) {
                 </div>
                 <div className={projects.detailsContainer}>
 
+
                     <div className={projects.linkContainer}>
+                        {/* MOBILE AND PC - Anchor Links */}
+
                         <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">Images</a>
                         <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">Plans</a>
 
-
+                        {/* PC ONLY IMAGE CONTROLS */}
 
                         <a href="#images" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
                             Images
-                            <label htmlFor="imageGrid" className={` ${utilStyles.toggle}  `}>
+                            <label htmlFor="imageGrid" className={utilStyles.toggle}>
                                 {imageGrid ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">grid_view</span>}
                             </label>
+
                         </a>
 
                         <a href="#plans" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
@@ -159,7 +148,7 @@ export default function Project({ projectData }) {
 
                         {projectData.hasOwnProperty("pano") ?
                             <Link href={projectData.pano}>
-                                <a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">north_east</span></a>
+                                <a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">open_in_new</span></a>
                             </Link> : <div />
                         }
 
@@ -167,7 +156,7 @@ export default function Project({ projectData }) {
                             <details id="panoDrop" className={` ${utilStyles.grow} `} onClick={togglePanoDrop}>
                                 <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
                                 {projectData.panos.map((pano) =>
-                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">north_east</span></a></Link>)}
+                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">open_in_new</span></a></Link>)}
                             </details>
                             : <div />
                         }
@@ -205,23 +194,6 @@ export default function Project({ projectData }) {
                 </div>
             </div>
 
-            {/* Mobile Device Image Controls */}
-            
-            <div className={` ${projects.imageControls} ${utilStyles.mobileOnlyFlex}`}>
-                <a className={utilStyles.link2} onClick={toggleImageRatio}>
-                    {ratioText}
-                    &nbsp;{imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
-                </a>
-
-                <Link href="#images">
-                    <a onClick={toggleImageGrid}
-                        className={utilStyles.link2}
-                    >
-                        {gridText}
-                        &nbsp;{imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
-                    </a>
-                </Link>
-            </div>
 
             {/* Main Content */}
 
@@ -239,7 +211,7 @@ export default function Project({ projectData }) {
                             <div className={utilStyles.anchor2} id={`img${pic.id}`} />
 
                             <Link href={`#img${pic.id}`}>
-                                <div onClick={toggleImageGrid} className={projects.pic} style={{aspectRatio:` ${aspectRatio}`}}>
+                                <div onClick={toggleImageGrid} className={projects.pic} style={{ aspectRatio: ` ${aspectRatio}` }}>
                                     <Image
                                         src={`/projects/${projectData.shortTitle}${pic.image}`}
                                         alt={pic.alt}
@@ -259,11 +231,7 @@ export default function Project({ projectData }) {
 
                 </div >
 
-                {/* <div className={utilStyles.bb1} /> */}
-
                 <div id="plans" className={utilStyles.anchor} />
-
-                {/* <h2 onClick={togglePlanGrid} className={utilStyles.mobileOnly} >Plan Display &nbsp; {planGrid? <span className="material-symbols-outlined">view_agenda</span> : <span className="material-symbols-outlined">grid_view</span>}</h2> */}
 
                 <div className={planGrid ? projects.gridWrap1 : projects.gridWrap2}>
                     {projectData.plans.map((plan) =>
@@ -293,6 +261,32 @@ export default function Project({ projectData }) {
                 </div>
             </div >
 
+
+            {/* Mobile Device Image Controls */}
+            
+            <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex}`}>
+                <div className={projects.mobileControlsToggle} onClick={imageControlsToggle} style={{backgroundColor: imageControls && "var(--p3)"}}>
+                    {imageControls? <span className="material-symbols-outlined" style={{color: imageControls && "var(--bg2)"}}>arrow_drop_down</span> : <span className="material-symbols-outlined">arrow_drop_up</span>}
+                </div>
+                <a className={utilStyles.link2} onClick={toggleImageRatio}>
+                    {ratioText}
+                    &nbsp;{imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
+                </a>
+
+                <Link href="#images">
+                    <a onClick={toggleImageGrid}
+                        className={utilStyles.link2}
+                    >
+                        {gridText}
+                        &nbsp;{imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
+                    </a>
+                </Link>
+                <a className={utilStyles.link2} onClick={() => setCaptionToggle(!captionToggle)}>
+                    Captions
+                    &nbsp;{captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}
+                </a>
+
+            </div>
         </Layout >
     )
 }

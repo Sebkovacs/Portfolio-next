@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout, { siteTitle } from '../components/Layout'
+import Layout, { siteTitle } from '../components/LayoutFilter'
 import { getSortedProjectsData } from '../lib/projects'
 import cards from '../styles/cards.module.css'
 import utilStyles from '../styles/utils.module.css'
