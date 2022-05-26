@@ -274,7 +274,7 @@ export default function Project({ projectData }) {
                 <a className={utilStyles.link2} onClick={toggleImageRatio}>
                     {ratioText}
                     &nbsp;
-                    {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
+                    {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}
                 </a>
 
                 <Link href="#images">
