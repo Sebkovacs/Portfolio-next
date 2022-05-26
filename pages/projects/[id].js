@@ -45,20 +45,22 @@ export default function Project({ projectData }) {
     if (typeof window !== 'undefined') {
 
         mobileDevice = window.innerWidth;
-        console.log(mobileDevice)
+        
     }
     mobileDevice <= 425 ? isMobile = true : false;
-    console.log(isMobile)
-
+    console.log("this is a mobile device:", isMobile)
+    console.log("screen width is:", mobileDevice)
 
     const [imageGrid, setImageGrid] = useState(false)
-    const [imageRatio, setImageRatio] = useState(!isMobile)
+    const [imageRatio, setImageRatio] = useState(isMobile)
     const [planGrid, setPlanGrid] = useState(true)
     const [panoDrop, setPanoDrop] = useState(false)
     const [captionToggle, setCaptionToggle] = useState(false)
     const [imageControls, setImageControls] = useState(false)
 
-    function toggleImageGrid() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); setImageRatio(!imageRatio); }
+    function toggleImageGrid() { setImageGrid(!imageGrid); }
+    function toggleZoom() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); }
+    function toggleZoomMobile() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); setImageRatio(!imageRatio); }
     function togglePlanGrid() { setPlanGrid(!planGrid); }
     function togglePanoDrop() { setPanoDrop(!panoDrop); }
     function toggleImageRatio() { setImageRatio(!imageRatio); }
@@ -69,12 +71,12 @@ export default function Project({ projectData }) {
 
 
     switch (imageRatio) {
-        case true:
+        case false:
             aspectRatio = '16 / 9';
             ratioText = "Landscape";
             break;
 
-        case false:
+        case true:
             aspectRatio = '1 / 1';
             ratioText = "Square";
             break;
@@ -131,10 +133,9 @@ export default function Project({ projectData }) {
 
                         <a href="#images" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
                             Images
-                            <label htmlFor="imageGrid" className={utilStyles.toggle}>
+                            <label htmlFor="imageGrid" className={utilStyles.toggle} >
                                 {imageGrid ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">grid_view</span>}
                             </label>
-
                         </a>
 
                         <a href="#plans" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
@@ -211,7 +212,7 @@ export default function Project({ projectData }) {
                             <div className={utilStyles.anchor2} id={`img${pic.id}`} />
 
                             <Link href={`#img${pic.id}`}>
-                                <div onClick={toggleImageGrid} className={projects.pic} style={{ aspectRatio: ` ${aspectRatio}` }}>
+                                <div onClick={!isMobile? toggleZoom : toggleZoomMobile} className={projects.pic} style={{ aspectRatio: ` ${aspectRatio}` }}>
                                     <Image
                                         src={`/projects/${projectData.shortTitle}${pic.image}`}
                                         alt={pic.alt}
