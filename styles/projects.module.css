@@ -93,6 +93,10 @@
     top: calc(-1 * var(--headerHeight));
 }
 
+.bottomLinks {
+    height: 2rem;
+}
+
 .gridWrap1, .gridWrap2 {
     display: grid;
     grid-template-rows: 1fr;
@@ -189,7 +193,7 @@ height: 3em;
 width: 100%;
 padding: .5em 0;
 background-color: var(--p2);
-z-index: 10;
+z-index: 3;
 transition: .5s;
 }
 
@@ -201,18 +205,28 @@ transition: .5s;
 }
 
 .mobileControlsToggle {
-    transition: .5s;
+
 position: absolute;
-height: 1em;
-aspect-ratio: 1 / 1;
-top: -1em;
-z-index: 11;
+top: -2rem;
+z-index: 4;
+
+height: 2rem;
+width: 100%;
+/* aspect-ratio: 1 / 1; */
+padding: 1em;
+/* border-radius: 50%; */
+
 display: flex;
 justify-content: center;
 align-items: center;
-width: 100%;
+
 background-color: var(--bg2);
 border-top: 1px solid var(--border1);
+
+font-family: var(--font2);
+font-size: 50%;
+
+transition: .5s;
 }
 
 @media (max-width: 768px) {

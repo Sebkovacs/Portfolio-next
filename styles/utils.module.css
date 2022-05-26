@@ -564,6 +564,10 @@ margin: 0;
     .hide {
         display: none
     }
+    .link2 {
+        font-size: 40%;
+        margin: auto .3rem;
+    }
 }
 
 @media (max-width: 375px) {

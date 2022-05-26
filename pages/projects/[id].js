@@ -255,7 +255,7 @@ export default function Project({ projectData }) {
                 <div className={utilStyles.pcOnly} >
                     <ButtonTop link="#top" where="Top" />
                 </div>
-                <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2} ${utilStyles.ontop}`}>
+                <div className={`${utilStyles.mobileOnlyFlex} ${utilStyles.flex2} ${utilStyles.ontop} ${projects.bottomLinks}`}>
                     <ButtonBack link="/" where="Projects" />
                     <ButtonTop link="#top" where="Top" />
                 </div>
@@ -263,14 +263,16 @@ export default function Project({ projectData }) {
 
 
             {/* Mobile Device Image Controls */}
-            
+
             <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex}`}>
-                <div className={projects.mobileControlsToggle} onClick={imageControlsToggle} style={{backgroundColor: imageControls && "var(--p3)"}}>
-                    {imageControls? <span className="material-symbols-outlined" style={{color: imageControls && "var(--bg2)"}}>arrow_drop_down</span> : <span className="material-symbols-outlined">arrow_drop_up</span>}
+                <div className={projects.mobileControlsToggle} onClick={imageControlsToggle} style={{ backgroundColor: imageControls && "var(--p3)", color: imageControls && "var(--bg2)" }}>
+                    
+                    {imageControls ? <span className="material-symbols-outlined" style={{ color: imageControls && "var(--bg2)" }}>arrow_drop_down</span> : <span className="material-symbols-outlined">arrow_drop_up</span>}
                 </div>
                 <a className={utilStyles.link2} onClick={toggleImageRatio}>
                     {ratioText}
-                    &nbsp;{imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
+                    &nbsp;
+                    {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
                 </a>
 
                 <Link href="#images">
@@ -278,7 +280,8 @@ export default function Project({ projectData }) {
                         className={utilStyles.link2}
                     >
                         {gridText}
-                        &nbsp;{imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
+                        &nbsp;
+                        {imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
                     </a>
                 </Link>
                 <a className={utilStyles.link2} onClick={() => setCaptionToggle(!captionToggle)}>
