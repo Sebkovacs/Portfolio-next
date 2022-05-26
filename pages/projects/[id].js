@@ -266,8 +266,9 @@ export default function Project({ projectData }) {
 
             <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex}`}>
                 <div className={projects.mobileControlsToggle} onClick={imageControlsToggle} style={{ backgroundColor: imageControls && "var(--p3)", color: imageControls && "var(--bg2)" }}>
-                    
-                    {imageControls ? <span className="material-symbols-outlined" style={{ color: imageControls && "var(--bg2)" }}>arrow_drop_down</span> : <span className="material-symbols-outlined">arrow_drop_up</span>}
+                    Image Options
+                    &nbsp;
+                    {imageControls ? <span className="material-symbols-outlined" style={{ color: imageControls && "var(--bg2)" }}>arrow_drop_down</span> : <span className="material-symbols-outlined" style={{ color: !imageControls && "var(--t1)" }}>arrow_drop_up</span>}
                 </div>
                 <a className={utilStyles.link2} onClick={toggleImageRatio}>
                     {ratioText}
