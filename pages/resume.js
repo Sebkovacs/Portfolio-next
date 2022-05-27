@@ -13,6 +13,7 @@ export default function Resume() {
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
+            
                 <div className={utilStyles.title}>
                     <h1>Resume Summary</h1>
                     <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}`}>
@@ -107,7 +108,6 @@ export default function Resume() {
 
                     </div>
                 </div>
-
         </Layout>
 
     )

@@ -91,7 +91,7 @@
     border-radius: .5em;
     padding: 1em;
     /* flex: 1; */
-    transition: all ease 2s;
+    /* transition: all ease 2s; */
 
     background-image: url("../public/smoke1.gif") ;
     background-position: center;

@@ -220,7 +220,7 @@ export default function Project({ projectData }) {
                                         objectFit="cover"
                                         priority={index <= 4 ? true : false}
                                     />
-                                    <h3 className={projects.imageTitle} style={{ display: captionToggle && "none" }}>{pic.id} {pic.alt}</h3>
+                                    <h3 className={projects.imageTitle} style={{ display: captionToggle && "none" }}>{pic.alt}</h3>
                                 </div>
                             </Link>
 
@@ -231,6 +231,8 @@ export default function Project({ projectData }) {
                     )}
 
                 </div >
+
+                {/* MAP Plans */}
 
                 <div id="plans" className={utilStyles.anchor} />
 
