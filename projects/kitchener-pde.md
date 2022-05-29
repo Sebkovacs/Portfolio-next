@@ -22,21 +22,21 @@ thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
 
 pics: [
-{id: 1, image: '/1.jpg', alt: Street view from Kitchener Pde looking east},
-{id: 2, image: '/2.jpg', alt: Street view from Nesca Pde looking north},
-{id: 3, image: '/3.jpg', alt: Back yard view from rear boundary},
-{id: 4, image: '/4.jpg', alt: Unit 1 garage},
-{id: 5, image: '/5.jpg', alt: Unit 1 entry and laundry},
-{id: 6, image: '/6.jpg', alt: Unit 1 main floor - living area & kitchen},
-{id: 7, image: '/7.jpg', alt: Unit 1 main floor - bedroom},
-{id: 8, image: '/8.jpg', alt: Unit 1 upper floor - tv lounge},
-{id: 9, image: '/9.jpg', alt: Unit 1 upper floor - master ensuite},
-{id: 10, image: '/10.jpg', alt: Unit 1 upper floor - master bedroom},
-{id: 11, image: '/11.jpg', alt: Unit 2 hallway view into the main living area},
-{id: 12, image: '/12.jpg', alt: Unit 2 main living area & kitchen},
-{id: 13, image: '/13.jpg', alt: "Unit 2 upper level tv lounge, right sliding door is the entry to upper bedroom 3"},
-{id: 14, image: '/14.jpg', alt: Unit 2 upper level bedroom},
-{id: 15, image: '/15.jpg', alt: Unit 2 upper level study}
+{id: 1, image: '/1.jpg', alt: kitchener duplex street view from Kitchener Pde looking east, caption: Street view from Kitchener Pde looking east},
+{id: 2, image: '/2.jpg', alt: kitchener duplex street view from Nesca Pde looking north, caption: Street view from Nesca Pde looking north},
+{id: 3, image: '/3.jpg', alt: kitchener duplex backyard view, caption: Back yard view from rear boundary},
+{id: 4, image: '/4.jpg', alt: kitchener duplex Unit 1 garage, caption: Unit 1 garage },
+{id: 5, image: '/5.jpg', alt: kitchener duplex Unit 1 entry and laundry, caption: Unit 1 entry and laundry},
+{id: 6, image: '/6.jpg', alt: kitchener duplex Unit 1 main floor living area & kitchen, caption: Unit 1 main floor living area & kitchen},
+{id: 7, image: '/7.jpg', alt: kitchener duplex Unit 1 bedroom, caption: Unit 1 main floor bedroom},
+{id: 8, image: '/8.jpg', alt: kitchener duplex Unit 1 tv lounge, caption:  Unit 1 upper floor tv lounge},
+{id: 9, image: '/9.jpg', alt: kitchener duplex Unit 1 master bedroom ensuite, caption: "Unit 1 upper floor - master bedroom ensuite"},
+{id: 10, image: '/10.jpg', alt: kitchener duplex Unit 1 upper floor - master bedroom, caption: Unit 1 upper floor - master bedroom},
+{id: 11, image: '/11.jpg', alt: kitchener duplex Unit 2 hallway view into main living area, caption: Unit 2 hallway view into the main living area},
+{id: 12, image: '/12.jpg', alt: kitchener duplex Unit 2 main living area & kitchen, caption: Unit 2 main living area & kitchen},
+{id: 13, image: '/13.jpg', alt: "kitchener duplex Unit 2 upper level tv lounge", caption: Unit 2 upper level tv lounge, right sliding door is the entry to upper bedroom 3},
+{id: 14, image: '/14.jpg', alt: kitchener duplex Unit 2 upper level bedroom, caption: Unit 2 upper level bedroom with views into the back yard},
+{id: 15, image: '/15.jpg', alt: kitchener duplex Unit 2 upper level study, caption: Unit 2 upper level study}
 ]
 
 north: 43

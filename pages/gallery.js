@@ -153,7 +153,7 @@ export default function Gallery({ allProjectsData }) {
                             <a className={gallery.imageSize} style={{ aspectRatio: `${aspectRatio}` }} onClick={toggleImageGrid}>
                                 <Image
                                     src={`/projects/${pic.shortTitle}${pic.image}`}
-                                    alt={pic.alt}
+                                    alt={pic.hasOwnProperty("caption") ? pic.caption : pic.alt}
                                     layout="fill"
                                     objectFit="cover"
                                     priority={index <= 6 ? true : false}
@@ -166,7 +166,7 @@ export default function Gallery({ allProjectsData }) {
                             <Link href={`/projects/${pic.link}`}>
                                 <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
                             </Link>
-                            <p>{pic.alt}</p>
+                            <p>{pic.hasOwnProperty("caption") ? pic.caption : pic.alt}</p>
                         </div>
                     </div>
 

@@ -215,17 +215,17 @@ export default function Project({ projectData }) {
                                 <div onClick={!isMobile? toggleZoom : toggleZoomMobile} className={projects.pic} style={{ aspectRatio: ` ${aspectRatio}` }}>
                                     <Image
                                         src={`/projects/${projectData.shortTitle}${pic.image}`}
-                                        alt={pic.alt}
+                                        alt={pic.hasOwnProperty("caption") ? pic.caption : pic.alt}
                                         layout="fill"
                                         objectFit="cover"
                                         priority={index <= 4 ? true : false}
                                     />
-                                    <h3 className={projects.imageTitle} style={{ display: captionToggle && "none" }}>{pic.alt}</h3>
+                                    <h3 className={projects.imageTitle} style={{ display: captionToggle && "none" }}>{pic.hasOwnProperty("caption") ? pic.caption : pic.alt}</h3>
                                 </div>
                             </Link>
 
                             <div className={captionToggle ? gallery.caption : gallery.hide}>
-                                <p>{pic.alt}</p>
+                                <p>{pic.hasOwnProperty("caption") ? pic.caption : pic.alt}</p>
                             </div>
                         </div>
                     )}
