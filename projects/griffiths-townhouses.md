@@ -17,12 +17,12 @@ thumb: '/1.png'
 thumbAlt: 'hello'
 
 pics: [
-{id: "1", image: '/1.png', alt: 'Concept 1 New lounge room', caption: },
-{id: "2", image: '/2.png', alt: 'Concept 2 ', caption: },
-{id: "3", image: '/3.png', alt: 'Concept 3 ', caption: },
-{id: "4", image: '/4.png', alt: 'Concept 4', caption: },
-{id: "5", image: '/5.png', alt: 'Concept 1', caption: },
-{id: "6", image: '/6.png', alt: 'Concept 2 ', caption: }
+{id: "1", image: '/1.png', alt: 1 Griffiths st townhouse development view from the south, caption: View of the townhouses and drive way from the south on Griffiths St},
+{id: "2", image: '/2.png', alt: 1 Griffiths st townhouse development view from the east, caption: View from the East on Griffiths st},
+{id: "3", image: '/3.png', alt: 1 Griffiths st townhouse development close up from the east, caption: Close up from the East},
+{id: "4", image: '/4.png', alt: 1 Griffiths st townhouse development unit 1 entry, caption: Unit 1 entry},
+{id: "5", image: '/5.png', alt: 1 Griffiths st townhouse development unit 2 entry and garages, caption: Unit 2 & 3 entry and garage},
+{id: "6", image: '/6.png', alt: 1 Griffiths st townhouse development unit 4 and 5 at the end, caption: Unit 4 & 5 at the end of the drive way}
 ]
 
 north: -29
