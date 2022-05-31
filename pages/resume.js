@@ -28,7 +28,7 @@ export default function Resume() {
             </div>
 
 
-            <div className={utilStyles.videoBackground} style={{height: "calc(100% - var(--h1Height) - var(--headerHeight))"}}>
+            <div className={utilStyles.videoBackground} style={{height: "calc(100% - var(--h1Height) - var(--headerHeight) - 63px)"}}>
                 <div className={utilStyles.backgroundCover} />
                 <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
                     <source src="/party.mp4"
