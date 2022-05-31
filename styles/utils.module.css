@@ -374,6 +374,34 @@
 .hide {
     display: none
 }
+
+#skIcon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: .5em;
+    overflow: hidden;
+    padding: 0;
+    margin: 1em;
+
+    border: 2px solid var(--p3);
+    /* background-color:red ; */
+    height: 2em;
+    aspect-ratio: 1 / 1;
+
+    background-image: url("../public/sebastian-kovacs-portfolio.png") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+#skIcon:hover {
+    background-color:var(--s2) ;
+background-blend-mode: difference;
+}
+
+
 @media (max-width: 1024px) {
     .flex {
         flex-direction: column;

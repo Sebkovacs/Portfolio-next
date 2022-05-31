@@ -47,9 +47,12 @@ export default function Projects({ allProjectsData }) {
             </div>
 
             <Link href={"/contact"}> 
-                <a className={gif.cash}>
-                    <p className={gif.typewriter}>Get in Touch!</p>
-                    <Image src={"/cash.gif"} layout="fill" objectFit='contain'/>
+                <a 
+                // id={gif.skIcon}
+                className={gif.cash}
+                >
+                            <Image src={"/sebastian-kovacs-portfolio.png"} height={50} width={50}/>
+   
                 </a>
             </Link>
 

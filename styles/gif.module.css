@@ -154,7 +154,7 @@
     background-image: url("../public/meh.gif") ;
 }
 
-.icon {
+#skIcon {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -162,7 +162,7 @@
     overflow: hidden;
     padding: 0;
     margin: 1em;
-    aspect-ratio: 1 / 1;
+
     border: 2px solid var(--p3);
     /* background-color:red ; */
     height: 2em;
@@ -175,7 +175,7 @@
     background-size: cover;
 }
 
-.icon:hover {
+#skIcon:hover {
         background-color:var(--s2) ;
 background-blend-mode: difference;
 }
