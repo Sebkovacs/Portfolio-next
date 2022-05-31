@@ -51,7 +51,7 @@ export default function Projects({ allProjectsData }) {
                 // id={gif.skIcon}
                 className={gif.cash}
                 >
-                            <Image src={"/sebastian-kovacs-portfolio.png"} height={50} width={50}/>
+                            <Image src={"/sebastian-kovacs-portfolio.png"} height={"50px"} width={"50px"}/>
    
                 </a>
             </Link>
