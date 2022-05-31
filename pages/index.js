@@ -17,14 +17,14 @@ const title = "Projects";
 export default function Projects({ allProjectsData }) {
 
     const projects = allProjectsData;
-    
+
     return (
         <Layout>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
             <div className={utilStyles.title}>
-            <h1>{title}</h1>
+                <h1>{title}</h1>
             </div>
             <div className={cards.cardWrap} id="cardWrap">
                 {projects.map(({ id, title, shortTitle, type, status, thumb, thumbAlt }) => (
@@ -46,13 +46,9 @@ export default function Projects({ allProjectsData }) {
                 ))}
             </div>
 
-            <Link href={"/contact"}> 
-                <a 
-                // id={gif.skIcon}
-                className={gif.cash}
-                >
-                            <Image src={"/sebastian-kovacs-portfolio.png"} height={"50px"} width={"50px"}/>
-   
+            <Link href={"/contact"}>
+                <a className={gif.indexContact}>
+                    <Image src={"/sebastian-kovacs-portfolio.png"} height={"50px"} width={"50px"} />
                 </a>
             </Link>
 

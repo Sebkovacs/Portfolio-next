@@ -180,19 +180,13 @@
 background-blend-mode: difference;
 }
 
-.cash {
-    width: 4em;
-    height: 2em;
+.indexContact {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 1rem;
+    left: 1rem;
     z-index: 10;   
-    background-color: transparent;
 }
-.cash:hover {
-    background-image: none;
-    background-color: transparent;
-}
+
 
 .typewriter {
     display: none;
