@@ -35,11 +35,7 @@ plans: [
 {id: "9", plan: '/p9.jpg', alt: "South Elevation"},
 {id: "10", plan: '/p10.jpg', alt: "West Elevation"},
 {id: "11", plan: '/p11.jpg', alt: "Construction Details"},
-{id: "12", plan: '/p12.jpg', alt: "Internal Elevations"},
-# {id: "13", plan: '/p13.jpg', alt: "Some of the Internal Elevations"},
-# {id: "14", plan: '/p14.jpg', alt: "Some of the Internal Elevations"},
-# {id: "15", plan: '/p15.jpg', alt: "Some of the Internal Elevations"},
-
+{id: "12", plan: '/p12.jpg', alt: "Internal Elevations"}
 ]
 
 
