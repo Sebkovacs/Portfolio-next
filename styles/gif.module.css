@@ -167,7 +167,7 @@
     /* background-color:red ; */
     height: 2em;
     aspect-ratio: 1 / 1;
-
+    
     background-image: url("../public/sebastian-kovacs-portfolio.png") ;
     background-position: center;
     background-repeat: no-repeat;
@@ -183,7 +183,7 @@ background-blend-mode: difference;
 .indexContact {
     position: fixed;
     bottom: 1rem;
-    left: 1rem;
+    left: 0;
     z-index: 10;   
 }
 
@@ -265,7 +265,6 @@ from, to { border-color: transparent }
         right: 0;
         justify-content: center;
         display: flex;
-        margin-bottom: -30px;
     }
     .friday {
         margin-top: 1em;
