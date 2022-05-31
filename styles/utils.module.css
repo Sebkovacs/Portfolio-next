@@ -653,7 +653,7 @@
         display: none
     }
 
-    .indexContact {
+    #indexContact {
         left: unset;
         right: .5rem;
     }
