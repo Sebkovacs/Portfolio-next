@@ -656,6 +656,7 @@
     #indexContact {
         left: unset;
         right: .5rem;
+        bottom: .5rem;
     }
     .mobileResumeVideoBackgroundHeight {
         height: calc(100%  - var(--h1Height) - 63px);
