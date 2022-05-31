@@ -67,7 +67,7 @@ export default function Resume() {
 
             <div className={` ${utilStyles.resume}`}>
                 <div className={utilStyles.list}>
-                    <h3>Relevant Work History</h3>
+                    <h2>Relevant Work History</h2>
                     <ul>
                         <li>Side Jobs 2021 - Present</li>
                         <li>Jason Topic Architecture 2018-2020</li>
@@ -77,7 +77,7 @@ export default function Resume() {
                 </div>
 
                 <div className={utilStyles.list}>
-                    <h3>Education / Qualifications</h3>
+                    <h2>Education / Qualifications</h2>
                     <ul>
                         <li>Masters Architecture - University of Newcastle July 2020 </li>
                     </ul>
@@ -85,10 +85,10 @@ export default function Resume() {
 
                 <div className={utilStyles.list}>
 
-                    <h3>Software</h3>
+                    <h2>Software</h2>
 
                     <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
-                        <h4>Drafting / BIM</h4>
+                        <h3>Drafting / BIM</h3>
                         <ul>
                             <li>Revit (v2020)</li>
                             <li>Vectorworks (v2017-2021)</li>
@@ -96,7 +96,7 @@ export default function Resume() {
                     </div>
 
                     <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
-                        <h4> Rendering</h4>
+                        <h3> Rendering</h3>
                         <ul>
                             <li>Vray</li>
                             <li>Twinmotion </li>
@@ -105,7 +105,7 @@ export default function Resume() {
                     </div>
 
                     <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
-                        <h4>Other</h4>
+                        <h3>Other</h3>
                         <ul>
                             <li>Adobe Photoshop</li>
                             <li>Adobe Illustrator </li>
@@ -118,7 +118,7 @@ export default function Resume() {
                 </div>
 
                 <div className={utilStyles.list}>
-                    <h3>Other Skills / Proficiencies</h3>
+                    <h2>Other Skills / Proficiencies</h2>
                     <ul>
                         <li>Digital Marketing</li>
                         <li>B2B Sales</li>
@@ -135,8 +135,8 @@ export default function Resume() {
                             Contact Me 👌
                         </div>
 
-                        <div className={gif.friday}><Image src={"/friday.gif"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
-                        <Image src={"/fire.gif"} layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
+                        <div className={gif.friday}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
+                        <Image src={"/fire.gif"} alt={"wood fire cartoon"}  layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
                     </a>
                 </Link>
             </div>

@@ -47,7 +47,7 @@ export default function Projects({ allProjectsData }) {
             </div>
 
             <Link href={"/contact"}>
-            <a id={utilStyles.indexContact}/>
+            <a id={utilStyles.indexContact}>Navigate to Contact Page</a>
             </Link>
 
 

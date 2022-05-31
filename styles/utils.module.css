@@ -58,6 +58,12 @@
     flex-wrap: wrap;
     align-items: center;
 }
+.flexLeft {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
 .flex2 {
     display: flex;
@@ -147,6 +153,23 @@
     flex-wrap: wrap;
     gap: 2em;
 }
+.resume h2 {
+    font-weight: 700;
+    font-style: italic;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 0;
+    padding: .5em 0;
+    color: var(--t1);
+    font-size: 1.2rem;
+}
+.resume h3 {
+    padding: 0;
+    color: var(--t1);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
 
 .contact {
     position: relative;
@@ -418,6 +441,7 @@
     overflow: hidden;
 
     background-color: none;
+    color: transparent;
 
     background-image: url('/sebastian-kovacs-portfolio.png');
     background-position: center;

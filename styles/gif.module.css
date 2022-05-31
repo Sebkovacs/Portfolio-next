@@ -55,11 +55,14 @@
     top: -110px;
     right: 0;
     z-index: 99;
+    user-select: none;
 }
 
 .happyblue:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
+    cursor: grab;
+
 }
 .happyblue:hover::after {
     content: "he he he";
