@@ -21,35 +21,35 @@ export default function Contact() {
 
             <div className={utilStyles.videoBackground}>
                 <div className={utilStyles.backgroundCover} />
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
