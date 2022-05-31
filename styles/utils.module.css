@@ -70,7 +70,8 @@
     align-items: baseline;
 
 }
-.address p{
+
+.address p {
     padding-left: 1rem;
 
 }
@@ -89,7 +90,7 @@
     /* flex: 1; */
     /* transition: all ease 2s; */
 
-    background-image: url("../public/smoke1.gif") ;
+    background-image: url("../public/smoke1.gif");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -105,7 +106,7 @@
 
 
     background-color: var(--p2);
-    background-image: url("../public/smoke2.gif") ;
+    background-image: url("../public/smoke2.gif");
     background-blend-mode: overlay;
     background-position: center;
     background-size: cover;
@@ -125,6 +126,7 @@
 .list li {
     margin: .5em 0 1em;
 }
+
 .backgroundCover {
     background-color: rgba(245, 245, 245, 0.89);
     width: 100%;
@@ -133,6 +135,7 @@
     overflow: hidden;
     z-index: 2;
 }
+
 .resume {
     position: relative;
     z-index: 9;
@@ -154,19 +157,22 @@
     padding: 1em;
     width: max-content;
     transition: ease-in-out 2s;
-    margin:  4em auto;
+    margin: 4em auto;
     z-index: 9;
 }
-.contact a{
+
+.contact a {
     padding: 0 .5em;
     background-color: transparent;
     transition: none;
 }
-.contact a:hover{
+
+.contact a:hover {
     padding: 0 .5em;
     background-color: var(--s2);
     background-image: none;
 }
+
 .hero {
     position: relative;
     overflow: hidden;
@@ -265,6 +271,7 @@
     position: relative;
     top: calc(-1 * var(--headerHeight));
 }
+
 .anchor2 {
     position: absolute;
     top: calc(-1.5 * var(--headerHeight));
@@ -332,7 +339,7 @@
 
     justify-content: space-between;
     user-select: none;
-    
+
 }
 
 .toggle {
@@ -349,7 +356,7 @@
 }
 
 .link:hover .toggle:hover {
-    background-color: rgba(var(--p1),.6);
+    background-color: rgba(var(--p1), .6);
     color: var(--t2);
 }
 
@@ -383,42 +390,59 @@
     text-transform: capitalize;
     font-size: .5em;
 }
-.font2 span{
+
+.font2 span {
     font-weight: inherit;
 }
+
 .hide {
     display: none
 }
 
 .videoBackground {
-    position: absolute; 
-    z-index: 1; 
-    display: flex; 
-    flex-wrap: wrap; 
-    height: calc(100vh - var(--headerHeight) - var(--h1Height)); 
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100vh - var(--headerHeight) - var(--h1Height));
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
 }
 
-.indexContact {
+#indexContact {
     position: fixed;
-    height: 2rem;
+    height: 1.5rem;
     aspect-ratio: 1 / 1;
     bottom: 1rem;
     left: .5rem;
-    z-index: 10;   
-    border-radius: .5rem;
     overflow: hidden;
-    filter: invert(0);
-    transition: 0;
-    border: 2px black solid;
-}
-.indexContact:hover {
-filter: invert(100%) hue-rotate(90deg) ;
-border: 2px white solid;
+
+    background-color: none;
+
+    background-image: url('/sebastian-kovacs-portfolio.png');
+    background-position: center;
+    background-blend-mode: normal;
+    background-color: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    z-index: 10;
+
+    border: 2px solid var(--p3);
+    border-radius: .3em;
+
+    transition: 0s;
+
+    cursor: pointer;
 }
 
-.contact .indexContact {
+#indexContact:hover {
+    background-blend-mode: difference;
+    background-color: var(--s2);
+    border: 2px solid var(--p3);
+}
+
+.contact #indexContact {
     position: absolute;
     bottom: .5rem;
     right: .5rem;
@@ -510,12 +534,14 @@ border: 2px white solid;
     .mobileOnlyFlex {
         display: flex;
     }
+
     .hide {
         display: none
     }
-    .videoBackground {
-        height: calc(100% - var(--h1Height)); 
 
+    .videoBackground {
+        height: calc(100% - var(--h1Height));
+        width: 100vw;
     }
 }
 
@@ -576,21 +602,25 @@ border: 2px white solid;
         margin: 0;
         text-align: start;
     }
+
     .contact h4 {
         padding-bottom: 0;
     }
-    .contact a{
-        padding: 0 ;
+
+    .contact a {
+        padding: 0;
         background-color: transparent;
         transition: none;
         font-size: 1.5em;
     }
-    .contact p{
-margin: 0;
+
+    .contact p {
+        margin: 0;
     }
-    .address p{
+
+    .address p {
         padding-top: .5em;
-            }
+    }
 
     .grid2 {
         grid-template-columns: 1fr;
@@ -618,9 +648,11 @@ margin: 0;
         font-size: .5em;
         padding: 1em .5em;
     }
+
     .hide {
         display: none
     }
+
     .indexContact {
         left: unset;
         right: .5rem;
@@ -632,11 +664,13 @@ margin: 0;
     .contact {
         padding-bottom: 3em;
     }
+
     .link2 {
         font-size: 10px;
         margin: auto .3rem;
     }
-    .link2 span{
+
+    .link2 span {
         font-size: 16px;
     }
 }

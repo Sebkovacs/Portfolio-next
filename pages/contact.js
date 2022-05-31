@@ -68,14 +68,15 @@ export default function Contact() {
                     <p>9/5 Dawson St<br /> Cooks Hill, NSW 2300<br /> Australia</p>
                 </div>
                 <Link href={"/"}>
-                    <a className={utilStyles.indexContact}>
+                <a id={utilStyles.indexContact}/>
+                    {/* <a className={utilStyles.indexContact}>
                         <Image
                             src={"/sebastian-kovacs-portfolio.png"}
                             alt={"sebastian Kovacs Icon Contact Link"}
                             layout="fill"
                             objectFit="cover"
                         />
-                    </a>
+                    </a> */}
                 </Link>
             </div>
 

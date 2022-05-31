@@ -47,14 +47,7 @@ export default function Projects({ allProjectsData }) {
             </div>
 
             <Link href={"/contact"}>
-                <a className={utilStyles.indexContact}>
-                    <Image
-                        src={"/sebastian-kovacs-portfolio.png"}
-                        alt={"sebastian Kovacs Icon Contact Link"}
-                        layout="fill"
-                        objectFit="cover"
-                    />
-                </a>
+            <a id={utilStyles.indexContact}/>
             </Link>
 
 
