@@ -16,7 +16,7 @@ photography: Sebastian Kovacs
 
 
 thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
+thumbAlt: Glovers Lane 2nd Story and renovation
 
 pics: [
 {id: "1", image: '/1.jpg', alt: Glovers Lane house renovation Main view from lane way, caption: "Main view from lane way"},

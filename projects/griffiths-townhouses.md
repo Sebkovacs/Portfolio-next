@@ -14,7 +14,7 @@ rendering:
 photography: 
 
 thumb: '/1.png'
-thumbAlt: 'hello'
+thumbAlt: 1 Griffiths Street townhouse development
 
 pics: [
 {id: "1", image: '/1.png', alt: 1 Griffiths st townhouse development view from the south, caption: View of the townhouses and drive way from the south on Griffiths St},

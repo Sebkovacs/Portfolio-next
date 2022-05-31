@@ -16,7 +16,7 @@ photography:
 
 
 thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
+thumbAlt: air bnb farm cabin concept at seal rock topi topi
 
 pics: [
 {id: "1", image: '/1.jpg', alt: "New farm cabin Main Living Area"},

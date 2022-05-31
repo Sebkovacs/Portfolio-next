@@ -15,7 +15,7 @@ rendering: Vectorworks
 photography: Sebastian Kovacs
 
 thumb: '/1.jpg'
-thumbAlt: "Lake Macquaire Regional Football facility new facility building at Speers Point"
+thumbAlt: Lake Macquaire Regional Football facility new facility building at Speers Point
 
 pics: [
 {id: 1, image: '/1.jpg', alt: The new Lake Macquaire Regional Football facility building car park side viewed from the north east, caption: New LMRFF building North East aspect viewed from The Esplanade. Home of the Jets FC...},

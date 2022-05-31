@@ -36,7 +36,7 @@ photography:
 summary: 'Exploring different concept ideas: feel, functon and cost. '
 
 thumb: '/1.png'
-thumbAlt: 'hello'
+thumbAlt: Glebe Road House Extension Concepts
 
 pics: [
 {id: "1", 

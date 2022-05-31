@@ -19,7 +19,7 @@ photography:
 summary: New build on country property in the beautiful Hunter Valley.
 
 thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
+thumbAlt: Kitchener Pde Duplex Concept Design
 
 pics: [
 {id: 1, image: '/1.jpg', alt: kitchener duplex street view from Kitchener Pde looking east, caption: Street view from Kitchener Pde looking east},

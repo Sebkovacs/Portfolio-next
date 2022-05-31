@@ -15,7 +15,7 @@ rendering: 'Twinmotion'
 photography: 
 
 thumb: '/1.png'
-thumbAlt: 'hello'
+thumbAlt: Tudor st Apartments Concept Design in Hamilton
 
 pics: [
 {id: 1, image: '/1.png', alt: Tudor st Apartments concept view from the North East , caption: Tudor St view from the North East},

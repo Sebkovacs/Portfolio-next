@@ -14,7 +14,7 @@ rendering: Twinmotion
 photography: 
 
 thumb: /1.jpg
-thumbAlt: image alt text.jpg
+thumbAlt: 36 Hall Street Dual Occupancy downsize development
 
 pics: [
 {id: "1", image: '/1.jpg', alt: "36 Hall St Dual Occupancy Photomontage", caption: Photomontage of the Dual Occupancy project from Hall St},

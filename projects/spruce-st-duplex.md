@@ -15,8 +15,7 @@ rendering:
 photography: 
 
 thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
-
+thumbAlt: spruce st duplex development in new lambton heights
 pics: [
 {id: "1", image: '/1.jpg', alt: "Spruce Street Duplex Photomontage from Spruce Street", caption: Photomontage from Spruce Street},
 {id: "2", image: '/2.jpg', alt: "Spruce Street Duplex Aerial 3D View of the building mass", caption: 3D view of massing}

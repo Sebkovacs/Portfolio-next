@@ -12,7 +12,7 @@ company: 'North'
 photography: "credit - North Construction"
 
 thumb: '/1.jpg'
-thumbAlt: 'hello'
+thumbAlt: Bishop Tyrrell Anglican College New school buildings
 
 pics: [
 {id: 1, image: '/1.jpg', alt: Tudor St view from the East},
@@ -23,10 +23,3 @@ pics: [
 plans: [
 ]
 ---
-This project aimed to test ideas around sustainability, affordability and public good, on urban-infill site in the heart of Newcastle.
-
-Concept design for 10 unique apartments; mixed use development.
-
-The goal was to hedge risk accommodating for a range of occupants and price points.
-
-The building was designed to be constructed from CLT (per XLAM) and key priorities were achieving cross & stack (natural) ventilation and nature into the design.

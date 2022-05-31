@@ -14,7 +14,7 @@ rendering:
 photography: 
 
 thumb: /1.jpg
-thumbAlt: image alt text.jpg
+thumbAlt: Lang Drive new build house
 
 pics: [
 {id: 1, image: /1.jpg, alt: View of the house from Lang Drive},

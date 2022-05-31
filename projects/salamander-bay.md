@@ -14,7 +14,7 @@ rendering:
 photography: Credit - The Bay Holiday Properties
 
 thumb: '/1.jpg'
-thumbAlt: 'image alt text.jpg'
+thumbAlt: 64 randall drive Holiday House renovation at Salamander Bay 
 
 pics: [
 {id: "1", image: '/1.jpg', alt: 64 Randall Drive new living layout, caption: "New lounge room. The existing floor changed heights but was built up to make the entire floor and deck level"},
