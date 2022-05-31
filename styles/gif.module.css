@@ -154,39 +154,6 @@
     background-image: url("../public/meh.gif") ;
 }
 
-#skIcon {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border-radius: .5em;
-    overflow: hidden;
-    padding: 0;
-    margin: 1em;
-
-    border: 2px solid var(--p3);
-    /* background-color:red ; */
-    height: 2em;
-    aspect-ratio: 1 / 1;
-    
-    background-image: url("../public/sebastian-kovacs-portfolio.png") ;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-    background-size: cover;
-}
-
-#skIcon:hover {
-        background-color:var(--s2) ;
-background-blend-mode: difference;
-}
-
-.indexContact {
-    position: fixed;
-    bottom: 1rem;
-    left: 0;
-    z-index: 10;   
-}
-
 
 .typewriter {
     display: none;
@@ -308,5 +275,6 @@ from, to { border-color: transparent }
         position: absolute;
     
     }
+
 
 }

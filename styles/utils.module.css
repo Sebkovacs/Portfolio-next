@@ -399,6 +399,32 @@
     overflow: hidden;
 }
 
+.indexContact {
+    position: fixed;
+    height: 2rem;
+    aspect-ratio: 1 / 1;
+    bottom: 1rem;
+    left: .5rem;
+    z-index: 10;   
+    border-radius: .5rem;
+    overflow: hidden;
+    filter: invert(0);
+    transition: 0;
+    border: 2px black solid;
+}
+.indexContact:hover {
+filter: invert(100%) hue-rotate(90deg) ;
+border: 2px white solid;
+}
+
+.contact .indexContact {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    height: 2rem;
+    left: unset;
+}
+
 
 @media (max-width: 1024px) {
 
@@ -593,6 +619,10 @@ margin: 0;
     }
     .hide {
         display: none
+    }
+    .indexContact {
+        left: unset;
+        right: .5rem;
     }
 
 }
