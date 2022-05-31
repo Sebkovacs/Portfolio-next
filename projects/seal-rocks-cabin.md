@@ -19,15 +19,15 @@ thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "Main Living Area"},
-{id: "2", image: '/2.jpg', alt: "Looking South East"},
-{id: "3", image: '/3.jpg', alt: "View uphill from Hubbard Rd"},
-{id: "4", image: '/4.jpg', alt: "SE Perspective"},
-{id: "5", image: '/5.jpg', alt: "Aerial Photomontage of the field and proposed facility building"},
-{id: "6", image: '/6.jpg', alt: "Ground Level Photomontage of the field and proposed facility building"},
-{id: "7", image: '/7.jpg', alt: "North Elevation"},
-{id: "8", image: '/8.jpg', alt: "East Elevation"},
-{id: "9", image: '/9.jpg', alt: "South Elevation"}
+{id: "1", image: '/1.jpg', alt: "New farm cabin Main Living Area"},
+{id: "2", image: '/2.jpg', alt: "New farm cabin Looking South East"},
+{id: "3", image: '/3.jpg', alt: "New farm cabin View uphill from Hubbard Rd"},
+{id: "4", image: '/4.jpg', alt: "New farm cabin SE Perspective"},
+{id: "5", image: '/5.jpg', alt: "New farm cabin Aerial Photomontage of the field and proposed facility building"},
+{id: "6", image: '/6.jpg', alt: "New farm cabin Ground Level Photomontage of the field and proposed facility building"},
+{id: "7", image: '/7.jpg', alt: "New farm cabin North Elevation"},
+{id: "8", image: '/8.jpg', alt: "New farm cabin East Elevation"},
+{id: "9", image: '/9.jpg', alt: "New farm cabin South Elevation"}
 ]
 
 north: -10
@@ -47,7 +47,7 @@ plans: [
 
 ---
 
-Farm cabin as secondar dwelling for the puproses of Air BNB business expansion.
+Farm cabin as secondary dwelling for the purposes of Air BNB business expansion.
 
 Focus on build cost and easy of building.
 

@@ -39,7 +39,7 @@ export default function Projects({ allProjectsData }) {
                             <div className={cards.title}>
 
                                 <h2>{title}</h2>
-                                <p className={cards.details}>{type} // {status}</p>
+                                <p className={`${cards.details}`} >{type} | {status}</p>
                             </div>
                         </a>
                     </Link>

@@ -34,7 +34,7 @@ pics: [
 {id: 10, image: '/10.jpg', alt: kitchener duplex Unit 1 upper floor - master bedroom, caption: Unit 1 upper floor - master bedroom},
 {id: 11, image: '/11.jpg', alt: kitchener duplex Unit 2 hallway view into main living area, caption: Unit 2 hallway view into the main living area},
 {id: 12, image: '/12.jpg', alt: kitchener duplex Unit 2 main living area & kitchen, caption: Unit 2 main living area & kitchen},
-{id: 13, image: '/13.jpg', alt: "kitchener duplex Unit 2 upper level tv lounge", caption: Unit 2 upper level tv lounge, right sliding door is the entry to upper bedroom 3},
+{id: 13, image: '/13.jpg', alt: "kitchener duplex Unit 2 upper level tv lounge", caption: "Unit 2 upper level tv lounge, right sliding door is the entry to upper bedroom 3"},
 {id: 14, image: '/14.jpg', alt: kitchener duplex Unit 2 upper level bedroom, caption: Unit 2 upper level bedroom with views into the back yard},
 {id: 15, image: '/15.jpg', alt: kitchener duplex Unit 2 upper level study, caption: Unit 2 upper level study}
 ]
@@ -48,7 +48,7 @@ plans: [
 {id: "4", plan: '/p4.jpg', alt: "Roof Plan"},
 {id: "5", plan: '/p5.jpg', alt: "Long Section"},
 {id: "6", plan: '/p6.jpg', alt: "Cross Sections"},
-{id: "7", plan: '/p7.jpg', alt: "Solar Study: Winter Solistice (June 21)"},
+{id: "7", plan: '/p7.jpg', alt: "Solar Study: Winter Solstice (June 21)"},
 
 
 ]

@@ -18,8 +18,8 @@ thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "Photomontage from Spruce St"},
-{id: "2", image: '/2.jpg', alt: "3D View of Massing"}
+{id: "1", image: '/1.jpg', alt: "Spruce Street Duplex Photomontage from Spruce Street", caption: Photomontage from Spruce Street},
+{id: "2", image: '/2.jpg', alt: "Spruce Street Duplex Aerial 3D View of the building mass", caption: 3D view of massing}
 ]
 
 north: 80

@@ -17,8 +17,8 @@ thumb: /1.jpg
 thumbAlt: image alt text.jpg
 
 pics: [
-{id: 1, image: /1.jpg, alt: hello},
-{id: "2", image: '/2.jpg', alt: yum}
+{id: 1, image: /1.jpg, alt: View of the house from Lang Drive},
+{id: 2, image: '/2.jpg', alt: Looking North West from Patterson Road}
 ]
 
 north: 15

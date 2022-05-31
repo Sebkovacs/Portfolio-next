@@ -19,13 +19,13 @@ thumb: '/1.jpg'
 thumbAlt: 'image alt text.jpg'
 
 pics: [
-{id: "1", image: '/1.jpg', alt: "Main view from laneway"},
-{id: "2", image: '/2.jpg', alt: "View from main road: Council St"},
-{id: "3", image: '/3.jpg', alt: "View to the trees"},
-{id: "4", image: '/4.jpg', alt: "Main Entry: New detailing"},
-{id: "5", image: '/5.jpg', alt: "Respecting the heritage aesthetic and blending in..."},
-{id: "6", image: '/6.jpg', alt: "New kitchen and dining on the main level"},
-{id: "7", image: '/7.jpg', alt: "Render of new backyard and interior design"}
+{id: "1", image: '/1.jpg', alt: Glovers Lane house renovation Main view from lane way, caption: "Main view from lane way"},
+{id: "2", image: '/2.jpg', alt: Glovers Lane house renovation View from Council Street, caption: "View from Council Street"},
+{id: "3", image: '/3.jpg', alt: Glovers Lane house renovation new roof and 2nd storey details, caption: "The new upstairs lounge looks out directly into the tree tops"},
+{id: "4", image: '/4.jpg', alt: Glovers Lane house renovation Front entry porch refreshed, caption: "Front entry porch refreshed"},
+{id: "5", image: '/5.jpg', alt: Glovers Lane house renovation view showing how old and new have been harmonised, caption: The aesthetics of the new 2nd storey harmonised with the existing - repainted and tasteful},
+{id: "6", image: '/6.jpg', alt: Glovers Lane house renovation new kitchen and living perspective render, caption: "The existing design had many pokey spaces, was very dark and inefficiently used space. The new open plan kitchen and dining with large bi-fold glazed doors"},
+{id: "7", image: '/7.jpg', alt: Glovers Lane house renovation new back courtyard perspective render, caption: The back courtyard was cleaned up and new bi-fold doors now open up directly to the kitchen and dining area}
 ]
 
 north: -50
@@ -43,4 +43,4 @@ plans: [
 
 ---
 
-Alts and Ads in a heritage area, the client wanted to reconfigure the existing main floor layout and to extend upwards with the addition of a second storey.
+Alterations and additions in a heritage area, the client wanted to reconfigure the existing main floor layout and to extend upwards with the addition of a second storey.
