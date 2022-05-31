@@ -397,6 +397,7 @@
     flex-wrap: wrap; 
     height: calc(100vh - var(--headerHeight) - var(--h1Height)); 
     overflow: hidden;
+    width: 100vw;
 }
 
 .indexContact {
@@ -514,7 +515,7 @@ border: 2px white solid;
         display: none
     }
     .videoBackground {
-        height: calc(100%  - var(--h1Height) - 63px); 
+        height: calc(100% - var(--headerHeight)); 
 
     }
 }
