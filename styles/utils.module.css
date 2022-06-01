@@ -473,6 +473,13 @@
     left: unset;
 }
 
+.credit {
+    position: absolute;
+    bottom: -3rem;
+    left: 1rem;
+    z-index: 99;
+}
+
 
 @media (max-width: 1024px) {
 

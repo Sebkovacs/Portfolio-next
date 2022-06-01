@@ -86,7 +86,9 @@ export default function Contact() {
                     </a> */}
                 </Link>
             </div>
-
+            <div className={utilStyles.credit }>
+                <p>2022 | Website developed by me</p>
+            </div>
         </Layout>
 
     )
