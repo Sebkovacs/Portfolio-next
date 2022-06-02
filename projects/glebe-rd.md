@@ -3,10 +3,7 @@ title: 'Extension Concepts'
 shortTitle: 'glebe-rd'
 
 panos: [
-    {name: concept 1a,
-    link: https://app.nocknock.io/show/JtiHEx75H
-    },
-    {name: concept 1b,
+    {name: concept 1,
     link: https://app.nocknock.io/show/Sn6ykFgIA
     },
     {name: concept 2,
@@ -33,7 +30,7 @@ rendering: 'Twinmotion'
 photography: 
 
 
-summary: 'Exploring different concept ideas: feel, functon and cost. '
+summary: 'Exploring different concept ideas: feel, function and cost. '
 
 thumb: '/1.png'
 thumbAlt: Glebe Road House Extension Concepts
@@ -75,7 +72,7 @@ caption: reworking the kitchen and moving the toilet / laundry - with the additi
 {id: "9", 
 image: '/9.png', 
 alt: 'Glebe Rd House Extension Concept 4 living area view',
-aption: 'Concept 4 the additional glazed door > opening from the new lounge to deck, wont massively impact natural light except in the mornings (faces east)'},
+caption: 'Concept 4 the additional glazed door > opening from the new lounge to deck, wont massively impact natural light except in the mornings (faces east)'},
 
 {id: "10", 
 image: '/10.png', 
@@ -84,7 +81,7 @@ caption: 'Existing dining and kitchen area view'},
 
 {id: "11", image: '/11.png', 
 alt: 'Glebe Rd House Extension Concept 1 view from backyard', 
-caption: 'Concep 1 pushes out the deck ny a few meters and basically encloses the area of the existing deck'},
+caption: 'Concept 1 pushes out the deck ny a few meters and basically encloses the area of the existing deck'},
 
 {id: "12", 
 image: '/12.png', 
@@ -155,18 +152,34 @@ plans: [
 
 Exploring different concept ideas: feel, function and cost.
 
-Because of existing heights -> flood level and existing roof
-the ceiling height became the key problem.
+The objective was to test a number of different ideas through a series of concepts - and then pick a choose the elements that worked well and see how they can be combined and refined.
 
-quickly developed up a total of 5 design options with variation over 
+The presentation of design options was with both plans, renders and 3D tour's. This really brought the concepts to life and made them easily comprehensible.
 
-- roof design
+Because of existing heights -> flood level and existing roof, ceiling height became the key problem.
+
+There were 4 design options quick generated with variation over 
+
+- roof / gutter design
 - lounge / indoor & outdoor
 - kitchen / toilet reconfiguration
+- deck and stairs
 
-The first designs : c1a & c1b
 
+
+#### Concept 1
 These focused on two alternate solutions with building a box gutter and falling the new roof down towards the existing roof.
 
 This would allow the existing roof to be kept and was thought to be the cheapest option.
-the north aspect would be open. Shading requirements were basically ignored.
+the north aspect would be open. 
+
+#### Concept 2
+The gable option - to avoid the section of low ceiling from a box gutter. The gable roof would be build out from the existing pitched roof and allow for nice high ceilings. 
+
+This concept also tested the idea of removing the backyard tree and building a wrap around deck.
+
+#### Concept 3
+The internal layout is inefficient and so the idea of moving the toilet / laundry was tested. A closed eastern wall kept more deck space and the addition of glazed folding doors bring much more natural light.
+
+#### Concept 4
+Similar to concept 3 - this concept tested closing off the new lounge to the back yard and instead increasing access to the deck. The new extension roof joins the existing roof - angling down towards the garage.

@@ -20,7 +20,7 @@ pics: [
 {id: 1, image: '/1.jpg', alt: St Francis Xavier Belmont Church main hall, caption: The main hall looking towards the alter - the ceiling is so high},
 {id: 2, image: '/2.jpg', alt: St Francis Xavier Belmont Church, caption: St Francis Xavier Belmont Church},
 {id: 3, image: '/3.jpg', alt: St Francis Xavier Belmont Church stain glass windows, caption: Stain glass windows & control room},
-{id: 4, image: '/4.jpg', alt: St Francis Xavier Belmont Church Main Entry stairs, caption: Main Entry stairs},
+{id: 4, image: '/4.jpg', alt: St Francis Xavier Belmont Church Main Entry stairs, caption: Main entry stairs},
 {id: 5, image: '/5.jpg', alt: St Francis Xavier Belmont Church view from the car park, caption: View from the car park},
 {id: 6, image: '/6.jpg', alt: St Francis Xavier Belmont Church entry way, caption: Entry way},
 ]

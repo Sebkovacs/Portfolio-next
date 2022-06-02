@@ -44,6 +44,8 @@ plans: [
 
 New build on an empty site. 
 
-Worked on a full set of construction & tender documents.
+Rural location out past Maitland.
 
-Comparison of tenders from builders.
+Approval via Complying Development pathway.
+
+Worked on the construction & tender documents.
