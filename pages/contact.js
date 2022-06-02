@@ -19,7 +19,7 @@ export default function Contact() {
             </div>
 
 
-            <div className={utilStyles.videoBackground}>
+            <div className={utilStyles.videoBackgroundContact}>
                 <div className={utilStyles.backgroundCover} />
                 <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
