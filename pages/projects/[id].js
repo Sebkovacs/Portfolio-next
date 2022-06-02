@@ -172,10 +172,14 @@ export default function Project({ projectData }) {
                         <h3>Project Details </h3>
                         <ul>
                             <li style={{ display: projectData.type == null ? "none" : "flex" }}>Type: {projectData.type}</li>
-                            <li style={{ display: projectData.status == null ? "none" : "flex" }}>Worked On: {projectData.work}</li>
-                            <li style={{ display: projectData.work == null ? "none" : "flex" }}>Status: {projectData.status}</li>
+                            <li style={{ display: projectData.status == null ? "none" : "flex" }}>Status: {projectData.status}</li>
+                            <li style={{ display: projectData.work == null ? "none" : "flex", backgroundColor: projectData.work == "Construction" && "var(--s2)", fontWeight: projectData.work == "Construction" && "800"}}>Worked On: {projectData.work}</li>
                             <li style={{ display: projectData.location == null ? "none" : "flex" }}>Location: {projectData.location}</li>
                             <li style={{ display: projectData.company == null ? "none" : "flex" }}>Company: {projectData.company}</li>
+                            <li style={{ display: projectData.architects == null ? "none" : "flex" }}>Architects: {projectData.architects}</li>
+                            <li style={{ display: projectData.contractor == null ? "none" : "flex" }}>Contractor: {projectData.contractor}</li>
+                            <li style={{ display: projectData.projectManager == null ? "none" : "flex" }}>Project Manager: {projectData.projectManager}</li>
+                            <li style={{ display: projectData.value == null ? "none" : "flex" }}>Project Value: {projectData.value}</li>
                             <li style={{ display: projectData.software == null ? "none" : "flex" }}>Software: {projectData.software}</li>
                             <li style={{ display: projectData.rendering == null ? "none" : "flex" }}>Rendering: {projectData.rendering}</li>
                             <li style={{ display: projectData.photography == null ? "none" : "flex" }}>Photography: {projectData.photography}</li>
