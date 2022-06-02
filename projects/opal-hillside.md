@@ -29,16 +29,14 @@ plans: [
 ]
 ---
 Opal Hillside is a 4 storey, 120 suite retirement aged care facility - a big new addition to the existing facility.
-It steps down the site from the entry off Violet Town Rd towards the east, going from two storey to the full 4 storey construction at the far eastern end.
+It steps down the site from the main entry, off Violet Town Rd, towards the east, going from two storey to the full four storey construction at the far eastern end.
 
-Construction is concrete slab and column structure with steel stud walls and exterior cladding of: Brick veneer / colorbond facade.
+Construction is post tensioned concrete slabs and column structure with steel stud walls and exterior cladding of: Brick veneer / colorbond facade.
 
-I worked on this project for ~2months with North, as a construction labourer - first on site during slab pours and through to finishing trades - a bit after scaffold down.
+I worked on this project for ~2months with North, as a construction labourer. I started on-site during slab pours and went through a bit after lock up & scaffold down.
 
-It was a very busy site and I had a good amount of exposure commercial construction - the delineation of responsibilities between trades and head contractor - and variations was good to experience - it got very heated at multiple points.
+It was a very busy site and I had a good amount of exposure to the full gambit of commercial construction - the delineation of responsibilities between trades and head contractor on contract, variations and how they were handled - it got very heated on site at multiple points.
 
-Tasks on site was a lot of odd jobs with the North Carpenters. 
+My time was about 50/50 doing odd jobs picking up from other trades and working with the North Carpenters.
 
-Highlights were getting be part of using commerical package of plans / drawings on site and getting to interact with a lot of different trades / sub contractors. 
-
-Interesting to see things from the other side.
+Highlights were being on the other side reading plans/drawings and getting to interact with a lot of different trades / sub contractors. 

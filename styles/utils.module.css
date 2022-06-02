@@ -551,7 +551,7 @@
     }
 
     .videoBackground {
-        height: calc(100% - var(--h1Height) - var(--headerHeight) + 27px);
+        height: calc(100% - var(--h1Height) - var(--headerHeight));
         width: 100vw;
     }
     .videoBackgroundContact {
@@ -668,6 +668,7 @@
     .list {
         margin: 1em;
         padding: .5em .1em;
+        flex: 1;
     }
 
     .list h2 {
@@ -698,9 +699,7 @@ padding: .5rem 1rem;
     .list a {
         font-size: 7vw;
     }
-    .credit {
 
-    }
 
     .contact {
         margin: 2em auto;
