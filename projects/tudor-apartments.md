@@ -29,14 +29,13 @@ pics: [
 {id: 9, image: '/9.png', alt: Tudor st Apartments concept Entry Foyer , caption: "Foyer lift, glass sliding door into the garage and bike storage access to the right"},
 {id: 10, image: '/10.png', alt: Tudor st Apartments concept Foyer view to William St, caption: Foyer with lift and stair circulation look towards William St},
 {id: 11, image: '/11.png', alt: Tudor st Apartments concept Level 1 stair circulation and sitting area , caption: Level 1 stair circulation and sitting area},
-{id: 12, image: '/12.png', alt: Tudor st Apartments concept Level 2 stair circulation and lift , caption: Level 2 stair circulation and lift},
-{id: 13, image: '/13.png', alt: Tudor st Apartments concept Level 2 hall way to apartments , caption: "Level 2 hall way to apartments, terrace gardens are on the left - looking towards the lift & stairs"},
-{id: 14, image: '/14.png', alt: Tudor st Apartments concept Unit 2 main level living area , caption: Unit 2 main level living area},
-{id: 15, image: '/15.png', alt: Tudor st Apartments concept Unit 2 view of double height loft apartment design, caption: "Unit 2 - units 2, 6 & 7 are loft apartments and features double height raked ceilings" },
-{id: 16, image: '/16.png', alt: Tudor st Apartments concept Unit 2 upper level bedroom , caption: Unit 2 upper level bedroom},
-{id: 17, image: '/17.png', alt: Tudor st Apartments concept Unit 3 upper level bedroom , caption: Unit 3 upper level bedroom},
-{id: 18, image: '/18.png', alt: Tudor st Apartments concept Unit 3 main level lounge room , caption: Unit 3 main level lounge room},
-{id: 19, image: '/19.png', alt: Tudor st Apartments concept Unit 9 view of the lounge and kitchen , caption: Unit 9 view of the lounge and kitchen},
+{id: 12, image: '/12.png', alt: Tudor st Apartments concept Level 2 hall way to apartments , caption: "Level 2 hall way to apartments, terrace gardens are on the left - looking towards the lift & stairs"},
+{id: 13, image: '/13.png', alt: Tudor st Apartments concept Unit 2 main level living area , caption: Unit 2 main level living area},
+{id: 14, image: '/14.png', alt: Tudor st Apartments concept Unit 2 view of double height loft apartment design, caption: "Unit 2 - units 2, 6 & 7 are loft apartments and features double height raked ceilings" },
+{id: 15, image: '/15.png', alt: Tudor st Apartments concept Unit 2 upper level bedroom , caption: Unit 2 upper level bedroom},
+{id: 16, image: '/16.png', alt: Tudor st Apartments concept Unit 3 upper level bedroom , caption: Unit 3 upper level bedroom},
+{id: 17, image: '/17.png', alt: Tudor st Apartments concept Unit 3 main level lounge room , caption: Unit 3 main level lounge room},
+{id: 18, image: '/18.png', alt: Tudor st Apartments concept Unit 9 view of the lounge and kitchen , caption: Unit 9 view of the lounge and kitchen}
 ]
 
 north: 80
