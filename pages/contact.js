@@ -101,7 +101,7 @@ export default function Contact() {
 
             {/* <div className={gif.party}> */}
 
-            <div className={` ${!themeDark && theme.darkGrad} ${!themeDark && theme.darkShadow} ${utilStyles.contact}`}>
+            <div className={` ${!themeDark && theme.darkShadow} ${utilStyles.contact}`} id={!themeDark && theme.darkGrad}>
                 <div className={gif.talk} id={!themeDark && theme.darkmodeT}><Image src={"/talk.gif"} alt={"Lets Talk Call me speech bubble"} layout="fill" objectFit='cover' priority="true"></Image></div>
                 <div className={gif.happyblue} id={!themeDark && theme.darkmodeT}><Image src={"/happyblue.gif"} alt={"happy blue cartoon saying lets talk"} layout="fill" objectFit='cover' priority="true" /></div>
                 <h2 className={`${utilStyles.grow} ${utilStyles.mb1} ${utilStyles.center} ${utilStyles.noPad}`} >Sebastian Kovacs</h2>
@@ -126,7 +126,7 @@ export default function Contact() {
                         </button>
                         
             </div>
-            <div className={`${utilStyles.credit } ${!themeDark && theme.darkGrad}`}>
+            <div className={`${utilStyles.credit } ${!themeDark && theme.darkmodeT}`}>
                 <p>2022 | Website developed by me</p>
             </div>
         </Layout>
