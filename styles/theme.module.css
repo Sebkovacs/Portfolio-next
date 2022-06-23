@@ -60,3 +60,9 @@
 .darkText, #darkText {
   color: var(--s2);
 }
+#darkmodeAlt {
+  color:  var(--border1); 
+}
+#darkmodeAlt:hover {
+  color:  var(--border2); 
+}

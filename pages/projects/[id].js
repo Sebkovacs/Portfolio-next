@@ -103,7 +103,7 @@ export default function Project({ projectData }) {
                 <title>{siteTitle}: {' '} {projectData.title}</title>
             </Head>
             <div className={projects.top} id="top" />
-            <div className={`${projects.details}`} id={themeDark ? theme.lightmode : theme.darkmode} >
+            <div className={`${projects.details}`} id={themeDark && theme.darkmode} >
 
                 <div className={utilStyles.title}>
                     <h1>{projectData.title}</h1>
@@ -135,7 +135,7 @@ export default function Project({ projectData }) {
                         <a href="#images" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
                             Images
                             <label htmlFor="imageGrid" className={utilStyles.toggle} >
-                                {imageGrid ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">grid_view</span>}
+                                {imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">crop_16_9</span>}
                             </label>
                         </a>
 
@@ -174,7 +174,7 @@ export default function Project({ projectData }) {
                         <ul>
                             <li style={{ display: projectData.type == null ? "none" : "flex" }}>Type: {projectData.type}</li>
                             <li style={{ display: projectData.status == null ? "none" : "flex" }}>Status: {projectData.status}</li>
-                            <li style={{ display: projectData.work == null ? "none" : "flex", backgroundColor: projectData.work == "Construction" & themeDark ? "var(--s2)" : "var(--border2)", fontWeight: projectData.work == "Construction" && "800"}}>Worked On: {projectData.work}</li>
+                            <li style={{ display: projectData.work == null ? "none" : "flex", fontWeight: projectData.work == "Construction" && "800"}}>Worked On: {projectData.work}</li>
                             <li style={{ display: projectData.location == null ? "none" : "flex" }}>Location: {projectData.location}</li>
                             <li style={{ display: projectData.company == null ? "none" : "flex" }}>Company: {projectData.company}</li>
                             <li style={{ display: projectData.architects == null ? "none" : "flex" }}>Architects: {projectData.architects}</li>
@@ -203,7 +203,7 @@ export default function Project({ projectData }) {
 
             {/* Main Content */}
 
-            <div className={`${projects.main} ${!themeDark &&  theme.darkmode}`} >
+            <div className={`${projects.main} ${themeDark &&  theme.darkmode}`} >
 
                 <div id="images" className={utilStyles.anchor2}></div>
 
@@ -272,13 +272,13 @@ export default function Project({ projectData }) {
 
             {/* Mobile Device Image Controls */}
 
-            <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex} ${!themeDark && theme.darkmode}`}>
+            <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex} ${themeDark && theme.darkmode}`}>
                 <div className={projects.mobileControlsToggle} onClick={imageControlsToggle} style={{ backgroundColor: imageControls && "var(--p3)", color: imageControls && "var(--bg2)" }} >
                     Image Options
                     &nbsp;
                     {imageControls ? <span className="material-symbols-outlined" style={{ color: imageControls && "var(--bg2)" }}>arrow_drop_down</span> : <span className="material-symbols-outlined" style={{ color: !imageControls && "var(--t1)" }}>arrow_drop_up</span>}
                 </div>
-                <a className={utilStyles.link2} id={!themeDark && theme.darkmode} onClick={toggleImageRatio}>
+                <a className={utilStyles.link2} id={themeDark && theme.darkmode} onClick={toggleImageRatio}>
                     {ratioText}
                     &nbsp;
                     {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}
@@ -287,14 +287,14 @@ export default function Project({ projectData }) {
                 <Link href="#images">
                     <a onClick={toggleImageGrid}
                         className={utilStyles.link2}
-                        id={!themeDark && theme.darkmode}
+                        id={themeDark && theme.darkmode}
                     >
                         {gridText}
                         &nbsp;
                         {imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
                     </a>
                 </Link>
-                <a className={utilStyles.link2} id={!themeDark && theme.darkmode} onClick={() => setCaptionToggle(!captionToggle)}>
+                <a className={utilStyles.link2} id={themeDark && theme.darkmode} onClick={() => setCaptionToggle(!captionToggle)}>
                     Captions
                     &nbsp;{captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}
                 </a>

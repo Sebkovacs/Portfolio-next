@@ -42,7 +42,7 @@ export default function Layout({ children, title, sidePanelHeading, data }) {
             /> */}
 
 
-                <main className={`${sidePanelState ? styles.bodyOpen : styles.bodyClosed} ${themeDark ? theme.lightmode : theme.darkmode}`}>
+                <main className={`${sidePanelState ? styles.bodyOpen : styles.bodyClosed} ${themeDark && theme.darkmode}`}>
                                 {children}
                 </main>
 

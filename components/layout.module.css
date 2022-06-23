@@ -77,12 +77,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 18vw;
+  
 
 }
 
 .filter, .tag {
   font-size: .5em;
   background-color: var(--p2);
+  
   border: 2px solid var(--bg2);
   padding: .8em;
   margin: .2em;

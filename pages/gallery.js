@@ -10,6 +10,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 import SidePanelRight from '../components/SidePanelRight'
 import Side from '../components/Side'
+import theme from '../styles/theme.module.css'
+import { useThemeDark } from '../context/AppContext'
 
 
 const title = "Gallery";
@@ -19,6 +21,7 @@ export default function Gallery({ allProjectsData }) {
     let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type, software: a.software, status: a.status, render: a.rendering, tags: [a.type, a.software, a.status, a.rendering] }))).flat();
     let [randomGalleryList, setRandomGalleryList] = useState(galleryList);
     let data = galleryList.flat()
+    const [themeDark] = useThemeDark();
 
     function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
@@ -128,12 +131,12 @@ export default function Gallery({ allProjectsData }) {
     switch (imageRatio) {
         case true:
             aspectRatio = '16 / 9';
-            ratioText = "Landscape";
+            ratioText = "Square";
             break;
 
         case false:
             aspectRatio = '1 / 1';
-            ratioText = "Square";
+            ratioText = "Landscape";
             break;
     }
 
@@ -289,7 +292,7 @@ export default function Gallery({ allProjectsData }) {
 
                         <div className={`${captionToggle ? gallery.caption : gallery.hide} ${gridCount ? gallery.captionHide : null}`}>
                             <Link href={`/projects/${pic.link}`}>
-                                <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
+                                <a className={gallery.projectLink} id={themeDark && theme.darkmodeAlt}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
                             </Link>
                             <p>{pic.hasOwnProperty("caption") ? pic.caption : pic.alt}</p>
                         </div>
@@ -301,8 +304,8 @@ export default function Gallery({ allProjectsData }) {
             <SidePanelRight
                 heading={"Settings"}
             >
-                <p className={utilStyles.link2} onClick={toggleImageGridOnly}>{gridCount ? "Grid" : "Single"} &nbsp;{gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
-                <p className={utilStyles.link2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}</p>
+                <p className={utilStyles.link2} onClick={toggleImageGridOnly}>{!gridCount ? "Grid" : "Single"} &nbsp;{!gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
+                <p className={utilStyles.link2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}</p>
                 <p className={`${gridCount ? gallery.toggleGray : null} ${utilStyles.link2}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                 <p className={utilStyles.link2} id={gallery.mix} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
             </SidePanelRight>

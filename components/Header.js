@@ -14,12 +14,12 @@ export default function Layout() {
         setThemeDark(prevThemeState => !prevThemeState)
     }
     return (
-        <header className= {`${styles.background} ${!themeDark && theme.darkmode}`} >
+        <header className= {`${styles.background} ${themeDark && theme.darkmode}`} >
 
             {/* PC Header & Nav */}
 
-            <nav className={`${styles.header} ${utilStyles.bb1} ${utilStyles.pcOnly} ${!themeDark && theme.darkmode} ${!themeDark && theme.darkBB1}`}>
-                <div className={`${utilStyles.headerContainer} ${styles.headerWrap} ${!themeDark && theme.darkmode} ${!themeDark && theme.darkBB1}`}>
+            <nav className={`${styles.header} ${utilStyles.bb1} ${utilStyles.pcOnly} ${themeDark && theme.darkmode} ${themeDark && theme.darkBB1}`}>
+                <div className={`${utilStyles.headerContainer} ${styles.headerWrap} ${themeDark && theme.darkmode} ${themeDark && theme.darkBB1}`}>
                     <Link href="/">
                         <a className={styles.logo} >
                             Sebastian Kovacs | Architecture Portfolio
@@ -40,13 +40,13 @@ export default function Layout() {
             <nav className={utilStyles.mobileOnly}>
                 {/* <Navbar> */}
                 <div className={`${styles.header} ${utilStyles.bb1}`}>
-                    <div className={`${utilStyles.headerContainer} ${styles.headerWrap} `} id={!themeDark && theme.darkBB1}>
+                    <div className={`${utilStyles.headerContainer} ${styles.headerWrap} `}>
                         <Link href="/">
                             <a className={`${styles.logo} `}>
                                 Sebastian Kovacs <br /> Architecture Portfolio
                             </a>
                         </Link>
-                        <div onClick={toggleNav} className={styles.navToggle} id={!themeDark && theme.darkBB1}>
+                        <div onClick={toggleNav} className={styles.navToggle}>
                             <span class="material-symbols-outlined"> 
                                 menu
                             </span>
@@ -64,12 +64,12 @@ export default function Layout() {
 
                 {/* </Mobile Side Navbar> */}
                 <div className={styles.mobileNav} style={{left: mobileNavOpen && "0"}}>
-                    <div onClick={toggleNav} className={styles.navToggle} id={!themeDark && theme.darkBB1}>
+                    <div onClick={toggleNav} className={styles.navToggle} id={themeDark && theme.darkBB1}>
                             <span class="material-symbols-outlined">
                             close
                             </span>
                         </div>
-                    <div className={`${styles.headerWrap} ${utilStyles.bb1}`} id={!themeDark && theme.darkBB1}><h1 className={styles.logo} >Menu</h1>
+                    <div className={`${styles.headerWrap} ${utilStyles.bb1}`} id={themeDark && theme.darkBB1}><h1 className={styles.logo} >Menu</h1>
                     </div>
                     <ul>
                         <li><Link href="/"><a>Projects</a></Link></li>

@@ -36,15 +36,15 @@ export default function Resume() {
 
             <div className={utilStyles.title}>
                 <h1>Resume Summary</h1>
-                <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}  ${!themeDark && theme.darkmodeSolid} ${!themeDark && theme.darkBB1}`} >
+                <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}  ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`} >
                     <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
                     <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
                 </div>
             </div>
 
-            <div className={`${utilStyles.mobileOnlyFlex} `}>
-                <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
-                <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+            <div className={`${utilStyles.mobileOnlyFlex}`}>
+                <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
             </div>
 
 
@@ -117,9 +117,9 @@ export default function Resume() {
             </div>
 
 
-            <div className={` ${utilStyles.resume} ${!themeDark && theme.darkmode}`} >
+            <div className={` ${utilStyles.resume} ${themeDark && theme.darkmode}`} >
                 <div className={utilStyles.list}>
-                    <h2 id={!themeDark && theme.darkText}>Relevant Work History</h2>
+                    <h2 id={themeDark && theme.darkText}>Relevant Work History</h2>
                     <ul>
                         <li>Side Jobs 2021 - Present</li>
                         <li>Jason Topic Architecture 2017-2020</li>
@@ -129,7 +129,7 @@ export default function Resume() {
                 </div>
 
                 <div className={utilStyles.list} >
-                    <h2 id={!themeDark && theme.darkText}>Education / Qualifications</h2>
+                    <h2 id={themeDark && theme.darkText}>Education / Qualifications</h2>
                     <ul>
                         <li>Masters Architecture - University of Newcastle July 2020 </li>
                     </ul>
@@ -137,18 +137,18 @@ export default function Resume() {
 
                 <div className={utilStyles.list} >
 
-                    <h2 id={!themeDark && theme.darkText}>Software</h2>
+                    <h2 id={themeDark && theme.darkText}>Software</h2>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${!themeDark && theme.darkmode}`} id={!themeDark && theme.darkmodeT}>
-                        <h3 id={!themeDark && theme.darkText}>Drafting / BIM</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`} id={themeDark && theme.darkmodeT}>
+                        <h3 id={themeDark && theme.darkText}>Drafting / BIM</h3>
                         <ul>
                             <li>Revit (v2020)</li>
                             <li>Vectorworks (v2017-2021)</li>
                         </ul>
                     </div>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${!themeDark && theme.darkmode}`} id={!themeDark && theme.darkmodeT}>
-                        <h3 id={!themeDark && theme.darkText}> Rendering</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`} id={themeDark && theme.darkmodeT}>
+                        <h3 id={themeDark && theme.darkText}> Rendering</h3>
                         <ul>
                             <li>Vray</li>
                             <li>Twinmotion </li>
@@ -156,8 +156,8 @@ export default function Resume() {
                         </ul>
                     </div>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${!themeDark && theme.darkmode}`} id={!themeDark && theme.darkmodeT}>
-                        <h3 id={!themeDark && theme.darkText}>Other</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`} id={themeDark && theme.darkmodeT}>
+                        <h3 id={themeDark && theme.darkText}>Other</h3>
                         <ul>
                             <li>Adobe Photoshop</li>
                             <li>Adobe Illustrator </li>
@@ -170,7 +170,7 @@ export default function Resume() {
                 </div>
 
                 <div className={utilStyles.list}>
-                    <h2 id={!themeDark && theme.darkText}>Other Skills / Proficiencies</h2>
+                    <h2 id={themeDark && theme.darkText}>Other Skills / Proficiencies</h2>
                     <ul>
                         <li>Digital Marketing</li>
                         <li>B2B Sales</li>
@@ -180,14 +180,14 @@ export default function Resume() {
                 </div>
 
                 <Link href={"/contact"}>
-                    <a className={gif.fire} id={!themeDark && theme.darkGIF}>
+                    <a className={gif.fire} id={themeDark && theme.darkGIF}>
 
-                        <div className={gif.text} id={!themeDark && theme.darkGIF}>
+                        <div className={gif.text} id={themeDark && theme.darkGIF}>
                             {/* Lets Get Cooking... */}
                             Contact Me 👌
                         </div>
 
-                        <div className={gif.friday} id={!themeDark && theme.darkmodeT}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
+                        <div className={gif.friday} id={themeDark && theme.darkmodeT}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
                         <Image src={"/fire.gif"} alt={"wood fire cartoon"}  layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
                     </a>
                 </Link>

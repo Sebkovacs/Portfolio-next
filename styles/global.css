@@ -132,7 +132,7 @@ a , summary{
   font-weight: 900;
   font-style: italic;
   text-transform: uppercase;
-  background-color: var(--bg2);
+  /* background-color: var(--bg2); */
 
   /* background-image: url("../public/smoke1.gif") ; */
   background-position: center;

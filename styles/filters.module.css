@@ -66,6 +66,9 @@
   flex: 1;
   user-select: none;
 }
+.link a {
+  background-color: var(--bg2);
+}
 .col {
   display: flex;
   flex-direction: column;

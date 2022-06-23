@@ -82,9 +82,8 @@
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(var(--t1), .3);
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-content: center;
     transition: 1s;
     user-select: none;
     z-index: 10;

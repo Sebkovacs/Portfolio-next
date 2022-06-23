@@ -282,6 +282,7 @@
     align-items: center;
     user-select: none;
     width: 100%;
+    background-color: var(--bg2);
 }
 
 .top {
@@ -631,7 +632,7 @@
     }
 
     .mobileResumeVideoBackgroundHeight {
-        height: calc(100% - var(--h1Height) - 63px);
+        height: calc(100% - var(--h1Height) - 43px);
     }
 
     .container {
@@ -846,9 +847,9 @@
         bottom: .5rem;
     }
 
-    .mobileResumeVideoBackgroundHeight {
-        height: calc(100% - var(--h1Height) - 63px);
-    }
+    /* .mobileResumeVideoBackgroundHeight {
+        height: calc(100% - var(--h1Height) - 43px);
+    } */
 
 }
 

@@ -101,19 +101,19 @@ export default function Contact() {
 
             {/* <div className={gif.party}> */}
 
-            <div className={` ${!themeDark && theme.darkShadow} ${utilStyles.contact}`} id={!themeDark && theme.darkGrad}>
-                <div className={gif.talk} id={!themeDark && theme.darkmodeT}><Image src={"/talk.gif"} alt={"Lets Talk Call me speech bubble"} layout="fill" objectFit='cover' priority="true"></Image></div>
-                <div className={gif.happyblue} id={!themeDark && theme.darkmodeT}><Image src={"/happyblue.gif"} alt={"happy blue cartoon saying lets talk"} layout="fill" objectFit='cover' priority="true" /></div>
+            <div className={` ${themeDark && theme.darkShadow} ${utilStyles.contact}`} id={themeDark && theme.darkGrad}>
+                <div className={gif.talk} id={themeDark && theme.darkmodeT}><Image src={"/talk.gif"} alt={"Lets Talk Call me speech bubble"} layout="fill" objectFit='cover' priority="true"></Image></div>
+                <div className={gif.happyblue} id={themeDark && theme.darkmodeT}><Image src={"/happyblue.gif"} alt={"happy blue cartoon saying lets talk"} layout="fill" objectFit='cover' priority="true" /></div>
                 <h2 className={`${utilStyles.grow} ${utilStyles.mb1} ${utilStyles.center} ${utilStyles.noPad}`} >Sebastian Kovacs</h2>
                 
-                <div id={!themeDark && theme.darkmodeT}>
+                <div id={themeDark && theme.darkmodeT}>
                     <h3 className={`${utilStyles.font2} ${utilStyles.flexLeft }`} >Phone: <br className={utilStyles.mobileOnly} /> <a className={utilStyles.flexLeft } href="tel:+61432365389">0432 365 389</a></h3>
                 </div>
-                <div id={!themeDark && theme.darkmodeT}>
+                <div id={themeDark && theme.darkmodeT}>
                     <h3 className={`${utilStyles.font2} ${utilStyles.flexLeft }`} >Email: <br className={utilStyles.mobileOnly} /><a className={`${utilStyles.lowerCase} ${utilStyles.flexLeft }`} href="mailto: sebkovacs@gmail.com">sebkovacs@gmail.com</a></h3>
                 </div>
                 
-                <div className={utilStyles.address} id={!themeDark && theme.darkmodeT}>
+                <div className={utilStyles.address} id={themeDark && theme.darkmodeT}>
                     <h3 style={{fontSize: "1rem", fontWeight: 400}}>Address:</h3>
                     <p>9/5 Dawson St<br /> Cooks Hill, NSW 2300<br /> Australia</p>
                 </div>
@@ -126,7 +126,7 @@ export default function Contact() {
                         </button>
                         
             </div>
-            <div className={`${utilStyles.credit } ${!themeDark && theme.darkmodeT}`}>
+            <div className={`${utilStyles.credit } ${themeDark && theme.darkmodeT}`}>
                 <p>2022 | Website developed by me</p>
             </div>
         </Layout>
