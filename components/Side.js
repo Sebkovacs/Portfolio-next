@@ -42,7 +42,7 @@ export default function Side({ children, title, heading, data }) {
 
 
     return (
-        <aside className={`${themeDark ? theme.lightmode : theme.darkmode} ${sidePanelState ? styles.sideBarOpen : styles.sideBarClosed}`}>
+        <aside className={`${!themeDark && theme.darkmode} ${sidePanelState ? styles.sideBarOpen : styles.sideBarClosed}`}>
             <div className={`${utilStyles.title}`}>
                 <span className={sidePanel.sidePanelTitle}>{heading}</span>
             </div>
@@ -50,7 +50,7 @@ export default function Side({ children, title, heading, data }) {
 
 
 
-            <div className={`${themeDark ? theme.lightmode : theme.darkmode} ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden" }}>
+            <div className={` ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden" }} id={!themeDark && theme.darkmode}>
                 {children}
 
                 {title == "Projects" && data.map((e, index) =>
@@ -59,7 +59,7 @@ export default function Side({ children, title, heading, data }) {
                         <div className={filters.projNum}>{index}</div>
                         <div className={filters.col}>
                             <Link href={`${pageTitle}/${e.id}`}>
-                                <a id={e.id} style={{ fontWeight: 800 }}>
+                                <a id={e.id} style={{ fontWeight: 800 }} >
                                     {e.title}
                                 </a>
                             </Link>
@@ -85,12 +85,12 @@ export default function Side({ children, title, heading, data }) {
                 </div>
 
                 {title == "Contact" ?
-                    <button id={sidePanel.contact} className={`${sidePanel.leftPanelToggleButton} ${themeDark ? theme.lightmode : theme.darkmode}`} type="button" onClick={() => router.back()} alt={"Click here to go back"}>
+                    <button id={sidePanel.contact} className={`${sidePanel.leftPanelToggleButton} ${!themeDark && theme.darkmode}`} type="button" onClick={() => router.back()} alt={"Click here to go back"}>
                         
                     </button>
                     :
                     <Link href="/contact">
-                        <a id={sidePanel.contact} className={`${sidePanel.leftPanelToggleButton} ${themeDark ? theme.lightmode : theme.darkmode} ${!themeDark && theme.darkNoBorder} `} alt={"Navigate to Contact Page"}
+                        <a id={sidePanel.contact} className={`${sidePanel.leftPanelToggleButton} ${!themeDark && theme.darkmode} ${!themeDark && theme.darkNoBorder} `} alt={"Navigate to Contact Page"}
 
                         // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
                         >

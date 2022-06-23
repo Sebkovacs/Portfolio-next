@@ -174,7 +174,7 @@ export default function Project({ projectData }) {
                         <ul>
                             <li style={{ display: projectData.type == null ? "none" : "flex" }}>Type: {projectData.type}</li>
                             <li style={{ display: projectData.status == null ? "none" : "flex" }}>Status: {projectData.status}</li>
-                            <li style={{ display: projectData.work == null ? "none" : "flex", backgroundColor: projectData.work == "Construction" || !themeDark ? "var(--s1)" : "var(--s2)", fontWeight: projectData.work == "Construction" && "800"}}>Worked On: {projectData.work}</li>
+                            <li style={{ display: projectData.work == null ? "none" : "flex", backgroundColor: projectData.work == "Construction" & themeDark ? "var(--s2)" : "var(--border2)", fontWeight: projectData.work == "Construction" && "800"}}>Worked On: {projectData.work}</li>
                             <li style={{ display: projectData.location == null ? "none" : "flex" }}>Location: {projectData.location}</li>
                             <li style={{ display: projectData.company == null ? "none" : "flex" }}>Company: {projectData.company}</li>
                             <li style={{ display: projectData.architects == null ? "none" : "flex" }}>Architects: {projectData.architects}</li>
@@ -203,7 +203,7 @@ export default function Project({ projectData }) {
 
             {/* Main Content */}
 
-            <div className={`${projects.main} ${themeDark ? theme.lightmode : theme.darkmode}`} >
+            <div className={`${projects.main} ${!themeDark &&  theme.darkmode}`} >
 
                 <div id="images" className={utilStyles.anchor2}></div>
 

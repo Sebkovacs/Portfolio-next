@@ -117,7 +117,7 @@ export default function Resume() {
             </div>
 
 
-            <div className={` ${utilStyles.resume}`} >
+            <div className={` ${utilStyles.resume} ${!themeDark && theme.darkmode}`} >
                 <div className={utilStyles.list}>
                     <h2>Relevant Work History</h2>
                     <ul>
@@ -139,7 +139,7 @@ export default function Resume() {
 
                     <h2>Software</h2>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`} id={!themeDark && theme.darkmodeT}>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${!themeDark && theme.darkmode}`} id={!themeDark && theme.darkmodeT}>
                         <h3>Drafting / BIM</h3>
                         <ul>
                             <li>Revit (v2020)</li>
@@ -147,7 +147,7 @@ export default function Resume() {
                         </ul>
                     </div>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`} id={!themeDark && theme.darkmodeT}>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${!themeDark && theme.darkmode}`} id={!themeDark && theme.darkmodeT}>
                         <h3> Rendering</h3>
                         <ul>
                             <li>Vray</li>
@@ -156,8 +156,8 @@ export default function Resume() {
                         </ul>
                     </div>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`} id={!themeDark && theme.darkmodeT}>
-                        <h3>Other</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${!themeDark && theme.darkmode}`} id={!themeDark && theme.darkmodeT}>
+                        <h3 >Other</h3>
                         <ul>
                             <li>Adobe Photoshop</li>
                             <li>Adobe Illustrator </li>
