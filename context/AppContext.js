@@ -1,11 +1,11 @@
 import { createContext, useContext, useMemo, useState } from "react";
 
-const ThemeDark = createContext(false);
+const ThemeDark = createContext(true);
 const SidePanelContext = createContext({})
 
 
 export function AppWrapper({ children }) {
-    const [themeDark, setThemeDark] = useState(false);
+    const [themeDark, setThemeDark] = useState(true);
     const [sidePanelState, setSidePanelState] = useState(false);
 
 

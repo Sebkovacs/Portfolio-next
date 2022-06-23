@@ -519,7 +519,7 @@
 }
 
 .bottom {
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
 }
@@ -549,7 +549,7 @@
     }
 
     .videoBackgroundContact {
-        /* height: calc(100vh - var(--h1Height)); */
+        height: calc(100vh - var(--h1Height));
         width: 100%;
     }
 
@@ -626,12 +626,12 @@
     }
 
     .videoBackgroundContact {
-        /* height: calc(100% - var(--headerHeight)); */
+        height: calc(100% - var(--headerHeight));
         width: 100vw;
     }
 
     .mobileResumeVideoBackgroundHeight {
-        height: calc(100% - var(--h1Height) - 43px);
+        height: calc(100% - var(--h1Height) - 63px);
     }
 
     .container {

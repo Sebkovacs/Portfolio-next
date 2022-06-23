@@ -180,14 +180,14 @@ export default function Resume() {
                 </div>
 
                 <Link href={"/contact"}>
-                    <a className={gif.fire}>
+                    <a className={gif.fire} id={!themeDark && theme.darkGIF}>
 
-                        <div className={gif.text}>
+                        <div className={gif.text} id={!themeDark && theme.darkGIF}>
                             {/* Lets Get Cooking... */}
                             Contact Me 👌
                         </div>
 
-                        <div className={gif.friday}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
+                        <div className={gif.friday} id={!themeDark && theme.darkmodeT}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
                         <Image src={"/fire.gif"} alt={"wood fire cartoon"}  layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
                     </a>
                 </Link>

@@ -48,3 +48,7 @@
 .darkBB1, #darkBB1 {
   border-bottom: 1px solid var(--border2);
 }
+.darkGIF, #darkGIF {
+  color: var(--s2);
+  background-color: transparent; 
+}
