@@ -1,32 +1,32 @@
 import { createContext, useContext, useMemo, useState } from "react";
 
-const ThemeContext = createContext('light');
+const ThemeDark = createContext(false);
 const SidePanelContext = createContext({})
 
 
 export function AppWrapper({ children }) {
-    const [themeState, setThemeState] = useState('light');
+    const [themeDark, setThemeDark] = useState(false);
     const [sidePanelState, setSidePanelState] = useState(false);
 
 
-    const themeValue = useMemo(() => {
-        return [themeState, setThemeState];
-    }, [themeState, setThemeState]);
+    const themeDarkValue = useMemo(() => {
+        return [themeDark, setThemeDark];
+    }, [themeDark, setThemeDark]);
 
     const sidePanelValue = useMemo(() => {
         return [sidePanelState, setSidePanelState];
     }, [sidePanelState, setSidePanelState]);
 
     return (
-        <ThemeContext.Provider value={themeValue}>
+        <ThemeDark.Provider value={themeDarkValue}>
             <SidePanelContext.Provider value={sidePanelValue}>
                 {children}
             </SidePanelContext.Provider>
-        </ThemeContext.Provider>
+        </ThemeDark.Provider>
     );
 }
-export function useThemeContext() {
-    return useContext(ThemeContext);
+export function useThemeDark() {
+    return useContext(ThemeDark);
 }
 export function useSidePanelContext() {
     return useContext(SidePanelContext);

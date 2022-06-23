@@ -1,0 +1,50 @@
+.lightmode {
+  /* color: var(--t1); */
+  /* background-color: var(--bg2); */
+}
+
+.darkmode, .darkmode div , .darkmode div:hover{
+  color: var(--s2);
+  background-color: var(--t1);
+  border: none;
+}
+
+.darkmode h1, .darkmode h2, .darkmode h3, .darkmode a, .darkmode span, .darkmode ul, .darkmode li, .darkmode p{
+  color: var(--s2);
+  background-color: transparent;
+}
+
+#darkmode, #darkmode div , #darkmode div:hover{
+  color: var(--s2);
+  background-color: var(--t1);
+  border: none;
+}
+
+#darkmode h1, #darkmode h2, #darkmode h3, #darkmode a, #darkmode span, #darkmode ul, #darkmode li, #darkmode p{
+  color: var(--s2);
+  background-color: transparent;
+  text-decoration-color: var(--border2);
+}
+
+.darkmodeT, #darkmodeT {
+  background-color: transparent; 
+}
+
+.darkmode2, #darkmode2 {
+  background-color: var(--t2);
+}
+
+.darkGrad, #darkGrad {
+  background: linear-gradient(to right top, var(--t2), var(--p3));
+}
+
+.darkShadow, #darkShadow {
+  box-shadow: 5px 5px 20px var(--s3);
+}
+
+.darkNoBorder, #darkNoBorder {
+  border: none;
+}
+.darkBB1, #darkBB1 {
+  border-bottom: 1px solid var(--border2);
+}

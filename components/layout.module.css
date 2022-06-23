@@ -237,10 +237,6 @@ padding: 1em;
   color: var(  --primary-var2);
 }
 
-.darkMode {
-
-}
-
 
 @media (max-width: 768px) {
   .headerWrap { justify-content: center;}

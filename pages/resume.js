@@ -5,6 +5,8 @@ import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image'
 import gif from '../styles/gif.module.css'
 import Side from '../components/Side'
+import theme from '../styles/theme.module.css'
+import { useThemeDark } from '../context/AppContext'
 
 const title = "Resume"
 const sidePanelHeading = "Write Up"
@@ -13,7 +15,7 @@ export default function Resume() {
     let data = [
         "About me: something something blurb blurb"
     ]
-
+    const [themeDark, setThemeDark] = useThemeDark();
 
     return (
         <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
@@ -115,7 +117,7 @@ export default function Resume() {
             </div>
 
 
-            <div className={` ${utilStyles.resume}`}>
+            <div className={` ${utilStyles.resume}`} >
                 <div className={utilStyles.list}>
                     <h2>Relevant Work History</h2>
                     <ul>
@@ -126,18 +128,18 @@ export default function Resume() {
                     </ul>
                 </div>
 
-                <div className={utilStyles.list}>
+                <div className={utilStyles.list} >
                     <h2>Education / Qualifications</h2>
                     <ul>
                         <li>Masters Architecture - University of Newcastle July 2020 </li>
                     </ul>
                 </div>
 
-                <div className={utilStyles.list}>
+                <div className={utilStyles.list} >
 
                     <h2>Software</h2>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`} id={!themeDark && theme.darkmodeT}>
                         <h3>Drafting / BIM</h3>
                         <ul>
                             <li>Revit (v2020)</li>
@@ -145,7 +147,7 @@ export default function Resume() {
                         </ul>
                     </div>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`} id={!themeDark && theme.darkmodeT}>
                         <h3> Rendering</h3>
                         <ul>
                             <li>Vray</li>
@@ -154,7 +156,7 @@ export default function Resume() {
                         </ul>
                     </div>
 
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`} id={!themeDark && theme.darkmodeT}>
                         <h3>Other</h3>
                         <ul>
                             <li>Adobe Photoshop</li>

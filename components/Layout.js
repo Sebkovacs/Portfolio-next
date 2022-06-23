@@ -5,7 +5,7 @@ import Footer from './Footer'
 import sidePanel from '../styles/sidePanel.module.css'
 import Link from 'next/link'
 
-import { useSidePanelContext, useThemeContext } from '../context/AppContext'
+import { useSidePanelContext, useThemeDark } from '../context/AppContext'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -15,7 +15,7 @@ export const siteTitle = 'Sebastian Kovacs'
 export default function Layout({ children, title }) {
     const router = useRouter()
 
-    const [themeState, setThemeState] = useThemeContext();
+    const [themeDark, setThemeDark] = useThemeDark();
     const [sidePanelState, setSidePanelState] = useSidePanelContext();
 
 
