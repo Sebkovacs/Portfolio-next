@@ -1,7 +1,8 @@
 ---
-title: 'excessity: housing / urban design'
+title: '"excessity" - The excess of necessity examined'
 date: '2020-01-01'
-category: 'urban'
+category: Urbanism
+blurb: Are houses getting bigger? Have expectations changed? Affordability & sustainability anyone?
 ---
 
 **Question**
@@ -12,9 +13,9 @@ And what are the greater impacts of this?*
 
 Structure
 
-0. intro
-1. define excess in housing
-2. is there a change in what is necessary - old vs mid vs contemporary housing and planning
+1. intro
+2. define excess in housing
+3. is there a change in what is necessary - old vs mid vs contemporary housing and planning
 - values and priorities
 - transport
 - materials

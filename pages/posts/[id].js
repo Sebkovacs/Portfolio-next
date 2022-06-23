@@ -19,40 +19,45 @@ export default function Post({ postData }) {
         <title>{siteTitle}: {' '} {postData.title}</title>
       </Head>
 
-      <div className={blog.tc}>
-        <h1 className={blog.title}>{postData.title}</h1>
-        <div className={blog.tcContainer}>
-          <div>
-            <p className={`${utilStyles.lightText} ${utilStyles.bb1}`}>
-              Updated: <Date dateString={postData.date} />
-            </p>
-            <h2>Table of Contents</h2>
-            <ul>
-              <li>Type: {postData.type}</li>
-              <li>Worked on: {postData.work}</li>
-              <li>Status: {postData.status}</li>
-              <li>Company: {postData.company}</li>
-              <li>Location: {postData.location}</li>
-              <li>Software: {postData.software}</li>
-            </ul>
-          </div>
-<div className={utilStyles.pcOnly}>
+
+      {/* Blog Content Here */}
+      <div className={blog.main}>
+
+      
+      <h1>{postData.title}</h1>
+      <div  dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <div className={utilStyles.mobileOnly}>
+        <ButtonBack
+          link="/blog"
+          where="Blog"
+        />
+      </div>
+      </div>
+
+      <div className={blog.tableOfContents}>
+      <div>
+        <p className={utilStyles.bb1}>Category: {postData.category}</p>
+        <p className={utilStyles.bb1}>Date Updated: <Date dateString={postData.date} /></p>
+        <span>Table of Contents</span>
+        <ol>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+        </ol>
+        </div>
+        <div className={utilStyles.pcOnly}>
           <ButtonBack
             link="/blog"
             where="Blog"
           />
-</div>
         </div>
       </div>
-      
-      {/* Blog Content Here */}
-      <div className={blog.main} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-<div className={utilStyles.mobileOnly}>
-          <ButtonBack
-            link="/blog"
-            where="Blog"
-          />
-</div>
+
+
+
     </Layout >
   )
 }

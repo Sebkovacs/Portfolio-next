@@ -4,16 +4,16 @@ shortTitle: 'salamander'
 
 date: '2019-10-12'
 
-type: 'Residential Alts & Ads'
-status: 'Constructed'
-work: 'DA Drawings'
-location: 'Salamander Bay, NSW'
-company: 'JTA'
-software:  'Vectorworks'
-rendering: 
+type: Residential Alts & Adds
+status: Constructed
+work: DA Drawings
+location: Salamander Bay, NSW
+company: JTA
+software: Vectorworks
+rendering: Twinmotion
 photography: Credit - The Bay Holiday Properties
 
-thumb: '/1.jpg'
+thumb: /1.jpg
 thumbAlt: 64 randall drive Holiday House renovation at Salamander Bay 
 
 pics: [

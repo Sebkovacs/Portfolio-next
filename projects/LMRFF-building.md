@@ -10,7 +10,7 @@ status: Constructed
 work: CC Drawings
 location: Speers Point, NSW
 company: JTA
-software:  Vectorworks
+software: Vectorworks
 rendering: Vectorworks
 photography: Sebastian Kovacs
 

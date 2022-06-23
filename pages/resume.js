@@ -1,18 +1,36 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout, { siteTitle } from '../components/Layout'
+import Layout, { siteTitle } from '../components/LayoutFilter'
 import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image'
 import gif from '../styles/gif.module.css'
+import Side from '../components/Side'
 
 const title = "Resume"
+const sidePanelHeading = "Write Up"
 
 export default function Resume() {
+    let data = [
+        "About me: something something blurb blurb"
+    ]
+
+
     return (
-        <Layout>
+        <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
+            <Side
+            heading={"About"}
+            title={title}>
+            <p>Hi my name is Sebastian</p>
+            <p>I am a Graduate Architect with about 3 years of architecture experience and about 1.5 years on the tools in commercial and residential construction.</p>
+            <p>My medium term goal is to work hard and improve my design skills and become a good architect.</p>
+            <p>My long term goal is to develop property where I can ensure really good quality. This would likely include exploring different set ups (equity / debt & tenure) similar to gruppenhaus projects in Europe.</p>
+            <hr/>
+            <p>I enjoy surfing, running, piano and reading - I need to be constantly learning and mentally stimulated...</p>
+
+            </Side>
 
             <div className={utilStyles.title}>
                 <h1>Resume Summary</h1>
@@ -30,6 +48,38 @@ export default function Resume() {
 
             <div className={`${utilStyles.mobileResumeVideoBackgroundHeight} ${utilStyles.videoBackground}`}>
                 <div className={utilStyles.backgroundCover} />
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
                 <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
                     <source src="/party.mp4"
                         type="video/mp4" />

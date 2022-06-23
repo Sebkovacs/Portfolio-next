@@ -4,16 +4,16 @@ shortTitle: 'griffiths'
 
 date: '2019-10-12'
 
-type: 'Multi-Residential'
-status: 'In Construction'
-work: 'Development Approval'
-location: 'Charlestown, NSW'
-company: 'JTA'
-software:  'Vectorworks'
-rendering: 
+type: Multi-Residential
+status: In Construction
+work: Development Approval
+location: Charlestown, NSW
+company: JTA
+software: Vectorworks
+rendering: Twinmotion
 photography: 
 
-thumb: '/1.png'
+thumb: /1.png
 thumbAlt: 1 Griffiths Street townhouse development
 
 pics: [

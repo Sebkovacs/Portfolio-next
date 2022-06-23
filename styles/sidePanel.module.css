@@ -104,8 +104,104 @@
     color: var(--bg1);
 }
 
+.sidePanelTitle {
+    height: var(--h1Height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--t1);
+    font-size: 1.6rem;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase; 
+    user-select: none;
+    text-decoration:none ;
+    letter-spacing: 0;
+}
 
+.content {
+    padding: 1rem 2rem 1rem 1.5rem;
+    display: grid;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    grid-template-columns: auto auto auto;
+    grid-gap: .5rem;
+    height: calc(100vh - var(--h1Height) - var(--headerHeight));
+    overflow-y: auto;
+}
+  
+.content a{
+    justify-items: flex-start;
+    padding: 0;
+    color: var(--t1);
+  font-family: Roboto mono, monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .5rem;
+}
 
+.toggleButtonGroup {
+    position: absolute;
+    bottom: calc(var(--h1Height) - var(--headerHeight) + 1.5rem );
+    right: -.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.leftPanelToggleButton {
+    display: flex;
+    position: relative;
+    height: 1.5rem;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: none;
+    
+    font-family: var(--font2);
+    font-size: .5rem;
+    background-image: url('/sebastian-kovacs-portfolio.png');
+    background-position: center;
+    background-blend-mode: normal;
+    background-color: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 10;
+    border: 2px solid var(--p3);
+    border-radius: .3em;
+    transition: 0s;
+    cursor: pointer;
+    color: transparent;
+}
+
+#theme, #sidePanel {
+    display: grid;
+    place-items: center;
+    background-image: none;
+    background-color: black;
+}
+#contact {
+    user-select: none;
+    
+}
+#theme span, #sidePanel span {
+ color: white;
+ user-select: none;
+}
+#theme:hover span, #sidePanel:hover span  {
+    color: black;
+   }
+
+#contact:hover, #theme:hover, #sidePanel:hover {
+    background-blend-mode: difference;
+    background-color: var(--s2);
+    border: 2px solid var(--p3);
+}
+#contact:hover {
+    background-image: url('/sebastian-kovacs-portfolio.png');
+    color: transparent;
+}
 
 
 @media (max-width: 425px) {

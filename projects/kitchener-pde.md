@@ -6,13 +6,13 @@ pano: https://kitchener-pano.vercel.app/
 
 date: '2019-10-12'
 
-type: 'Residential'
-status: 'Concept'
-work: 'Concept Design'
-company: 'Sebastian Kovacs'
-location: 'The Hill, NSW'
-software:  'Revit'
-rendering: 'Vray'
+type: Residential
+status: Concept
+work: Concept Design
+company: Sebastian Kovacs
+location: The Hill, NSW
+software: Revit
+rendering: Vray
 photography: 
 
 

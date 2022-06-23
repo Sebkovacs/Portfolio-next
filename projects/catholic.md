@@ -11,7 +11,8 @@ location: Belmont
 contractor: Core Project
 architects: Killen + Doran Architects
 value: $22m
-photography: "credit: Core Project"
+photography: credit - Core Project
+software:
 
 thumb: /1.jpg
 thumbAlt: St Francis Xavier Belmont Church new building

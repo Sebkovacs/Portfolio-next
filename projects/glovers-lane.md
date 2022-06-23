@@ -10,7 +10,7 @@ status: Constructed
 work: Construction Documentation
 location: Cooks Hill, NSW
 company: JTA
-software:  Vectorworks
+software: Vectorworks
 rendering: 
 photography: Sebastian Kovacs
 

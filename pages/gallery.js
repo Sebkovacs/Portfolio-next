@@ -1,30 +1,82 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout, { siteTitle } from '../components/Layout'
-
+import Layout, { siteTitle } from '../components/LayoutFilter'
 import { getSortedProjectsData } from '../lib/projects'
-
 import gallery from '../styles/gallery.module.css'
 import utilStyles from '../styles/utils.module.css'
+import filters from '../styles/filters.module.css'
 
 import Image from 'next/image'
-import gif from '../styles/gif.module.css'
-
 import { useState } from 'react'
-import SidePanel from '../components/SidePanel'
-
-
-
+import SidePanelRight from '../components/SidePanelRight'
+import Side from '../components/Side'
 
 
 const title = "Gallery";
-
+const sidePanelHeading = "Filters";
 
 export default function Gallery({ allProjectsData }) {
-
-    let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type }))).flat();
-
+    let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type, software: a.software, status: a.status, render: a.rendering, tags: [a.type, a.software, a.status, a.rendering] }))).flat();
     let [randomGalleryList, setRandomGalleryList] = useState(galleryList);
+    let data = galleryList.flat()
+
+    function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+    }
+
+
+
+    const categories = data.map(e => e.type);
+    const software = data.map(e => e.software);
+    const render = data.map(e => e.render);
+    const status = data.map(e => e.status);
+    const projects = data.map(e => e.title);
+
+    let allSoftware = software.concat(render)
+
+    let filterCategory = categories.filter(onlyUnique)
+    let filterAllSoftware = allSoftware.filter(onlyUnique)
+    let filterStatus = status.filter(onlyUnique)
+    let filterProject = projects.filter(onlyUnique)
+
+
+    function updateFilteredItems() {
+        let modData = data
+        for (let i = 0; i < modData.length; i++) {
+            for (let e = 0; e < filterList.length; e++) {
+                modData[i].hasOwnProperty(filterList[e])
+                return modData[i]
+            }
+        }
+    }
+
+
+
+    let allSoftwareFilterNull = filterAllSoftware.filter(Boolean)
+
+    let reducedCategories = filterCategory.map(e => ({ type: e, id: e, type: "category" }))
+    let reducedSoftware = allSoftwareFilterNull.map(e => ({ software: e, id: e, type: "software" }))
+    let reducedStatus = filterStatus.map(e => ({ status: e, id: e, type: "status" }))
+    let reducedProject = filterProject.map(e => ({ project: e, id: e, type: "project" }))
+
+    reducedCategories.sort(function (a, b) { if (a.id < b.id) return -1; if (a.id > b.id) return 1; return 0; });
+    reducedSoftware.sort(function (a, b) { if (a.id < b.id) return -1; if (a.id > b.id) return 1; return 0; });
+    reducedStatus.sort(function (a, b) { if (a.id < b.id) return -1; if (a.id > b.id) return 1; return 0; });
+    reducedProject.sort(function (a, b) { if (a.id < b.id) return -1; if (a.id > b.id) return 1; return 0; });
+
+    let projectList = { title: "Projects", list: reducedProject }
+    let softwareList = { title: "Software", list: reducedSoftware }
+    let statusList = { title: "Status", list: reducedStatus }
+    let categoryList = { title: "Categories", list: reducedCategories }
+    // let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type, software: a.software, status: a.status, render: a.rendering }))).flat();
+
+    // data = [reducedCategories, reducedSoftware, reducedStatus, reducedCategories]
+    data = [
+        // projectList
+        , softwareList
+        , statusList
+        , categoryList
+    ]
 
     function mixGallery() {
         let currentIndex = galleryList.length;
@@ -100,7 +152,7 @@ export default function Gallery({ allProjectsData }) {
     // }
 
     let imageDisplay = ""
-    let imageDisplayText =""
+    let imageDisplayText = ""
     switch (gridCount, imageRatio) {
         case gridCount && !imageRatio:
             imageDisplay = gallery.squareSingle;
@@ -120,14 +172,87 @@ export default function Gallery({ allProjectsData }) {
         case gridCount && imageRatio:
             imageDisplay = gallery.landscapeGrid;
             imageDisplayText = "landscape grid"
-                break;
+            break;
     }
 
+    let [picsList, setPics] = useState(galleryList)
+    let [filterList, setFilterList] = useState([])
+
+    // const modFilters = e => {
+    //     if (!filterList.includes(e.target.id)) {
+    //         setFilterList(filterList.push(e.target.id))
+
+    //     } else {
+    //         let index = filterList.indexOf(e.target.id);
+    //         setFilterList(filterList.splice(index, 1));
+    //     }
+    //     setFilterList([...filterList]);
+    // }\
+
+
+
+    const modFilters = e => {
+        if (!filterList.includes(e.target.id)) {
+            setFilterList(filterList.push(e.target.id))
+    
+            let filteredGallery = []
+            for (let i = 0; i < galleryList.length; i++) {
+                for (let a = 0; a < 4; a++ ) {
+                    if (filterList.includes(galleryList[i].tags[a])) {
+                        
+                        filteredGallery.push(galleryList[i])
+                        
+                    }
+                }
+              }
+              setRandomGalleryList( randomGalleryList = filteredGallery)
+
+        } else {
+            let index = filterList.indexOf(e.target.id);
+            setFilterList(filterList.splice(index, 1));
+            
+            let filteredGallery = []
+            for (let i = 0; i < galleryList.length; i++) {
+                for (let a = 0; a < 4; a++ ) {
+                    if (filterList.includes(galleryList[i].tags[a])) {
+                        
+                        filteredGallery.push(galleryList[i])
+                        
+                    }
+                }
+            }
+            setRandomGalleryList( randomGalleryList = filteredGallery)
+        }
+        setFilterList([...filterList]);
+    };
+
+    function setAll () {
+        setRandomGalleryList(galleryList)
+        setFilterList([])
+      }
+
     return (
-        <Layout>
+        <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
+            <Side
+                    title={title}
+    heading={"Filters"}
+    >
+
+                <p>Applied Filters</p>
+                {filterList.map(a => <p className={filters.tag} id={a} key={a} onClick={modFilters}>{a}</p>)}
+
+                <p>Filters</p>
+                {title == "Gallery" && data.map(({ title, list }) =>
+                    <details className={filters.filterContainer}>
+                        <summary className={filters.filter}>{title}</summary>
+                        {list.map(a => <p className={filters.tag} id={a.id} key={a.id} onClick={modFilters}>{a.id}</p>)}
+                    </details>)}
+                    <div className={filters.tag} onClick={setAll}>Reset</div>
+
+            </Side>
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
                 {/* <div className={`${utilStyles.pcOnly} ${utilStyles.flex2}`}>
@@ -138,7 +263,7 @@ export default function Gallery({ allProjectsData }) {
                 </div> */}
             </div>
 
-            {/* Main Conent */}
+            {/* Main Content */}
             <div className={`${gallery.imageGrid} ${imageDisplay}`} >
 
                 {/* MAP GALLERY > galleryList */}
@@ -173,16 +298,15 @@ export default function Gallery({ allProjectsData }) {
                 )}
             </div>
 
-            {/* BOTTOM TOGGLES */}
-
-            <SidePanel
+            <SidePanelRight
                 heading={"Settings"}
             >
-                <p className={utilStyles.link2} onClick={toggleImageGridOnly}>{gridCount ?  "Grid" : "Single" } &nbsp;{gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
+                <p className={utilStyles.link2} onClick={toggleImageGridOnly}>{gridCount ? "Grid" : "Single"} &nbsp;{gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
                 <p className={utilStyles.link2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}</p>
-                <p className={`${gridCount? gallery.toggleGray : null} ${utilStyles.link2}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                <p className={`${gridCount ? gallery.toggleGray : null} ${utilStyles.link2}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
                 <p className={utilStyles.link2} id={gallery.mix} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
-            </SidePanel>
+            </SidePanelRight>
+
         </Layout >
 
     )

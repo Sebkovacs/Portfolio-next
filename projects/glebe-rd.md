@@ -20,13 +20,13 @@ panos: [
 
 date: '2019-10-12'
 
-type: 'Residential Alts & Ads'
-status: 'Concept'
-work: 'Concept Design'
-company: 'Sebastian Kovacs'
-location: 'Merewether, NSW'
-software:  'Vectorworks'
-rendering: 'Twinmotion'
+type: Residential Alts & Adds
+status: Concept
+work: Concept Design
+company: Sebastian Kovacs
+location: Merewether, NSW
+software: Vectorworks
+rendering: Twinmotion
 photography: 
 
 

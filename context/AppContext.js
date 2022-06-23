@@ -1,12 +1,12 @@
-import { createContext, useContext, useMemo } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 const ThemeContext = createContext('light');
-const SidePanelContext = createContext({ showSidePanel: false })
+const SidePanelContext = createContext({})
 
 
 export function AppWrapper({ children }) {
-    const [themeState, setThemeState] = useState({});
-    const [sidePanelState, setSidePanelState] = useState({});
+    const [themeState, setThemeState] = useState('light');
+    const [sidePanelState, setSidePanelState] = useState(false);
 
 
     const themeValue = useMemo(() => {
@@ -14,7 +14,7 @@ export function AppWrapper({ children }) {
     }, [themeState, setThemeState]);
 
     const sidePanelValue = useMemo(() => {
-        return [appState, setAppState];
+        return [sidePanelState, setSidePanelState];
     }, [sidePanelState, setSidePanelState]);
 
     return (

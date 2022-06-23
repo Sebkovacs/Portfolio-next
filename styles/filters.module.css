@@ -1,0 +1,96 @@
+
+.filterContainer details {
+  padding: 1em;
+
+
+  cursor: pointer;
+}
+
+.filters,
+.tags {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 18vw;
+
+}
+
+.filter,
+.tag {
+  font-size: .5em;
+  background-color: var(--p2);
+  border: 2px solid var(--bg2);
+  padding: .8em;
+  margin: .2em;
+  cursor: pointer;
+  border-radius: 1em;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: var(--font2);
+  color: var(--t1);
+}
+
+.filter {
+  font-size: .5em;
+  background-color: var(--p3);
+}
+
+.filter:hover {
+  background-color: var(--s3);
+  border: 2px solid var(--s3);
+  color: var(--bg1);
+}
+
+.tag:hover {
+
+  background-color: var(--bg2);
+  border: 2px solid var(--s2);
+}
+
+.link {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg2);
+  display: flex;
+  align-items: center;
+  user-select: none;
+  border-radius: .5em;
+  border: 1px solid var(--border1);
+  color: var(--s1);
+  font-weight: 400;
+  font-size: .5rem;
+  text-transform: uppercase;
+  font-family: var(--font2);
+  font-style: normal;
+  position: relative;
+  flex: 1;
+  user-select: none;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
+
+.projNum {
+  font-family: var(--font2);
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-content: center;
+}
+
+@media (max-width: 768px) {
+  .filterContainer {
+    width: 25%;
+    margin-left: 0;
+    padding: 1em;
+  }
+
+  .filters,
+  .filters ul,
+  .filters li {
+    padding-top: 1em
+  }
+}

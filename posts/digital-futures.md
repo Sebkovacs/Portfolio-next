@@ -2,6 +2,7 @@
 title: 'Digital Futures: VR, AR, Digital Twins & Interface'
 date: '2020-01-01'
 category: 'Rendering'
+blurb: How can design be better communicated to clients and builders?
 ---
 
 ## the next thing?

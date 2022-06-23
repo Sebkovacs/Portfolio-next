@@ -2,13 +2,11 @@ import side from '../styles/sidePanel.module.css'
 import utilStyles from '../styles/utils.module.css'
 import { useState } from 'react';
 
-export default function SidePanel({ children, heading }) {
+export default function SidePanelRight({ children, heading }) {
 
     let [panelOpen, setPanelOpen] = useState(false);
 
     function toggle() { setPanelOpen(!panelOpen) };
-
-    console.log("panel is open ", panelOpen)
 
     return (
         <aside>

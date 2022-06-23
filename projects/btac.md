@@ -4,16 +4,17 @@ shortTitle: btac
 
 date: '2000'
 
-type: 'Education'
-status: 'Constructed'
-work: 'Construction'
-location: 'Fletcher'
+type: Education
+status: Constructed
+work: Construction
+location: Fletcher
 architects: SHAC
 contractor: North Construction and Building
 value: $6m
-photography: "credit - North Construction and Building"
+photography: credit - North Construction and Building
+software: false
 
-thumb: '/1.jpg'
+thumb: /1.jpg
 thumbAlt: Bishop Tyrrell Anglican College New primary school buildings
 
 pics: [

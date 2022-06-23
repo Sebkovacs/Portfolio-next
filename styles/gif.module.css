@@ -1,37 +1,3 @@
-.meh {
-    background-image: url("../public/meh.gif") ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    height: 10vh;
-    position: relative;
-    /* bottom: 0;
-    right: 50; */
-}
-.cake {
-    background-image: url("../public/cake.gif") ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    height: 10vh;
-    position: relative;
-    /* bottom: 0;
-    right: 50; */
-}
-
-.think {
-    background-image: url("../public/think.gif") ;
-    /* background-position: center; */
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 2 / 1;
-    width: 200px;
-    position: relative;
-    margin: 0 auto -20px;
-    z-index: 99;
-}
 .talk {
     /* background-image: url("../public/talk.gif") ; */
     /* background-position: center; */
@@ -152,10 +118,6 @@
     padding: 2em;
 }
 
-.meh:hover {
-    background-color: unset;
-    background-image: url("../public/meh.gif") ;
-}
 
 
 .typewriter {

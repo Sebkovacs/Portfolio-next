@@ -1,28 +1,48 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout, { siteTitle } from '../components/Layout'
+import Layout, { siteTitle } from '../components/LayoutFilter'
 import { getSortedProjectsData } from '../lib/projects'
 import cards from '../styles/cards.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image'
-import gif from '../styles/gif.module.css'
-
-
-
+import { useSidePanelContext, useThemeContext } from '../context/AppContext'
+import Side from '../components/Side'
+import SidePanelRight from '../components/SidePanelRight'
+import filters from '../styles/filters.module.css'
 
 const title = "Projects";
-
-
+const sidePanelHeading = "Project List"
 
 export default function Projects({ allProjectsData }) {
 
+    const [themeState, setThemeState] = useThemeContext();
+    const [sidePanelState, setSidePanelState] = useSidePanelContext();
+
+    function themeToggle() {
+        setThemeState(prevThemeState => !prevThemeState)
+    }
+    function sidePanelToggle() {
+        setSidePanelState(prevSidePanelState => !prevSidePanelState)
+    }
     const projects = allProjectsData;
 
+    // sorted Project List
+    const data = projects.sort(function (a, b) { if (a.date > b.date) return -1; if (a.date < b.date) return 1; return 0; });
+    
+    let pageTitle = title.toLowerCase();
+
     return (
-        <Layout>
+        <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
+            <Side
+            heading={"Project List"}
+            title={title}
+            data={data}/>
+                
+
+            
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
             </div>
@@ -46,9 +66,6 @@ export default function Projects({ allProjectsData }) {
                 ))}
             </div>
 
-            <Link href={"/contact"}>
-            <a id={utilStyles.indexContact}>Navigate to Contact Page</a>
-            </Link>
 
 
         </Layout>

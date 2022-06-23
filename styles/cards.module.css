@@ -35,7 +35,7 @@
     /* line-height: 1.5em; */
     margin: .5em 0;
     /* text-underline-offset: 0; */
-    font-family: 'Inconsolata', monospace;
+  font-family: Roboto mono, monospace;
     font-style: normal;
 }
 
@@ -43,7 +43,7 @@
     margin: 0;
     font-size: 1rem;
     color: var(--t2);
-    font-family: 'Long Cang';
+    /* font-family: 'Long Cang'; */
 }
 
 

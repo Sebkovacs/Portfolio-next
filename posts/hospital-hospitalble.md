@@ -2,6 +2,7 @@
 title: 'Hospital... Hospitable?'
 date: '2020-01-01'
 category: 'Rendering'
+blurb: How can design be better communicated to clients and builders?
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

@@ -9,6 +9,7 @@ import { useState } from "react";
 import { id } from 'date-fns/locale'
 import Filters from './Filters'
 import Projects from '../pages'
+import { useSidePanelContext } from '../context/AppContext'
 
 
 export const siteTitle = 'Sebastian Kovacs'
@@ -20,7 +21,7 @@ export default function Layout({ children, title}) {
     const [filters, setFilters] = useState(["vectorworks", "twinmotion",]);
 
 
-
+    const [sidePanelState] = useSidePanelContext();
     // console.log(filters)
     return (
         <>
@@ -43,7 +44,7 @@ export default function Layout({ children, title}) {
 
             
             <div id={styles.layout}>
-            <aside className={sideBar? styles.sideBarOpen : styles.sideBarClosed }>
+            <aside className={sidePanelState? styles.sideBarOpen : styles.sideBarClosed }>
                     
                     <div id={styles.icon} onClick={toggle}> <span class="material-symbols-outlined">navigate_next</span> </div>
 
@@ -56,11 +57,12 @@ export default function Layout({ children, title}) {
 
 
 
-            <main className={sideBar? styles.bodyOpen : styles.bodyClosed }>
+            <main className={sidePanelState? styles.bodyOpen : styles.bodyClosed }>
                 {children}
             </main>
             </div>
             {/* <Footer /> */}
+
        </>
     )
 }

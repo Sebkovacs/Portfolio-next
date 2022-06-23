@@ -9,7 +9,7 @@ status: Constructed
 work: Construction Drawings
 location: Bolwarra Heights, NSW
 company: JTA
-software:  Vectorworks
+software: Vectorworks
 rendering: 
 photography: 
 

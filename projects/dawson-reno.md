@@ -9,7 +9,7 @@ status: Concept
 work: Concept Design
 location: Cooks Hill, NSW
 company: Sebastian Kovacs
-software:  Revit
+software: Revit
 rendering: Vray
 photography: 
 

@@ -1,7 +1,8 @@
 ---
-title: 'Architect Means: History, Present, Furture'
+title: 'Architect Means?'
 date: '2020-01-01'
 category: 'Rendering'
+blurb: What does it mean to be an architect - and how has that / will that change over time?
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

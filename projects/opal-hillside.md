@@ -12,9 +12,10 @@ architects: dwp
 contractor: North Construction and Building
 projectManager: APP
 value: $24.7m
-photography: "credit - North Construction & Building"
+photography: credit - North Construction & Building
+software:
 
-thumb: '/1.jpg'
+thumb: /1.jpg
 thumbAlt: Opal Hillside Age Care
 
 pics: [

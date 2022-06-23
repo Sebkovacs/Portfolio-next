@@ -5,13 +5,13 @@ pano: https://twinmotion.unrealengine.com/panorama/oFEBEKa1IxmAi7Wq
 
 date: '2021-11-15'
 
-type: 'Mixed Use Multi-Res'
-status: 'Concept'
-work: 'Concept Design'
-location: 'Hamilton, NSW'
-company: 'Sebastian Kovacs'
-software:  'Vectorworks'
-rendering: 'Twinmotion'
+type: Multi-Residential
+status: Concept
+work: Concept Design
+location: Hamilton, NSW
+company: Sebastian Kovacs
+software: Vectorworks
+rendering: Twinmotion
 photography: 
 
 thumb: '/1.png'

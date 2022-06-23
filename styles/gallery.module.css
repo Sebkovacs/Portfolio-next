@@ -18,13 +18,13 @@
 
 .squareGrid {
     grid-template-columns: 1fr 1fr 1fr;
-    width: 80vw;
+    width: 80%;
 }
 
 .landscapeSingle {
     grid-template-columns: 1fr;
     gap: 2rem;
-    width: 75vw;
+    width: 75%;
 }
 
 .landscapeGrid {
@@ -73,9 +73,9 @@
 
     color: var(--t2);
 
-    font-family: 'Inconsolata', monospace;
+  font-family: Roboto mono, monospace;
     width: fit-content;
-    font-size: .4em;
+    font-size: .6rem;
     font-weight: 700;
     font-style: normal;
     text-transform: capitalize;
@@ -198,7 +198,14 @@
 #mix:active span {
     transform: rotateZ(90deg);
 }
+@media (max-width: 1440px) {
+    .landscapeSingle {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 93%;
+    }
 
+}
 
 @media (max-width: 768px) {
     .wrapper {

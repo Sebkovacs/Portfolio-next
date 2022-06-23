@@ -2,6 +2,7 @@
 title: 'Quality Also..?'
 date: '2021-01-01'
 category: 'Theory'
+blurb: How can design be better communicated to clients and builders?
 ---
 
 Yeah itd be a combination of factors

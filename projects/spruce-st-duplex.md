@@ -5,12 +5,12 @@ shortTitle: 'spruce'
 
 date: '2018-08-22'
 
-type: 'Residential'
-status: 'In Construction'
-work: 'DA Drawings'
-location: 'New Lambton Heights, NSW'
-company: 'JTA'
-software:  'Vectorworks'
+type: Residential
+status: In Construction
+work: DA Drawings
+location: New Lambton Heights, NSW
+company: JTA
+software: Vectorworks
 rendering: 
 photography: 
 

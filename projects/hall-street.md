@@ -9,11 +9,11 @@ status: In Construction
 work: Construction Documentation
 location: Merewether, NSW
 company: JTA
-software:  Vectorworks
+software: Vectorworks
 rendering: Twinmotion
-photography: 
+photography:
 
-thumb: /1.jpg
+thumb: /7.png
 thumbAlt: 36 Hall Street Dual Occupancy downsize development
 
 pics: [

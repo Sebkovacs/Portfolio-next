@@ -1,79 +1,205 @@
-.tc {
-
+.tableOfContents {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-between;
     background-color: var(--bg1);
     border-right: solid 1px var(--border1);
-  
+
     position: fixed;
     z-index: 5;
-  
+
     width: 20%;
     height: 100vh;
-  
+
     left: 0;
-    background: var(--bg2) ;
+    background: var(--bg2);
+    height: calc(100vh - var(--headerHeight));
+    overflow-y: auto;
+
 }
 
-.tc>h1{
+.tableOfContents h1 {
     border-bottom: solid 1px var(--border1);
     padding: 1em;
     height: auto;
 }
-.tc h2{
+
+.tableOfContents h2 {
 
     padding: 1em;
 }
 
-.tcContainer{
-    height: calc(100vh - var(--h1Height) - var(--headerHeight));
-    overflow-y: auto;
-}
 
-.tc ul{
+.tableOfContents ul {
     padding-inline-start: 3em;
     padding-inline-end: 3em;
     padding-bottom: 2em;
 }
 
-.tc li{
+.tableOfContents li {
     padding: 1em 0;
 
 }
 
-.tc p {
+.tableOfContents p {
     padding: 1em 2em;
     margin: 0;
 }
 
-.main{
+.main {
     padding: 2em;
     width: 80%;
     position: absolute;
-    right:0;
+    right: 0;
     background-color: var(--primary);
 }
 
-.main p, .main ul, .main ol {
-margin: 0;
-padding: 1em 2em;
-list-style-type: unset;
+.main p,
+.main ul,
+.main ol {
+    margin: 0;
+    padding: 1em 2em;
+    list-style-type: unset;
 }
 
 .main li {
-margin-left: 2em;
-padding:1em;
+    margin-left: 2em;
+    padding: 1em;
 }
 
+.wrapper {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+padding: 1rem;
+justify-content: center;
+
+}
+
+.blog {
+    border: 2px dashed var(--p2);
+    border-radius: .5rem;
+    padding: .5rem;
+    background: linear-gradient(to right top, var(--bg2), var(--p2));
+    position: relative;
+    z-index: 1;
+    /* transition: 1s ; */
+    overflow: hidden;
+    background-image: url("../public/smoke2.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-color: var(--bg2);
+    max-width: 30%;
+}
+
+.blog::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right top, var(--bg2), var(--s2));
+    z-index: -1;
+    transition: 1s;
+    opacity: 0;
+
+}
+
+.blog:hover {
+    box-shadow: 5px 5px 20px var(--border1);
+    border: 2px solid rgba(var(--p1), .5);
+}
+
+.blog:hover::before {
+    opacity: .5;
+}
+
+.blog h2 {
+    font-weight: 700;
+    font-style: italic;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 0;
+    padding: 0 0 .5em 0;
+    color: var(--t1);
+    font-size: .7rem;
+  font-family: Roboto mono, monospace;
+    margin: .5rem;
+}
+
+.blog h3 {
+    padding: 0;
+    margin: .5rem;
+    color: var(--t1);
+  font-family: Roboto mono, monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .5rem;
+}
+
+.blog h4 {
+    padding: 0;
+}
+
+.blog a {
+    padding: 0;
+}
+
+.blog p {
+    font-size: .5rem;
+    padding: 0;
+    margin: .5rem;
+    text-transform: initial;
+}
+
+.blog time {
+    font-size: .5rem;
+    padding: 0;
+    margin: 0;
+    text-transform: initial;
+}
+
+.category {
+    text-transform: initial;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 @media (max-width: 768px) {
-    .main {position: relative; width: 100%; margin: 0; padding: 0;}
-    .tc { top:0; display: flex; flex-direction: column; width: 100%; height:auto; position: relative;}
-    .tcContainer{height:fit-content;  overflow: visible; } 
+    .main {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tableOfContents {
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .tableOfContentsContainer {
+        height: fit-content;
+        overflow: visible;
+    }
+    .blog {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 425px) {
 
-
+    .blog {
+        max-width: 100%;
+    }
 }

@@ -2,6 +2,7 @@
 title: 'Comparison of Design Processes'
 date: '2020-01-01'
 category: 'Design'
+blurb: How can design be better communicated to clients and builders?
 ---
 *Question:*
 __How does the architectural design process compare to other design industries and are there any lessons that could be learnt?__

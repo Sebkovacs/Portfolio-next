@@ -5,13 +5,13 @@ pano: https://twinmotion.unrealengine.com/panorama/Njp9KYyAXZO7wA2o
 
 date: '2019-03-02'
 
-type: 'Residential'
-work: 'Concept Design'
-status: 'Concept'
-location: 'Topi Topi, NSW'
-company: 'Sebastian Kovacs'
-software:  'Revit'
-rendering: 'Vray / Twinmotion'
+type: Residential
+work: Concept Design
+status: Concept
+location: Topi Topi, NSW
+company: Sebastian Kovacs
+software:  Revit
+rendering: Vray
 photography: 
 
 
