@@ -1,17 +1,17 @@
 .lightmode {
-  /* color: var(--t1); */
+  /* color: var(--s3); */
   /* background-color: var(--bg2); */
 }
 
 .darkmode, .darkmode div , .darkmodeSolid, .darkmodeSolid a {
   color: var(--s2);
-  background-color: var(--t1);
+  background-color: var(--s3);
   border-color: var(--border2);
   background-blend-mode: exclusion;
 }
 .darkmodeSolid a:hover, .darkmode div:hover {
   color: var(--s2);
-  background-color: var(--t1);
+  background-color: var(--s3);
 }
 .darkmode h1, .darkmode h2, .darkmode h3, .darkmode a, .darkmode span, .darkmode ul, .darkmode li, .darkmode p{
   color: var(--s2);
@@ -21,7 +21,7 @@
 
 #darkmode, #darkmode div , #darkmodeSolid, #darkmode div:hover{
   color: var(--s2);
-  background-color: var(--t1);
+  background-color: var(--s3);
   border-color: var(--border2);
 }
 
@@ -79,7 +79,7 @@
 }
 #darkmodeSummary, #darkmodeSummary:hover, #darkmodeSummary a, #darkmodeSummary:hover a {
   color: var(--s2);
-  background-color: var(--t1);
+  background-color: var(--s3);
   border-color: var(--border1);
 }
 #darkmodeAltBG2:hover {

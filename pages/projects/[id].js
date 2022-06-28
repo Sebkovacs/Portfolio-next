@@ -23,12 +23,13 @@ import Side from '../../components/Side'
 
 export default function Project({ projectData }) {
     const [isMobile, setIsMobile] = useState()
-    useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        }
-    })
+    const [imageGrid, setImageGrid] = useState(false)
+    const [imageRatio, setImageRatio] = useState(isMobile)
+    const [planGrid, setPlanGrid] = useState(true)
+    const [panoDrop, setPanoDrop] = useState(false)
+    const [captionToggle, setCaptionToggle] = useState(false)
+    const [imageControls, setImageControls] = useState(false)
+    const [sidePanelState] = useSidePanelContext();
 
     let pano = false;
     let panos = false;
@@ -39,7 +40,34 @@ export default function Project({ projectData }) {
     let gridText = ""
     let gridSwitch = false
 
-    const [sidePanelState] = useSidePanelContext();
+    function toggleImageGrid() { setImageGrid(!imageGrid); }
+    function toggleZoom() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); }
+    function toggleZoomMobile() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); setImageRatio(!imageRatio); }
+    function togglePlanGrid() { setPlanGrid(!planGrid); }
+    function togglePanoDrop() { setPanoDrop(!panoDrop); }
+    function toggleImageRatio() { setImageRatio(!imageRatio); }
+    function imageControlsToggle() { setImageControls(!imageControls); console.log(imageControls) }
+
+
+    useEffect(() => {
+        let windowWidth = window.innerWidth;
+        if (windowWidth <= 768) {
+            setIsMobile(true)
+        } else { setIsMobile(false) }
+
+    })
+    useEffect(() => {
+        if (isMobile) {
+            setImageRatio(true)
+        }
+        
+    }, [isMobile])
+
+    console.log("is mobile?", isMobile)
+    console.log("image aspect is:", ratioText)
+    console.log("aspect ratio = ", aspectRatio)
+
+
 
     // check if the project has a pano link or multiple pano links >> if so, later run code for link buttons
     if (projectData.hasOwnProperty("pano")) {
@@ -51,34 +79,17 @@ export default function Project({ projectData }) {
         panos = false;
     }
 
-    const [imageGrid, setImageGrid] = useState(false)
-    const [imageRatio, setImageRatio] = useState(isMobile)
-    const [planGrid, setPlanGrid] = useState(true)
-    const [panoDrop, setPanoDrop] = useState(false)
-    const [captionToggle, setCaptionToggle] = useState(false)
-    const [imageControls, setImageControls] = useState(false)
-
-    function toggleImageGrid() { setImageGrid(!imageGrid); }
-    function toggleZoom() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); }
-    function toggleZoomMobile() { setImageGrid(!imageGrid); setCaptionToggle(!captionToggle); setImageRatio(!imageRatio); }
-    function togglePlanGrid() { setPlanGrid(!planGrid); }
-    function togglePanoDrop() { setPanoDrop(!panoDrop); }
-    function toggleImageRatio() { setImageRatio(!imageRatio); }
-    function imageControlsToggle() { setImageControls(!imageControls); console.log(imageControls) }
-
-
-
 
 
     switch (imageRatio) {
         case false:
             aspectRatio = '16 / 9';
-            ratioText = "Landscape";
+            ratioText = "Square";
             break;
 
         case true:
             aspectRatio = '1 / 1';
-            ratioText = "Square";
+            ratioText = "Landscape";
             break;
     }
 
@@ -86,12 +97,12 @@ export default function Project({ projectData }) {
     switch (imageGrid) {
         case true:
             gridSwitch = 1;
-            gridText = "Single";
+            gridText = "Grid";
             break;
 
         case false:
             gridSwitch = 3;
-            gridText = "Grid";
+            gridText = "Single";
             break;
     }
     const [themeDark, setThemeDark] = useThemeDark();
@@ -285,7 +296,7 @@ export default function Project({ projectData }) {
                 <a className={utilStyles.link2} id={themeDark && theme.darkmode} onClick={toggleImageRatio}>
                     {ratioText}
                     &nbsp;
-                    {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}
+                    {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
                 </a>
 
                 <Link href="#images">
@@ -295,7 +306,7 @@ export default function Project({ projectData }) {
                     >
                         {gridText}
                         &nbsp;
-                        {imageGrid ? <span className="material-symbols-outlined">splitscreen</span> : <span className="material-symbols-outlined">grid_on</span>}
+                        {imageGrid ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}
                     </a>
                 </Link>
                 <a className={utilStyles.link2} id={themeDark && theme.darkmode} onClick={() => setCaptionToggle(!captionToggle)}>

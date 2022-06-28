@@ -10,14 +10,14 @@ import { useEffect, useState } from 'react'
 import theme from '../styles/theme.module.css'
 
 export default function Side({ children, title, heading, data, h1 }) {
-    const [isMobile, setIsMobile ] = useState()
+    const [isMobile, setIsMobile] = useState()
     useEffect(() => {
         let windowWidth = window.innerWidth;
         if (windowWidth <= 768) {
             setIsMobile(true)
-        }
-    })
-    
+        } else { setIsMobile(false)}
+    }, [])
+
     const router = useRouter()
     const [themeDark, setThemeDark] = useThemeDark();
     const [sidePanelState, setSidePanelState] = useSidePanelContext();
@@ -47,15 +47,28 @@ export default function Side({ children, title, heading, data, h1 }) {
         setFilterList([])
     }
 
+    let [showContent, setShowContent] = useState(true)
+
+    useEffect(() => {
+        if (isMobile && !sidePanelState) {
+            return setShowContent(showContent = true)
+        } else if (!isMobile && sidePanelState) {
+            return setShowContent(showContent = true)
+        } else  {
+            return setShowContent(showContent = false)
+        }
+    })
+
+
     return (
          <aside className={`${themeDark && theme.darkmode}  ${sidePanelState ? styles.sideBarOpen : styles.sideBarClosed} `} >
             <div className={`${utilStyles.title}`}>
                 {h1 != undefined 
-                ? <h1 style={{ overflow: !sidePanelState && "hidden", opacity: !sidePanelState ? "0" : "1", opacity: isMobile &&  "1", transition: "1s"}}>{h1}</h1> 
-                : <span className={sidePanel.sidePanelTitle} style={{ opacity: !sidePanelState ? "0" : "1", opacity: isMobile &&  "1", transition: "1s"}}>{heading}</span>}
+                ? <h1 style={{ overflow: !sidePanelState && "hidden", opacity: showContent ?  "1" : "0", transition: "1s"}}>{h1}</h1> 
+                : <span className={sidePanel.sidePanelTitle} style={{ opacity: showContent ?  "1" : "0", transition: "1s"}}>{heading}</span>}
             </div>
 
-            <div className={` ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden", opacity: !sidePanelState ? "0" : "1", opacity: isMobile &&  "1", transition: "1s"}} id={themeDark && theme.darkmode}>
+            <div className={` ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden", opacity: showContent ?  "1" : "0", transition: "1s"}} id={themeDark && theme.darkmode}>
                 {children}
 
                 {title == "Projects" && data.map((e, index) =>

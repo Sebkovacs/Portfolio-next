@@ -13,8 +13,8 @@
   --s2: #fffab6;
   --s3: #1D192B;
 
-  --t1: #555152;
-  --t2: #66434f;
+  --t1: #272e44;
+  --t2: #664364;
 
   --container: 90vw;
   --headerHeight: 3rem;
@@ -95,6 +95,10 @@ time {
 
 span {
   color: var(--s1);
+}
+a:hover span{
+  transition: 1s;
+  color: var(--t2);
 }
 footer {
   height: 55px;
