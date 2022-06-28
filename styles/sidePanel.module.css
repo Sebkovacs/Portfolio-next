@@ -143,7 +143,7 @@
 
 .toggleButtonGroup {
     position: absolute;
-    bottom: calc(var(--h1Height) - var(--headerHeight) + 1.5rem );
+    bottom: calc(var(--headerHeight) + 1.5rem );
     right: -.75rem;
     display: flex;
     flex-direction: column;

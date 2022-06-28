@@ -266,7 +266,7 @@ export default function Project({ projectData }) {
                                 layout="fill"
                                 objectFit="contain"
                             />
-                            <div className={projects.planDetails}>
+                            <div className={projects.planDetails} style={{ backgroundColor: themeDark && "transparent"}}>
 
                                 <h3 className={projects.planTitle}> {plan.alt}</h3>
                                 <span class="material-symbols-outlined" style={{ color: themeDark && "var(--s2)", transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>

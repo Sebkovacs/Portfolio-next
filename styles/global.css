@@ -9,12 +9,13 @@
   --p2: #EADDFF;
   --p3: #a784df;
 
+  /* --s1: #3775bd; */
   --s1: #3e8de7;
   --s2: #fffab6;
   --s3: #1D192B;
 
-  --t1: #272e44;
-  --t2: #664364;
+  --t1: #555152;
+  --t2: #66434f;
 
   --container: 90vw;
   --headerHeight: 3rem;
@@ -95,9 +96,9 @@ time {
 
 span {
   color: var(--s1);
+  transition: 1s;
 }
 a:hover span{
-  transition: 1s;
   color: var(--t2);
 }
 footer {
