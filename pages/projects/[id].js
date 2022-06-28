@@ -22,7 +22,7 @@ import Side from '../../components/Side'
 
 
 export default function Project({ projectData }) {
-    const [isMobile, setIsMobile ] = useState()
+    const [isMobile, setIsMobile] = useState()
     useEffect(() => {
         let windowWidth = window.innerWidth;
         if (windowWidth <= 768) {
@@ -103,12 +103,13 @@ export default function Project({ projectData }) {
             </Head>
             <div className={projects.top} id="top" />
             <Side
-            title={title}
-            h1={title}>
+                title={title}
+                h1={title}
+            >
 
-            {/* <div className={`${projects.details}`} id={themeDark && theme.darkmode} > */}
+                {/* <div className={`${projects.details}`} id={themeDark && theme.darkmode} > */}
 
-            
+
                 {/* <div className={utilStyles.title}>
                     <h1>{projectData.title}</h1>
                 </div> */}
@@ -128,86 +129,86 @@ export default function Project({ projectData }) {
                 {/* <div className={projects.detailsContainer}> */}
 
 
-                    <div className={projects.linkContainer}>
-                        {/* MOBILE AND PC - Anchor Links */}
+                <div className={projects.linkContainer}>
+                    {/* MOBILE AND PC - Anchor Links */}
 
-                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">Images</a>
-                        <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">Plans</a>
+                    <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#images">Images</a>
+                    <a className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.mobileOnlyFlex}`} href="#plans">Plans</a>
 
-                        {/* PC ONLY IMAGE CONTROLS */}
+                    {/* PC ONLY IMAGE CONTROLS */}
 
-                        <a href="#images" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
-                            Images
-                            <label htmlFor="imageGrid" className={utilStyles.toggle} >
-                                {imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">crop_16_9</span>}
-                            </label>
-                        </a>
+                    <a href="#images" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
+                        Images
+                        <label htmlFor="imageGrid" className={utilStyles.toggle} >
+                            {imageGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">crop_16_9</span>}
+                        </label>
+                    </a>
 
-                        <a href="#plans" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
-                            Plans
-                            <label htmlFor="planGrid" className={` ${utilStyles.toggle}  `}>
-                                {planGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
-                            </label>
-                        </a>
-
-
-
-                        {projectData.hasOwnProperty("pano") ?
-                            <Link href={projectData.pano}>
-                                <a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">open_in_new</span></a>
-                            </Link> : <div />
-                        }
-
-                        {projectData.hasOwnProperty("panos") ?
-                            <details id="panoDrop" className={` ${utilStyles.grow} ${themeDark && theme.darkmode}`} onClick={togglePanoDrop}>
-                                <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} `} id={themeDark && theme.darkmodeSummary}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
-                                {projectData.panos.map((pano) =>
-                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`} id={themeDark && theme.darkmode}>{pano.name}&nbsp;<span className="material-symbols-outlined">open_in_new</span></a></Link>)}
-                            </details>
-                            : <div />
-                        }
+                    <a href="#plans" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.pcOnly}`}>
+                        Plans
+                        <label htmlFor="planGrid" className={` ${utilStyles.toggle}  `}>
+                            {planGrid ? <span className="material-symbols-outlined">grid_view</span> : <span className="material-symbols-outlined">view_agenda</span>}
+                        </label>
+                    </a>
 
 
-                        <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleZoom} />
 
-                        <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
-                    </div>
+                    {projectData.hasOwnProperty("pano") ?
+                        <Link href={projectData.pano}>
+                            <a target="_blank" className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3D Tour &nbsp;<span className="material-symbols-outlined">open_in_new</span></a>
+                        </Link> : <div />
+                    }
 
-                    <div className={projects.projDetails}>
-                        <h3>Project Details </h3>
-                        <ul>
-                            <li style={{ display: projectData.type == null ? "none" : "flex" }}>Type: {projectData.type}</li>
-                            <li style={{ display: projectData.status == null ? "none" : "flex" }}>Status: {projectData.status}</li>
-                            <li style={{ display: projectData.work == null ? "none" : "flex", fontWeight: projectData.work == "Construction" && "800"}}>Worked On: {projectData.work}</li>
-                            <li style={{ display: projectData.location == null ? "none" : "flex" }}>Location: {projectData.location}</li>
-                            <li style={{ display: projectData.company == null ? "none" : "flex" }}>Company: {projectData.company}</li>
-                            <li style={{ display: projectData.architects == null ? "none" : "flex" }}>Architects: {projectData.architects}</li>
-                            <li style={{ display: projectData.contractor == null ? "none" : "flex" }}>Contractor: {projectData.contractor}</li>
-                            <li style={{ display: projectData.projectManager == null ? "none" : "flex" }}>Project Manager: {projectData.projectManager}</li>
-                            <li style={{ display: projectData.value == null ? "none" : "flex" }}>Project Value: {projectData.value}</li>
-                            <li style={{ display: projectData.software == null ? "none" : "flex" }}>Software: {projectData.software}</li>
-                            <li style={{ display: projectData.rendering == null ? "none" : "flex" }}>Rendering: {projectData.rendering}</li>
-                            <li style={{ display: projectData.photography == null ? "none" : "flex" }}>Photography: {projectData.photography}</li>
-                            {/* <li><Date dateString={projectData.date} /></li> */}
-                        </ul>
-                    </div>
+                    {projectData.hasOwnProperty("panos") ?
+                        <details id="panoDrop" className={` ${utilStyles.grow} ${themeDark && theme.darkmode}`} onClick={togglePanoDrop}>
+                            <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} `} id={themeDark && theme.darkmodeSummary}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
+                            {projectData.panos.map((pano) =>
+                                <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`} id={themeDark && theme.darkmode}>{pano.name}&nbsp;<span className="material-symbols-outlined">open_in_new</span></a></Link>)}
+                        </details>
+                        : <div />
+                    }
 
-                    {/* main write up */}
-                    <h3>Overview</h3>
-                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} className={`${projects.overview} ${utilStyles.grow}`} />
-                    <div className={utilStyles.pcOnly} id={projects.bottom} style={{opacity: !sidePanelState ? "0": "1", transition: "1s"}}>
-                        <ButtonBack
-                            link="/"
-                            where="Projects"
-                        />
-                    </div>
+
+                    <input id="imageGrid" className={utilStyles.hide} type="checkbox" onClick={toggleZoom} />
+
+                    <input id="planGrid" className={utilStyles.hide} type="checkbox" onClick={togglePlanGrid} />
+                </div>
+
+                <div className={projects.projDetails}>
+                    <h3>Project Details </h3>
+                    <ul>
+                        <li style={{ display: projectData.type == null ? "none" : "flex" }}>Type: {projectData.type}</li>
+                        <li style={{ display: projectData.status == null ? "none" : "flex" }}>Status: {projectData.status}</li>
+                        <li style={{ display: projectData.work == null ? "none" : "flex", fontWeight: projectData.work == "Construction" && "800" }}>Worked On: {projectData.work}</li>
+                        <li style={{ display: projectData.location == null ? "none" : "flex" }}>Location: {projectData.location}</li>
+                        <li style={{ display: projectData.company == null ? "none" : "flex" }}>Company: {projectData.company}</li>
+                        <li style={{ display: projectData.architects == null ? "none" : "flex" }}>Architects: {projectData.architects}</li>
+                        <li style={{ display: projectData.contractor == null ? "none" : "flex" }}>Contractor: {projectData.contractor}</li>
+                        <li style={{ display: projectData.projectManager == null ? "none" : "flex" }}>Project Manager: {projectData.projectManager}</li>
+                        <li style={{ display: projectData.value == null ? "none" : "flex" }}>Project Value: {projectData.value}</li>
+                        <li style={{ display: projectData.software == null ? "none" : "flex" }}>Software: {projectData.software}</li>
+                        <li style={{ display: projectData.rendering == null ? "none" : "flex" }}>Rendering: {projectData.rendering}</li>
+                        <li style={{ display: projectData.photography == null ? "none" : "flex" }}>Photography: {projectData.photography}</li>
+                        {/* <li><Date dateString={projectData.date} /></li> */}
+                    </ul>
+                </div>
+
+                {/* main write up */}
+                <h3>Overview</h3>
+                <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} className={`${projects.overview} ${utilStyles.grow}`} />
+                <div className={utilStyles.pcOnly} id={projects.bottom} style={{ opacity: !sidePanelState ? "0" : "1", transition: "1s" }}>
+                    <ButtonBack
+                        link="/"
+                        where="Projects"
+                    />
+                </div>
                 {/* </div> */}
-            {/* </div> */}
+                {/* </div> */}
             </Side>
 
             {/* Main Content */}
 
-            <div className={`${projects.main} ${themeDark &&  theme.darkmode}`} >
+            <div className={`${projects.main} ${themeDark && theme.darkmode}`} >
 
                 <div id="images" className={utilStyles.anchor2}></div>
 
@@ -221,7 +222,7 @@ export default function Project({ projectData }) {
                             <div className={utilStyles.anchor2} id={`img${pic.id}`} />
 
                             <Link href={`#img${pic.id}`}>
-                                <div onClick={!isMobile? toggleZoom : toggleZoomMobile} className={projects.pic} style={{ aspectRatio: ` ${aspectRatio}` }}>
+                                <div onClick={!isMobile ? toggleZoom : toggleZoomMobile} className={projects.pic} style={{ aspectRatio: ` ${aspectRatio}` }}>
                                     <Image
                                         src={`/projects/${projectData.shortTitle}${pic.image}`}
                                         alt={pic.hasOwnProperty("caption") ? pic.caption : pic.alt}
@@ -257,7 +258,7 @@ export default function Project({ projectData }) {
                             <div className={projects.planDetails}>
 
                                 <h3 className={projects.planTitle}> {plan.alt}</h3>
-                                <span class="material-symbols-outlined" style={{ color: themeDark && "var(--s2)",  transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>
+                                <span class="material-symbols-outlined" style={{ color: themeDark && "var(--s2)", transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>
                                     navigation
                                 </span>
                             </div>
