@@ -1,70 +1,74 @@
-.tableOfContents {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--bg1);
-    border-right: solid 1px var(--border1);
-
-    position: fixed;
-    z-index: 5;
-
-    width: 20%;
-    height: 100vh;
-
-    left: 0;
-    background: var(--bg2);
-    height: calc(100vh - var(--headerHeight));
-    overflow-y: auto;
-
-}
-
-.tableOfContents h1 {
-    border-bottom: solid 1px var(--border1);
-    padding: 1em;
-    height: auto;
-}
-
-.tableOfContents h2 {
-
-    padding: 1em;
-}
-
-
-.tableOfContents ul {
-    padding-inline-start: 3em;
-    padding-inline-end: 3em;
-    padding-bottom: 2em;
-}
-
-.tableOfContents li {
-    padding: 1em 0;
-
-}
-
-.tableOfContents p {
-    padding: 1em 2em;
-    margin: 0;
-}
-
 .main {
-    padding: 2em;
-    width: 80%;
-    position: absolute;
-    right: 0;
-    background-color: var(--primary);
-}
+    /* padding: 2em; */
+    width: 60%;
+    padding: 0;
+    position: relative;
 
+}
+.main h1 {
+    height: var(--h1Height);
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+}
+.main h2 {
+    /* height: var(--h1Height); */
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--headerHeight));
+    text-decoration: none;
+    letter-spacing: normal;
+    font-style: normal;
+    font-size: 1rem;
+}
+.main h3 {
+    /* height: var(--h1Height); */
+    padding: 0 2em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    letter-spacing: normal;
+    font-size: .8em;
+}
 .main p,
 .main ul,
 .main ol {
     margin: 0;
-    padding: 1em 2em;
+    padding: 0 2em;
     list-style-type: unset;
+    line-height: 2em;
 }
 
 .main li {
-    margin-left: 2em;
-    padding: 1em;
+    margin: 0;
+    list-style-position: inside;
+    padding: 0 1em;
+}
+
+.main h2 {
+    counter-increment: h2-counter 1;
+}
+.main h2::before {
+    content: counter(h2-counter) "." ' \2004'; 
+}
+.main h3 {
+    counter-increment: h3-counter 1;
+}
+.main h3::before {
+    content: counter(h2-counter) "." counter(h3-counter) "." ' \2004'; 
+}
+
+.tocLink {
+    color: unset;
+    text-transform: capitalize;
+    transition: 0;
+    list-style-position: inside
+}
+.tocLink:hover {
+    color: unset;
+    text-transform: capitalize;
+    background-color: var(--s2);
 }
 
 .wrapper {
@@ -73,13 +77,13 @@ flex-wrap: wrap;
 gap: 1rem;
 padding: 1rem;
 justify-content: center;
-
+/* background-color: var(--bg1); */
 }
 
 .blog {
     border: 2px dashed var(--p2);
     border-radius: .5rem;
-    padding: .5rem;
+    padding: .5em;
     background: linear-gradient(to right top, var(--bg2), var(--p2));
     position: relative;
     z-index: 1;
@@ -92,6 +96,7 @@ justify-content: center;
     background-blend-mode: screen;
     background-color: var(--bg2);
     max-width: 30%;
+    user-select: none;
 }
 
 .blog::before {
@@ -105,17 +110,28 @@ justify-content: center;
     z-index: -1;
     transition: 1s;
     opacity: 0;
-
 }
 
 .blog:hover {
     box-shadow: 5px 5px 20px var(--border1);
-    border: 2px solid rgba(var(--p1), .5);
+    border: 2px solid var(--t2);
 }
 
 .blog:hover::before {
     opacity: .5;
 }
+#categoryTag {
+    width: max-content;
+    padding: .2rem .4rem;
+    background-color: var(--bg1);
+    border: 2px solid transparent;
+    border-radius: .5em;
+    font-size: .5rem;
+    transition: 1s;
+  }
+.blog:hover #categoryTag {
+    border: 2px solid var(--p2);
+  }
 
 .blog h2 {
     font-weight: 700;
@@ -149,14 +165,14 @@ justify-content: center;
 }
 
 .blog p {
-    font-size: .5rem;
+    font-size: .7rem;
     padding: 0;
     margin: .5rem;
     text-transform: initial;
 }
 
 .blog time {
-    font-size: .5rem;
+    font-size: .7rem;
     padding: 0;
     margin: 0;
     text-transform: initial;
@@ -179,19 +195,6 @@ justify-content: center;
         padding: 0;
     }
 
-    .tableOfContents {
-        top: 0;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .tableOfContentsContainer {
-        height: fit-content;
-        overflow: visible;
-    }
     .blog {
         max-width: 100%;
     }

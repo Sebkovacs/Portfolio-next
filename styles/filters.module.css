@@ -18,7 +18,7 @@
 
 .filter,
 .tag {
-  font-size: .5em;
+  font-size: .7em;
   background-color: var(--p2);
   border: 2px solid var(--bg2);
   padding: .8em;
@@ -30,8 +30,9 @@
   color: var(--t1);
 }
 
+
 .filter {
-  font-size: .5em;
+  font-size: .7em;
   background-color: var(--p3);
 }
 
@@ -68,7 +69,17 @@
 }
 .link a {
   background-color: var(--bg2);
+  justify-items: flex-start;
+  padding: 0;
+  color: var(--t1);
+font-family: Roboto mono, monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .5rem;
+
 }
+
+
 .col {
   display: flex;
   flex-direction: column;

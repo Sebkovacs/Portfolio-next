@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 // import { SRLWrapper } from "simple-react-lightbox";
 
-import Layout, { siteTitle } from '../../components/LayoutSideOpen'
+import Layout, { siteTitle } from '../../components/LayoutFilter'
 import Date from '../../components/Date'
 import ButtonBack from '../../components/ButtonBack'
 import ButtonTop from '../../components/ButtonTop'
@@ -16,8 +16,9 @@ import gallery from '../../styles/gallery.module.css'
 
 import { useState } from "react"
 import { useEffect } from 'react'
-import { useThemeDark } from '../../context/AppContext'
+import { useSidePanelContext, useThemeDark } from '../../context/AppContext'
 import theme from '../../styles/theme.module.css'
+import Side from '../../components/Side'
 
 
 export default function Project({ projectData }) {
@@ -32,6 +33,8 @@ export default function Project({ projectData }) {
 
     let gridText = ""
     let gridSwitch = false
+
+    const [sidePanelState] = useSidePanelContext();
 
     // check if the project has a pano link or multiple pano links >> if so, later run code for link buttons
     if (projectData.hasOwnProperty("pano")) {
@@ -48,7 +51,7 @@ export default function Project({ projectData }) {
         mobileDevice = window.innerWidth;
         
     }
-    mobileDevice <= 425 ? isMobile = true : false;
+    mobileDevice <= 425 ? isMobile = true :  isMobile = false;
     console.log("this is a mobile device:", isMobile)
     console.log("screen width is:", mobileDevice)
 
@@ -96,18 +99,23 @@ export default function Project({ projectData }) {
             break;
     }
     const [themeDark, setThemeDark] = useThemeDark();
-
+    let title = projectData.title
     return (
         <Layout>
             <Head>
                 <title>{siteTitle}: {' '} {projectData.title}</title>
             </Head>
             <div className={projects.top} id="top" />
-            <div className={`${projects.details}`} id={themeDark && theme.darkmode} >
+            <Side
+            title={title}
+            h1={title}>
 
-                <div className={utilStyles.title}>
+            {/* <div className={`${projects.details}`} id={themeDark && theme.darkmode} > */}
+
+            
+                {/* <div className={utilStyles.title}>
                     <h1>{projectData.title}</h1>
-                </div>
+                </div> */}
 
                 {/* Mobile Only Header Image */}
                 <div className={utilStyles.mobileOnly}>
@@ -121,7 +129,7 @@ export default function Project({ projectData }) {
                         />
                     </div>
                 </div>
-                <div className={projects.detailsContainer}>
+                {/* <div className={projects.detailsContainer}> */}
 
 
                     <div className={projects.linkContainer}>
@@ -155,10 +163,10 @@ export default function Project({ projectData }) {
                         }
 
                         {projectData.hasOwnProperty("panos") ?
-                            <details id="panoDrop" className={` ${utilStyles.grow} `} onClick={togglePanoDrop}>
-                                <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link}`}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
+                            <details id="panoDrop" className={` ${utilStyles.grow} ${themeDark && theme.darkmode}`} onClick={togglePanoDrop}>
+                                <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} `} id={themeDark && theme.darkmodeSummary}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
                                 {projectData.panos.map((pano) =>
-                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">open_in_new</span></a></Link>)}
+                                    <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`} id={themeDark && theme.darkmode}>{pano.name}&nbsp;<span className="material-symbols-outlined">open_in_new</span></a></Link>)}
                             </details>
                             : <div />
                         }
@@ -190,16 +198,16 @@ export default function Project({ projectData }) {
 
                     {/* main write up */}
                     <h3>Overview</h3>
-                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} className={utilStyles.grow} />
-                    <div className={utilStyles.pcOnly}>
+                    <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} className={`${projects.overview} ${utilStyles.grow}`} />
+                    <div className={utilStyles.pcOnly} id={projects.bottom} style={{opacity: !sidePanelState ? "0": "1", transition: "1s"}}>
                         <ButtonBack
                             link="/"
                             where="Projects"
                         />
                     </div>
-                </div>
-            </div>
-
+                {/* </div> */}
+            {/* </div> */}
+            </Side>
 
             {/* Main Content */}
 
@@ -243,7 +251,7 @@ export default function Project({ projectData }) {
 
                 <div className={planGrid ? projects.gridWrap1 : projects.gridWrap2}>
                     {projectData.plans.map((plan) =>
-                        <div key={plan.id} className={`${utilStyles.bb1} ${projects.plan}`}>
+                        <div key={plan.id} className={`${utilStyles.bb1} ${projects.plan} ${themeDark && theme.invertImg}`}>
                             <Image
                                 src={`/projects/${projectData.shortTitle}${plan.plan}`}
                                 alt={plan.alt}
@@ -253,7 +261,7 @@ export default function Project({ projectData }) {
                             <div className={projects.planDetails}>
 
                                 <h3 className={projects.planTitle}> {plan.alt}</h3>
-                                <span class="material-symbols-outlined" style={{ transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>
+                                <span class="material-symbols-outlined" style={{ color: themeDark && "var(--s2)",  transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>
                                     navigation
                                 </span>
                             </div>
@@ -269,14 +277,13 @@ export default function Project({ projectData }) {
                 </div>
             </div >
 
-
-            {/* Mobile Device Image Controls */}
+            {/* Mobile Device Image Options BOTTOM */}
 
             <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex} ${themeDark && theme.darkmode}`}>
                 <div className={projects.mobileControlsToggle} onClick={imageControlsToggle} style={{ backgroundColor: imageControls && "var(--p3)", color: imageControls && "var(--bg2)" }} >
                     Image Options
                     &nbsp;
-                    {imageControls ? <span className="material-symbols-outlined" style={{ color: imageControls && "var(--bg2)" }}>arrow_drop_down</span> : <span className="material-symbols-outlined" style={{ color: !imageControls && "var(--t1)" }}>arrow_drop_up</span>}
+                    {imageControls ? <span className="material-symbols-outlined" style={{ color: imageControls && "var(--bg2)" }}>arrow_drop_down</span> : <span className="material-symbols-outlined" style={{ color: !imageControls && themeDark ? "var(--s2)" : "var(--t1)" }}>arrow_drop_up</span>}
                 </div>
                 <a className={utilStyles.link2} id={themeDark && theme.darkmode} onClick={toggleImageRatio}>
                     {ratioText}

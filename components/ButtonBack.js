@@ -12,9 +12,9 @@ export default function BackButton({ link, where }) {
     const [themeDark] = useThemeDark();
     return (
         <Link href={link}>
-            <a className={`${styles.back} ${styles.bt1} ${styles.bb1} ${themeDark && theme.darkmode}`}>
+            <a className={`${styles.back} ${styles.bt1} `} id={themeDark && theme.darkmode}>
                 <span class="material-symbols-outlined">arrow_back</span>
-                &nbsp; Back to {where}
+                &nbsp;{where}
 
             </a>
         </Link>

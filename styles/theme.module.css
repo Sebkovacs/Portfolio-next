@@ -42,8 +42,12 @@
 .darkGrad, #darkGrad {
   background: linear-gradient(to right top, var(--t2), var(--p3));
 }
+.darkGradShadow, #darkGradShadow {
+  background: linear-gradient(to right top, var(--t2), var(--p3));
+  box-shadow: 5px 5px 20px var(--s3);
+}
 
-.darkShadow, #darkShadow {
+.darkShadow, #darkShadow, .darkShadow:hover, #darkShadow:hover {
   box-shadow: 5px 5px 20px var(--s3);
 }
 
@@ -60,9 +64,67 @@
 .darkText, #darkText {
   color: var(--s2);
 }
+.darkText2, #darkText2, .darkText2 p, #darkText2 p , .darkText2 a, #darkText2 a, .darkText2 div, #darkText2 div {
+  color: var(--t2);
+}
 #darkmodeAlt {
   color:  var(--border1); 
 }
 #darkmodeAlt:hover {
   color:  var(--border2); 
+}
+
+#darkmodeAltBG, #darkmodeAltBG:hover, #darkmodeAltBG a, #darkmodeAltBG:hover a {
+  background-color:  var(--border2); 
+}
+#darkmodeSummary, #darkmodeSummary:hover, #darkmodeSummary a, #darkmodeSummary:hover a {
+  color: var(--s2);
+  background-color: var(--t1);
+  border-color: var(--border1);
+}
+#darkmodeAltBG2:hover {
+  color: var(--p2);
+  background-color:  var(--s3); 
+  transition: .5s;
+}
+#darkmodeAltBG2:hover span {
+  transition: .5s;
+  color: var(--p2);
+}
+.invertImg img {
+
+  filter: invert(1);
+  mix-blend-mode: exclusion;
+}
+.darkmode details[open] #summary{
+  background-color: var(--s3);
+  border: 2px solid var(--bg2);
+  color: var(--bg1);
+  background-image: url(/_next/static/media/smoke2.fe566e0b.gif);
+  color: var(--bg2)
+}
+.darkmode #summary{
+  background-color: var(--border2);
+  color: var(--s2)
+}
+
+.darkmode #summary:hover{
+  border: 2px solid var(--bg2);
+}
+
+#darkFilter p,
+#darkTag p{
+  font-size: .7em;
+
+  border: 2px solid var(--bg2);
+  padding: .8em;
+  margin: .2em;
+  cursor: pointer;
+  border-radius: 1em;
+  transition: 0s;
+  color: var(--s2);
+}
+#darkFilter p:hover, #darkTag p:hover{
+  transition: 0s;
+background-color: rgba(var(--p1), .5);
 }

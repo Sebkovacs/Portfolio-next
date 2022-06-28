@@ -20,7 +20,7 @@ export default function SidePanelRight({ children, heading }) {
 
                     <div
                         className={side.toggle}
-                        id={themeDark && theme.darkmodeAlt}
+                        id={themeDark && theme.darkmodeAltBG}
                         onClick={toggle}
                         style={{ transition: "ease 1s", border: panelOpen ? "2px solid var(--border1)" : "2px solid transparent" }}
                     >

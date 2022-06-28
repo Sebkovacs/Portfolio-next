@@ -291,6 +291,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    background-color: var(--bg2);
 }
 
 .pcOnly .top {
@@ -340,7 +341,7 @@
 .link {
 
     padding: .5rem;
-    margin: .5rem;
+    margin: .5rem 0;
     background-color: var(--bg2);
     display: flex;
     align-items: center;
@@ -428,7 +429,7 @@
     font-family: var(--font2);
     font-weight: 400;
     text-transform: capitalize;
-    font-size: .5em;
+    font-size: .7rem;
 }
 
 .font2 span {
@@ -854,6 +855,7 @@
 }
 
 @media (max-width: 375px) {
+    
     .contact {
         padding-bottom: 3em;
     }

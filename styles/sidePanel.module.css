@@ -131,7 +131,7 @@
     overflow-y: auto;
 }
   
-.content a{
+/* .content a{
     justify-items: flex-start;
     padding: 0;
     color: var(--t1);
@@ -139,7 +139,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: .5rem;
-}
+} */
 
 .toggleButtonGroup {
     position: absolute;
@@ -200,6 +200,22 @@
 #contact:hover {
     background-image: url('/sebastian-kovacs-portfolio.png');
     color: transparent;
+}
+
+.pcOnly {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0;
+        height: auto;
+        overflow-y: none;
+    }
+
+    .pcOnly {
+        display: none;
+    }
 }
 
 

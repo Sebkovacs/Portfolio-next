@@ -8,6 +8,8 @@
 
     position: relative;
     overflow: hidden;
+    transition: 1s;
+      background-color: var(--bg1);
 }
 
 .squareSingle {
@@ -195,7 +197,7 @@
     display: none;
 }
 
-#mix:active span {
+.mix:active span {
     transform: rotateZ(90deg);
 }
 @media (max-width: 1440px) {

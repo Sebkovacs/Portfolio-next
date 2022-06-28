@@ -14,10 +14,11 @@
 
     left: 0;
     background: var(--bg2);
-
+    position: relative;
+    width: 100%;
 }
 
-.details>h1 {
+.details > h1 {
     border-bottom: solid 1px var(--border1);
     padding: 1em;
     display: flex;
@@ -62,19 +63,19 @@
     margin: 0;
 }
 
-.linkContainer {
+/* .linkContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 1em .5em 0;
 
-}
+} */
 
-.projDetails {
+/* .projDetails {
     padding: 0 1em;
-    /* margin: 1em; */
-}
+    margin: 1em;
+} */
 
 .projDetails h3 {
     padding-left: 0;
@@ -86,7 +87,8 @@
 
 .projDetails li {
     border-top: 1px solid var(--border1);
-    padding: .5em;
+    padding: .5rem;
+    margin: 0;
     /* font-size: .9em; */
     list-style: none;
     font-size: .6rem;
@@ -94,7 +96,7 @@
 
 .main {
     /* padding: 2em; */
-    width: 80%;
+    width: 100%;
     position: absolute;
     right: 0;
 }
@@ -116,10 +118,11 @@
     margin-bottom: 3em;
 }
 .gridWrap1{
+    padding: 2rem;
     grid-template-columns: 1fr;
 }
 .gridWrap2 {
-    padding: 1em;
+    padding: 2rem;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -238,6 +241,17 @@ font-family: var(--font2);
 font-size: 50%;
 
 transition: .5s;
+}
+
+#bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+}
+
+.overview p:last-child {
+    margin-bottom: 5rem;
 }
 
 @media (max-width: 768px) {

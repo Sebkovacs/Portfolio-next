@@ -17,6 +17,17 @@ import { useThemeDark } from '../context/AppContext'
 const title = "Gallery";
 const sidePanelHeading = "Filters";
 
+let mobileDevice = 1
+let isMobile = false
+if (typeof window !== 'undefined') {
+
+    mobileDevice = window.innerWidth;
+    
+}
+mobileDevice <= 768 ? isMobile = true : isMobile = false;
+
+
+
 export default function Gallery({ allProjectsData }) {
     let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type, software: a.software, status: a.status, render: a.rendering, tags: [a.type, a.software, a.status, a.rendering] }))).flat();
     let [randomGalleryList, setRandomGalleryList] = useState(galleryList);
@@ -197,65 +208,68 @@ export default function Gallery({ allProjectsData }) {
     const modFilters = e => {
         if (!filterList.includes(e.target.id)) {
             setFilterList(filterList.push(e.target.id))
-    
+
             let filteredGallery = []
             for (let i = 0; i < galleryList.length; i++) {
-                for (let a = 0; a < 4; a++ ) {
+                for (let a = 0; a < 4; a++) {
                     if (filterList.includes(galleryList[i].tags[a])) {
-                        
+
                         filteredGallery.push(galleryList[i])
-                        
+
                     }
                 }
-              }
-              setRandomGalleryList( randomGalleryList = filteredGallery)
+            }
+            setRandomGalleryList(randomGalleryList = filteredGallery)
 
         } else {
             let index = filterList.indexOf(e.target.id);
             setFilterList(filterList.splice(index, 1));
-            
+
             let filteredGallery = []
             for (let i = 0; i < galleryList.length; i++) {
-                for (let a = 0; a < 4; a++ ) {
+                for (let a = 0; a < 4; a++) {
                     if (filterList.includes(galleryList[i].tags[a])) {
-                        
+
                         filteredGallery.push(galleryList[i])
-                        
+
                     }
                 }
             }
-            setRandomGalleryList( randomGalleryList = filteredGallery)
+            setRandomGalleryList(randomGalleryList = filteredGallery)
         }
         setFilterList([...filterList]);
     };
 
-    function setAll () {
+    function setAll() {
         setRandomGalleryList(galleryList)
         setFilterList([])
-      }
+    }
 
     return (
         <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
+            {!isMobile && 
             <Side
                     title={title}
-    heading={"Filters"}
-    >
+                heading={"Filters"}
+                >
+            
 
                 <p>Applied Filters</p>
                 {filterList.map(a => <p className={filters.tag} id={a} key={a} onClick={modFilters}>{a}</p>)}
 
                 <p>Filters</p>
                 {title == "Gallery" && data.map(({ title, list }) =>
-                    <details className={filters.filterContainer}>
-                        <summary className={filters.filter}>{title}</summary>
+                    <details className={filters.filterContainer} id={themeDark && theme.darkFilter}>
+                        <summary className={` ${filters.filter}`} id={themeDark && theme.summary}>{title}</summary>
                         {list.map(a => <p className={filters.tag} id={a.id} key={a.id} onClick={modFilters}>{a.id}</p>)}
                     </details>)}
                     <div className={filters.tag} onClick={setAll}>Reset</div>
 
             </Side>
+            }
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
                 {/* <div className={`${utilStyles.pcOnly} ${utilStyles.flex2}`}>
@@ -304,10 +318,10 @@ export default function Gallery({ allProjectsData }) {
             <SidePanelRight
                 heading={"Settings"}
             >
-                <p className={utilStyles.link2} onClick={toggleImageGridOnly}>{!gridCount ? "Grid" : "Single"} &nbsp;{!gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
-                <p className={utilStyles.link2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}</p>
-                <p className={`${gridCount ? gallery.toggleGray : null} ${utilStyles.link2}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
-                <p className={utilStyles.link2} id={gallery.mix} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
+                <p className={`${utilStyles.link2} `} id={themeDark && theme.darkmodeAltBG2} onClick={toggleImageGridOnly}>{!gridCount ? "Grid" : "Single"} &nbsp;{!gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
+                <p className={utilStyles.link2} id={themeDark && theme.darkmodeAltBG2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}</p>
+                <p className={`${gridCount ? gallery.toggleGray : null} ${utilStyles.link2}`} id={themeDark && theme.darkmodeAltBG2} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                <p className={`${utilStyles.link2} ${gallery.mix}`} id={themeDark && theme.darkmodeAltBG2} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
             </SidePanelRight>
 
         </Layout >
