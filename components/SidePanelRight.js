@@ -36,7 +36,7 @@ export default function SidePanelRight({ children, heading }) {
 
                 </div>
 
-                <div className={`${utilStyles.mobileOnly} ${side.background} }`} onClick={toggle} style={{ display: !panelOpen && "none"}}/>
+                <div className={`${utilStyles.mobileOnly} ${side.background} }`} onClick={toggle} style={{transition: ".5s ease .5s", opacity: panelOpen ? themeDark ? ".8" : ".8" : "0"}}/>
 
         </aside>
     )
