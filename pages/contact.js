@@ -176,7 +176,7 @@ export default function Contact() {
                 </button>
 
             </div>
-            <div className={`${utilStyles.credit} ${themeDark && theme.darkmode}`} style={{backgroundColor: themeDark && "var(--s2)"}}>
+            <div className={`${utilStyles.credit} ${themeDark && theme.darkmode}`} style={{backgroundColor: themeDark ? !isMobile && "var(--s2)" : isMobile && "none"}}>
                 <p style={{color: themeDark && "var(--border1)"}}>2022 | Website developed by me</p>
             </div>
         </Layout>
