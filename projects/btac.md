@@ -12,7 +12,6 @@ architects: SHAC
 contractor: North Construction and Building
 value: $6m
 photography: credit - North Construction and Building
-software: false
 
 thumb: /1.jpg
 thumbAlt: Bishop Tyrrell Anglican College New primary school buildings

@@ -182,11 +182,11 @@
 }
 #contact {
     user-select: none;
-    
 }
 #theme span, #sidePanel span {
  color: white;
  user-select: none;
+ transition: 0s;
 }
 #theme:hover span, #sidePanel:hover span  {
     color: black;

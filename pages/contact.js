@@ -147,14 +147,14 @@ export default function Contact() {
                 <div className={gif.happyblue} id={themeDark && theme.darkmodeT}><Image src={"/happyblue.gif"} alt={"happy blue cartoon saying lets talk"} layout="fill" objectFit='cover' priority="true" /></div>
                 <h2 className={`${utilStyles.grow} ${utilStyles.mb1} ${utilStyles.center} ${utilStyles.noPad}`} style={{color: themeDark && "var(--border1)", textDecorationColor: themeDark && "var(--t1)", textUnderlineOffset: ".1em"}}>Sebastian Kovacs</h2>
 
-                <div id={themeDark && theme.darkmodeT}>
+                <div id={themeDark && theme.darkmodeHover}>
                     <h3 className={`${utilStyles.font2} ${utilStyles.flexLeft}`}>Phone: <br className={utilStyles.mobileOnly} /> <a className={utilStyles.flexLeft} href="tel:+61432365389">0432 365 389</a></h3>
                 </div>
-                <div id={themeDark && theme.darkmodeT}>
+                <div id={themeDark && theme.darkmodeHover}>
                     <h3 className={`${utilStyles.font2} ${utilStyles.flexLeft}`}>Email: <br className={utilStyles.mobileOnly} /><a className={`${utilStyles.lowerCase} ${utilStyles.flexLeft}`} href="mailto: sebkovacs@gmail.com">sebkovacs@gmail.com</a></h3>
                 </div>
 
-                <div className={utilStyles.address} id={themeDark && theme.darkmodeT} >
+                <div className={utilStyles.address} id={themeDark && theme.darkmodeHover} >
                     <h3 style={{ fontSize: "1rem", fontWeight: 500 }}>Address:</h3>
                     <p>9/5 Dawson St<br /> Cooks Hill, NSW 2300<br /> Australia</p>
                 </div>

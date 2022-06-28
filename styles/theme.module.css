@@ -3,7 +3,7 @@
   /* background-color: var(--bg2); */
 }
 
-.darkmode, .darkmode div , .darkmodeSolid, .darkmodeSolid a {
+.darkmode, .darkmode div, .darkmode a , .darkmodeSolid, .darkmodeSolid a {
   color: var(--s2);
   background-color: var(--s3);
   border-color: var(--border2);
@@ -19,7 +19,7 @@
   
 }
 
-#darkmode, #darkmode div , #darkmodeSolid, #darkmode div:hover{
+#darkmode, #darkmode div , #darkmodeSolid, #darkmode div:hover, .darkmode button{
   color: var(--s2);
   background-color: var(--s3);
   border-color: var(--border2);
@@ -31,8 +31,15 @@
   text-decoration-color: var(--border2);
 }
 
-.darkmodeT, #darkmodeT {
+.darkmode a:hover, #darkmode a:hover{
+  transition: all 0s;
+  color: var(--s2);
+  background-color: var(--p3);
+}
+
+.darkmodeT, #darkmodeT, .darkmodeT div, #darkmodeT div, .darkmodeT span, #darkmodeT span, .darkmodeT:hover a, #darkmodeT:hover a, .darkmodeT:hover div, #darkmodeT:hover div{
   background-color: transparent; 
+  user-select: none;
 }
 
 .darkmode2, #darkmode2 {
@@ -127,4 +134,13 @@
 #darkFilter p:hover, #darkTag p:hover{
   transition: 0s;
 background-color: rgba(var(--p1), .5);
+}
+
+#darkmodeHover, #darkmodeHover h3, #darkmodeHover p, #darkmodeHover a{
+  color: var(--bg2);
+  letter-spacing: 1px;
+  background-color: transparent;
+}
+#darkmodeHover:hover a {
+  background-color: var(--s1);
 }

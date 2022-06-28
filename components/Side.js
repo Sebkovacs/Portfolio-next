@@ -72,30 +72,37 @@ export default function Side({ children, title, heading, data, h1 }) {
                 {children}
 
                 {title == "Projects" && data.map((e, index) =>
-
-                    <div className={filters.link}>
-                        <div className={filters.projNum}>{index}</div>
-                        <div className={filters.col}>
-                            <Link href={`${pageTitle}/${e.id}`}>
-                                <a id={e.id} style={{ fontWeight: 800 }} >
-                                    {e.title}
-                                </a>
-                            </Link>
+                <Link href={`${pageTitle}/${e.id}`}>
+                    <a className={filters.link} id={themeDark && theme.darkmodeT}>
+                        
+                            <div className={filters.projNum}>{index + 1}</div>
+                            <div className={filters.col}>
+                                
+                                    <p id={e.id} style={{ fontWeight: 800, fontSize: ".8rem", margin: 0 }} >
+                                        {e.title}
+                                    </p>
+                                
+                                <div style={{display: "flex", flexDirection:'row', fontFamily:'var(--font2)'}}>
+                                    <span style={{ fontSize: "0.7rem", color: themeDark ? "var(--p2)" : "var(--s1)", margin: 0, fontFamily:'var(--font2)'}}>
+                                        {e.type}</span>
+                                        {e.work == "Construction" &&<span  
+                            style={{ fontFamily:'var(--font2)', margin: "0 0 0 .5rem", fontSize: "0.6rem", backgroundColor: themeDark ? "var(--t1)" : "var(--s2)", color: themeDark ? "var(--border1)" : "var(--s3)"}}
+                            >*Worked on Construction*</span>}
+                                    
                             
-                                <a href="#" key={e.id} style={{ color: themeDark ? "var(--p2)" : "var(--s1)"}}>
-                                    {e.type}
-                                </a>
-                            
-                            {e.work == "Construction" && <p style={{margin: "0", fontSize: "0.5rem", backgroundColor: themeDark ? "var(--s3)" : "var(--s2)", color: themeDark ? "var(--border1)" : "var(--s3)"}}>  *Worked on Construction*</p>}
+                                {/* {e.work == "Construction" && <p style={{margin: "0", fontSize: "0.5rem", backgroundColor: themeDark ? "var(--s3)" : "var(--s2)", color: themeDark ? "var(--border1)" : "var(--s3)"}}>  *Worked on Construction*</p>} */}
+                            </div>
                         </div>
-                    </div>
+                             
+                    </a>
+                    </Link>
                 )}
 
             </div>
-            <div className={`${sidePanel.pcOnly} ${sidePanel.toggleButtonGroup}`} id={themeDark && theme.darkmodeT}>
+            <div className={`${sidePanel.pcOnly} ${sidePanel.toggleButtonGroup}`} id={themeDark && theme.darkmodeSolid}>
 
                 <div id={sidePanel.sidePanel} className={sidePanel.leftPanelToggleButton}
-                    // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
+                    
                     onClick={sidePanelToggle}>
                     {sidePanelState
                         ? <span class="material-symbols-outlined">arrow_back</span>
@@ -103,12 +110,12 @@ export default function Side({ children, title, heading, data, h1 }) {
                 </div>
 
                 {title == "Contact" ?
-                    <button id={sidePanel.contact} className={`${sidePanel.leftPanelToggleButton} ${themeDark && theme.darkmode}`} type="button" onClick={() => router.back()} alt={"Click here to go back"}>
+                    <button id={sidePanel.contact}  className={`${sidePanel.leftPanelToggleButton} ${themeDark && theme.darkmode}`} type="button" onClick={() => router.back()} alt={"Click here to go back"}>
                         
                     </button>
                     :
                     <Link href="/contact">
-                        <a id={sidePanel.contact} className={`${sidePanel.leftPanelToggleButton} ${themeDark && theme.darkmode} ${themeDark && theme.darkNoBorder} `} alt={"Navigate to Contact Page"}
+                        <a id={sidePanel.contact}   className={`${sidePanel.leftPanelToggleButton} ${themeDark && theme.darkmode} ${themeDark && theme.darkNoBorder} `} alt={"Navigate to Contact Page"}
 
                         // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
                         >
@@ -118,7 +125,7 @@ export default function Side({ children, title, heading, data, h1 }) {
                 }
 
                 <div id={sidePanel.theme} className={sidePanel.leftPanelToggleButton}
-                    // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
+                    
                     onClick={themeToggle}>
                     {themeDark
                         ? <span class="material-symbols-outlined">dark_mode</span>
