@@ -302,6 +302,14 @@ transition: .5s;
         margin: 0;
     }
 
+    .overview p {
+        padding-top: 0;
+        margin: 0;
+    }
+    .overview p:last-child {
+        margin-bottom: 0;
+    }
+
     .cardWrap {
         width: 100%;
     }
@@ -336,13 +344,13 @@ transition: .5s;
         display: flex;
         justify-content: space-around;
         margin: 0;
-        padding: 0;
+        padding: .5rem;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     .pano {
-        padding: 1em;
+        padding: 1rem;
         flex-grow: 1;
         text-align: center;
     }
@@ -357,8 +365,8 @@ transition: .5s;
     .projDetails {
         float: none;
         margin: 0em 1em;
-        padding:  1em 0 0;
-        background-color: var(--bg2);
+        padding:  1em 0;
+        background-color: var(--bg1);
     }
     .details {
         padding-bottom: 0rem;

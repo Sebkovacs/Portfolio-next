@@ -27,8 +27,8 @@ export default function Layout() {
                     </Link>
                     <div>
                         <Link href="/"><a className={styles.navitem}>Projects</a></Link>
-                        <Link href="/blog"><a className={styles.navitem}>Blog</a></Link>
                         <Link href="/gallery"><a className={styles.navitem}>Gallery</a></Link>
+                        {/* <Link href="/blog"><a className={styles.navitem}>Blog</a></Link> */}
                         <Link href="/resume"><a className={styles.navitem}>Resume</a></Link>
                         <Link href="/contact"><a className={styles.navitem}>Contact</a></Link>
                     </div>
@@ -57,8 +57,8 @@ export default function Layout() {
                 {/* </Navbar> */}
 
                 <Link href="/"><a className={styles.navitem}>Projects</a></Link>
-                <Link href="/blog"><a className={styles.navitem}>Blog</a></Link>
                 <Link href="/gallery"><a className={styles.navitem}>Gallery</a></Link>
+                {/* <Link href="/blog"><a className={styles.navitem}>Blog</a></Link> */}
                 <Link href="/resume"><a className={styles.navitem}>Resume</a></Link>
                 <Link href="/contact"><a className={styles.navitem}>Contact</a></Link>
 
@@ -73,8 +73,8 @@ export default function Layout() {
                     </div>
                     <ul>
                         <li><Link href="/"><a>Projects</a></Link></li>
-                        <li><Link href="/blog"><a>Blog</a></Link></li>
                         <li><Link href="/gallery"><a>Gallery</a></Link></li>
+                        {/* <li><Link href="/blog"><a>Blog</a></Link></li> */}
                         <li><Link href="/resume"><a>Resume</a></Link></li>
                         <li><Link href="/contact"><a>Contact</a></Link></li>
 

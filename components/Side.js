@@ -5,20 +5,11 @@ import Link from 'next/link'
 import { useSidePanelContext, useThemeDark } from '../context/AppContext'
 import { useRouter } from 'next/router'
 import filters from '../styles/filters.module.css'
-import Projects from '../pages'
+
 import { useEffect, useState } from 'react'
 import theme from '../styles/theme.module.css'
 
 export default function Side({ children, title, heading, data, h1 }) {
-    let mobileDevice = 1000
-    let isMobile = true
-    
-    if (typeof window !== 'undefined') {
-
-        mobileDevice = window.innerWidth;
-        
-    }
-    mobileDevice <= 768 ? isMobile = true : isMobile = false;
 
     const router = useRouter()
     const [themeDark, setThemeDark] = useThemeDark();
@@ -53,11 +44,11 @@ export default function Side({ children, title, heading, data, h1 }) {
          <aside className={`${themeDark && theme.darkmode}  ${sidePanelState ? styles.sideBarOpen : styles.sideBarClosed} `} >
             <div className={`${utilStyles.title}`}>
                 {h1 != undefined 
-                ? <h1 style={{ overflow: !sidePanelState && "hidden", opacity: isMobile ? "1" : "0", transition: "1s"}}>{h1}</h1> 
-                : <span className={sidePanel.sidePanelTitle} style={{ opacity: isMobile ? "1" : "0", transition: "1s"}}>{heading}</span>}
+                ? <h1 style={{ overflow: !sidePanelState && "hidden", opacity: sidePanelState ? "1" : "0", transition: "1s"}}>{h1}</h1> 
+                : <span className={sidePanel.sidePanelTitle} style={{ opacity: sidePanelState ? "1" : "0", transition: "1s"}}>{heading}</span>}
             </div>
 
-            <div className={` ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden", opacity: isMobile ? "1" : `${sidePanelState ? "1" : "0"}`, transition: "1s"}} id={themeDark && theme.darkmode}>
+            <div className={` ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden", opacity: sidePanelState ? "1" : "0", transition: "1s"}} id={themeDark && theme.darkmode}>
                 {children}
 
                 {title == "Projects" && data.map((e, index) =>

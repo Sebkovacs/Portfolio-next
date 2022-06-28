@@ -14,7 +14,18 @@ import theme from '../styles/theme.module.css'
 const title = "Projects";
 const sidePanelHeading = "Project List"
 
+let mobileDevice = 1
+let isMobile = false
+if (typeof window !== 'undefined') {
+
+    mobileDevice = window.innerWidth;
+    
+}
+mobileDevice <= 768 ? isMobile = true : isMobile = false;
+
 export default function Projects({ allProjectsData }) {
+
+
 
     const [themeDark, setThemeDark] = useThemeDark();
     const [sidePanelState, setSidePanelState] = useSidePanelContext();
@@ -30,17 +41,19 @@ export default function Projects({ allProjectsData }) {
     // sorted Project List
     const data = projects.sort(function (a, b) { if (a.date > b.date) return -1; if (a.date < b.date) return 1; return 0; });
     
-    let pageTitle = title.toLowerCase();
+
 
     return (
         <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
+            {!isMobile && 
             <Side
             heading={"Project List"}
             title={title}
             data={data}/>
+            }
                 
 
             

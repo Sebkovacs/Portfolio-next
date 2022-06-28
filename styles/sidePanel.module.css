@@ -211,6 +211,12 @@
         padding: 0;
         height: auto;
         overflow-y: none;
+        background-color: var(--bg1);
+        gap: 0;
+    }
+    .content h3 {
+        padding-bottom: .5em;
+        margin: 0;
     }
 
     .pcOnly {

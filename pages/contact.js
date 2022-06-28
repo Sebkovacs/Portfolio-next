@@ -106,6 +106,38 @@ export default function Contact() {
                     <source src="/party.mp4"
                         type="video/mp4" />
                 </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
+                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
+                    <source src="/party.mp4"
+                        type="video/mp4" />
+                </video>
             </div>
 
             {/* <div className={gif.party}> */}
@@ -123,13 +155,22 @@ export default function Contact() {
                 </div>
 
                 <div className={utilStyles.address} id={themeDark && theme.darkmodeT}>
-                    <h3 style={{ fontSize: "1rem", fontWeight: 400 }}>Address:</h3>
+                    <h3 style={{ fontSize: "1rem", fontWeight: 500 }}>Address:</h3>
                     <p>9/5 Dawson St<br /> Cooks Hill, NSW 2300<br /> Australia</p>
                 </div>
                 {/* <Link href={"/"}>
                 <a id={utilStyles.indexContact}>Navigate to Home Page</a>
                 </Link> */}
+                {isMobile &&
 
+                    data.map((e) =>
+                        <Link href={e.link}>
+                            <a target="_blank" className={utilStyles.link2} style={{ display: 'flex', alignItems: "center", justifyContent: "flex-start", padding: ".5rem", borderRadius: ".5rem", fontSize: ".7rem", width: "fit-content", margin: "1rem", textTransform: "capitalize" }} id={e.id}>
+                                <img src={e.logo} height={20} width={20} style={{ marginRight: ".5rem" }} />
+                                {e.id}
+                            </a>
+                        </Link>)
+                }
                 <button id={utilStyles.indexContact} type="button" onClick={() => router.back()}>
                     Click here to go back
                 </button>

@@ -194,7 +194,7 @@
     padding: 1em;
     width: max-content;
     transition: ease-in-out 2s;
-    margin: 4em auto;
+    margin: 8rem auto;
     z-index: 9;
 }
 .contact h2 {
@@ -498,7 +498,7 @@
 .credit {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 15rem;
     width: 300px;
     margin-left: -150px;
     padding: .5rem;
@@ -680,6 +680,7 @@
 
     .link {
         justify-content: center;
+        margin: .5rem;
     }
 
     .title {

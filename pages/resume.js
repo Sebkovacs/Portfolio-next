@@ -11,29 +11,39 @@ import { useThemeDark } from '../context/AppContext'
 const title = "Resume"
 const sidePanelHeading = "Write Up"
 
+let mobileDevice = 1
+let isMobile = false
+if (typeof window !== 'undefined') {
+
+  mobileDevice = window.innerWidth;
+
+}
+mobileDevice <= 768 ? isMobile = true : isMobile = false;
+
+
 export default function Resume() {
     let data = [
-        "About me: something something blurb blurb"
+        <p>Hi my name is Sebastian</p>,
+        <p>I am a Graduate Architect with about 3 years of architecture experience and about 1.5 years on the tools in commercial and residential construction.</p>,
+        <p>My short term goal is to gain registration as an architect. Im keen to just work hard, improve my design skills and become a good architect.</p>,
+        <p>My long term goal is to use my architecture skills in developing property on the side and creating some really cool projects where the architect has more control</p>,
+        <p className={utilStyles.bt1}>I enjoy surfing, running, playing piano and reading (non-fiction) - I love to be constantly learning and mentally stimulated...</p>,
     ]
     const [themeDark, setThemeDark] = useThemeDark();
 
     return (
-        <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
+        <Layout>
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
-            <Side
-            heading={"About"}
-            title={title}>
-            <p>Hi my name is Sebastian</p>
-            <p>I am a Graduate Architect with about 3 years of architecture experience and about 1.5 years on the tools in commercial and residential construction.</p>
-            <p>My medium term goal is to work hard and improve my design skills and become a good architect.</p>
-            <p>My long term goal is to develop property where I can ensure really good quality. This would likely include exploring different set ups (equity / debt & tenure) similar to gruppenhaus projects in Europe.</p>
-            <hr/>
-            <p>I enjoy surfing, running, piano and reading - I need to be constantly learning and mentally stimulated...</p>
+            {!isMobile &&
+                <Side
+                    heading={"About Me"}
+                    title={title}>
+                    {data}
 
-            </Side>
-
+                </Side>
+            }
             <div className={utilStyles.title}>
                 <h1>Resume Summary</h1>
                 <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}  ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`} >
@@ -178,6 +188,10 @@ export default function Resume() {
                         <li>Social Media Marketing</li>
                     </ul>
                 </div>
+                {isMobile && <div className={utilStyles.list}>
+                    <h2 id={themeDark && theme.darkText}>About Me</h2>
+                    {data}
+                </div>}
 
                 <Link href={"/contact"}>
                     <a className={gif.fire} id={themeDark && theme.darkGIF}>
@@ -188,7 +202,7 @@ export default function Resume() {
                         </div>
 
                         <div className={gif.friday} id={themeDark && theme.darkmodeT}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
-                        <Image src={"/fire.gif"} alt={"wood fire cartoon"}  layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
+                        <Image src={"/fire.gif"} alt={"wood fire cartoon"} layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
                     </a>
                 </Link>
             </div>
