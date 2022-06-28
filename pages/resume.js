@@ -7,21 +7,22 @@ import gif from '../styles/gif.module.css'
 import Side from '../components/Side'
 import theme from '../styles/theme.module.css'
 import { useThemeDark } from '../context/AppContext'
+import { useEffect, useState } from 'react'
 
 const title = "Resume"
 const sidePanelHeading = "Write Up"
 
-let mobileDevice = 1
-let isMobile = false
-if (typeof window !== 'undefined') {
-
-  mobileDevice = window.innerWidth;
-
-}
-mobileDevice <= 768 ? isMobile = true : isMobile = false;
-
 
 export default function Resume() {
+    const [isMobile, setIsMobile ] = useState()
+    useEffect(() => {
+        let windowWidth = window.innerWidth;
+        if (windowWidth <= 768) {
+            setIsMobile(true)
+        }
+    })
+
+
     let data = [
         <p>Hi my name is Sebastian</p>,
         <p>I am a Graduate Architect with about 3 years of architecture experience and about 1.5 years on the tools in commercial and residential construction.</p>,

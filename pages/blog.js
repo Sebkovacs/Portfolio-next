@@ -4,7 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import blog from '../styles/blog.module.css'
 import filters from '../styles/filters.module.css'
 import { getSortedPostsData } from '../lib/posts'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Side from '../components/Side'
 import theme from '../styles/theme.module.css'
@@ -13,20 +13,22 @@ import { useThemeDark } from '../context/AppContext'
 const title = "Blog"
 const sidePanelHeading = "Filters"
 
-let mobileDevice = 1
-let isMobile = false
-if (typeof window !== 'undefined') {
-
-  mobileDevice = window.innerWidth;
-
-}
-mobileDevice <= 768 ? isMobile = true : isMobile = false;
 
 export default function Blog({ allPostsData }) {
   const [themeDark] = useThemeDark();
   let data = allPostsData;
   let [posts, setPosts] = useState(data)
   let [filterList, setFilterList] = useState([])
+
+
+  const [isMobile, setIsMobile ] = useState()
+  useEffect(() => {
+      let windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+          setIsMobile(true)
+      }
+  })
+
 
   function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;

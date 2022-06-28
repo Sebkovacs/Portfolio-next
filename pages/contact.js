@@ -8,20 +8,20 @@ import { useRouter } from 'next/router'
 import Side from '../components/Side'
 import theme from '../styles/theme.module.css'
 import { useThemeDark } from '../context/AppContext'
+import { useEffect, useState } from 'react'
 
 const title = "Contact"
 const sidePanelHeading = "Social Links"
 
-let mobileDevice = 1
-let isMobile = false
-if (typeof window !== 'undefined') {
-
-    mobileDevice = window.innerWidth;
-
-}
-mobileDevice <= 768 ? isMobile = true : isMobile = false;
-
 export default function Contact() {
+    const [isMobile, setIsMobile ] = useState()
+    useEffect(() => {
+        let windowWidth = window.innerWidth;
+        if (windowWidth <= 768) {
+            setIsMobile(true)
+        }
+    })
+
     let data = [{
         id: "Linkedin",
         link: "https://www.linkedin.com/in/sebastiankovacs/",

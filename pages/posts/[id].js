@@ -31,7 +31,14 @@ export default function Post({ postData }) {
   }, [])
 
 
-  console.log(tableOfContents)
+  const [isMobile, setIsMobile ] = useState()
+  useEffect(() => {
+      let windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+          setIsMobile(true)
+      }
+  })
+
 
 
 

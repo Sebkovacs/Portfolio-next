@@ -10,22 +10,23 @@ import Side from '../components/Side'
 import SidePanelRight from '../components/SidePanelRight'
 import filters from '../styles/filters.module.css'
 import theme from '../styles/theme.module.css'
+import { useEffect, useState } from 'react'
 
 const title = "Projects";
 const sidePanelHeading = "Project List"
 
-let mobileDevice = 1
-let isMobile = false
-if (typeof window !== 'undefined') {
 
-    mobileDevice = window.innerWidth;
-    
-}
-mobileDevice <= 768 ? isMobile = true : isMobile = false;
+
 
 export default function Projects({ allProjectsData }) {
 
-
+    const [isMobile, setIsMobile ] = useState()
+    useEffect(() => {
+        let windowWidth = window.innerWidth;
+        if (windowWidth <= 768) {
+            setIsMobile(true)
+        }
+    })
 
     const [themeDark, setThemeDark] = useThemeDark();
     const [sidePanelState, setSidePanelState] = useSidePanelContext();
@@ -40,7 +41,7 @@ export default function Projects({ allProjectsData }) {
 
     // sorted Project List
     const data = projects.sort(function (a, b) { if (a.date > b.date) return -1; if (a.date < b.date) return 1; return 0; });
-    
+
 
 
     return (
@@ -48,15 +49,15 @@ export default function Projects({ allProjectsData }) {
             <Head>
                 <title>{siteTitle} {' | '} {title}</title>
             </Head>
-            {!isMobile && 
-            <Side
-            heading={"Project List"}
-            title={title}
-            data={data}/>
+            {!isMobile &&
+                <Side
+                    heading={"Project List"}
+                    title={title}
+                    data={data} />
             }
-                
 
-            
+
+
             <div className={utilStyles.title}>
                 <h1>{title}</h1>
             </div>

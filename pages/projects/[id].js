@@ -22,11 +22,16 @@ import Side from '../../components/Side'
 
 
 export default function Project({ projectData }) {
+    const [isMobile, setIsMobile ] = useState()
+    useEffect(() => {
+        let windowWidth = window.innerWidth;
+        if (windowWidth <= 768) {
+            setIsMobile(true)
+        }
+    })
+
     let pano = false;
     let panos = false;
-
-    let mobileDevice = 1000
-    let isMobile = false
 
     let aspectRatio = ""
     let ratioText = ""
@@ -45,15 +50,6 @@ export default function Project({ projectData }) {
         pano = false;
         panos = false;
     }
-
-    if (typeof window !== 'undefined') {
-
-        mobileDevice = window.innerWidth;
-        
-    }
-    mobileDevice <= 425 ? isMobile = true :  isMobile = false;
-    console.log("this is a mobile device:", isMobile)
-    console.log("screen width is:", mobileDevice)
 
     const [imageGrid, setImageGrid] = useState(false)
     const [imageRatio, setImageRatio] = useState(isMobile)

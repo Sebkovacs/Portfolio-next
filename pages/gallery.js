@@ -7,7 +7,7 @@ import utilStyles from '../styles/utils.module.css'
 import filters from '../styles/filters.module.css'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SidePanelRight from '../components/SidePanelRight'
 import Side from '../components/Side'
 import theme from '../styles/theme.module.css'
@@ -17,18 +17,16 @@ import { useThemeDark } from '../context/AppContext'
 const title = "Gallery";
 const sidePanelHeading = "Filters";
 
-let mobileDevice = 1
-let isMobile = false
-if (typeof window !== 'undefined') {
-
-    mobileDevice = window.innerWidth;
-    
-}
-mobileDevice <= 768 ? isMobile = true : isMobile = false;
-
-
-
 export default function Gallery({ allProjectsData }) {
+
+    const [isMobile, setIsMobile ] = useState()
+    useEffect(() => {
+        let windowWidth = window.innerWidth;
+        if (windowWidth <= 768) {
+            setIsMobile(true)
+        }
+    })
+
     let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type, software: a.software, status: a.status, render: a.rendering, tags: [a.type, a.software, a.status, a.rendering] }))).flat();
     let [randomGalleryList, setRandomGalleryList] = useState(galleryList);
     let data = galleryList.flat()
