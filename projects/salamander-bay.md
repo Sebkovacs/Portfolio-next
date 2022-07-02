@@ -32,7 +32,7 @@ north: -15
 
 plans: [
 {id: "1", plan: '/p1.jpg', alt: "Main Floor Plan"},
-{id: "2", plan: '/p2.jpg', alt: "Upper Floor Plan"},
+{id: "2", plan: '/p2.jpg', alt: "Lower Floor Plan"},
 {id: "3", plan: '/p3.jpg', alt: "Section A"},
 {id: "4", plan: '/p4.jpg', alt: "Existing Main Floor Plan"},
 {id: "5", plan: '/p5.jpg', alt: "Existing Lower Floor Plan"}
@@ -41,10 +41,20 @@ plans: [
 
 ---
 
-Salamander bay house renovation
-- removed wall opened up living / dining / kitchen = open plan living
-- levelled out upper floors and deck / balcony
+In Ports Stephens area the client wanted to renovate the existing property to update it and improve the main floor layout and existing pool area.
 
-Spectacular views
-Now let as a holiday house
-In Ports Stephens area the client wanted to renovate the existing property to update it and improve the layout and existing pool area.
+The views are absolutely spectacular.
+
+
+Main alterations
+- Opening up of the main floor - especially the kitchen and living areas
+- New Master bedroom on the main floor
+- Levelled out upper floors and balcony
+- New tile balcony and expansion to create a functional outdoor dining area 
+- New pool & deck 
+- New TV lounge replacing the very dated spa & "rock feature"
+- All bathrooms & ensuites were renovated
+
+The house is now let as a holiday house.
+
+

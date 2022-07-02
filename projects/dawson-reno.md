@@ -67,7 +67,9 @@ plans: [
 
 ---
 
-2 concepts exploring opening up of the living space and kitchen. 
+Small townhouse internal renovation.
+
+Two concepts exploring how the main living space and kitchen could be opened up. 
 
 Concept 1 explored the idea of a larger master bedroom with ensuite.
 

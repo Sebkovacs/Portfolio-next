@@ -55,10 +55,10 @@ plans: [
 ]
 
 ---
-This project aimed to test ideas around sustainability, affordability and public good, on urban-infill site in the heart of Newcastle.
-
 Concept design for 10 unique apartments; mixed use development.
 
-The goal was to hedge risk accommodating for a range of occupants and price points.
+Each apartment is a different design targeted to a particular customer profile - based on life situation & price point.
 
-The building was designed to be constructed from CLT (per XLAM) and key priorities were achieving cross & stack (natural) ventilation and nature into the design.
+With many new apartments being released in Newcastle, the goal was to take steps to differentiate and offer something more unique. 
+
+Sustainable design was a priority with the building was designed to be constructed from CLT (per XLAM) and to have excellent cross & stack ventilation, natural light and to incorporate nature into the design.

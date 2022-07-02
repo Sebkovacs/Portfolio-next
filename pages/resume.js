@@ -26,9 +26,9 @@ export default function Resume() {
     let data = [
         <p>Hi my name is Sebastian</p>,
         <p>I am a Graduate Architect with about 3 years of architecture experience and about 1.5 years on the tools in commercial and residential construction.</p>,
-        <p>My short term goal is to gain registration as an architect. Im keen to just work hard, improve my design skills and become a good architect.</p>,
-        <p>My long term goal is to use my architecture skills in developing property on the side and creating some really cool projects where the architect has more control</p>,
-        <p className={utilStyles.bt1}>I enjoy surfing, running, playing piano and reading (non-fiction) - I love to be constantly learning and mentally stimulated...</p>,
+        <p>My current goal is to gain registration as an architect. Im keen to just work hard, improve my design skills and become a good architect.</p>,
+        
+        <p className={utilStyles.bt2}>I enjoy surfing, running, playing piano and reading (non-fiction) - I love to be constantly learning and mentally stimulated...</p>,
     ]
     const [themeDark, setThemeDark] = useThemeDark();
 

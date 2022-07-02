@@ -165,7 +165,7 @@ export default function Contact() {
 
                     data.map((e) =>
                         <Link href={e.link}>
-                            <a target="_blank" className={utilStyles.link2} style={{ display: 'flex', alignItems: "center", justifyContent: "flex-start", padding: ".5rem", borderRadius: ".5rem", fontSize: ".7rem", width: "fit-content", margin: "1rem", textTransform: "capitalize" }} id={e.id}>
+                            <a target="_blank" className={utilStyles.link2} style={{color: themeDark && "var(--border1)", display: 'flex', alignItems: "center", justifyContent: "flex-start", padding: ".5rem", borderRadius: ".5rem", fontSize: ".7rem", width: "fit-content", margin: "1rem", textTransform: "capitalize",  borderColor: themeDark && "var(--border1)" }} id={e.id}>
                                 <img src={e.logo} height={20} width={20} style={{ marginRight: ".5rem" }} />
                                 {e.id}
                             </a>

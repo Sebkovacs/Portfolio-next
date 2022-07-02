@@ -17,10 +17,11 @@
     padding: 1em;
 
     height: calc(100vh - var(--headerHeight));
-    width: 300px;
+    width: 250px;
+    margin: auto;
 
-    border: 5px solid var(--border1);
-    border-radius: .5em;
+    /* border: 5px solid var(--border1); */
+    border-radius: 1rem 0 0 1rem;
 
     transition: all ease 1s;
 
@@ -30,10 +31,12 @@
     background-repeat: no-repeat;
     background-blend-mode: screen;
     background-color: var(--border1);
+
+    user-select: none;
 }
 
 .panel:hover {
-    border: 5px solid var(--border1);
+    /* border: 5px solid var(--border1); */
     box-shadow: 5px 5px 20px var(--border1);
 
 
@@ -234,9 +237,9 @@
         padding: 0;
     } */
     .toggle {
-        width: 1.5rem;
-        height: 1.5rem;
-        bottom: .25rem;
+        width: 2rem;
+        height: 2rem;
+        bottom: .5rem;
     }
     
 }

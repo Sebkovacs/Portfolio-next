@@ -16,13 +16,13 @@ export default function SidePanelRight({ children, heading }) {
 
                 <div
                     className={side.panel}
-                    style={{ right: panelOpen ? "0px" : "-300px" }}>
+                    style={{ right: panelOpen ? "0" : "-250px", boxShadow: themeDark && " 5px 5px 20px var(--s3)"}}>
 
                     <div
                         className={side.toggle}
                         id={themeDark && theme.darkmodeAltBG}
                         onClick={toggle}
-                        style={{ transition: "ease 1s", border: panelOpen ? "2px solid var(--border1)" : "2px solid transparent" }}
+                        style={{ transition: "all 1s", border: panelOpen ? "2px solid var(--border1)" : "2px solid transparent" }}
                     >
                         {panelOpen ? <span class="material-symbols-outlined" >
                             navigate_next
@@ -36,7 +36,7 @@ export default function SidePanelRight({ children, heading }) {
 
                 </div>
 
-                <div className={`${utilStyles.mobileOnly} ${side.background} }`} onClick={toggle} style={{transition: ".5s ease .5s", opacity: panelOpen ? themeDark ? ".8" : ".8" : "0"}}/>
+                <div className={`${utilStyles.mobileOnly} ${side.background} }`} onClick={toggle} style={{display: !panelOpen && "none",transition: ".5s ease .5s", opacity: panelOpen ? themeDark ? ".8" : ".8" : "0"}}/>
 
         </aside>
     )

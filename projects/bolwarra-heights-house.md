@@ -42,10 +42,8 @@ plans: [
 
 ---
 
-New build on an empty site. 
-
-Rural location out past Maitland.
+A new custom home in a rural setting.
 
 Approval via Complying Development pathway.
 
-Worked on the construction & tender documents.
+For this project I worked on the construction documents.

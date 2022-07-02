@@ -49,6 +49,4 @@ plans: [
 
 Farm cabin as secondary dwelling for the purposes of Air BNB business expansion.
 
-Focus on build cost and easy of building.
-
-summary: 'Secondary Dwelling in coastal farming region. Fun design problem dealing with environmental conditions, summer heat, cold winters, bushfire risk and aesthetics with a tight budget. Complete package costed with two designs and multiple budget options presented to the client.'
+The key objectives were to create a 'place' that would capitalise on the farm atmosphere and offer a great get away, while minimising build cost and ensuring ease of construction (owner builder).

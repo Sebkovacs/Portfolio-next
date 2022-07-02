@@ -22,7 +22,7 @@
   --h1Height: 5rem;
 
   --font2: Roboto mono, monospace;
-
+  -webkit-tap-highlight-color: transparent;
 }
 
 
