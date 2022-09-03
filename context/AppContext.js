@@ -6,7 +6,7 @@ const SidePanelContext = createContext({})
 
 export function AppWrapper({ children }) {
     const [themeDark, setThemeDark] = useState(false);
-    const [sidePanelState, setSidePanelState] = useState(false);
+    const [sidePanelState, setSidePanelState] = useState(true);
 
 
     const themeDarkValue = useMemo(() => {
