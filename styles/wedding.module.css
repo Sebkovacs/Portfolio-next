@@ -2,10 +2,12 @@
 .h1, .h2, .list h3, .list li, .list p, .button {
     /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Long Cang';
-    font-weight: 200;
+    font-weight: 500;
     text-decoration: none;
-    padding: 0;
-    margin: 0;
+    padding: initial;
+    margin: initial;
+    font-size: 32px;
+    line-height: normal;
 }
 .h1 {
     margin: 1rem;
@@ -20,6 +22,11 @@
     font-weight: 300;
     font-size: 1rem;
     margin-top: 1rem;
+}
+.list ul, .list li, .list p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: initial;
+    margin-top: .3rem;
 }
 
 .container {
