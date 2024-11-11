@@ -41,7 +41,7 @@ export default function Resume() {
                 <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${Styles.bb1} ${Styles.download} ${themeDark && theme.darkBB1}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
             </div> */}
 
-<h1 className={Styles.h1}>Wedding Information Page</h1>
+<h1 className={Styles.h1}>- Wedding Information -</h1>
             <div className={` ${Styles.container} ${themeDark && theme.darkmode}`} >
                 <div className={Styles.list}>
                     <h2 className={Styles.h2} id={themeDark && theme.darkText}>The Ceremony</h2>

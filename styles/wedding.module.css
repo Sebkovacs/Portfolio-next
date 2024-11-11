@@ -1,6 +1,8 @@
 
-.h1, .h2, .list h3, .list li, .list p {
-    font-family: montserrat;
+.h1, .h2, .list h3, .list li, .list p, .button {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Long Cang';
+    font-weight: 200;
     text-decoration: none;
     padding: 0;
     margin: 0;
@@ -39,6 +41,7 @@ min-width: 25%;
 .list ul {
     list-style-type: none;
 }
+
 .buttons {
     display: flex;
     flex-direction: column;
@@ -49,7 +52,7 @@ margin-top: 2rem;
 .button {
     display: flex;
     flex-direction: row;
-    font-size: .7rem;
+    font-size: 1rem;
     padding: 1rem;
     background-color: antiquewhite;
     border-radius: .5rem;
