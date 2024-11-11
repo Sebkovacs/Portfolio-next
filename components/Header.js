@@ -31,6 +31,7 @@ export default function Layout() {
                         {/* <Link href="/blog"><a className={styles.navitem}>Blog</a></Link> */}
                         <Link href="/resume"><a className={styles.navitem}>Resume</a></Link>
                         <Link href="/contact"><a className={styles.navitem}>Contact</a></Link>
+                        <Link href="/wedding"><a className={styles.navitem}>new</a></Link>
                     </div>
                 </div>
             </nav>

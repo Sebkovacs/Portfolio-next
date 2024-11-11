@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/LayoutFilter'
-import utilStyles from '../styles/utils.module.css'
+import Styles from '../styles/wedding.module.css'
 import Image from 'next/image'
 import gif from '../styles/gif.module.css'
 import Side from '../components/Side'
-import theme from '../styles/theme.module.css'
+
 import { useThemeDark } from '../context/AppContext'
 import { useEffect, useState } from 'react'
 
@@ -23,45 +23,28 @@ export default function Resume() {
     })
 
 
-    let data = [
-        <p>HI this is a quick draft</p>,
-        <p>we will write more info later</p>,
-        <p>Thanks for your time</p>,
-        
-        <p className={utilStyles.bt2}>More info Q & A</p>,
-    ]
     const [themeDark, setThemeDark] = useThemeDark();
 
     return (
-        <Layout>
-            <Head>
-                <title>{siteTitle} {' | '} {title}</title>
-            </Head>
-            {!isMobile &&
-                <Side
-                    heading={"Wedding"}
-                    title={title}>
-                    {data}
+<div>
+            {/* <div className={Styles.title}>
 
-                </Side>
-            }
-            <div className={utilStyles.title}>
                 <h1>Wedding Information Page</h1>
-                <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}  ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`} >
-                    <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
-                    <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                <div className={`${Styles.buttons} ${Styles.pcOnly}  ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`} >
+                    <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={Styles.download}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                    <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={Styles.download}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
                 </div>
             </div>
 
-            <div className={`${utilStyles.mobileOnlyFlex}`}>
-                <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
-                <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
-            </div>
+            <div className={`${Styles.mobileOnlyFlex}`}>
+                <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={`${Styles.bb1} ${Styles.download} ${themeDark && theme.darkBB1}`}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+                <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${Styles.bb1} ${Styles.download} ${themeDark && theme.darkBB1}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+            </div> */}
 
-
-            <div className={` ${utilStyles.resume} ${themeDark && theme.darkmode}`} >
-                <div className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>The Ceremony</h2>
+<h1 className={Styles.h1}>Wedding Information Page</h1>
+            <div className={` ${Styles.container} ${themeDark && theme.darkmode}`} >
+                <div className={Styles.list}>
+                    <h2 className={Styles.h2} id={themeDark && theme.darkText}>The Ceremony</h2>
                     <ul>
                         <li>Where: hickson st lookout</li>
                         <li>Address: 14 Hickson St, Merewether NSW 2291</li>
@@ -71,20 +54,33 @@ export default function Resume() {
                         <li>Note! Its a public location so we can reserve parking, and have to share access throughout :)</li>
 
                     </ul>
+                    <div className={`${Styles.buttons} ${Styles.pcOnly}  ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`} >
+                    <a className={Styles.button}>Add to Calendar<span class="material-symbols-outlined">event</span></a>
+                    <a className={Styles.button}>Google Maps Link<span class="material-symbols-outlined">pin_drop</span></a>
+                </div>
+                    
                 </div>
 
-                <div className={utilStyles.list} >
-                    <h2 id={themeDark && theme.darkText}>The Reception</h2>
+                <div className={Styles.list} >
+                    <h2 className={Styles.h2} id={themeDark && theme.darkText}>The Reception</h2>
                     <ul>
                         <li>Where: The Edwards</li>
                         <li>Address: 148 Parry St, Newcastle West NSW 2302</li>
-                        <li>Time: 3pm</li>
+                        <li>Time: 5pm-11pm kick out</li>
                         <li>Date: 11 Janurary 2025</li>
-                        <li>Please arrive 2.30pm for a ceremony commencement at 3pm sharp!</li>
+                        <li>Smart Casual Dress</li>
+                        <li>Grazing table and capaes :)</li>
+                        <li>speaches at 7pm</li>
                     </ul>
+                    <div className={`${Styles.buttons} ${Styles.pcOnly}  ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`} >
+                    <a className={Styles.button} target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=N242NzBlajRyb3Y0cjc2OWs5bWdibG0zcGkgc2Via292YWNzQG0&amp;tmsrc=sebkovacs%40gmail.com">Add to Calendar<span class="material-symbols-outlined">event</span></a>
+                    
+                    <a className={Styles.button}>Google Maps Link<span class="material-symbols-outlined">pin_drop</span></a>
+
                 </div>
-                <div className={utilStyles.list} >
-                    <h2 id={themeDark && theme.darkText}>Q & A</h2>
+                </div>
+                <div className={Styles.list} >
+                    <h2 className={Styles.h2} id={themeDark && theme.darkText}>Q & A</h2>
 
 
 <p>For all our friends and family who have lots of questions, please check out our Q&A.</p>
@@ -124,22 +120,9 @@ export default function Resume() {
                 </div>
 
                 
-
-                <Link href={"/contact"}>
-                    <a className={gif.fire} id={themeDark && theme.darkGIF}>
-
-                        <div className={gif.text} id={themeDark && theme.darkGIF}>
-                            {/* Lets Get Cooking... */}
-                            Contact Me 👌
-                        </div>
-
-                        <div className={gif.friday} id={themeDark && theme.darkmodeT}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
-                        <Image src={"/fire.gif"} alt={"wood fire cartoon"} layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
-                    </a>
-                </Link>
             </div>
 
-        </Layout>
+            </div>
 
     )
 }
