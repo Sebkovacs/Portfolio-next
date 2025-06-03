@@ -20,7 +20,7 @@ export default function Layout({ children, title }) {
 
 
     function themeToggle() {
-        setThemeState(prevThemeState => !prevThemeState)
+        setThemeDark(prevThemeState => !prevThemeState)
     }
     function sidePanelToggle() {
         setSidePanelState(prevSidePanelState => !prevSidePanelState)
@@ -73,7 +73,7 @@ export default function Layout({ children, title }) {
                     <div id={sidePanel.theme} className={sidePanel.leftPanelToggleButton}
                         // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
                         onClick={themeToggle}>
-                        {themeState
+                        {themeDark
                             ? <span class="material-symbols-outlined">dark_mode</span>
                             : <span class="material-symbols-outlined">light_mode</span>}
                     </div>

@@ -32,7 +32,7 @@ export default function Projects({ allProjectsData }) {
     const [sidePanelState, setSidePanelState] = useSidePanelContext();
 
     function themeToggle() {
-        setThemeState(prevThemeState => !prevThemeState)
+        setThemeDark(prevThemeState => !prevThemeState)
     }
     function sidePanelToggle() {
         setSidePanelState(prevSidePanelState => !prevSidePanelState)
