@@ -50,14 +50,12 @@ export default function Side({ children, title, heading, data, h1 }) {
     let [showContent, setShowContent] = useState(true)
 
     useEffect(() => {
-        if (isMobile && !sidePanelState) {
-            return setShowContent(showContent = true)
-        } else if (!isMobile && sidePanelState) {
-            return setShowContent(showContent = true)
-        } else  {
-            return setShowContent(showContent = false)
+        if (isMobile) {
+            setShowContent(true)
+        } else {
+            setShowContent(sidePanelState)
         }
-    })
+    }, [isMobile, sidePanelState])
 
 
     return (

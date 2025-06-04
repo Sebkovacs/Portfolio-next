@@ -68,7 +68,10 @@ header {
 }
 
 
-main {min-height: 70vh;}
+main {
+  min-height: calc(100vh - var(--headerHeight));
+  padding-top: var(--headerHeight);
+}
 
 section {
   width: var(--container);
