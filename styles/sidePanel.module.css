@@ -138,7 +138,7 @@
     justify-items: flex-start;
     padding: 0;
     color: var(--t1);
-  font-family: Roboto mono, monospace;
+  font-family: var(--font-mono);
     font-style: normal;
     font-weight: 400;
     font-size: .5rem;

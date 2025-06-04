@@ -75,7 +75,7 @@
 
     color: var(--t2);
 
-  font-family: Roboto mono, monospace;
+  font-family: var(--font-mono);
     width: fit-content;
     font-size: .6rem;
     font-weight: 700;

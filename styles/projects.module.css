@@ -167,7 +167,7 @@
     background-color: var(--p3);
     color: var(--bg2);
 
-  font-family: Roboto mono, monospace;
+  font-family: var(--font-mono);
     font-size: .6em;
     font-weight: 400;
     font-style: normal;

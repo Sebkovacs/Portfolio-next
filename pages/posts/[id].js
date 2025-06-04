@@ -31,13 +31,10 @@ export default function Post({ postData }) {
   }, [])
 
 
-  const [isMobile, setIsMobile ] = useState()
+  const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
-      let windowWidth = window.innerWidth;
-      if (windowWidth <= 768) {
-          setIsMobile(true)
-      }
-  })
+      setIsMobile(window.innerWidth <= 768)
+  }, [])
 
 
 

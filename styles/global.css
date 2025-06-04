@@ -21,8 +21,21 @@
   --headerHeight: 3rem;
   --h1Height: 5rem;
 
-  --font2: Roboto mono, monospace;
+  --font-base: 'Inter', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+  --font2: var(--font-mono);
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
   -webkit-tap-highlight-color: transparent;
+}
+
+:root[data-theme='dark'] {
+  --bg1: var(--s3);
+  --bg2: #2a2735;
+  --border1: var(--border2);
+  --t1: var(--s2);
 }
 
 
@@ -37,9 +50,10 @@ body {
   padding: 0;
   margin: 0;
   /* font-family: 'Long Cang'; */
-font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-base);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.5;
   box-sizing: border-box;
   color: var(--t1);
   
@@ -209,7 +223,7 @@ h4 {
 p, li, time {
   margin-bottom: 1rem;
   /* font-family: 'Inconsolata', monospace; */
-  font-family: Roboto mono, monospace;
+  font-family: var(--font-mono);
   font-size: 14px;
 }
 

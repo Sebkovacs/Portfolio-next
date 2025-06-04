@@ -19,13 +19,10 @@ const sidePanelHeading = "Filters";
 
 export default function Gallery({ allProjectsData }) {
 
-    const [isMobile, setIsMobile ] = useState()
+    const [isMobile, setIsMobile] = useState(false)
     useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        }
-    })
+        setIsMobile(window.innerWidth <= 768)
+    }, [])
 
     let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type, software: a.software, status: a.status, render: a.rendering, tags: [a.type, a.software, a.status, a.rendering] }))).flat();
     let [randomGalleryList, setRandomGalleryList] = useState(galleryList);

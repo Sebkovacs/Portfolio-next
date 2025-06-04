@@ -10,12 +10,10 @@ import { useEffect, useState } from 'react'
 import theme from '../styles/theme.module.css'
 
 export default function Side({ children, title, heading, data, h1 }) {
-    const [isMobile, setIsMobile] = useState()
+    const [isMobile, setIsMobile] = useState(false)
     useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        } else { setIsMobile(false)}
+        const windowWidth = window.innerWidth;
+        setIsMobile(windowWidth <= 768);
     }, [])
 
     const router = useRouter()
@@ -50,14 +48,12 @@ export default function Side({ children, title, heading, data, h1 }) {
     let [showContent, setShowContent] = useState(true)
 
     useEffect(() => {
-        if (isMobile && !sidePanelState) {
-            return setShowContent(showContent = true)
-        } else if (!isMobile && sidePanelState) {
-            return setShowContent(showContent = true)
-        } else  {
-            return setShowContent(showContent = false)
+        if ((isMobile && !sidePanelState) || (!isMobile && sidePanelState)) {
+            setShowContent(true)
+        } else {
+            setShowContent(false)
         }
-    })
+    }, [isMobile, sidePanelState])
 
 
     return (

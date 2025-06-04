@@ -35,7 +35,7 @@
     /* line-height: 1.5em; */
     margin: .5em 0;
     /* text-underline-offset: 0; */
-  font-family: Roboto mono, monospace;
+  font-family: var(--font-mono);
     font-style: normal;
 }
 

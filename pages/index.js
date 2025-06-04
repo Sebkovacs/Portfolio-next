@@ -20,23 +20,14 @@ const sidePanelHeading = "Project List"
 
 export default function Projects({ allProjectsData }) {
 
-    const [isMobile, setIsMobile ] = useState()
+    const [isMobile, setIsMobile] = useState(false)
     useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        }
-    })
+        setIsMobile(window.innerWidth <= 768)
+    }, [])
 
     const [themeDark, setThemeDark] = useThemeDark();
     const [sidePanelState, setSidePanelState] = useSidePanelContext();
 
-    function themeToggle() {
-        setThemeDark(prevThemeState => !prevThemeState)
-    }
-    function sidePanelToggle() {
-        setSidePanelState(prevSidePanelState => !prevSidePanelState)
-    }
     const projects = allProjectsData;
 
     // sorted Project List

@@ -22,7 +22,7 @@ import Side from '../../components/Side'
 
 
 export default function Project({ projectData }) {
-    const [isMobile, setIsMobile] = useState()
+    const [isMobile, setIsMobile] = useState(false)
     const [imageGrid, setImageGrid] = useState(false)
     const [imageRatio, setImageRatio] = useState(isMobile)
     const [planGrid, setPlanGrid] = useState(true)
@@ -50,12 +50,8 @@ export default function Project({ projectData }) {
 
 
     useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        } else { setIsMobile(false) }
-
-    })
+        setIsMobile(window.innerWidth <= 768)
+    }, [])
     useEffect(() => {
         if (isMobile) {
             setImageRatio(true)
