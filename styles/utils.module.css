@@ -174,7 +174,11 @@
 }
 
 .backgroundCover {
-    background-color: rgba(var(--bg3), 0.9);
+    background-color: rgba(var(--bg3), 0.8);
+    background-image: url('/smoke1.gif');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
     width: 100%;
     height: 100%;
     position: absolute;
