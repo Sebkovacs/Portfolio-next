@@ -9,206 +9,168 @@ import theme from '../styles/theme.module.css'
 import { useThemeDark } from '../context/AppContext'
 import { useEffect, useState } from 'react'
 
-const title = "Resume"
-const sidePanelHeading = "Write Up"
+const title = 'Resume'
 
-
-export default function Resume() {
-    const [isMobile, setIsMobile ] = useState()
+export default function Resume () {
+    const [isMobile, setIsMobile] = useState(false)
     useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        }
-    })
+        const handleResize = () => setIsMobile(window.innerWidth <= 768)
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
-
-    let data = [
-        <p>Hi my name is Sebastian</p>,
-        <p>I am a Graduate Architect with about 3 years of architecture experience and about 1.5 years on the tools in commercial and residential construction.</p>,
-        <p>My current goal is to gain registration as an architect. Im keen to just work hard, improve my design skills and become a good architect.</p>,
-        
-        <p className={utilStyles.bt2}>I enjoy surfing, running, playing piano and reading (non-fiction) - I love to be constantly learning and mentally stimulated...</p>,
+    /* -------------------------------------------------------------------------- */
+    /*                           ABOUT & PERSONAL BLURB                           */
+    /* -------------------------------------------------------------------------- */
+    const aboutMe = [
+        <p key='intro'>Hey — I’m Sebastian Kovacs, a Newcastle‑based Project Architect specialising in early‑phase <em>data‑centre</em> campuses and high‑end coastal homes.</p>,
+        <p key='exp'>Across 7 years in practice I’ve taken multiple hyperscale data‑centre projects from blank‑site due‑diligence through <abbr title='Concept Design'>Concept</abbr>, <abbr title='Development Application'>DA</abbr> and <abbr title='State Significant Development Application'>SSDA</abbr> submissions, while concurrently delivering bespoke residential retreats along the NSW coastline.</p>,
+        <p key='goal'>I sit the APE in June 2025 and currently drive concept‑to‑approval strategy at <em>EJE Architecture</em>. My long‑game: location‑independent design leadership that funds surf‑chasing and a portfolio of tech & property ventures.</p>,
+        <p key='life' className={utilStyles.bt2}>When I’m not finessing façade‑to‑rack clearances you’ll find me wrangling Next.js side‑projects, shooting sunrise surf sessions, or devouring books on strategy and neuro‑performance.</p>
     ]
-    const [themeDark, setThemeDark] = useThemeDark();
+
+    const [themeDark] = useThemeDark()
 
     return (
         <Layout>
             <Head>
-                <title>{siteTitle} {' | '} {title}</title>
+                <title>{`${siteTitle} | ${title}`}</title>
             </Head>
-            {!isMobile &&
-                <Side
-                    heading={"About Me"}
-                    title={title}>
-                    {data}
 
+            {!isMobile && (
+                <Side heading='About Me' title={title}>
+                    {aboutMe}
                 </Side>
-            }
-            <div className={utilStyles.title}>
-                <h1>Resume Summary</h1>
-                <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}  ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`} >
-                    <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
-                    <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={utilStyles.download}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
+            )}
+
+            {/* --------------------------------- HEADER --------------------------------- */}
+            <header className={utilStyles.title}>
+                <h1>Résumé Snapshot</h1>
+                <div className={`${utilStyles.buttons} ${utilStyles.pcOnly} ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`}>
+                    <a href='/files/Resume-Sebastian-Kovacs-2025.pdf' download className={utilStyles.download}>
+                        Resume <span className='material-symbols-outlined'>file_download</span>
+                    </a>
+                    <a href='/files/Portfolio-Sebastian-Kovacs-2025.pdf' download className={utilStyles.download}>
+                        Portfolio (18 MB) <span className='material-symbols-outlined'>file_download</span>
+                    </a>
                 </div>
+            </header>
+
+            {/* --------------------------- MOBILE DOWNLOAD --------------------------- */}
+            <div className={utilStyles.mobileOnlyFlex}>
+                <a href='/files/Resume-Sebastian-Kovacs-2025.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Resume <span className='material-symbols-outlined'>file_download</span></a>
+                <a href='/files/Portfolio-Sebastian-Kovacs-2025.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Portfolio (18 MB) <span className='material-symbols-outlined'>file_download</span></a>
             </div>
 
-            <div className={`${utilStyles.mobileOnlyFlex}`}>
-                <a href='/files/Resume-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Resume &nbsp;<span class="material-symbols-outlined">file_download</span></a>
-                <a href='/files/Portfolio-Sebastian-Kovacs-2022.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Portfolio (16mb) &nbsp;<span class="material-symbols-outlined">file_download</span></a>
-            </div>
-
-
+            {/* ------------------------------ HERO LOOP ------------------------------ */}
             <div className={`${utilStyles.mobileResumeVideoBackgroundHeight} ${utilStyles.videoBackground}`}>
                 <div className={utilStyles.backgroundCover} />
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
-                <video style={{ flex: 1 }} width={"400vw"} autoplay="true" loop preload="true">
-                    <source src="/party.mp4"
-                        type="video/mp4" />
-                </video>
+                {[...Array(6)].map((_, i) => (
+                    <video key={i} style={{ flex: 1 }} width='400vw' autoPlay loop muted playsInline preload='metadata'>
+                        <source src='/party.mp4' type='video/mp4' />
+                    </video>
+                ))}
             </div>
 
-
-            <div className={` ${utilStyles.resume} ${themeDark && theme.darkmode}`} >
-                <div className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>Relevant Work History</h2>
+            {/* --------------------------------- BODY --------------------------------- */}
+            <main className={`${utilStyles.resume} ${themeDark && theme.darkmode}`}>
+                {/* WORK HISTORY */}
+                <section className={utilStyles.list}>
+                    <h2 id={themeDark && theme.darkText}>Professional Experience</h2>
                     <ul>
-                        <li>Side Jobs 2021 - Present</li>
-                        <li>Jason Topic Architecture 2017-2020</li>
-                        <li>Carpentry (Paul Hickson Builder) 2016-2017</li>
-                        <li>Construction (North) 2015-2016</li>
+                        <li>
+                            EJE Architecture — Project Architect | 2022 - Present
+                            <ul className={utilStyles.subList}>
+                                <li>Design lead for a $550 m hyperscale data‑centre campus (80 MW) – stewarded Concept, DA & SSDA packs, coordinated with structural, electrical & fire teams, and secured gateway approvals on first submission.</li>
+                                <li>Drove front‑end strategy on tier‑III/IV data‑centre rollouts across Sydney & Melbourne greenfield sites.</li>
+                                <li>Guided clients through feasibility studies, yield optimisation & CAPEX modelling.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            SALT & STONE Architecture + Interiors — Co‑Founder / Design Lead | 2024 - Present
+                            <ul className={utilStyles.subList}>
+                                <li>Crafting high‑end coastal residences (A$1‐5 m) from vision through DA approval, weaving sustainability + sensory materiality.</li>
+                                <li>Built client acquisition funnel & brand identity; landed first three projects within 60 days of launch.</li>
+                            </ul>
+                        </li>
+                        <li>Freelance — NatHERS/BASIX Energy Assessor & Revit workflow consultant | 2021 - Present</li>
+                        <li>Jason Topic Architecture — Graduate Architect | 2017 - 2020</li>
+                        <li>Paul Hickson Builder — Carpenter | 2016 - 2017</li>
+                        <li>North Constructions — Construction Labourer | 2015 - 2016</li>
                     </ul>
-                </div>
+                </section>
 
-                <div className={utilStyles.list} >
-                    <h2 id={themeDark && theme.darkText}>Education / Qualifications</h2>
+                {/* EDUCATION */}
+                <section className={utilStyles.list}>
+                    <h2 id={themeDark && theme.darkText}>Education & Credentials</h2>
                     <ul>
-                        <li>Masters Architecture - University of Newcastle July 2020 </li>
+                        <li>Master of Architecture — University of Newcastle | 2020</li>
+                        <li>APE (NSW) — Candidate, sitting June 2025</li>
+                        <li>NatHERS / BASIX Assessor — in progress, 2025</li>
+                        <li>AWS Cloud Practitioner — in progress, 2025</li>
                     </ul>
-                </div>
+                </section>
 
-                <div className={utilStyles.list} >
-
-                    <h2 id={themeDark && theme.darkText}>Software</h2>
-
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`} id={themeDark && theme.darkmodeT}>
-                        <h3 id={themeDark && theme.darkText}>Drafting / BIM</h3>
+                {/* SOFTWARE*/}
+                <section className={utilStyles.list}>
+                    <h2 id={themeDark && theme.darkText}>Core Toolset</h2>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`}>
+                        <h3 id={themeDark && theme.darkText}>BIM / Coordination</h3>
                         <ul>
-                            <li>Revit (v2020)</li>
-                            <li>Vectorworks (v2017-2021)</li>
+                            <li>Revit 2025 (+ Dynamo & Generative Design)</li>
+                            <li>Archicad 27</li>
+                            <li>Revizto</li>
                         </ul>
                     </div>
-
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`} id={themeDark && theme.darkmodeT}>
-                        <h3 id={themeDark && theme.darkText}> Rendering</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`}>
+                        <h3 id={themeDark && theme.darkText}>Visualisation</h3>
                         <ul>
-                            <li>Vray</li>
-                            <li>Twinmotion </li>
-                            <li>Lumion</li>
+                            <li>Unreal Engine 5.4</li>
+                            <li>Twinmotion 2025</li>
                         </ul>
                     </div>
-
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`} id={themeDark && theme.darkmodeT}>
-                        <h3 id={themeDark && theme.darkText}>Other</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`}>
+                        <h3 id={themeDark && theme.darkText}>Dev / Misc</h3>
                         <ul>
-                            <li>Adobe Photoshop</li>
-                            <li>Adobe Illustrator </li>
-                            <li>Adobe InDesign</li>
-                            <li>Google Office Suite</li>
+                            <li>Next.js / React / TypeScript</li>
+                            <li>Adobe CC (PS, AI, ID)</li>
+                            <li>AWS Amplify, S3</li>
                         </ul>
                     </div>
+                </section>
 
-
-                </div>
-
-                <div className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>Other Skills / Proficiencies</h2>
+                {/* SKILLS*/}
+                <section className={utilStyles.list}>
+                    <h2 id={themeDark && theme.darkText}>Hybrid Skill Stack</h2>
                     <ul>
-                        <li>Digital Marketing</li>
-                        <li>B2B Sales</li>
-                        <li>Web Development</li>
-                        <li>Social Media Marketing</li>
+                        <li>Data‑centre master‑planning & compliance navigation (NCC, SEPP, SSDA)</li>
+                        <li>Concept storytelling & visual strategy for high‑net‑worth residential clients</li>
+                        <li>Digital marketing funnels & Google Ads for design practices</li>
+                        <li>Full‑stack web‑app prototyping (Next.js, Firebase, AWS)</li>
+                        <li>NLP‑based performance coaching & transformational hypnosis</li>
                     </ul>
-                </div>
-                {isMobile && <div className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>About Me</h2>
-                    {data}
-                </div>}
+                </section>
 
-                <Link href={"/contact"}>
+                {/* MOBILE ABOUT */}
+                {isMobile && (
+                    <section className={utilStyles.list}>
+                        <h2 id={themeDark && theme.darkText}>About Me</h2>
+                        {aboutMe}
+                    </section>
+                )}
+
+                {/* CTA */}
+                <Link href='/contact'>
                     <a className={gif.fire} id={themeDark && theme.darkGIF}>
-
-                        <div className={gif.text} id={themeDark && theme.darkGIF}>
-                            {/* Lets Get Cooking... */}
-                            Contact Me 👌
+                        <div className={gif.text}>Contact Me 👌</div>
+                        <div className={gif.friday} id={themeDark && theme.darkmodeT}>
+                            <Image src='/friday.gif' alt='frying pan cartoon' layout='fill' objectFit='cover' objectPosition='bottom' priority />
                         </div>
-
-                        <div className={gif.friday} id={themeDark && theme.darkmodeT}><Image src={"/friday.gif"} alt={"frying pan cartoon"} layout="fill" objectFit='cover' objectPosition={"bottom"} priority="true" /></div>
-                        <Image src={"/fire.gif"} alt={"wood fire cartoon"} layout="fill" objectFit='cover' objectPosition={"top"} priority="true" />
+                        <Image src='/fire.gif' alt='wood fire cartoon' layout='fill' objectFit='cover' objectPosition='top' priority />
                     </a>
                 </Link>
-            </div>
-
+            </main>
         </Layout>
-
     )
 }
