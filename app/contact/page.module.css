@@ -1,0 +1,90 @@
+﻿.wrapper {
+  display: grid;
+  gap: 2.5rem;
+  padding: 4rem 0;
+}
+
+.intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 60ch;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 1.6rem + 1.4vw, 3rem);
+}
+
+.cardGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cardBody {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.contactForm {
+  display: grid;
+  gap: 1.2rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+.input,
+.textarea {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-elevated);
+  color: var(--color-text);
+}
+
+.textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.submitButton {
+  justify-self: start;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-hard);
+}

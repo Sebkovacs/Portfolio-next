@@ -5,7 +5,6 @@ import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image'
 import gif from '../styles/gif.module.css'
 import Side from '../components/Side'
-import theme from '../styles/theme.module.css'
 import { useThemeDark } from '../context/AppContext'
 import { useEffect, useState } from 'react'
 
@@ -47,7 +46,7 @@ export default function Resume () {
             {/* --------------------------------- HEADER --------------------------------- */}
             <header className={utilStyles.title}>
                 <h1>Résumé Snapshot</h1>
-                <div className={`${utilStyles.buttons} ${utilStyles.pcOnly} ${themeDark && theme.darkmodeSolid} ${themeDark && theme.darkBB1}`}>
+                <div className={`${utilStyles.buttons} ${utilStyles.pcOnly}`}>
                     <a href='/files/Resume-Sebastian-Kovacs-2025.pdf' download className={utilStyles.download}>
                         Resume <span className='material-symbols-outlined'>file_download</span>
                     </a>
@@ -59,8 +58,8 @@ export default function Resume () {
 
             {/* --------------------------- MOBILE DOWNLOAD --------------------------- */}
             <div className={utilStyles.mobileOnlyFlex}>
-                <a href='/files/Resume-Sebastian-Kovacs-2025.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Resume <span className='material-symbols-outlined'>file_download</span></a>
-                <a href='/files/Portfolio-Sebastian-Kovacs-2025.pdf' download className={`${utilStyles.bb1} ${utilStyles.download} ${themeDark && theme.darkBB1}`}>Portfolio (18 MB) <span className='material-symbols-outlined'>file_download</span></a>
+                <a href='/files/Resume-Sebastian-Kovacs-2025.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Resume <span className='material-symbols-outlined'>file_download</span></a>
+                <a href='/files/Portfolio-Sebastian-Kovacs-2025.pdf' download className={`${utilStyles.bb1} ${utilStyles.download}`}>Portfolio (18 MB) <span className='material-symbols-outlined'>file_download</span></a>
             </div>
 
             {/* ------------------------------ HERO LOOP ------------------------------ */}
@@ -74,10 +73,10 @@ export default function Resume () {
             </div>
 
             {/* --------------------------------- BODY --------------------------------- */}
-            <main className={`${utilStyles.resume} ${themeDark && theme.darkmode}`}>
+            <main className={`${utilStyles.resume}`}>
                 {/* WORK HISTORY */}
                 <section className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>Professional Experience</h2>
+                    <h2 >Professional Experience</h2>
                     <ul>
                         <li>
                             EJE Architecture — Project Architect | 2022 - Present
@@ -103,7 +102,7 @@ export default function Resume () {
 
                 {/* EDUCATION */}
                 <section className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>Education & Credentials</h2>
+                    <h2 >Education & Credentials</h2>
                     <ul>
                         <li>Master of Architecture — University of Newcastle | 2020</li>
                         <li>APE (NSW) — Candidate, sitting June 2025</li>
@@ -114,24 +113,24 @@ export default function Resume () {
 
                 {/* SOFTWARE*/}
                 <section className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>Core Toolset</h2>
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`}>
-                        <h3 id={themeDark && theme.darkText}>BIM / Coordination</h3>
+                    <h2 >Core Toolset</h2>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                        <h3 >BIM / Coordination</h3>
                         <ul>
                             <li>Revit 2025 (+ Dynamo & Generative Design)</li>
                             <li>Archicad 27</li>
                             <li>Revizto</li>
                         </ul>
                     </div>
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`}>
-                        <h3 id={themeDark && theme.darkText}>Visualisation</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                        <h3 >Visualisation</h3>
                         <ul>
                             <li>Unreal Engine 5.4</li>
                             <li>Twinmotion 2025</li>
                         </ul>
                     </div>
-                    <div className={`${utilStyles.bt1} ${utilStyles.grid2} ${themeDark && theme.darkmode}`}>
-                        <h3 id={themeDark && theme.darkText}>Dev / Misc</h3>
+                    <div className={`${utilStyles.bt1} ${utilStyles.grid2}`}>
+                        <h3 >Dev / Misc</h3>
                         <ul>
                             <li>Next.js / React / TypeScript</li>
                             <li>Adobe CC (PS, AI, ID)</li>
@@ -142,7 +141,7 @@ export default function Resume () {
 
                 {/* SKILLS*/}
                 <section className={utilStyles.list}>
-                    <h2 id={themeDark && theme.darkText}>Hybrid Skill Stack</h2>
+                    <h2 >Hybrid Skill Stack</h2>
                     <ul>
                         <li>Data‑centre master‑planning & compliance navigation (NCC, SEPP, SSDA)</li>
                         <li>Concept storytelling & visual strategy for high‑net‑worth residential clients</li>
@@ -155,16 +154,16 @@ export default function Resume () {
                 {/* MOBILE ABOUT */}
                 {isMobile && (
                     <section className={utilStyles.list}>
-                        <h2 id={themeDark && theme.darkText}>About Me</h2>
+                        <h2 >About Me</h2>
                         {aboutMe}
                     </section>
                 )}
 
                 {/* CTA */}
                 <Link href='/contact'>
-                    <a className={gif.fire} id={themeDark && theme.darkGIF}>
+                    <a className={gif.fire} >
                         <div className={gif.text}>Contact Me 👌</div>
-                        <div className={gif.friday} id={themeDark && theme.darkmodeT}>
+                        <div className={gif.friday} >
                             <Image src='/friday.gif' alt='frying pan cartoon' layout='fill' objectFit='cover' objectPosition='bottom' priority />
                         </div>
                         <Image src='/fire.gif' alt='wood fire cartoon' layout='fill' objectFit='cover' objectPosition='top' priority />
@@ -174,3 +173,4 @@ export default function Resume () {
         </Layout>
     )
 }
+

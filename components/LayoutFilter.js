@@ -3,9 +3,8 @@ import styles from './layout.module.css'
 import Header from './Header'
 import Side from './Side'
 import { useSidePanelContext, useThemeDark } from '../context/AppContext'
-import { getStaticProps } from '../pages'
 import { useState } from 'react'
-import theme from '../styles/theme.module.css'
+// Theme handled via CSS variables on :root[data-theme]
 
 export const siteTitle = 'Sebastian Kovacs'
 
@@ -42,7 +41,7 @@ export default function Layout({ children, title, sidePanelHeading, data }) {
             /> */}
 
 
-                <main className={`${sidePanelState ? styles.bodyOpen : styles.bodyClosed} ${themeDark && theme.darkmode}`}>
+                <main className={`${sidePanelState ? styles.bodyOpen : styles.bodyClosed}`}>
                                 {children}
                 </main>
 

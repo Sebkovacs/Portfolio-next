@@ -1,0 +1,20 @@
+﻿.heading {
+  margin: 0;
+  font-size: clamp(2rem, 1.4rem + 1.2vw, 2.6rem);
+}
+
+.gridWrapper {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+
+.filtersPanel {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.subtext {
+  color: var(--color-text-soft);
+  max-width: 60ch;
+}

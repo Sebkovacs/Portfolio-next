@@ -1,7 +1,7 @@
 import side from '../styles/sidePanel.module.css'
 import utilStyles from '../styles/utils.module.css'
 import { useState } from 'react';
-import theme from '../styles/theme.module.css'
+// Theme handled via CSS variables on :root[data-theme]
 import { useThemeDark } from '../context/AppContext'
 
 export default function SidePanelRight({ children, heading }) {
@@ -20,13 +20,12 @@ export default function SidePanelRight({ children, heading }) {
 
                     <div
                         className={side.toggle}
-                        id={themeDark && theme.darkmodeAltBG}
                         onClick={toggle}
                         style={{ transition: "all 1s", border: panelOpen ? "2px solid var(--border1)" : "2px solid transparent" }}
                     >
-                        {panelOpen ? <span class="material-symbols-outlined" >
+                        {panelOpen ? <span className="material-symbols-outlined" >
                             navigate_next
-                        </span> : <span class="material-symbols-outlined">
+                        </span> : <span className="material-symbols-outlined">
                             navigate_before
                         </span>}
                     </div>

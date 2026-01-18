@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import filters from '../styles/filters.module.css'
 
 import { useEffect, useState } from 'react'
-import theme from '../styles/theme.module.css'
+// Theme handled via CSS variables on :root[data-theme]
 
 export default function Side({ children, title, heading, data, h1 }) {
     const [isMobile, setIsMobile] = useState()
@@ -59,19 +59,19 @@ export default function Side({ children, title, heading, data, h1 }) {
 
 
     return (
-         <aside className={`${themeDark && theme.darkmode}  ${sidePanelState ? styles.sideBarOpen : styles.sideBarClosed} `} >
+         <aside className={`${sidePanelState ? styles.sideBarOpen : styles.sideBarClosed} `} >
             <div className={`${utilStyles.title}`}>
                 {h1 != undefined 
                 ? <h1 style={{ overflow: !sidePanelState && "hidden", opacity: showContent ?  "1" : "0", transition: "1s"}}>{h1}</h1> 
                 : <span className={sidePanel.sidePanelTitle} style={{ opacity: showContent ?  "1" : "0", transition: "1s"}}>{heading}</span>}
             </div>
 
-            <div className={` ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden", opacity: showContent ?  "1" : "0", transition: "1s"}} id={themeDark && theme.darkmode}>
+            <div className={` ${sidePanel.content}`} style={{ overflow: !sidePanelState && "hidden", opacity: showContent ?  "1" : "0", transition: "1s"}}>
                 {children}
 
                 {title == "Projects" && data.map((e, index) =>
                 <Link href={`${pageTitle}/${e.id}`}>
-                    <a className={filters.link} id={themeDark && theme.darkmodeT}>
+                    <a className={filters.link}>
                         
                             <div className={filters.projNum}>{index + 1}</div>
                             <div className={filters.col}>
@@ -97,23 +97,23 @@ export default function Side({ children, title, heading, data, h1 }) {
                 )}
 
             </div>
-            <div className={`${sidePanel.pcOnly} ${sidePanel.toggleButtonGroup}`} id={themeDark && theme.darkmodeSolid}>
+            <div className={`${sidePanel.pcOnly} ${sidePanel.toggleButtonGroup}`}>
 
                 <div id={sidePanel.sidePanel} className={sidePanel.leftPanelToggleButton}
                     
                     onClick={sidePanelToggle}>
                     {sidePanelState
-                        ? <span class="material-symbols-outlined">arrow_back</span>
-                        : <span class="material-symbols-outlined">arrow_forward</span>}
+                        ? <span className="material-symbols-outlined">arrow_back</span>
+                        : <span className="material-symbols-outlined">arrow_forward</span>}
                 </div>
 
                 {title == "Contact" ?
-                    <button id={sidePanel.contact}  className={`${sidePanel.leftPanelToggleButton} ${themeDark && theme.darkmode}`} type="button" onClick={() => router.back()} alt={"Click here to go back"}>
+                    <button id={sidePanel.contact}  className={`${sidePanel.leftPanelToggleButton}`} type="button" onClick={() => router.back()} alt={"Click here to go back"}>
                         
                     </button>
                     :
                     <Link href="/contact">
-                        <a id={sidePanel.contact}   className={`${sidePanel.leftPanelToggleButton} ${themeDark && theme.darkmode} ${themeDark && theme.darkNoBorder} `} alt={"Navigate to Contact Page"}
+                        <a id={sidePanel.contact}   className={`${sidePanel.leftPanelToggleButton}`} alt={"Navigate to Contact Page"}
 
                         // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
                         >
@@ -126,8 +126,8 @@ export default function Side({ children, title, heading, data, h1 }) {
                     
                     onClick={themeToggle}>
                     {themeDark
-                        ? <span class="material-symbols-outlined">dark_mode</span>
-                        : <span class="material-symbols-outlined">light_mode</span>}
+                        ? <span className="material-symbols-outlined">dark_mode</span>
+                        : <span className="material-symbols-outlined">light_mode</span>}
                 </div >
             </div>
 

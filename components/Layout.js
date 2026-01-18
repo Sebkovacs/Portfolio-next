@@ -52,7 +52,7 @@ export default function Layout({ children, title }) {
                     <div id={sidePanel.sidePanel} className={sidePanel.leftPanelToggleButton} style={{ cursor: "grab" }}
                     // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
                     >
-                        <span class="material-symbols-outlined">circle</span>
+                        <span className="material-symbols-outlined">circle</span>
                     </div>
 
                     {title == "Contact" ?
@@ -74,8 +74,8 @@ export default function Layout({ children, title }) {
                         // style={{ width: sidePanelState ? " 11.5rem" : " unset"}}
                         onClick={themeToggle}>
                         {themeDark
-                            ? <span class="material-symbols-outlined">dark_mode</span>
-                            : <span class="material-symbols-outlined">light_mode</span>}
+                            ? <span className="material-symbols-outlined">dark_mode</span>
+                            : <span className="material-symbols-outlined">light_mode</span>}
                     </div>
                 </div>
             </aside>

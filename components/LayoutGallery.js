@@ -46,7 +46,7 @@ export default function Layout({ children, title}) {
             <div id={styles.layout}>
             <aside className={sidePanelState? styles.sideBarOpen : styles.sideBarClosed }>
                     
-                    <div id={styles.icon} onClick={toggle}> <span class="material-symbols-outlined">navigate_next</span> </div>
+                    <div id={styles.icon} onClick={toggle}> <span className="material-symbols-outlined">navigate_next</span> </div>
 
 
                     <div className={utilStyles.title}>

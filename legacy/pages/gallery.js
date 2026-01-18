@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/LayoutFilter'
+import SEO from '../components/SEO'
 import { getSortedProjectsData } from '../lib/projects'
 import gallery from '../styles/gallery.module.css'
 import utilStyles from '../styles/utils.module.css'
@@ -10,7 +11,6 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import SidePanelRight from '../components/SidePanelRight'
 import Side from '../components/Side'
-import theme from '../styles/theme.module.css'
 import { useThemeDark } from '../context/AppContext'
 
 
@@ -19,13 +19,11 @@ const sidePanelHeading = "Filters";
 
 export default function Gallery({ allProjectsData }) {
 
-    const [isMobile, setIsMobile ] = useState()
+    const [isMobile, setIsMobile ] = useState(false)
     useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        }
-    })
+        const windowWidth = window.innerWidth
+        setIsMobile(windowWidth <= 768)
+    }, [])
 
     let galleryList = allProjectsData.map(a => a.pics.map(b => ({ ...b, link: a.id, shortTitle: a.shortTitle, title: a.title, type: a.type, software: a.software, status: a.status, render: a.rendering, tags: [a.type, a.software, a.status, a.rendering] }))).flat();
     let [randomGalleryList, setRandomGalleryList] = useState(galleryList);
@@ -245,9 +243,7 @@ export default function Gallery({ allProjectsData }) {
 
     return (
         <Layout title={title} sidePanelHeading={sidePanelHeading} data={data}>
-            <Head>
-                <title>{siteTitle} {' | '} {title}</title>
-            </Head>
+            <SEO title={`${siteTitle} | ${title}`} description='Gallery of selected works and visuals.' />
             {!isMobile && 
             <Side
                     title={title}
@@ -260,8 +256,8 @@ export default function Gallery({ allProjectsData }) {
 
                 <p>Filters</p>
                 {title == "Gallery" && data.map(({ title, list }) =>
-                    <details className={filters.filterContainer} id={themeDark && theme.darkFilter}>
-                        <summary className={` ${filters.filter}`} id={themeDark && theme.summary}>{title}</summary>
+                    <details className={filters.filterContainer}>
+                        <summary className={` ${filters.filter}`}>{title}</summary>
                         {list.map(a => <p className={filters.tag} id={a.id} key={a.id} onClick={modFilters}>{a.id}</p>)}
                     </details>)}
                     <div className={filters.tag} onClick={setAll}>Reset</div>
@@ -304,7 +300,7 @@ export default function Gallery({ allProjectsData }) {
 
                         <div className={`${captionToggle ? gallery.caption : gallery.hide} ${gridCount ? gallery.captionHide : null}`}>
                             <Link href={`/projects/${pic.link}`}>
-                                <a className={gallery.projectLink} id={themeDark && theme.darkmodeAlt}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
+                                <a className={gallery.projectLink}>{pic.title} | {pic.shortTitle} | {pic.type} </a>
                             </Link>
                             <p>{pic.hasOwnProperty("caption") ? pic.caption : pic.alt}</p>
                         </div>
@@ -316,10 +312,10 @@ export default function Gallery({ allProjectsData }) {
             <SidePanelRight
                 heading={"Settings"}
             >
-                <p className={`${utilStyles.link2} `} id={themeDark && theme.darkmodeAltBG2} onClick={toggleImageGridOnly}>{!gridCount ? "Grid" : "Single"} &nbsp;{!gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
-                <p className={utilStyles.link2} id={themeDark && theme.darkmodeAltBG2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}</p>
-                <p className={`${gridCount ? gallery.toggleGray : null} ${utilStyles.link2}`} id={themeDark && theme.darkmodeAltBG2} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
-                <p className={`${utilStyles.link2} ${gallery.mix}`} id={themeDark && theme.darkmodeAltBG2} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
+                <p className={`${utilStyles.link2} `} onClick={toggleImageGridOnly}>{!gridCount ? "Grid" : "Single"} &nbsp;{!gridCount ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}</p>
+                <p className={utilStyles.link2} onClick={toggleImageRatio}>{ratioText}&nbsp; {imageRatio ? <span className="material-symbols-outlined">crop_square</span> : <span className="material-symbols-outlined">crop_16_9</span>}</p>
+                <p className={`${gridCount ? gallery.toggleGray : null} ${utilStyles.link2}`} onClick={toggleCaptions}>Captions &nbsp; {captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}</p>
+                <p className={`${utilStyles.link2} ${gallery.mix}`} onClick={mixGallery}>Mix Gallery &nbsp;<span className="material-symbols-outlined">cameraswitch</span></p>
             </SidePanelRight>
 
         </Layout >
@@ -335,3 +331,9 @@ export async function getStaticProps() {
         }
     }
 }
+
+
+
+
+
+

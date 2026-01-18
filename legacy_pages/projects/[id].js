@@ -4,6 +4,7 @@ import Link from 'next/link'
 // import { SRLWrapper } from "simple-react-lightbox";
 
 import Layout, { siteTitle } from '../../components/LayoutFilter'
+import SEO from '../../components/SEO'
 import Date from '../../components/Date'
 import ButtonBack from '../../components/ButtonBack'
 import ButtonTop from '../../components/ButtonTop'
@@ -50,12 +51,9 @@ export default function Project({ projectData }) {
 
 
     useEffect(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth <= 768) {
-            setIsMobile(true)
-        } else { setIsMobile(false) }
-
-    })
+        const windowWidth = window.innerWidth
+        setIsMobile(windowWidth <= 768)
+    }, [])
     useEffect(() => {
         if (isMobile) {
             setImageRatio(true)
@@ -109,8 +107,31 @@ export default function Project({ projectData }) {
     let title = projectData.title
     return (
         <Layout>
+            <SEO
+                title={`${siteTitle} | ${projectData.title}`}
+                description={projectData.summary || `${projectData.type} | ${projectData.status}`}
+                image={`/projects/${projectData.shortTitle}${projectData.thumb || (projectData.pics?.[0]?.image || '')}`}
+                type="article"
+            />
             <Head>
-                <title>{siteTitle}: {' '} {projectData.title}</title>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'CreativeWork',
+                            name: projectData.title,
+                            description: projectData.summary || `${projectData.type} | ${projectData.status}`,
+                            author: {
+                                '@type': 'Person',
+                                name: 'Sebastian Kovacs'
+                            },
+                            image: [`/projects/${projectData.shortTitle}${projectData.thumb || (projectData.pics?.[0]?.image || '')}`],
+                            about: projectData.type,
+                            dateCreated: projectData.date
+                        })
+                    }}
+                />
             </Head>
             <div className={projects.top} id="top" />
             <Side
@@ -171,10 +192,10 @@ export default function Project({ projectData }) {
                     }
 
                     {projectData.hasOwnProperty("panos") ?
-                        <details id="panoDrop" className={` ${utilStyles.grow} ${themeDark && theme.darkmode}`} onClick={togglePanoDrop}>
-                            <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} `} id={themeDark && theme.darkmodeSummary}>3d Tours {panoDrop ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}</summary>
+                        <details id="panoDrop" className={` ${utilStyles.grow}`} onClick={togglePanoDrop}>
+                            <summary className={`${utilStyles.grow} ${utilStyles.bb1} ${utilStyles.link} `}>3d Tours {panoDrop ? <span className="material-symbols-outlined">expand_less</span> : <span className="material-symbols-outlined">expand_more</span>}</summary>
                             {projectData.panos.map((pano) =>
-                                <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`} id={themeDark && theme.darkmode}>{pano.name}&nbsp;<span className="material-symbols-outlined">open_in_new</span></a></Link>)}
+                                <Link href={pano.link} ><a target="_blank" className={`${utilStyles.grow} ${utilStyles.link} ${utilStyles.font2}`}>{pano.name}&nbsp;<span className="material-symbols-outlined">open_in_new</span></a></Link>)}
                         </details>
                         : <div />
                     }
@@ -219,7 +240,14 @@ export default function Project({ projectData }) {
 
             {/* Main Content */}
 
-            <div className={`${projects.main} ${themeDark && theme.darkmode}`} >
+            <div className={`${projects.main}`} >
+
+                {/* Project meta */}
+                <section className={utilStyles.container} style={{padding: '1rem 1rem 0'}}>
+                    <p style={{margin: 0, opacity: .8}}>
+                        {projectData.type}{projectData.status ? ` | ${projectData.status}` : ''}{projectData.location ? ` | ${projectData.location}` : ''}
+                    </p>
+                </section>
 
                 <div id="images" className={utilStyles.anchor2}></div>
 
@@ -269,7 +297,7 @@ export default function Project({ projectData }) {
                             <div className={projects.planDetails} style={{ backgroundColor: themeDark && "transparent"}}>
 
                                 <h3 className={projects.planTitle}> {plan.alt}</h3>
-                                <span class="material-symbols-outlined" style={{ color: themeDark && "var(--s2)", transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>
+                                <span className="material-symbols-outlined" style={{ color: themeDark && "var(--s2)", transform: `rotateZ(${projectData.north}deg)`, display: plan.alt.includes("Plan") ? "block" : "none" }}>
                                     navigation
                                 </span>
                             </div>
@@ -287,13 +315,13 @@ export default function Project({ projectData }) {
 
             {/* Mobile Device Image Options BOTTOM */}
 
-            <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex} ${themeDark && theme.darkmode}`}>
+            <div className={`${imageControls ? projects.controlsVisible : projects.controlsHidden}  ${projects.mobileImageControls} ${utilStyles.mobileOnlyFlex}`}>
                 <div className={projects.mobileControlsToggle} onClick={imageControlsToggle} style={{ backgroundColor: imageControls && "var(--p3)", color: imageControls && "var(--bg2)" }} >
                     Image Options
                     &nbsp;
                     {imageControls ? <span className="material-symbols-outlined" style={{ color: imageControls && "var(--bg2)" }}>arrow_drop_down</span> : <span className="material-symbols-outlined" style={{ color: !imageControls && themeDark ? "var(--s2)" : "var(--t1)" }}>arrow_drop_up</span>}
                 </div>
-                <a className={utilStyles.link2} id={themeDark && theme.darkmode} onClick={toggleImageRatio}>
+                <a className={utilStyles.link2} onClick={toggleImageRatio}>
                     {ratioText}
                     &nbsp;
                     {imageRatio ? <span className="material-symbols-outlined">crop_16_9</span> : <span className="material-symbols-outlined">crop_square</span>}
@@ -302,14 +330,14 @@ export default function Project({ projectData }) {
                 <Link href="#images">
                     <a onClick={toggleImageGrid}
                         className={utilStyles.link2}
-                        id={themeDark && theme.darkmode}
+                        
                     >
                         {gridText}
                         &nbsp;
                         {imageGrid ? <span className="material-symbols-outlined">grid_on</span> : <span className="material-symbols-outlined">splitscreen</span>}
                     </a>
                 </Link>
-                <a className={utilStyles.link2} id={themeDark && theme.darkmode} onClick={() => setCaptionToggle(!captionToggle)}>
+                <a className={utilStyles.link2} onClick={() => setCaptionToggle(!captionToggle)}>
                     Captions
                     &nbsp;{captionToggle ? <span className="material-symbols-outlined">toggle_on</span> : <span className="material-symbols-outlined">toggle_off</span>}
                 </a>

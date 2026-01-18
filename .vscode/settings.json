@@ -14,5 +14,6 @@
         "crossorigin",
         "happyblue",
         "ontop"
-    ]
+    ],
+    "chatgpt.openOnStartup": true
 }

@@ -1,0 +1,242 @@
+﻿.hero {
+  position: relative;
+  padding: clamp(4rem, 6vw, 7rem) 0 4rem;
+  overflow: hidden;
+}
+
+.heroInner {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.heroContent {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.heroKicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(2.8rem, 2rem + 2vw, 4.1rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.heroLead {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 48ch;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1.7rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-hard);
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 32px -20px rgba(40, 64, 242, 0.5);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-elevated);
+  transition: background var(--transition-snappy), transform var(--transition-snappy);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  background: var(--color-highlight);
+}
+
+.heroPanel {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.8rem, 3vw, 2.4rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.heroPanel h2 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.heroList {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.heroList strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.heroList span {
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+}
+
+.metrics {
+  display: grid;
+  gap: 1.25rem;
+  padding: 4rem 0;
+}
+
+.metricsGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.metricCard {
+  padding: 1.8rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.metricCard span {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.metricCard strong {
+  font-size: clamp(2.4rem, 1.8rem + 1.2vw, 3rem);
+}
+
+.metricCard p {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 1.4rem + 1vw, 2.4rem);
+}
+
+.sectionHeading p {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+.projectGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.projectCard {
+  display: grid;
+  gap: 1rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+}
+
+.projectCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hard);
+}
+
+.projectMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.projectBody {
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.projectTag {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.projectTitle {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.projectMeta {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+.aboutSection {
+  display: grid;
+  gap: 1rem;
+  padding: 4rem 0;
+}
+
+.aboutSection p {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+
+.heroIcon {
+  font-size: 1.15rem;
+}
+
+
+
+
+
+

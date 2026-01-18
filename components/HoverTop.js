@@ -6,7 +6,7 @@ export default function HoverTop() {
         <Link href="#top"> 
                 {/* <a className={utilStyles.hoverTop}> */}
         <a className={`${utilStyles.link} ${utilStyles.hoverTop}`}>
-        <span class="material-symbols-outlined">
+        <span className="material-symbols-outlined">
 keyboard_double_arrow_up
 </span>
         </a>

@@ -7,7 +7,7 @@ import { getSortedPostsData } from '../lib/posts'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Side from '../components/Side'
-import theme from '../styles/theme.module.css'
+// Theme handled via CSS variables on :root[data-theme]
 import { useThemeDark } from '../context/AppContext'
 
 const title = "Blog"
@@ -21,13 +21,11 @@ export default function Blog({ allPostsData }) {
   let [filterList, setFilterList] = useState([])
 
 
-  const [isMobile, setIsMobile ] = useState()
+  const [isMobile, setIsMobile ] = useState(false)
   useEffect(() => {
-      let windowWidth = window.innerWidth;
-      if (windowWidth <= 768) {
-          setIsMobile(true)
-      }
-  })
+      const windowWidth = window.innerWidth;
+      setIsMobile(windowWidth <= 768)
+  }, [])
 
 
   function onlyUnique(value, index, self) {
@@ -109,7 +107,7 @@ export default function Blog({ allPostsData }) {
 
         {posts.map(({ id, title, blurb, category }) => (
           <Link href={`/posts/${id}`}>
-            <a className={` ${blog.blog}`} id={themeDark && theme.darkmode} key={`${id} ${title}`}>
+            <a className={` ${blog.blog}`} key={`${id} ${title}`}>
 
               <h2>{title}</h2>
               <h3>Question: </h3>

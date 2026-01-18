@@ -1,0 +1,132 @@
+﻿.catalogue {
+  display: grid;
+  gap: 2rem;
+}
+
+.filters {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  padding: 1.8rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.filtersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filtersSummary {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.filtersGroups {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.filtersGroup h3 {
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-elevated);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  transition: background var(--transition-snappy), transform var(--transition-snappy), color var(--transition-snappy);
+}
+
+.chipActive {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+}
+
+.resetButton {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.empty {
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.card {
+  display: grid;
+  gap: 0.9rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  overflow: hidden;
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hard);
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.cardBody {
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.cardTag {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cardMeta {
+  margin: 0;
+  color: var(--color-text-soft);
+}
