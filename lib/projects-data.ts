@@ -1,6 +1,8 @@
-﻿import fs from 'fs'
+import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import remark from 'remark'
+import html from 'remark-html'
 
 export type ProjectImage = { id: number | string, image: string, alt: string, caption?: string }
 export type ProjectPlan = { id: number | string, plan: string, alt: string }
@@ -22,10 +24,13 @@ export type Project = {
   pics: ProjectImage[]
   plans: ProjectPlan[]
   north?: number
-  pano?: string
-  panos?: { name: string, link: string }[]
   homeSections?: string[]
   featured?: boolean
+  area?: string
+  nathers?: string
+  energy?: string
+  content?: string
+  contentHtml?: string
 }
 
 const projectsDir = path.join(process.cwd(), 'projects')
@@ -35,19 +40,27 @@ export function getAllProjects(): Project[] {
   const items = files.map(file => {
     const id = file.replace(/\.md$/, '')
     const raw = fs.readFileSync(path.join(projectsDir, file), 'utf8')
-    const { data } = matter(raw)
-    return { id, ...(data as any) } as Project
+    const { data, content } = matter(raw)
+    return { id, content, ...(data as any) } as Project
   })
   return items.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export function getProject(slug: string): Project | null {
+export async function getProject(slug: string): Promise<Project | null> {
   const file = path.join(projectsDir, `${slug}.md`)
   if (!fs.existsSync(file)) return null
   const raw = fs.readFileSync(file, 'utf8')
-  const { data } = matter(raw)
-  return { id: slug, ...(data as any) } as Project
+  const { data, content } = matter(raw)
+  
+  let contentHtml = ''
+  if (content && content.trim()) {
+    try {
+      const processed = await remark().use(html).process(content)
+      contentHtml = processed.toString()
+    } catch (e) {
+      contentHtml = content
+    }
+  }
+
+  return { id: slug, content, contentHtml, ...(data as any) } as Project
 }
-
-
-

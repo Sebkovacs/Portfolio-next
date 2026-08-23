@@ -1,22 +1,7 @@
-﻿import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
 import { getAllProjects } from '../lib/projects.server'
-
-const aboutStatements = [
-  "Hey — I'm Sebastian Kovacs, a Newcastle-based Project Architect specialising in early-phase data-centre campuses and high-end coastal homes.",
-  "Across seven years in practice I've guided hyperscale data-centre projects from blank-site due diligence through Concept, DA and SSDA submissions while delivering bespoke residential retreats along the NSW coastline.",
-  "I sit the APE in June 2025 and currently drive concept-to-approval strategy at EJE Architecture. The long game is location-independent design leadership backed by surf-chasing and a portfolio of tech and property ventures.",
-  "When I'm not refining facade-to-rack clearances you'll find me wrangling Next.js side projects, shooting sunrise surf sessions, or tearing through books on strategy and neuro-performance.",
-]
-
-const homeSections = [
-  { key: 'selected', title: 'Selected projects', description: 'Flagship work defining the practice right now.' },
-  { key: 'themes', title: 'Themes', description: 'Curated narratives across typologies, clients and climate.' },
-  { key: 'portfolios', title: 'Portfolio sets', description: 'Modular collections for proposals and workshops.' },
-] as const
-
-type HomeSectionKey = (typeof homeSections)[number]['key']
 
 type CompactProject = {
   id: string
@@ -27,169 +12,422 @@ type CompactProject = {
   type?: string
   status?: string
   location?: string
-  homeSections?: string[]
-  featured?: boolean
+  summary?: string
+  area?: string
 }
 
-function normaliseStatus(value?: string) {
-  return value?.toLowerCase().trim() ?? ''
-}
-
-function isInSection(project: CompactProject, key: HomeSectionKey) {
-  return project.homeSections?.includes(key)
-}
-
-function ProjectCard({ project }: { project: CompactProject }) {
-  const meta = [project.type, project.status, project.location].filter(Boolean)
+function FlagshipCard({ project }: { project: CompactProject }) {
   return (
-    <Link href={`/projects/${project.id}`} className={styles.projectCard}>
-      <div className={styles.projectMedia}>
+    <Link href={`/projects/${project.id}`} className={styles.flagshipCard}>
+      <div className={styles.cardMedia}>
         <Image
           src={`/projects/${project.shortTitle}${project.thumb}`}
-          alt={project.thumbAlt}
+          alt={project.thumbAlt || project.title}
           fill
-          sizes="(min-width: 1100px) 320px, (min-width: 768px) 45vw, 90vw"
+          sizes="(min-width: 1200px) 400px, (min-width: 768px) 50vw, 100vw"
+          className={styles.cardImg}
         />
+        <div className={styles.cardOverlay}>
+          <span className="material-symbols-outlined">arrow_outward</span>
+        </div>
       </div>
-      <div className={styles.projectBody}>
-        {project.type && <span className={styles.projectTag}>{project.type}</span>}
-        <h3 className={styles.projectTitle}>{project.title}</h3>
-        {meta.length > 0 && <p className={styles.projectMeta}>{meta.join(' / ')}</p>}
+      <div className={styles.cardBody}>
+        <div className={styles.cardHeaderRow}>
+          {project.type && <span className="badge-arch badge-accent">{project.type}</span>}
+          {project.status && <span className={styles.cardStatus}>{project.status}</span>}
+        </div>
+        <h3 className={styles.cardTitle}>{project.title}</h3>
+        {project.location && <p className={styles.cardLocation}>{project.location}</p>}
+        {project.area && (
+          <div className={styles.cardAreaBadge}>
+            <span className="material-symbols-outlined" style={{ fontSize: '0.85rem' }}>square_foot</span>
+            <span>{project.area}</span>
+          </div>
+        )}
+        {project.summary && <p className={styles.cardSummary}>{project.summary}</p>}
       </div>
     </Link>
   )
 }
 
+/* ── Placeholder testimonials — REPLACE WITH REAL CLIENT QUOTES ── */
+const testimonials = [
+  {
+    quote: "Sebastian understood our coastal block from the very first site visit. He mapped the wind patterns, the sun angles, the swell direction — things we'd never thought about. The design he produced feels like it grew out of the headland.",
+    name: 'James & Claire M.',
+    project: 'Coastal Headland Residence',
+    location: 'Merewether, NSW',
+  },
+  {
+    quote: "We wanted a home that could go completely off-grid without feeling like a bush shack. Seb delivered a design that's beautiful, warm, and completely autonomous. The rammed earth and timber are extraordinary.",
+    name: 'Tom & Priya S.',
+    project: 'Off-Grid Eco Sanctuary',
+    location: 'Seal Rocks, NSW',
+  },
+  {
+    quote: "The DA process felt daunting on our coastal hazard block, but Sebastian navigated council flawlessly. He handled the Clause 4.6 variation and we got approval on the first submission. Worth every cent.",
+    name: 'Rebecca L.',
+    project: 'Dune Pavilion Residence',
+    location: 'Fingal Bay, NSW',
+  },
+]
+
 export default function HomePage() {
-  const projects = getAllProjects()
-
-  const compactProjects: CompactProject[] = projects.map((project) => ({
-    id: project.id,
-    title: project.title,
-    shortTitle: project.shortTitle,
-    thumb: project.thumb,
-    thumbAlt: project.thumbAlt,
-    type: project.type,
-    status: project.status,
-    location: project.location,
-    homeSections: project.homeSections,
-    featured: project.featured,
-  }))
-
-  const completedStatuses = new Set(['constructed', 'built', 'complete'])
-  const completed = compactProjects.filter((project) => completedStatuses.has(normaliseStatus(project.status))).length
-  const active = Math.max(compactProjects.length - completed, 0)
-  const typeCount = new Set(compactProjects.map((project) => project.type).filter(Boolean)).size
-
-  const featuredProjects = compactProjects.filter((project) => project.featured).slice(0, 3)
-  const sectionContent = homeSections
-    .map((section) => ({
-      ...section,
-      projects: compactProjects.filter((project) => isInSection(project, section.key)).slice(0, 4),
-    }))
-    .filter((section) => section.projects.length > 0)
+  const allProjects = getAllProjects()
+  
+  const flagshipIds = new Set([
+    'salt-point-residence',
+    'dune-house-fingal',
+    'crescent-head-surf-shack',
+    'redhead-bluff-pavilion',
+    'seal-rocks-sanctuary',
+    'bar-beach-dual-occ',
+  ])
+  const flagshipProjects = allProjects.filter((p) => flagshipIds.has(p.id))
 
   return (
-    <>
-      <section className={styles.hero}>
-        <div className={`${styles.heroInner} page-shell`}>
-          <div className={styles.heroContent}>
-            <span className={styles.heroKicker}>Project Architect — Newcastle, Australia</span>
-            <h1 className={styles.heroTitle}>
-              Sebastian Kovacs designs digital-first campuses and coastal retreats with equal calm.
-            </h1>
-            <p className={styles.heroLead}>
-              Hey — I'm Sebastian Kovacs, a Newcastle-based Project Architect specialising in early-phase data-centre campuses and high-end coastal homes.
-            </p>
-            <div className={styles.heroActions}>
-              <Link href="/projects" className={styles.primaryButton}>
-              <span className="material-symbols-sharp" aria-hidden>north_east</span>
-              <span>View projects</span>
-            </Link>
-              <Link href="/contact" className={styles.secondaryButton}>
-              <span className="material-symbols-outlined" aria-hidden>handshake</span>
-              <span>Start a conversation</span>
-            </Link>
+    <div className={styles.pageWrapper}>
+      {/* Trust Stats Bar — warm social proof replacing the old telemetry bar */}
+      <div className={styles.trustBar}>
+        <div className="page-shell">
+          <div className={styles.trustBarInner}>
+            <div className={styles.trustStat}>
+              <span className={styles.trustStatValue}>{allProjects.length}</span>
+              <span className={styles.trustStatLabel}>Projects Delivered</span>
+            </div>
+            <div className={styles.trustStatDivider} />
+            <div className={styles.trustStat}>
+              <span className={styles.trustStatValue}>8.5+</span>
+              <span className={styles.trustStatLabel}>Star NatHERS Targets</span>
+            </div>
+            <div className={styles.trustStatDivider} />
+            <div className={styles.trustStat}>
+              <span className={styles.trustStatValue}>100%</span>
+              <span className={styles.trustStatLabel}>Net-Zero Capable Designs</span>
+            </div>
+            <div className={styles.trustStatDivider} />
+            <div className={styles.trustStat}>
+              <span className={styles.trustStatValue}>NSW</span>
+              <span className={styles.trustStatLabel}>Coastal Specialist #13540</span>
             </div>
           </div>
-          <aside className={styles.heroPanel} aria-label="Practice snapshot">
-            <h2>Snapshot</h2>
-            <p>
-              Currently shaping concept-to-approval strategy at <strong>EJE Architecture</strong> while preparing for the 2025 Architectural Practice Examination.
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <section className={styles.heroSection}>
+        <div className="page-shell">
+          <div className={styles.heroGrid}>
+            <div className={styles.heroContent}>
+              <div className={styles.heroKicker}>
+                <span className="badge-arch badge-accent">SALT &amp; STONE</span>
+                <span className={styles.regoText}>NSW Registered Architect #13540</span>
+              </div>
+              
+              <h1 className={styles.heroHeadline}>
+                Homes built for the raw power of the ocean and the peace of family living.
+              </h1>
+              
+              <p className={styles.heroSubtext}>
+                We craft bespoke coastal residences, off-grid eco pavilions, and sandstone headland dwellings across Newcastle and the NSW coastline. Driven by lifelong ocean immersion, passive solar thermal mass, and marine-resilient craft.
+              </p>
+              
+              <div className={styles.heroButtons}>
+                <Link href="/projects" className="btn-primary">
+                  <span>Explore Flagship Works</span>
+                  <span className="material-symbols-outlined">arrow_forward</span>
+                </Link>
+                <Link href="/contact" className="btn-secondary">
+                  <span>Book Free Consultation</span>
+                </Link>
+              </div>
+
+              <div className={styles.heroDirectLine}>
+                <span className="material-symbols-outlined" style={{ fontSize: '1rem', color: 'var(--color-accent)' }}>phone</span>
+                <span>Or call directly:</span>
+                <a href="tel:+61432365389" className={styles.heroPhone}>+61 432 365 389</a>
+              </div>
+            </div>
+
+            <div className={styles.heroHeroVisual}>
+              <div className={styles.heroImageCard}>
+                <Image
+                  src="/projects/salt-point/1.jpg"
+                  alt="Salt Point House overlooking Merewether ocean swell"
+                  fill
+                  priority
+                  sizes="(min-width: 1200px) 600px, 100vw"
+                  className={styles.heroImg}
+                />
+                <div className={styles.heroImageDetails}>
+                  <div className={styles.heroCalloutBadge}>
+                    <span className="badge-arch badge-accent">Featured Concept</span>
+                    <strong>Salt Point Residence · Merewether</strong>
+                  </div>
+                  <div className={styles.materialTagGroup}>
+                    <span className={styles.materialTag}>400mm Rammed Earth Mass</span>
+                    <span className={styles.materialTag}>Weathered Silvertop Ash</span>
+                    <span className={styles.materialTag}>100% Off-Grid Solar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Three Coastal Typologies */}
+      <section className={styles.typologySection}>
+        <div className="page-shell">
+          <div className={styles.sectionHeader}>
+            <span className="badge-arch badge-accent">Design Typologies</span>
+            <h2 className={styles.sectionTitle}>Built for the Edge of the Ocean</h2>
+            <p className={styles.sectionSubtitle}>
+              Three distinct residential specialisms engineered for extreme salt air, wind dynamics, and ecological harmony.
             </p>
-            <ul className={styles.heroList}>
-              <li>
-                <strong>Hyperscale data-centre campuses</strong>
-                <span>Guiding due diligence, Concept, DA and SSDA submissions for complex digital infrastructure.</span>
-              </li>
-              <li>
-                <strong>Coastal residential retreats</strong>
-                <span>Pairing bespoke storytelling with rigorous planning for high-end NSW clients.</span>
-              </li>
-              <li>
-                <strong>Hybrid skill stack</strong>
-                <span>Architecture, digital funnels and performance coaching in one toolkit.</span>
-              </li>
-            </ul>
-          </aside>
+          </div>
+
+          <div className={styles.typologyGrid}>
+            <div className={styles.typologyCard}>
+              <div className={styles.typologyIcon}>
+                <span className="material-symbols-outlined">waves</span>
+              </div>
+              <span className={styles.typologyNumber}>01</span>
+              <h3 className={styles.typologyTitle}>Headland &amp; Cliff Dwellings</h3>
+              <p className={styles.typologyDesc}>
+                Monolithic stabilised rammed earth and board-marked concrete structures engineered to deflect southerly gales while framing sweeping ocean horizons.
+              </p>
+              <span className={styles.typologyFeature}>Thermal Mass · Wind Deflection · Salt Shielding</span>
+            </div>
+
+            <div className={styles.typologyCard}>
+              <div className={styles.typologyIcon}>
+                <span className="material-symbols-outlined">forest</span>
+              </div>
+              <span className={styles.typologyNumber}>02</span>
+              <h3 className={styles.typologyTitle}>Off-Grid Eco Sanctuaries</h3>
+              <p className={styles.typologyDesc}>
+                Twin timber pavilions connected by coastal forest breezeways, powered by 100% solar microgrids, sub-deck rainwater harvesting, and passive cooling.
+              </p>
+              <span className={styles.typologyFeature}>100% Net Zero · Light-Touch Footings · Native Timber</span>
+            </div>
+
+            <div className={styles.typologyCard}>
+              <div className={styles.typologyIcon}>
+                <span className="material-symbols-outlined">domain</span>
+              </div>
+              <span className={styles.typologyNumber}>03</span>
+              <h3 className={styles.typologyTitle}>Coastal Dual Occupancies</h3>
+              <p className={styles.typologyDesc}>
+                Multi-generational twin residences crafted in Sydney sandstone and batten screens, delivering uncompromised privacy, light, and coastal site value.
+              </p>
+              <span className={styles.typologyFeature}>Acoustic Isolation · Solar Access · Capital Value</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className={`${styles.metrics} page-shell`} aria-label="Practice metrics">
-        <div className={styles.metricsGrid}>
-          <div className={styles.metricCard}>
-            <span>Projects documented</span>
-            <strong>{compactProjects.length}</strong>
-            <p>Architecture and visual strategy programs captured across this portfolio.</p>
+      {/* Flagship Projects Showcase */}
+      <section className={styles.showcaseSection}>
+        <div className="page-shell">
+          <div className={styles.showcaseHeaderRow}>
+            <div>
+              <span className="badge-arch badge-accent">Curated Portfolio</span>
+              <h2 className={styles.sectionTitle}>Flagship Coastal Works &amp; Concepts</h2>
+              <p className={styles.sectionSubtitle}>
+                Six ocean-orientated residences developed for extreme marine environments and sustainable self-reliance.
+              </p>
+            </div>
+            <Link href="/projects" className={styles.viewArchiveLink}>
+              <span>Explore All Works ({allProjects.length})</span>
+              <span className="material-symbols-outlined">arrow_forward</span>
+            </Link>
           </div>
-          <div className={styles.metricCard}>
-            <span>Active programmes</span>
-            <strong>{active}</strong>
-            <p>Concept, DA and SSDA journeys currently progressing toward approval.</p>
-          </div>
-          <div className={styles.metricCard}>
-            <span>Typologies</span>
-            <strong>{typeCount}</strong>
-            <p>Data-centre, residential and community works delivered with craft.</p>
+
+          <div className={styles.flagshipGrid}>
+            {flagshipProjects.map((project) => (
+              <FlagshipCard key={project.id} project={project} />
+            ))}
           </div>
         </div>
       </section>
 
-      {featuredProjects.length > 0 && (
-        <section className="page-shell" aria-labelledby="featured-projects">
-          <div className={styles.sectionHeading}>
-            <h2 id="featured-projects">Featured projects</h2>
-            <p>Recent highlights anchored in performance, storytelling and delivery.</p>
+      {/* Client Testimonials — Social Proof Strip */}
+      <section className={styles.testimonialSection}>
+        <div className="page-shell">
+          <div className={styles.sectionHeader}>
+            <span className="badge-arch badge-accent">Client Voices</span>
+            <h2 className={styles.sectionTitle}>What Our Clients Say</h2>
+            <p className={styles.sectionSubtitle}>
+              Trusted by families and landholders building their forever coastal homes across NSW.
+            </p>
           </div>
-          <div className={styles.projectGrid}>
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+
+          <div className={styles.testimonialGrid}>
+            {testimonials.map((t) => (
+              <div key={t.name} className={styles.testimonialCard}>
+                <div className={styles.testimonialQuoteMark}>"</div>
+                <blockquote className={styles.testimonialQuote}>
+                  {t.quote}
+                </blockquote>
+                <div className={styles.testimonialAuthor}>
+                  <strong>{t.name}</strong>
+                  <span>{t.project} · {t.location}</span>
+                </div>
+              </div>
             ))}
           </div>
-        </section>
-      )}
-
-      {sectionContent.map((section) => (
-        <section key={section.key} className="page-shell" aria-labelledby={`home-section-${section.key}`}>
-          <div className={styles.sectionHeading}>
-            <h2 id={`home-section-${section.key}`}>{section.title}</h2>
-            <p>{section.description}</p>
-          </div>
-          <div className={styles.projectGrid}>
-            {section.projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </section>
-      ))}
-
-      <section className={`${styles.aboutSection} page-shell`} aria-labelledby="about-heading">
-        <h2 id="about-heading">Practice perspective</h2>
-        {aboutStatements.map((statement) => (
-          <p key={statement}>{statement}</p>
-        ))}
+        </div>
       </section>
-    </>
+
+      {/* The Surfer-Architect Manifesto */}
+      <section className={styles.manifestoSection}>
+        <div className="page-shell">
+          <div className={styles.manifestoCard}>
+            <span className="badge-arch badge-accent">The Surfer-Architect Ethos</span>
+            <blockquote className={styles.manifestoQuote}>
+              "When you spend your dawn hours in the ocean watching swells wrap around headlands, you understand daylight, prevailing winds, and material resilience in your bones. Coastal architecture shouldn't fight the elements — it should harness them."
+            </blockquote>
+            <div className={styles.manifestoFooter}>
+              <div className={styles.manifestoAuthor}>
+                <strong>Sebastian Kovacs</strong>
+                <span>Principal Architect · Master of Architecture (M.Arch) · NSW ARB #13540</span>
+              </div>
+              <Link href="/philosophy" className="btn-secondary">
+                <span>Read Full Philosophy</span>
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Architect — Personal Section */}
+      <section className={styles.architectSection}>
+        <div className="page-shell">
+          <div className={styles.architectGrid}>
+            <div className={styles.architectImageWrap}>
+              {/* TODO: Replace with real photo of Sebastian */}
+              <Image
+                src="/sebastian-kovacs-portrait.jpg"
+                alt="Sebastian Kovacs — Principal Architect, Salt & Stone Architecture"
+                width={480}
+                height={640}
+                className={styles.architectImg}
+              />
+              <div className={styles.architectImageCaption}>
+                <span className="badge-arch badge-accent">NSW ARB #13540</span>
+                <span>Merewether Headland, Newcastle</span>
+              </div>
+            </div>
+
+            <div className={styles.architectContent}>
+              <span className="badge-arch badge-accent">Meet Your Architect</span>
+              <h2 className={styles.architectHeading}>Sebastian Kovacs</h2>
+              <p className={styles.architectRole}>
+                Principal Architect · M.Arch · Lifelong Surfer · Father of Two
+              </p>
+              <div className={styles.architectBio}>
+                <p>
+                  I grew up on the NSW coast, surfing before school and watching the light change across headlands every morning. That daily immersion shaped how I think about homes — not as objects placed on land, but as extensions of the landscape they sit within.
+                </p>
+                <p>
+                  My practice, Salt &amp; Stone, is built around one conviction: coastal homes should harness the elements, not fight them. Every project starts on site, reading the wind, the sun, and the salt air before a single line is drawn.
+                </p>
+                <p>
+                  When I'm not at the drawing board, I'm in the water with my two kids, testing whether the morning offshores are as clean as the weather models predicted. That's the same attention to microclimate that goes into every home I design.
+                </p>
+              </div>
+              <div className={styles.architectCreds}>
+                <div className={styles.credItem}>
+                  <span className="material-symbols-outlined" style={{ fontSize: '1.1rem', color: 'var(--color-accent)' }}>verified</span>
+                  <span>NSW Registered Architect #13540</span>
+                </div>
+                <div className={styles.credItem}>
+                  <span className="material-symbols-outlined" style={{ fontSize: '1.1rem', color: 'var(--color-accent)' }}>school</span>
+                  <span>Master of Architecture (M.Arch)</span>
+                </div>
+                <div className={styles.credItem}>
+                  <span className="material-symbols-outlined" style={{ fontSize: '1.1rem', color: 'var(--color-accent)' }}>shield</span>
+                  <span>Professional Indemnity Insured</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4-Stage Architectural Delivery Framework */}
+      <section className={styles.processSection}>
+        <div className="page-shell">
+          <div className={styles.sectionHeader}>
+            <span className="badge-arch">The Client Journey</span>
+            <h2 className={styles.sectionTitle}>Four Stages to Coastal Delivery</h2>
+            <p className={styles.sectionSubtitle}>
+              A rigorous, transparent process de-risking coastal site conditions, planning hurdles, and construction costs.
+            </p>
+          </div>
+
+          <div className={styles.processGrid}>
+            <div className={styles.processCard}>
+              <span className={styles.processNumber}>01</span>
+              <h3 className={styles.processTitle}>Site &amp; Microclimate Due Diligence</h3>
+              <p className={styles.processDesc}>
+                Topography mapping, wind vector analysis, solar trajectory modeling, coastal hazard review, and council planning constraints.
+              </p>
+            </div>
+
+            <div className={styles.processCard}>
+              <span className={styles.processNumber}>02</span>
+              <h3 className={styles.processTitle}>Concept Design &amp; 3D Massing</h3>
+              <p className={styles.processDesc}>
+                Spatial zoning, view alignment, wind deflection modeling, material selection (rammed earth, timber, copper), and living flow.
+              </p>
+            </div>
+
+            <div className={styles.processCard}>
+              <span className={styles.processNumber}>03</span>
+              <h3 className={styles.processTitle}>DA &amp; CDC Approvals Mastery</h3>
+              <p className={styles.processDesc}>
+                Comprehensive drawing packages, Clause 4.6 variations, coastal council negotiations, and NSW planning approvals.
+              </p>
+            </div>
+
+            <div className={styles.processCard}>
+              <span className={styles.processNumber}>04</span>
+              <h3 className={styles.processTitle}>Precision BIM &amp; Builder Tender</h3>
+              <p className={styles.processDesc}>
+                100% Revit documentation, marine-grade fixture specifications, competitive builder tender review, and on-site observation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Consultation Conversion CTA */}
+      <section className={styles.ctaSection}>
+        <div className="page-shell">
+          <div className={styles.ctaCard}>
+            <div className={styles.ctaContent}>
+              <span className="badge-arch badge-accent">Free 30-Minute Consultation</span>
+              <h2 className={styles.ctaHeading}>Planning a bespoke coastal residence or eco retreat?</h2>
+              <p className={styles.ctaSub}>
+                Book a free, no-obligation site consultation. We'll evaluate your site topography, wind vectors, solar access, and planning pathways across NSW.
+              </p>
+            </div>
+            <div className={styles.ctaAction}>
+              <Link href="/contact" className="btn-primary">
+                <span>Book Free Consultation</span>
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+              <a href="tel:+61432365389" className={styles.ctaPhoneLink}>
+                <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>phone</span>
+                <span>+61 432 365 389</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
-

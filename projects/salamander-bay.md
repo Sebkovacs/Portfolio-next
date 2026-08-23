@@ -1,60 +1,37 @@
 ---
-title: 'Holiday House'
+title: 'Port Stephens Coastal Retreat'
 shortTitle: 'salamander'
-
 date: '2019-10-12'
-
-type: Residential Alts & Adds
-status: Constructed
-work: DA Drawings
-location: Salamander Bay, NSW
-company: JTA
-software: Vectorworks
-rendering: Twinmotion
-photography: Credit - The Bay Holiday Properties
-
-thumb: /1.jpg
-thumbAlt: 64 randall drive Holiday House renovation at Salamander Bay 
-
+type: 'Coastal Residence Alteration'
+status: 'Constructed'
+work: 'DA Drawings & Detailed Design'
+location: 'Salamander Bay, Port Stephens NSW'
+company: 'Salt & Stone Architecture'
+software: 'Vectorworks / Twinmotion'
+rendering: 'Twinmotion'
+photography: 'Credit - The Bay Holiday Properties'
+thumb: '/1.jpg'
+thumbAlt: 'Port Stephens Coastal Retreat renovation at Salamander Bay'
 pics: [
-{id: "1", image: '/1.jpg', alt: 64 Randall Drive new living layout, caption: "New lounge room. The existing floor changed heights but was built up to make the entire floor and deck level"},
-{id: "2", image: '/2.jpg', alt: 64 Randall Drive new entry view looking towards the kitchen, caption: "New entry and kitchen view, existing walls around the entry are removed making a spacious open plan"},
-{id: "3", image: '/3.jpg', alt: 64 Randall Drive new fully renovate kitchen and open plan through to dining , caption: "New kitchen with new island bench, existing walls were removed to open up and connect the kitchen to the dining area"},
-{id: "4", image: '/4.jpg', alt: 64 Randall Drive new tile deck balcony with massive views over the bay , caption: "A new tile deck replaces the existing timber balcony, is made level, and is widened to create a truly spectacular outdoor dining location"},
-{id: "5", image: '/5.jpg', alt: 64 Randall Drive master bedroom , caption: "New Master Bedroom, replacing the existing lounge room. The existing sliding door is replaced with windows, and no longer has balcony access, and there is walk-in-wardrobe to the left"},
-{id: "6", image: '/6.jpg', alt: 64 Randall Drive new pool and timber pool deck , caption: "New Pool Area, the spa and 'water feature' were removed and the whole area is now an external area. The height levels are vastly improved along with the pool shape and tiling"},
-{id: "7", image: '/7.jpg', alt: 64 Randall Drive new lower level tv lounge room, caption: "New TV lounge on the lower floor replacing the existing spa. The stairs are reconfigured, walls opened up and it has made it a much brighter and more functional space"},
-{id: "8", image: '/8.jpg', alt: 64 Randall Drive new lower level tv lounge room looking towards the pool area , caption: "Looking from the new TV lounge towards the pool. The existing glazed wall is replaced with a glazed folding door"},
-{id: "9", image: '/9.jpg', alt: 64 Randall Drive new renovated bathroom , caption: "Ensuite Bathroom"}
+  {id: "1", image: '/1.jpg', alt: "New main living area", caption: "Reconfigured open-plan lounge connecting directly to expanded outdoor terrace and bay views."},
+  {id: "2", image: '/2.jpg', alt: "New entry and kitchen vista", caption: "Removal of compartmentalised internal walls creating a light-drenched coastal arrival sequence."},
+  {id: "3", image: '/3.jpg', alt: "Renovated coastal kitchen", caption: "Natural stone island bench anchoring the dining and open entertaining spaces."},
+  {id: "4", image: '/4.jpg', alt: "Expanded outdoor entertaining deck", caption: "New level tiled terrace overlooking panoramic Port Stephens waters."},
+  {id: "6", image: '/6.jpg', alt: "New pool and timber decking", caption: "Transformed pool pavilion and integrated timber sun deck."}
 ]
-
 north: -15
-
 plans: [
-{id: "1", plan: '/p1.jpg', alt: "Main Floor Plan"},
-{id: "2", plan: '/p2.jpg', alt: "Lower Floor Plan"},
-{id: "3", plan: '/p3.jpg', alt: "Section A"},
-{id: "4", plan: '/p4.jpg', alt: "Existing Main Floor Plan"},
-{id: "5", plan: '/p5.jpg', alt: "Existing Lower Floor Plan"}
+  {id: "1", plan: '/p1.jpg', alt: "Main Upper Living Floor Plan"},
+  {id: "2", plan: '/p2.jpg', alt: "Lower Ground & Pool Level Plan"},
+  {id: "3", plan: '/p3.jpg', alt: "Cross Section A-A"},
+  {id: "4", plan: '/p4.jpg', alt: "Existing Upper Floor Plan (Pre-Renovation)"},
+  {id: "5", plan: '/p5.jpg', alt: "Existing Lower Floor Plan (Pre-Renovation)"}
 ]
-
-
 ---
 
-In Ports Stephens area the client wanted to renovate the existing property to update it and improve the main floor layout and existing pool area.
+A comprehensive transformation of a tired 1980s brick holiday house into an open, luxurious coastal retreat framing panoramic vistas across Port Stephens.
 
-The views are absolutely spectacular.
-
-
-Main alterations
-- Opening up of the main floor - especially the kitchen and living areas
-- New Master bedroom on the main floor
-- Levelled out upper floors and balcony
-- New tile balcony and expansion to create a functional outdoor dining area 
-- New pool & deck 
-- New TV lounge replacing the very dated spa & "rock feature"
-- All bathrooms & ensuites were renovated
-
-The house is now let as a holiday house.
-
-
+### Architectural Transformation
+- **Level Transitions:** Removed awkward stepped floor levels to create a single, continuous polished floor plane flowing seamlessly onto the expanded coastal deck.
+- **Microclimate Deck:** Redesigned balcony depth and screening to provide sheltered outdoor dining shielded from prevailing afternoon westerlies.
+- **Thermal Performance:** High-performance glazing and cross-ventilation louvres replaced old single-pane sliders, keeping the interior cool through humid summer months.

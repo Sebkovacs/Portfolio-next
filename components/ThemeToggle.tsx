@@ -1,34 +1,21 @@
-﻿"use client"
-import type { ThemePreference } from './ThemeProvider'
+"use client"
 import { useTheme } from './ThemeProvider'
-
-const order: ThemePreference[] = ['light', 'dark', 'system']
-const icons: Record<ThemePreference, string> = {
-  light: 'light_mode',
-  dark: 'dark_mode',
-  system: 'settings_suggest',
-}
-const labels: Record<ThemePreference, string> = {
-  light: 'Light',
-  dark: 'Dark',
-  system: 'System',
-}
+import styles from './ThemeToggle.module.css'
 
 export default function ThemeToggle() {
-  const { preference, toggle } = useTheme()
-
-  const icon = icons[preference]
-  const label = labels[preference]
+  const { theme, toggle } = useTheme()
 
   return (
     <button
-      aria-label={`Theme preference: ${label}`}
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       onClick={toggle}
-      className="site-nav__toggle"
+      className={styles.themeToggleBtn}
       type="button"
+      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
     >
-      <span className="material-symbols-outlined">{icon}</span>
-      <span className="site-nav__toggle-label">{label}</span>
+      <span className="material-symbols-outlined" style={{ fontSize: '1.2rem' }}>
+        {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+      </span>
     </button>
   )
 }

@@ -1,0 +1,414 @@
+.caseStudy {
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+/* Top Back Navigation */
+.topNav {
+  display: flex;
+  align-items: center;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 850px;
+}
+
+.headerKicker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.locationMeta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-soft);
+}
+
+.title {
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.leadSummary {
+  font-size: 1.18rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0;
+}
+
+/* Spec Section */
+.specSection {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.specLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-soft);
+}
+
+.specValue {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Gallery Section */
+.gallerySection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Sustainability Performance Card */
+.sustainabilityCard {
+  background: var(--color-sage-subtle);
+  border: 1px solid rgba(78, 114, 113, 0.2);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sustainabilityHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sustainabilityIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-sm);
+  background: rgba(78, 114, 113, 0.15);
+  color: var(--color-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sustainabilityIcon .material-symbols-outlined {
+  font-size: 1.4rem;
+}
+
+.sustainabilityTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.sustainabilitySubtitle {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.sustainabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.sustainabilityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.sustainabilityItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sustainabilityItem strong {
+  font-size: 0.88rem;
+  color: var(--color-text);
+}
+
+.sustainabilityItem span {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Narrative Case Study */
+.narrativeSection {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.narrativeHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 1.5rem;
+}
+
+.sectionHeading {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.narrativeContent {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 800px;
+}
+
+.narrativeContent h2,
+.narrativeContent h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.narrativeContent p {
+  margin-bottom: 1.25rem;
+}
+
+.narrativeContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.narrativeContent li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.narrativeContent li::before {
+  content: "—";
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.narrativeContent strong {
+  color: var(--color-text);
+}
+
+/* Site Assessment Callout */
+.siteAssessmentCallout {
+  margin-top: 1.5rem;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.calloutIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.calloutIcon .material-symbols-outlined {
+  font-size: 1.6rem;
+}
+
+.calloutText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.calloutText strong {
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.calloutText p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Floor Plans Section */
+.plansSectionWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Next / Prev Project Nav */
+.projectNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.navLinkCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.navLinkCard:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navDirection {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-soft);
+}
+
+.navProjectTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.navNext .navLinkCard {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Project Conversion CTA */
+.projectCta {
+  margin-top: 1rem;
+}
+
+.projectCtaInner {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.projectCtaTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.25rem;
+}
+
+.projectCtaText {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .narrativeSection {
+    padding: 2rem 1.5rem;
+  }
+
+  .siteAssessmentCallout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .projectNav {
+    grid-template-columns: 1fr;
+  }
+
+  .navNext .navLinkCard {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .projectCtaInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
