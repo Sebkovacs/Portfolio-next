@@ -23,13 +23,31 @@ pics: [
     id: '1',
     image: '/1.jpg',
     alt: 'The Point Retreat outdoor living deck and board rack',
-    caption: 'Dedicated board storage, outdoor copper shower with solar hot water, and deep timber eaves designed for the post-surf ritual.'
+    caption: 'An unpretentious yet highly refined coastal vernacular, utilizing salvaged Australian hardwoods to withstand the punishing coastal salt air.'
   },
   {
     id: '2',
     image: '/2.jpg',
-    alt: 'Expansive recycled ironbark timber deck with integrated surfboard storage overlooking a point break',
-    caption: 'An unpretentious yet highly refined coastal vernacular, utilizing salvaged Australian hardwoods to withstand the punishing coastal salt air.'
+    alt: 'Outdoor copper rain shower and surfboard rack',
+    caption: 'Dedicated board storage, outdoor copper shower with solar hot water, and deep timber eaves designed specifically for the post-surf ritual.'
+  },
+  {
+    id: '3',
+    image: '/3.jpg',
+    alt: 'Additional project detail view',
+    caption: 'Further architectural details showcasing the material palette and integration with the coastal environment.'
+  },
+  {
+    id: '4',
+    image: '/4.jpg',
+    alt: 'Living area perspective',
+    caption: 'Interior spatial arrangement emphasizing natural light and cross-ventilation.'
+  },
+  {
+    id: '5',
+    image: '/5.jpg',
+    alt: 'Contextual site integration',
+    caption: 'Demonstrating the building footprint sitting lightly on the landscape.'
   }
 ]
 plans: [
@@ -41,12 +59,15 @@ plans: [
 ]
 ---
 
-Designed as the ultimate family surf sanctuary at Crescent Head, The Point Retreat celebrates the simplicity of coastal living, salt-washed skin, and the rhythm of daily tide charts. 
+### The Problem
+The brief called for a low-footprint, highly durable retreat that breathes with the ocean while handling corrosive salt air and integrating daily surf rituals. The architecture needed to reject the sprawling, enclosed footprint typical of modern holiday homes, instead embracing the outdoor coastal climate.
 
-The building rejects the sprawling footprint typical of modern holiday homes, instead opting for a highly efficient, compact living zone structured around a central outdoor timber breezeway. This covered deck acts as the primary living room for nine months of the year, directly connecting the enclosed shelter with dedicated surfboard bays, wetsuit drying zones, and an open-sky copper rain shower.
+### Client Profile
+A traveling longboarder and environmental consultant seeking a minimalist, barefoot lifestyle base. They wanted a home that facilitated a deep connection to the natural rhythm of the tides, prioritizing outdoor living and natural, weathering materials over polished luxury.
 
 ### The Surfer-Architect Toolkit
-The architecture is inherently pragmatic, designed specifically to accommodate the rituals of an ocean-focused lifestyle without compromising on spatial poetry.
+Designed as the ultimate family surf sanctuary at Crescent Head, The Point Retreat celebrates the simplicity of coastal living, salt-washed skin, and the rhythm of daily tide charts. 
+
 - **Surf Ritual Flow:** Direct sandy-feet access from the point path leads into a timber-slatted wash area. Sand is left outside before entering the conditioned interior zones.
 - **Recycled Heavy Hardwood:** Salvaged bridge timbers and recycled ironbark create a robust, low-maintenance structural shell that patinas gracefully in the coastal air, requiring no chemical sealants.
 - **Cross-Ventilation Passive Cooling:** Oversized, custom-made timber louvres harness the reliable onshore sea breezes, negating the need for any mechanical air conditioning.

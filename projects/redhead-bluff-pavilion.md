@@ -1,56 +1,73 @@
 ---
-title: 'The Bluff House'
-shortTitle: 'bluff-house'
-date: '2026-03-20'
-type: 'Coastal Headland Residence'
-status: 'Under Construction'
-work: 'Detailed Documentation & Site Admin'
+title: 'The Bluff Pavilion'
+shortTitle: 'bluff-pavilion'
+date: '2026-03-22'
+type: 'Coastal Sanctuary Pavilion'
+status: 'Concept'
+work: 'Architecture & Masterplan'
 location: 'Redhead Bluff, NSW'
 company: 'Salt & Stone Architecture'
-software: 'Revit / BIM 360'
+software: 'Revit / Enscape'
 rendering: 'Photorealistic'
-summary: 'A monumental off-form board-marked concrete and Corten steel residence engineered into the Redhead escarpment, built to withstand extreme coastal storms while capturing open Pacific horizons.'
+summary: 'A biophilic coastal pavilion utilizing rusting Corten steel and spotted gum to blend into the surrounding bluff, offering a deep connection to the elements.'
 thumb: '/1.jpg'
-thumbAlt: 'The Bluff House concrete and corten pavilion overlooking the ocean'
+thumbAlt: 'The Bluff Pavilion with Corten steel facade'
 featured: true
 homeSections: ['selected', 'future']
-area: '380m² internal + 140m² terrace'
-nathers: '7.5-Star NatHERS Target'
-energy: 'Grid-Hybrid Solar + Thermal Mass'
-north: 40
+area: '140m² internal + 60m² outdoor decking'
+nathers: '8.2-Star NatHERS Target'
+energy: 'Passive Solar Design'
+north: 45
 pics: [
   {
     id: '1',
     image: '/1.jpg',
-    alt: 'The Bluff House twilight view over ocean cliffs',
-    caption: 'Board-marked off-form concrete walls provide supreme structural anchoring and thermal mass against severe southerly coastal squalls.'
+    alt: 'Corten steel pavilion exterior nestled in the bluff',
+    caption: 'The use of Corten steel ensures the building naturally rusts, adopting the deep red and ochre tones of the Redhead Bluff cliffs.'
   },
   {
     id: '2',
     image: '/2.jpg',
-    alt: 'Monumental off-form concrete and corten steel residence cantilevered over a coastal cliff under stormy skies',
-    caption: 'A brutalist yet highly refined architectural response to an extreme coastal environment. The cantilevered structure frames open Pacific horizons.'
+    alt: 'Open pavilion interior with spotted gum and cross-ventilation',
+    caption: 'An entirely open-plan pavilion arrangement allows coastal breezes to flow uninhibited through the living zones, blurring the line between indoors and out.'
+  },
+  {
+    id: '3',
+    image: '/3.jpg',
+    alt: 'Additional project detail view',
+    caption: 'Further architectural details showcasing the material palette and integration with the coastal environment.'
+  },
+  {
+    id: '4',
+    image: '/4.jpg',
+    alt: 'Living area perspective',
+    caption: 'Interior spatial arrangement emphasizing natural light and cross-ventilation.'
+  },
+  {
+    id: '5',
+    image: '/5.jpg',
+    alt: 'Contextual site integration',
+    caption: 'Demonstrating the building footprint sitting lightly on the landscape.'
   }
 ]
 plans: [
   {
     id: '1',
     plan: '/p1.jpg',
-    alt: 'Headland Residence & Ocean Lap Pool Plan (1:100 @ A1)'
+    alt: 'Pavilion Layout Plan (1:100)'
   }
 ]
 ---
 
-Engraved directly into the sandstone cliffs of Redhead Bluff, this residence represents a profound dialogue between raw structural permanence and delicate coastal light. 
+### The Problem
+Addressing intense solar gain and prevailing coastal winds on a highly elevated bluff while maintaining a deeply biophilic, open pavilion-style living arrangement. The architecture needed to sit lightly on the earth and visually disappear into the rust-colored landscape of the headland.
 
-The architecture abandons lightweight framing, instead employing heavy off-form board-marked concrete and weathering Corten steel to form protective thermal bunkers. These monolithic forms anchor deeply into the escarpment while simultaneously cantilevering outward, framing panoramic ocean vistas through expansive double-glazed, low-E performance facades.
+### Client Profile
+A yoga instructor and traveling surfer seeking a sanctuary for movement, rest, and connection. She requested a home that functioned more like a breathable shelter than a sealed, conditioned box, prioritizing natural airflow, morning sunlight, and acoustic connection to the waves crashing below.
 
-### The Brutalist Coastal Vernacular
-The extreme exposure of the site demanded an uncompromising structural response. The resulting aesthetic is unapologetically brutalist yet meticulously refined in its detailing. 
-- **Board-Marked Concrete:** The texture of the timber formwork remains permanently etched into the concrete walls, providing a tactile softness to the heavy mass and referencing the rugged textures of the adjacent cliff face.
-- **Corrosion Immunity:** Raw exterior materials—including the concrete, Corten steel cladding, and structural bronze elements—require zero painting, staining, or synthetic coatings over their century-long lifespan. They are designed to thrive in, rather than fight against, the corrosive salt-laden atmosphere.
+### Biophilic Design Response
+The Bluff Pavilion is a study in site-responsive materiality and passive environmental control.
 
-### Environmental Engineering & Craft
-- **Thermal Inertia:** The heavy concrete mass acts as a massive thermal battery. It absorbs excess midday solar radiation during winter and radiates gentle, passive heat throughout the cool coastal evenings, stabilizing internal temperatures year-round.
-- **Stormwater Harvesting:** Rooftop runoff is gravity-fed into a subterranean 45,000L reservoir, supplying all household water needs and native garden irrigation.
-- **Ocean Pool Integration:** A cantilevered concrete lap pool extends towards the horizon, acting simultaneously as a recreational space, an architectural reflection pond, and a secondary thermal heat sink.
+- **Camouflaged Materiality:** The exterior is primarily clad in Corten steel. As it oxidizes in the salt air, it develops a protective rust layer that perfectly mirrors the geological tones of the surrounding Redhead Bluff.
+- **Pavilion Living:** The home operates as a single, large pavilion with deeply recessed sliding glass walls that can be completely retracted, turning the entire living room into a covered outdoor deck.
+- **Thermal Strategy:** Wide, engineered spotted-gum roof eaves provide critical summer shading while allowing low-angle winter sun to penetrate and warm the polished concrete floors.

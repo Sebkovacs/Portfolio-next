@@ -8,7 +8,7 @@ work: 'Feasibility & Concept Design'
 location: 'Seal Rocks, NSW'
 company: 'Salt & Stone Architecture'
 software: 'Revit / ClimateStudio'
-rendering: 'Twinmotion'
+rendering: 'Photorealistic'
 summary: 'A completely autonomous, off-grid coastal timber sanctuary split into twin pavilions connected by an open-air breezeway, powered by 100% solar and rainwater harvesting.'
 thumb: '/1.jpg'
 thumbAlt: 'Sugarloaf Eco Sanctuary off-grid solar pavilions'
@@ -30,6 +30,24 @@ pics: [
     image: '/2.jpg',
     alt: 'Sugarloaf Eco Sanctuary transparent glass breezeway connecting timber pavilions in the forest',
     caption: 'The central glass breezeway acts as a transitional space that dissolves the boundary between the architecture and the dense Australian coastal forest.'
+  },
+  {
+    id: '3',
+    image: '/3.jpg',
+    alt: 'Additional project detail view',
+    caption: 'Further architectural details showcasing the material palette and integration with the coastal environment.'
+  },
+  {
+    id: '4',
+    image: '/4.jpg',
+    alt: 'Living area perspective',
+    caption: 'Interior spatial arrangement emphasizing natural light and cross-ventilation.'
+  },
+  {
+    id: '5',
+    image: '/5.jpg',
+    alt: 'Contextual site integration',
+    caption: 'Demonstrating the building footprint sitting lightly on the landscape.'
   }
 ]
 plans: [
@@ -41,16 +59,15 @@ plans: [
 ]
 ---
 
-Located adjacent to the pristine marine park of Seal Rocks, Sugarloaf Eco Sanctuary is designed for complete off-grid living with zero municipal grid dependencies. 
+### The Problem
+Located adjacent to the pristine marine park of Seal Rocks, the site required an architecture that could exist completely off-grid with zero municipal grid dependencies. Furthermore, building in a protected coastal forest meant zero ground-slab excavation could be permitted in order to protect ancient root systems and native flora.
 
-The architecture is deliberately fractured into two distinct pavilion wings. This massing strategy not only reduces the perceived scale of the building amongst the trees but also mandates a physical transition through the landscape when moving between the active living zones and the quiet sleeping quarters.
+### Client Profile
+A marine biologist and her family, needing a sustainable base close to the marine park for research and a quiet retreat. Deeply passionate about conservation, they demanded an architectural solution that left no permanent scar on the landscape and utilized entirely natural, locally sourced materials.
 
 ### Spatial Sequencing & Biophilic Design
-The connective tissue between the pavilions is a completely transparent glass and timber breezeway. Hovering above the forest floor on light-touch steel footings, this space acts as a sheltered observation deck, immersing the occupants in the coastal microclimate and native bird habitat while preserving the natural hydrology of the site.
+The architecture is deliberately fractured into two distinct pavilion wings. This massing strategy reduces the perceived scale of the building amongst the trees and mandates a physical transition through the landscape when moving between zones.
 
-### Autonomous Sustainable Technology
-The brief demanded complete self-reliance without sacrificing luxury or thermal comfort.
+- **The Glass Breezeway:** The connective tissue between the pavilions is a completely transparent glass and timber breezeway. Hovering above the forest floor on light-touch steel footings, this space immerses occupants in the coastal microclimate.
 - **Full Energy Autonomy:** High-efficiency bi-facial rooftop solar panels are paired with a robust 25kWh lithium iron phosphate battery storage system, capable of sustaining the home through prolonged overcast coastal weather.
-- **Natural Light & Air:** North-facing clerestory glass, cross-ventilating timber louvres, and wide overhanging roof eaves provide complete passive thermal regulation.
-- **Material Authenticity:** Locally sourced silver ash and native tallowwood interior finishes create a warm, grounding atmosphere that ages gracefully alongside the surrounding forest.
-- **Ecological Footprint:** Zero ground-slab excavation was permitted. The entire structure relies on minimal-impact screw piles to protect ancient root systems.
+- **Material Authenticity:** Locally sourced silver ash and native tallowwood interior finishes, alongside robust rammed-earth structural walls, create a warm, grounding atmosphere.

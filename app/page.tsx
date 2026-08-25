@@ -77,11 +77,11 @@ export default function HomePage() {
   
   const flagshipIds = new Set([
     'salt-point-residence',
-    'dune-house-fingal',
+    'tasman-peninsula-cabin',
     'crescent-head-surf-shack',
     'redhead-bluff-pavilion',
     'seal-rocks-sanctuary',
-    'bar-beach-dual-occ',
+    'boardriders-duplex',
   ])
   const flagshipProjects = allProjects.filter((p) => flagshipIds.has(p.id))
 
